@@ -54,15 +54,16 @@ user: you want to use DOS-keys with a few basic GNU ones?  you want to
 go with the full power of the GNU system?  All are options that are
 provided by the six levels of experience of Prime:
 
-   1- Newbie: All DOS shortcut keys, no GNU keys yet 2- Novice: DOS
-shortcut keys, some of which are replaced with GNU's 3- Intermediate:
-DOS keys with a few more replaced with GNU keys 4- ِAdvanced: ...  And
-more GNU keys in 5- ِExpert: Very few DOS keys, most are GNU keys 6-
-ِVeteran: Only GNU keys, no DOS-like keys
+   1- Newbie: All DOS shortcut keys, no GNU keys yet
+2- Novice: DOS shortcut keys, some of which are replaced with GNU's
+3- Intermediate: DOS keys with a few more replaced with GNU keys
+4- ِAdvanced: ...  And more GNU keys in
+5- ِExpert: Very few DOS keys, most are GNU keys
+6- ِVeteran: Only GNU keys, no DOS-like keys
 
-   You start with level 1 by default.  To set your level, call the mino
-with '-levelX' or '-lX' options, Where X is the level desired, for
-example:
+   You start with level 1 by default.
+To set your level, call the mino with '-levelX' or '-lX' options, Where
+X is the level desired, for example:
      $prime --level2
 
 Which keys are defined for which level?
@@ -74,37 +75,50 @@ certain key is defined.  Each key defined is recognized in higher levels
 (e.g.  level 2 keys are recognized in levels 3-4-5-6).  Note that in
 level 5 only GNU keys are defined, no DOS keys will work at this level!.
 
-   Keybindings: In the table below, C-something means pressing down CTRL
-and then pressing the other key.  Note that '^' is the same as 'C',
-meaning CTRL key, it is just typed like this so DOS users can feel
-familiar with the text.  The same as M-something, which means META or
-ALT.
+   Keybindings:
+In the table below, C-something means pressing down CTRL and then
+pressing the other key.  Note that '^' is the same as 'C', meaning CTRL
+key, it is just typed like this so DOS users can feel familiar with the
+text.  The same as M-something, which means META or ALT.
 
    =====================================================================
 Function DOS-like key GNU key GnuDOS Level
 =====================================================================
 All DOS bindings and no GNU bindings Newbie
 
-   Next Line Down C-n Novice Prev.  Line Up C-p Novice Backward Left C-b
-Novice Forward Right C-f Novice Back One Word ^Left M-b Novice Fwd One
-Word ^Right M-f Novice
+Next Line Down C-n Novice
+Prev.  Line Up C-p Novice
+Backward Left C-b Novice
+Forward Right C-f Novice
+Back One Word ^Left M-b Novice
+Fwd One Word ^Right M-f Novice
 
-   Cancel ESC C-g Intermediate Next Screen PgDn C-v Intermediate Prev.
-Screen PgUp M-v Intermediate Start of Line Home C-a Intermediate End of
-Line End C-e Intermediate Start of text ^Home C-< Intermediate End of
-text ^End C-> Intermediate
+Cancel ESC C-g Intermediate
+Next Screen PgDn C-v Intermediate
+Prev.  Screen PgUp M-v Intermediate
+Start of Line Home C-a Intermediate
+End of Line End C-e Intermediate
+Start of text ^Home C-< Intermediate
+End of text ^End C-> Intermediate
 
-   Del prev char BkSpc DEL (is BkSpc) Advanced Del next char Delete C-d
-Advanced Del prev word ^BkSpc M-DEL (is M-BkSpc) Advanced Del next word
-^Delete M-d Advanced Select text SHIFT+Arrow C-Space Advanced Del
-selection BkSpc/Del C-w Advanced
+Del prev char BkSpc DEL (is BkSpc) Advanced
+Del next char Delete C-d Advanced
+Del prev word ^BkSpc M-DEL (is M-BkSpc) Advanced
+Del next word ^Delete M-d Advanced
+Select text SHIFT+Arrow C-Space Advanced
+Del selection BkSpc/Del C-w Advanced
 
-   Quit ^Q C-x C-c Expert Paste (yanking) ^V C-y Expert Del Line ^D C-k
-Expert Undo ^Z C-/, C-_, C-x u Expert Open File ^O C-x C-f Expert Save
-File ^S C-x C-s Expert Find (Search) ^F C-s (forward search) Expert C-r
-(reverse search) Expert Help F1 C-h ?  Expert
+Quit ^Q C-x C-c Expert
+Paste (yanking) ^V C-y Expert
+Del Line ^D C-k Expert
+Undo ^Z C-/, C-_, C-x u Expert
+Open File ^O C-x C-f Expert
+Save File ^S C-x C-s Expert
+Find (Search) ^F C-s (forward search) Expert
+C-r (reverse search) Expert
+Help F1 C-h ?  Expert
 
-   All GNU bindings and no DOS bindings Veteran
+All GNU bindings and no DOS bindings Veteran
 =====================================================================
 
 Why should I use it?
@@ -711,35 +725,35 @@ Index
 
 * About Prime:                           Overview.            (line   6)
 * Bottom view:                           Main Window.         (line  22)
-* Command line export:                   Overview.            (line 112)
+* Command line export:                   Overview.            (line 126)
 * Directory view:                        Main Window.         (line  19)
 * Edit menu:                             Menus.               (line  17)
-* Exporting from the command line:       Overview.            (line 112)
+* Exporting from the command line:       Overview.            (line 126)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
                                                               (line   9)
 * File menu:                             Menus.               (line   9)
 * File view:                             Main Window.         (line  21)
 * Help menu:                             Menus.               (line  33)
-* How to run Prime:                      Overview.            (line  89)
-* Key bindings:                          Overview.            (line  32)
+* How to run Prime:                      Overview.            (line 103)
+* Key bindings:                          Overview.            (line  33)
 * Keyboard shortcuts:                    Menus.               (line  40)
 * Main window:                           Main Window.         (line   3)
 * Manu bar:                              Main Window.         (line   9)
 * Menus:                                 Menus.               (line   3)
-* No log information:                    Overview.            (line 108)
+* No log information:                    Overview.            (line 122)
 * Overview:                              Overview.            (line   3)
 * Prime main window:                     Main Window.         (line   3)
 * Prime menu bar:                        Main Window.         (line   9)
 * Prime Overview:                        Overview.            (line   3)
-* Running Prime:                         Overview.            (line  89)
+* Running Prime:                         Overview.            (line 103)
 * Shortcut keys:                         Menus.               (line  39)
 * Shortcuts:                             Menus.               (line  40)
-* Start Prime with a specific directory: Overview.            (line 118)
-* Starting Prime:                        Overview.            (line  89)
-* Suppressing log information:           Overview.            (line 108)
+* Start Prime with a specific directory: Overview.            (line 132)
+* Starting Prime:                        Overview.            (line 103)
+* Suppressing log information:           Overview.            (line 122)
 * What is Prime:                         Overview.            (line   6)
-* Why to use it:                         Overview.            (line  74)
-* Why to use Prime:                      Overview.            (line  74)
+* Why to use it:                         Overview.            (line  88)
+* Why to use Prime:                      Overview.            (line  88)
 * Working around with menus:             Menus.               (line   3)
 
 
@@ -747,10 +761,10 @@ Index
 Tag Table:
 Node: Top729
 Node: Overview1090
-Node: Main Window6584
-Node: Menus7278
-Node: Shortcuts8650
-Node: GNU Free Documentation License9656
-Node: Index32134
+Node: Main Window6569
+Node: Menus7263
+Node: Shortcuts8635
+Node: GNU Free Documentation License9641
+Node: Index32119
 
 End Tag Table

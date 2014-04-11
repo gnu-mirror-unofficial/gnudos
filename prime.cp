@@ -5,14 +5,14 @@
 \entry{Key bindings}{1}{Key bindings}
 \entry{Why to use Prime}{2}{Why to use Prime}
 \entry{Why to use it}{2}{Why to use it}
-\entry{Running Prime}{2}{Running Prime}
-\entry{Starting Prime}{2}{Starting Prime}
-\entry{How to run Prime}{2}{How to run Prime}
-\entry{No log information}{2}{No log information}
-\entry{Suppressing log information}{2}{Suppressing log information}
-\entry{Command line export}{2}{Command line export}
-\entry{Exporting from the command line}{2}{Exporting from the command line}
-\entry{Start Prime with a specific directory}{2}{Start Prime with a specific directory}
+\entry{Running Prime}{3}{Running Prime}
+\entry{Starting Prime}{3}{Starting Prime}
+\entry{How to run Prime}{3}{How to run Prime}
+\entry{No log information}{3}{No log information}
+\entry{Suppressing log information}{3}{Suppressing log information}
+\entry{Command line export}{3}{Command line export}
+\entry{Exporting from the command line}{3}{Exporting from the command line}
+\entry{Start Prime with a specific directory}{3}{Start Prime with a specific directory}
 \entry{Main window}{3}{Main window}
 \entry{Prime main window}{3}{Prime main window}
 \entry{Manu bar}{4}{Manu bar}

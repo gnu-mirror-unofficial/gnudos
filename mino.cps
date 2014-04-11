@@ -1,6 +1,6 @@
 \initial {C}
-\entry {Code highlighting}{2}
-\entry {Command line help}{2}
+\entry {Code highlighting}{3}
+\entry {Command line help}{3}
 \initial {E}
 \entry {Edit menu}{5}
 \entry {Edit menus}{4}
@@ -11,7 +11,7 @@
 \entry {File state}{4}
 \initial {H}
 \entry {Help menu}{5}
-\entry {Highlighting mode}{2}
+\entry {Highlighting mode}{3}
 \entry {How to run mino}{2}
 \initial {I}
 \entry {Invoking mino}{2}
@@ -30,7 +30,7 @@
 \entry {Reasons of using mino}{2}
 \entry {Running mino}{2}
 \initial {S}
-\entry {Sentence highlighting}{2}
+\entry {Sentence highlighting}{3}
 \entry {Shortcuts}{6}
 \entry {Shortcuts keys}{6}
 \entry {Starting mino}{2}

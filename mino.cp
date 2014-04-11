@@ -8,10 +8,10 @@
 \entry{Running mino}{2}{Running mino}
 \entry{Starting mino}{2}{Starting mino}
 \entry{Invoking mino}{2}{Invoking mino}
-\entry{Command line help}{2}{Command line help}
-\entry{Sentence highlighting}{2}{Sentence highlighting}
-\entry{Code highlighting}{2}{Code highlighting}
-\entry{Highlighting mode}{2}{Highlighting mode}
+\entry{Command line help}{3}{Command line help}
+\entry{Sentence highlighting}{3}{Sentence highlighting}
+\entry{Code highlighting}{3}{Code highlighting}
+\entry{Highlighting mode}{3}{Highlighting mode}
 \entry{Main window}{4}{Main window}
 \entry{Menu bar}{4}{Menu bar}
 \entry{Status bar}{4}{Status bar}

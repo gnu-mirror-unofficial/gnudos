@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the Mino (mino) program (version 1.0).
+<!-- This manual is for the GnuDOS Mino program (version 1.0).
 
 Copyright (C) 2014 Mohammed Isam.
 
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Mino (mino) version 1.0: Overview</title>
+<title>Mino version 1.0: Overview</title>
 
-<meta name="description" content="Mino (mino) version 1.0: Overview">
-<meta name="keywords" content="Mino (mino) version 1.0: Overview">
+<meta name="description" content="Mino version 1.0: Overview">
+<meta name="keywords" content="Mino version 1.0: Overview">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -66,13 +66,13 @@ ul.no-bullet {list-style: none}
 Next: <a href="Main-Window.html#Main-Window" accesskey="n" rel="next">Main Window</a>, Previous: <a href="index.html#Top" accesskey="p" rel="previous">Top</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Overview-of-the-mino-_0028Mino_0029-text-editor"></a>
-<h2 class="chapter">1 Overview of the mino (Mino) text editor</h2>
+<a name="Overview-of-the-mino-text-editor"></a>
+<h2 class="chapter">1 Overview of the mino text editor</h2>
 <a name="index-Overview"></a>
 <a name="index-Mino-Overview"></a>
 
-<p>What is mino (Mino)?
-Prime is a GNU software, part of the GnuDOS package.
+<p>What is mino?
+Mino is a GNU software, part of the GnuDOS package.
 Mino is a text file editor for use with the GNU/Linux console/xterm. The idea 
 was to provide a text editor that is user friendly and easy to use for those 
 who came from DOS land. Having accustomed to SHIFT selecting text, using 
@@ -82,12 +82,12 @@ complexity can be adjusted by the user: you want to use DOS-keys with a few
 basic GNU ones? you want to go with the full power of the GNU system? All are
 options that are provided by the six levels of experience of Mino:
 </p>
-<p>1- Newbie: All DOS shortcut keys, no GNU keys yet
-  2- Novice: DOS shortcut keys, some of which are replaced with GNU&rsquo;s
-  3- Intermediate: DOS keys with a few more replaced with GNU keys
-  4- ÙAdvanced: ... And more GNU keys in
-  5- ÙExpert: Very few DOS keys, most are GNU keys
-  6- ÙVeteran: Only GNU keys, no DOS-like keys
+<p>1- Newbie: All DOS shortcut keys, no GNU keys yet<br>
+  2- Novice: DOS shortcut keys, some of which are replaced with GNU&rsquo;s<br>
+  3- Intermediate: DOS keys with a few more replaced with GNU keys<br>
+  4- ÙAdvanced: ... And more GNU keys in<br>
+  5- ÙExpert: Very few DOS keys, most are GNU keys<br>
+  6- ÙVeteran: Only GNU keys, no DOS-like keys<br>
 </p>  
 <p>You start with level 1 by default.
 To set your level, call the mino with &rsquo;&ndash;levelX&rsquo; or &rsquo;-lX&rsquo; options,
@@ -103,53 +103,53 @@ Where X is the level desired, for example:
 respective GNU key bindings. To the right is the level at which a certain GNU
 key is defined. Each key defined is recognized in higher levels (e.g. level 2
 keys are recognized in levels 3-4-5-6). Note that in level 6 only GNU keys are
-defined, no DOS keys will work at this level!.
+defined, no DOS keys will work at this level!.<br>
 </p>
-<p>Keybindings:
+<p>Keybindings:<br>
 In the table below, C-something means pressing down CTRL and then pressing the
 other key. Note that &rsquo;^&rsquo; is the same as &rsquo;C&rsquo;, meaning CTRL key, it is just
 typed like this so DOS users can feel familiar with the text.
-The same as M-something, which means META or ALT.
+The same as M-something, which means META or ALT.<br>
 </p>
-<p>=====================================================================
-Function        DOS-like key    GNU key                 GnuDOS Level
-=====================================================================
-All DOS bindings and no GNU bindings			Newbie
-</p>
-<p>Next Line       Down            C-n                     Novice
-Prev. Line      Up              C-p                     Novice
-Backward        Left            C-b                     Novice
-Forward         Right           C-f                     Novice
-Back One Word   ^Left           M-b                     Intermediate
-Fwd One Word    ^Right          M-f                     Intermediate
-</p>
-<p>Cancel          ESC             C-g                     Intermediate
-Next Screen     PgDn            C-v                     Intermediate
-Prev. Screen    PgUp            M-v                     Intermediate
-Start of Line   Home            C-a                     Intermediate
-End of Line     End             C-e                     Intermediate
-Start of text   ^Home           C-&lt;                     Intermediate
-End of text     ^End            C-&gt;                     Intermediate
-</p>
-<p>Del prev char   BkSpc           DEL (is BkSpc)          Advanced
-Del next char   Delete          C-d                     Advanced
-Del prev word   ^BkSpc          M-DEL (is M-BkSpc)      Advanced
-Del next word   ^Delete         M-d                     Advanced
-Select text     SHIFT+Arrow     C-Space                 Advanced
-Del selection   BkSpc/Del       C-w                     Advanced
-</p>
-<p>Quit            ^Q              C-x C-c                 Expert
-Paste (yanking) ^V              C-y                     Expert
-Del Line        ^D              C-k                     Expert
-Undo            ^Z              C-/, C-_, C-x u         Expert
-Open File       ^O              C-x C-f                 Expert
-Save File       ^S              C-x C-s                 Expert
-Find (Search)   ^F              C-s (forward search)    Expert
-                                C-r (reverse search)    Expert
-Help            F1              C-h ?                   Expert
-</p>
-<p>All GNU bindings and no DOS bindings                    Veteran
-=====================================================================
+<p>=====================================================================<br>
+Function        DOS-like key    GNU key                 GnuDOS Level <br>
+=====================================================================<br>
+All DOS bindings and no GNU bindings			Newbie<br>
+<br>
+Next Line       Down            C-n                     Novice<br>
+Prev. Line      Up              C-p                     Novice<br>
+Backward        Left            C-b                     Novice<br>
+Forward         Right           C-f                     Novice<br>
+Back One Word   ^Left           M-b                     Intermediate<br>
+Fwd One Word    ^Right          M-f                     Intermediate<br>
+<br>
+Cancel          ESC             C-g                     Intermediate<br>
+Next Screen     PgDn            C-v                     Intermediate<br>
+Prev. Screen    PgUp            M-v                     Intermediate<br>
+Start of Line   Home            C-a                     Intermediate<br>
+End of Line     End             C-e                     Intermediate<br>
+Start of text   ^Home           C-&lt;                     Intermediate<br>
+End of text     ^End            C-&gt;                     Intermediate<br>
+<br>
+Del prev char   BkSpc           DEL (is BkSpc)          Advanced<br>
+Del next char   Delete          C-d                     Advanced<br>
+Del prev word   ^BkSpc          M-DEL (is M-BkSpc)      Advanced<br>
+Del next word   ^Delete         M-d                     Advanced<br>
+Select text     SHIFT+Arrow     C-Space                 Advanced<br>
+Del selection   BkSpc/Del       C-w                     Advanced<br>
+<br>
+Quit            ^Q              C-x C-c                 Expert<br>
+Paste (yanking) ^V              C-y                     Expert<br>
+Del Line        ^D              C-k                     Expert<br>
+Undo            ^Z              C-/, C-_, C-x u         Expert<br>
+Open File       ^O              C-x C-f                 Expert<br>
+Save File       ^S              C-x C-s                 Expert<br>
+Find (Search)   ^F              C-s (forward search)    Expert<br>
+                                C-r (reverse search)    Expert<br>
+Help            F1              C-h ?                   Expert<br>
+<br>
+All GNU bindings and no DOS bindings                    Veteran<br>
+=====================================================================<br>
 </p>
 <a name="Why-should-I-use-it_003f-"></a>
 <h3 class="heading">Why should I use it?<br></h3>

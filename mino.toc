@@ -1,4 +1,4 @@
-@numchapentry{Overview of the mino (Mino) text editor}{1}{Overview}{1}
+@numchapentry{Overview of the mino text editor}{1}{Overview}{1}
 @numchapentry{Mino main window}{2}{Main Window}{4}
 @numchapentry{Working around with menus}{3}{Menus}{5}
 @numchapentry{Using keyboard shortcuts}{4}{Shortcuts}{7}

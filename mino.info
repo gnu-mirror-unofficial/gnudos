@@ -1,6 +1,6 @@
 This is mino.info, produced by makeinfo version 5.1 from mino.texi.
 
-This manual is for the Mino (mino) program (version 1.0).
+This manual is for the GnuDOS Mino program (version 1.0).
 
    Copyright (C) 2014 Mohammed Isam.
 
@@ -13,7 +13,7 @@ This manual is for the Mino (mino) program (version 1.0).
 
 INFO-DIR-SECTION Editors
 START-INFO-DIR-ENTRY
-* mino: (mino).                 Using Mino (mino) text editor.
+* mino: (mino).                 Using Mino text editor.
 END-INFO-DIR-ENTRY
 
 
@@ -22,11 +22,11 @@ File: mino.info,  Node: Top,  Next: Overview,  Up: (dir)
 mino
 ****
 
-This manual is for the Mino (mino) text editor (version 1.0).
+This manual is for the Mino text editor (version 1.0).
 
 * Menu:
 
-* Overview:: Overview of the mino (Mino) text editor
+* Overview:: Overview of the mino text editor
 * Main Window:: Mino main window
 * Menus:: Working around with menus
 * Shortcuts:: Using keyboard shortcuts
@@ -36,25 +36,26 @@ This manual is for the Mino (mino) text editor (version 1.0).
 
 File: mino.info,  Node: Overview,  Next: Main Window,  Prev: Top,  Up: Top
 
-1 Overview of the mino (Mino) text editor
-*****************************************
+1 Overview of the mino text editor
+**********************************
 
-What is mino (Mino)?  Prime is a GNU software, part of the GnuDOS
-package.  Mino is a text file editor for use with the GNU/Linux
-console/xterm.  The idea was to provide a text editor that is user
-friendly and easy to use for those who came from DOS land.  Having
-accustomed to SHIFT selecting text, using CTRL-shortcut keys and so on
-makes it hard for a regular Joe to dive in head first into GNU syntax.
-Mino provides multi-level experience, the level of complexity can be
-adjusted by the user: you want to use DOS-keys with a few basic GNU
-ones?  you want to go with the full power of the GNU system?  All are
-options that are provided by the six levels of experience of Mino:
+What is mino?  Mino is a GNU software, part of the GnuDOS package.  Mino
+is a text file editor for use with the GNU/Linux console/xterm.  The
+idea was to provide a text editor that is user friendly and easy to use
+for those who came from DOS land.  Having accustomed to SHIFT selecting
+text, using CTRL-shortcut keys and so on makes it hard for a regular Joe
+to dive in head first into GNU syntax.  Mino provides multi-level
+experience, the level of complexity can be adjusted by the user: you
+want to use DOS-keys with a few basic GNU ones?  you want to go with the
+full power of the GNU system?  All are options that are provided by the
+six levels of experience of Mino:
 
-   1- Newbie: All DOS shortcut keys, no GNU keys yet 2- Novice: DOS
-shortcut keys, some of which are replaced with GNU's 3- Intermediate:
-DOS keys with a few more replaced with GNU keys 4- ِAdvanced: ...  And
-more GNU keys in 5- ِExpert: Very few DOS keys, most are GNU keys 6-
-ِVeteran: Only GNU keys, no DOS-like keys
+   1- Newbie: All DOS shortcut keys, no GNU keys yet
+2- Novice: DOS shortcut keys, some of which are replaced with GNU's
+3- Intermediate: DOS keys with a few more replaced with GNU keys
+4- ِAdvanced: ...  And more GNU keys in
+5- ِExpert: Very few DOS keys, most are GNU keys
+6- ِVeteran: Only GNU keys, no DOS-like keys
 
    You start with level 1 by default.  To set your level, call the mino
 with '-levelX' or '-lX' options, Where X is the level desired, for
@@ -71,37 +72,50 @@ levels (e.g.  level 2 keys are recognized in levels 3-4-5-6).  Note that
 in level 6 only GNU keys are defined, no DOS keys will work at this
 level!.
 
-   Keybindings: In the table below, C-something means pressing down CTRL
-and then pressing the other key.  Note that '^' is the same as 'C',
-meaning CTRL key, it is just typed like this so DOS users can feel
-familiar with the text.  The same as M-something, which means META or
-ALT.
+   Keybindings:
+In the table below, C-something means pressing down CTRL and then
+pressing the other key.  Note that '^' is the same as 'C', meaning CTRL
+key, it is just typed like this so DOS users can feel familiar with the
+text.  The same as M-something, which means META or ALT.
 
    =====================================================================
 Function DOS-like key GNU key GnuDOS Level
 =====================================================================
 All DOS bindings and no GNU bindings Newbie
 
-   Next Line Down C-n Novice Prev.  Line Up C-p Novice Backward Left C-b
-Novice Forward Right C-f Novice Back One Word ^Left M-b Intermediate Fwd
-One Word ^Right M-f Intermediate
+Next Line Down C-n Novice
+Prev.  Line Up C-p Novice
+Backward Left C-b Novice
+Forward Right C-f Novice
+Back One Word ^Left M-b Intermediate
+Fwd One Word ^Right M-f Intermediate
 
-   Cancel ESC C-g Intermediate Next Screen PgDn C-v Intermediate Prev.
-Screen PgUp M-v Intermediate Start of Line Home C-a Intermediate End of
-Line End C-e Intermediate Start of text ^Home C-< Intermediate End of
-text ^End C-> Intermediate
+Cancel ESC C-g Intermediate
+Next Screen PgDn C-v Intermediate
+Prev.  Screen PgUp M-v Intermediate
+Start of Line Home C-a Intermediate
+End of Line End C-e Intermediate
+Start of text ^Home C-< Intermediate
+End of text ^End C-> Intermediate
 
-   Del prev char BkSpc DEL (is BkSpc) Advanced Del next char Delete C-d
-Advanced Del prev word ^BkSpc M-DEL (is M-BkSpc) Advanced Del next word
-^Delete M-d Advanced Select text SHIFT+Arrow C-Space Advanced Del
-selection BkSpc/Del C-w Advanced
+Del prev char BkSpc DEL (is BkSpc) Advanced
+Del next char Delete C-d Advanced
+Del prev word ^BkSpc M-DEL (is M-BkSpc) Advanced
+Del next word ^Delete M-d Advanced
+Select text SHIFT+Arrow C-Space Advanced
+Del selection BkSpc/Del C-w Advanced
 
-   Quit ^Q C-x C-c Expert Paste (yanking) ^V C-y Expert Del Line ^D C-k
-Expert Undo ^Z C-/, C-_, C-x u Expert Open File ^O C-x C-f Expert Save
-File ^S C-x C-s Expert Find (Search) ^F C-s (forward search) Expert C-r
-(reverse search) Expert Help F1 C-h ?  Expert
+Quit ^Q C-x C-c Expert
+Paste (yanking) ^V C-y Expert
+Del Line ^D C-k Expert
+Undo ^Z C-/, C-_, C-x u Expert
+Open File ^O C-x C-f Expert
+Save File ^S C-x C-s Expert
+Find (Search) ^F C-s (forward search) Expert
+C-r (reverse search) Expert
+Help F1 C-h ?  Expert
 
-   All GNU bindings and no DOS bindings Veteran
+All GNU bindings and no DOS bindings Veteran
 =====================================================================
 
 Why should I use it?
@@ -175,8 +189,8 @@ File: mino.info,  Node: Main Window,  Next: Menus,  Prev: Overview,  Up: Top
 2 Mino main window
 ******************
 
-After running mino (Mino), you are faced with a window that has the
-following components:
+After running mino, you are faced with a window that has the following
+components:
 
 Menu bar
 ========
@@ -739,8 +753,8 @@ Index
  [index ]
 * Menu:
 
-* Code highlighting:                     Overview.            (line 107)
-* Command line help:                     Overview.            (line  95)
+* Code highlighting:                     Overview.            (line 121)
+* Command line help:                     Overview.            (line 109)
 * Edit menu:                             Menus.               (line  19)
 * Edit menus:                            Main Window.         (line  43)
 * Editing area:                          Main Window.         (line  37)
@@ -749,10 +763,10 @@ Index
 * File menu:                             Menus.               (line   9)
 * File state:                            Main Window.         (line  21)
 * Help menu:                             Menus.               (line  48)
-* Highlighting mode:                     Overview.            (line 107)
-* How to run mino:                       Overview.            (line  82)
-* Invoking mino:                         Overview.            (line  82)
-* Key bindings:                          Overview.            (line  28)
+* Highlighting mode:                     Overview.            (line 121)
+* How to run mino:                       Overview.            (line  96)
+* Invoking mino:                         Overview.            (line  96)
+* Key bindings:                          Overview.            (line  29)
 * Keyboard shortcuts:                    Menus.               (line  55)
 * Main window:                           Main Window.         (line   6)
 * Menu bar:                              Main Window.         (line   9)
@@ -760,27 +774,27 @@ Index
 * Mino Overview:                         Overview.            (line   6)
 * Options menu:                          Menus.               (line  36)
 * Overview:                              Overview.            (line   6)
-* Reasons of using mino:                 Overview.            (line  74)
-* Running mino:                          Overview.            (line  82)
-* Sentence highlighting:                 Overview.            (line 107)
+* Reasons of using mino:                 Overview.            (line  88)
+* Running mino:                          Overview.            (line  96)
+* Sentence highlighting:                 Overview.            (line 121)
 * Shortcuts:                             Menus.               (line  55)
 * Shortcuts keys:                        Menus.               (line  54)
-* Starting mino:                         Overview.            (line  82)
+* Starting mino:                         Overview.            (line  96)
 * Status bar:                            Main Window.         (line  15)
 * Status indicators:                     Main Window.         (line  32)
-* Why to use it:                         Overview.            (line  74)
-* Why to use mino:                       Overview.            (line  74)
+* Why to use it:                         Overview.            (line  88)
+* Why to use mino:                       Overview.            (line  88)
 * Work area:                             Main Window.         (line  37)
 
 
 
 Tag Table:
-Node: Top705
-Node: Overview1055
-Node: Main Window6514
-Node: Menus7773
-Node: Shortcuts9612
-Node: GNU Free Documentation License10275
-Node: Index32752
+Node: Top698
+Node: Overview1034
+Node: Main Window6458
+Node: Menus7710
+Node: Shortcuts9549
+Node: GNU Free Documentation License10212
+Node: Index32689
 
 End Tag Table
