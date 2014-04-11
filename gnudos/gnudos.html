@@ -1,0 +1,1497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for the GnuDOS library (version 1.0).
+
+Copyright (C) 2014 Mohammed Isam.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+ -->
+<!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
+<head>
+<title>GnuDOS library version 1.0</title>
+
+<meta name="description" content="GnuDOS library version 1.0">
+<meta name="keywords" content="GnuDOS library version 1.0">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="#Top" rel="start" title="Top">
+<link href="#Index" rel="index" title="Index">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="dir.html#Top" rel="up" title="(dir)">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.indentedblock {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style:oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:nowrap}
+span.nolinebreak {white-space:nowrap}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+<h1 class="settitle" align="center">GnuDOS library version 1.0</h1>
+
+
+
+<a name="SEC_Contents"></a>
+<h2 class="contents-heading">Table of Contents</h2>
+
+<div class="contents">
+
+<ul class="no-bullet">
+  <li><a name="toc-Overview-of-the-GnuDOS-library" href="#Overview">1 Overview of the GnuDOS library</a></li>
+  <li><a name="toc-An-example-of-using-the-GnuDOS-library" href="#hello_005fgnudos">2 An example of using the GnuDOS library</a></li>
+  <li><a name="toc-An-example-of-using-the-strings-utility" href="#hello_005fstrings">3 An example of using the strings utility</a></li>
+  <li><a name="toc-Using-the-Kbd-utility" href="#Kbd">4 Using the Kbd utility</a></li>
+  <li><a name="toc-Using-the-Dialogs-utility" href="#Dialogs">5 Using the Dialogs utility</a></li>
+  <li><a name="toc-Using-the-Screen-utility" href="#Screen">6 Using the Screen utility</a></li>
+  <li><a name="toc-Using-the-Strings-utility" href="#Strings">7 Using the Strings utility</a></li>
+  <li><a name="toc-Fog_003a-The-console-Form-Designer" href="#Fog">8 Fog: The console Form Designer</a></li>
+  <li><a name="toc-GNU-Free-Documentation-License-1" href="#GNU-Free-Documentation-License">Appendix A GNU Free Documentation License</a>
+  <ul class="no-bullet">
+    <li><a name="toc-GNU-Free-Documentation-License-2" href="#GNU-Free-Documentation-License-2">A.1 GNU Free Documentation License</a></li>
+  </ul></li>
+  <li><a name="toc-Index-1" href="#Index">Index</a></li>
+</ul>
+</div>
+
+
+<a name="Top"></a>
+<div class="header">
+<p>
+Next: <a href="#Overview" accesskey="n" rel="next">Overview</a>, Up: <a href="dir.html#Top" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="GnuDOS-library"></a>
+<h1 class="top">GnuDOS library</h1>
+
+<p>This manual is for the GnuDOS library (version 1.0).
+</p>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Overview" accesskey="1">Overview</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Overview of the GnuDOS library
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#hello_005fgnudos" accesskey="2">hello_gnudos</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">An example of using the GnuDOS library
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#hello_005fstrings" accesskey="3">hello_strings</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">An example of using the strings utility
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Kbd" accesskey="4">Kbd</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Using the Kbd utility
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Dialogs" accesskey="5">Dialogs</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Using the Dialogs utility
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Screen" accesskey="6">Screen</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Using the Screen utility
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Strings" accesskey="7">Strings</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Using the Strings utility
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Fog" accesskey="8">Fog</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The console Form Designer
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#GNU-Free-Documentation-License" accesskey="9">GNU Free Documentation License</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Index">Index</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<a name="Overview"></a>
+<div class="header">
+<p>
+Next: <a href="#hello_005fgnudos" accesskey="n" rel="next">hello_gnudos</a>, Previous: <a href="#Top" accesskey="p" rel="previous">Top</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="index-Overview"></a>
+<a name="index-GnuDOS-library-overview"></a>
+<a name="Overview-of-the-GnuDOS-library"></a>
+<h2 class="chapter">1 Overview of the GnuDOS library</h2>
+
+<a name="About-the-GnuDOS-library"></a>
+<h3 class="heading">About the GnuDOS library</h3>
+<p>GnuDOS package is a GNU software. It is a library designed to help new users
+of the GNU system, who are coming from a DOS background, fit into the picture
+and start using the GNU system with ease. It also addresses the console
+programmers of such programs that have the look and feel of old DOS system.
+The library is composed of core utilities and software applications:
+* The core library (corelib) contains four utilities: Kbd (for keyboard 
+handling), Screen (for screen drawing), Dialogs (for dialog boxes/window
+drawing), and Strings (for strings functions).
+* The software applications are three: Prime (console file manager), Mino
+(console text editor), and Fog (console form designer).
+</p>
+
+<a name="The-rationale-behind-the-GnuDOS-corelib-library"></a>
+<h3 class="heading">The rationale behind the GnuDOS corelib library</h3>
+<p>So, you like programming under the GNU/Linux console, right?. And you came
+from the DOS land where every thing was white/blue or yellow/black. You 
+want to make users coming from DOS land feel home when switching to the
+powerful GNU system. Okay, That&rsquo;s good. But there are some catches when 
+programming under the console. First of all, you can&rsquo;t format your output 
+exactly the way you want in terms of color, positioning, and so on. You can 
+go deep and use terminal escape sequences (as most GNU/Linux consoles emulate
+the VT100 terminal), but who can remember these?.
+</p>
+<p>Next comes the problem of the terminal driver interfering with the keyboard 
+input. You don&rsquo;t get the real key scancodes sent by the keyboard. The driver 
+gets in the way and performs a lot of steps to map the right key to the right 
+keycode, process some special key combinations (like CTRL+ALT+DEL) and so on, 
+before passing the result to the terminal. And in the case of XTerminal, the 
+X terminal does more processing before sending the final result to your 
+program. You say what difference does it make? you are taking all the pain off
+my head, why should I bother? Here is why:
+</p>
+<p>If you want your program to be REALLY interactive, like waiting the user to 
+press a key (press, not press and release and press ENTER!) you can&rsquo;t rely on 
+the good old getc() or getchar() functions, as they will return an input char 
+alright, but only after the user presses ENTER!. That&rsquo;s no good for us, you know.
+Another thing is reading special keys, like SHIFT, ALT and CTRL. You don&rsquo;t get 
+scancodes for these keys (not all times, at least).
+</p>
+<p>So how to make your program get over these problems? well, you can implement 
+your own keyboard driver, which will be very painful to  construct your keymap 
+tables and do all the calculations, or your can interfere with the input sent 
+from the console driver before it does any further processing on it. 
+The console-utils See <a href="#Kbd">Kbd</a>. utility does this. It tells the console driver 
+to send it raw data (with no processing), and it then looks into its own table 
+to see what key (or key combinations) does this scancode means, and then gives 
+you the result.
+</p>
+<p>Right now, the See <a href="#Kbd">Kbd</a>. utility doesn&rsquo;t recognize ALL the possible keys that 
+can be entered through a keyboard. It recognizes all the alphanumeric charset, 
+the TAB, CAPS, ENTER, SPACE, CTRL, ALT, SHIFT, DEL, INS, HOME, ESC, and END. 
+More keys (like function keys F1-F12) will be added with future releases.
+</p>
+<p>The other thing the GnuDOS library provides is a utility for controlling the 
+screen See <a href="#Screen">Screen</a>. It provides functions for getting the screen size (height 
+and width), setting the screen colors, and clearing the screen.
+</p>
+<p>The third utility is the See <a href="#Dialogs">Dialogs</a>. utility, which (as its name says) 
+provides a ready to use class of dialog boxes under the console. It provides 
+two types of boxes: simple dialog box (to provide the user with a messeage, or 
+asking for confirmation, ...) and an input box (to ask the user to enter some input).
+</p>
+<p>The fourth utility is the See <a href="#Strings">Strings</a>. utility. It provides some handy 
+functions to make working with strings under C much easier for the programmer.
+</p>
+<p>There are two sample programs: the See <a href="#hello_005fgnudos">hello_gnudos</a>. demonstrates how to use 
+the various elements and utilities of the console-utils (GnuDOS) library (except 
+for the strings utility). The other example is See <a href="#hello_005fstrings">hello_strings</a>. which 
+demonstrates how to use the strings utility.
+</p>
+<hr>
+<a name="hello_005fgnudos"></a>
+<div class="header">
+<p>
+Next: <a href="#hello_005fstrings" accesskey="n" rel="next">hello_strings</a>, Previous: <a href="#Overview" accesskey="p" rel="previous">Overview</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="index-hello_005fgnudos"></a>
+<a name="An-example-of-using-the-GnuDOS-library"></a>
+<h2 class="chapter">2 An example of using the GnuDOS library</h2>
+
+<p>This is a sample program that demonstrates how to use the GnuDOS library utilities:
+</p>
+<div class="example">
+<pre class="example">#include &quot;console/dialogs.h&quot;
+#include &quot;console/screen.h&quot;
+#include &quot;console/kbd.h&quot;
+
+void sighandler(int signo) {
+    //do what ever needs to be done here. The following line is just an example.
+    fprintf(stderr, &quot;SIGNAL %d received\n&quot;, signo);
+}
+
+int main(int argc, char *argv[]) {
+  if(!catchSignals()) {
+    fprintf(stderr, &quot;Error catching signals. Exiting.\n&quot;);
+    exit(1);
+  }
+  if(!init_kbd()) {
+    fprintf(stderr, &quot;Error initializing keyboard. Aborting.\n&quot;);
+    exit(1);
+  }
+  
+  getScreenSize();		//gets screen size
+  clearScreenC(WHITE, BGBLACK);	//clear the screen
+  //loads color arrays with default values
+  loadDefaultColors();
+  setScreenColors(FG_COLOR[COLOR_WINDOW], BG_COLOR[COLOR_WINDOW]);
+    
+  msgBox(&quot;This was an example&quot;, OK, INFO);
+  drawBox(2, 2, SCREEN_H-2, SCREEN_W-2, &quot; Example &quot;, YES);
+  locate(3, 3); printf(&quot;Hello GnuDOS!&quot;);
+  locate(4, 3); printf(&quot;This is an example Window.&quot;);
+  locate(5, 3); printf(&quot;Press ENTER to exit...&quot;);
+  while(1) {
+    if(getKey() == ENTER_KEY) break;
+  }
+  
+  clearScreen();
+  //very important to restore keyboard state to its
+  //previous state before exiting
+  restore_kbd();
+  exit(0);
+}
+</pre></div>
+
+
+<p>Note that including the header file &quot;dialogs.h&quot; automatically includes both 
+&quot;screen.h&quot; and &quot;kbd.h&quot; as the dialogs utility uses both of the other two.
+</p>
+
+<p>And now REMEMBER two things:
+(1) a call to initTerminal() must be invoked before using the library
+(2) a call restoreTerminal() must be done before exiting the program
+For deatils about these functions please see See <a href="#Kbd">Kbd</a>.<br>
+</p>
+<p>If you forget point (2), you will leave the user&rsquo;s terminal in raw mode, which 
+(under console) means he/she will not be able to do virtually anything (not 
+even switching terminal by CTRL+ALT+F key!). The only way out is a reboot!. 
+Under X it is less worse, usually the user will need to close the xterm or kill 
+the process. Still though, it is IMPERATIVE to call restoreTerminal() before 
+exiting your program!. To make sure no funny things happen (like your progrm 
+crashing for whatever reason, or your admin killing it, to name a few) before 
+you call restoreTerminal(), you better use the catchSignals() function of the 
+See <a href="#Dialogs">Dialogs</a>. utility. Remember though that there are some signals that can&rsquo;t 
+be caught by your program, like the SIGSTOP and SIGKILL signals. This is why we 
+used the catchSignals() function instead of the catchAllSignals() function.
+</p>
+
+<hr>
+<a name="hello_005fstrings"></a>
+<div class="header">
+<p>
+Next: <a href="#Kbd" accesskey="n" rel="next">Kbd</a>, Previous: <a href="#hello_005fgnudos" accesskey="p" rel="previous">hello_gnudos</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="index-hello_005fstrings"></a>
+<a name="An-example-of-using-the-strings-utility"></a>
+<h2 class="chapter">3 An example of using the strings utility</h2>
+
+<p>This is a sample program that demonstrates how to use the strings utility:
+</p>
+<div class="example">
+<pre class="example">#include &lt;stdio.h&gt;
+#include &quot;strings.h&quot;
+
+int main(int argc, char **argv) {
+    printf(&quot;Hello World&quot;);
+    str s;
+    s = &quot;Hello world&quot;;
+    printf(&quot;\n%s&quot;, s);
+    printf(&quot;\n%d&quot;, indexof(s, 'H'));
+    printf(&quot;\n%d&quot;, nindexof('H'));
+    printf(&quot;\n%d&quot;, lindexof(s, 'H'));
+    printf(&quot;\n%s&quot;, substr(s, 4));
+    printf(&quot;\n%s&quot;, nsubstr(s, 4, 5));
+    return 0;
+}
+</pre></div>
+
+
+<hr>
+<a name="Kbd"></a>
+<div class="header">
+<p>
+Next: <a href="#Dialogs" accesskey="n" rel="next">Dialogs</a>, Previous: <a href="#hello_005fstrings" accesskey="p" rel="previous">hello_strings</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="index-Kbd"></a>
+<a name="index-The-Kbd-utility"></a>
+<a name="index-Using-the-Kbd-utility"></a>
+<a name="Using-the-Kbd-utility"></a>
+<h2 class="chapter">4 Using the Kbd utility</h2>
+
+<p>The Kbd utility of the GnuDOS library provides functions for getting input 
+from the keyboard, initializing and restoring the terminal state to enable 
+the utility to grasp proper keyboard input, and some global variables.<br>
+</p>
+<a name="index-Global-keyboard-variables"></a>
+<a name="index-Global-Kbd-variables"></a>
+<p>The global variables defined in kbd.h are:
+</p>
+<div class="example">
+<pre class="example">bool ALT;
+bool CTRL;
+bool SHIFT;
+bool CAPS;
+bool INSERT;
+bool X_IS_RUNNING;
+</pre></div>
+
+<p>This is their explanation:<br>
+&nbsp;ALT: Boolean variable that indicates the state of the ALT key<br>
+&nbsp;&nbsp;(1=pressed, 0=released)<br>
+&nbsp;CTRL: Boolean variable that indicates the state of the CTRL key<br>
+&nbsp;&nbsp;(1=pressed, 0=released)<br>
+&nbsp;SHIFT: Boolean variable that indicates the state of the SHIFT key<br>
+&nbsp;&nbsp;(1=pressed, 0=released)<br>
+&nbsp;CAPS: Boolean variable that indicates the state of CAPSLOCK<br>
+&nbsp;&nbsp;(1=pressed/ON, 0=released/OFF)<br>
+&nbsp;INSERT: Boolean variable that indicates the state of the INSERT key<br>
+&nbsp;&nbsp;(1=pressed/ON, 0=released/OFF)<br>
+&nbsp;X_IS_RUNNING: Boolean variable that indicates whether X is running<br>
+&nbsp;&nbsp;(1=running under X, 0=running under console)<br>
+</p>
+<a name="index-Keyboard-functions"></a>
+<a name="index-Kbd-functions"></a>
+<p>Three functions are defined:<br>
+</p>
+<div class="example">
+<pre class="example">int initTerminal();
+void restoreTerminal();
+int getKey();
+</pre></div>
+
+<p>The initTerminal() function must be called before any other library function 
+is used. It initializes the terminal for library use. What this means in simple 
+English is that the console will be messed up for other programs during your 
+program execution. This is why it is MANDATORY to call restoreTerminal() just 
+before your program exits to ensure that the terminal is restored to its previous 
+state. Failing to do so, the terminal is left in an intermediate state that the 
+user will have only one option: to reboot (under console) or to kill (or close) 
+the terminal (under X).<br>
+</p>
+<p>The function getKey() is called to get the next key press from the keyboard. 
+It actually relies on two functions internally: one to get the key under X, the 
+other to get it under console mode. The difference between the two is of no 
+relevance to the user. Just call getKey() to get the next keypress whether 
+under X or not.
+</p>
+<p>The getKey() function returns its result as an integer. For alphanumeric keys 
+this will mean the ASCII value of that key (ASCII 65-90 for Latin capitals, 
+97-122 for Latin smalls, 32 for Space, 33-64 for numbers and punctuation, 
+96 for backtick, 123-126 for braces, vertical bar and tilde). Other keys like 
+arrows and ESC and ENTER are defined as macros in the kbd.h file:
+</p>
+<a name="index-Special-keys"></a>
+<div class="example">
+<pre class="example">#define ESC_KEY		27
+#define BACKSPACE_KEY	8
+#define TAB_KEY		9
+#define ENTER_KEY	13
+#define CAPS_KEY	1
+#define SHIFT_KEY	2
+#define CTRL_KEY	3
+#define ALT_KEY		4
+#define SPACE_KEY	32
+#define UP_KEY		5
+#define DOWN_KEY	6
+#define LEFT_KEY	7
+#define RIGHT_KEY	10
+#define DEL_KEY		11
+#define	HOME_KEY	12
+#define END_KEY		14
+#define INS_KEY		15
+#define SHIFT_DOWN	17
+#define SHIFT_UP	18
+#define PGUP_KEY	19
+#define PGDOWN_KEY	20
+</pre></div>
+
+<p>What you need to do is to match the return value of getKey() against the 
+desired key. For example:
+</p>
+<div class="example">
+<pre class="example">if(getKey() == ESC_KEY)
+   exit(0);
+</pre></div>
+
+<p>Or, more elegantly, in a switch loop:
+</p>
+<a name="index-Sample-of-using-the-getKey_0028_0029-function"></a>
+<div class="example">
+<pre class="example">int c = getKey();
+switch(c) {
+  case(ESC_KEY):
+     //do-something
+     break;
+  case(UP_KEY):
+     //do-other-stuff
+     break;
+  default:
+     if(c &gt;= 32 &amp;&amp; c &lt;= 126)
+        print(&quot;%c&quot;, c);
+     break;
+}
+</pre></div>
+
+<p>To test for special key combinations (e.g. CTRL+S):
+</p>
+<div class="example">
+<pre class="example">c = getKey()
+if(c == 's' &amp;&amp; CTRL) {
+   //do something
+}
+</pre></div>
+
+
+<hr>
+<a name="Dialogs"></a>
+<div class="header">
+<p>
+Next: <a href="#Screen" accesskey="n" rel="next">Screen</a>, Previous: <a href="#Kbd" accesskey="p" rel="previous">Kbd</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="index-Dialogs"></a>
+<a name="index-The-Dialogs-utility"></a>
+<a name="index-Using-the-Dialogs-utility"></a>
+<a name="Using-the-Dialogs-utility"></a>
+<h2 class="chapter">5 Using the Dialogs utility</h2>
+
+<p>The Dialogs utility provides three types of dialog boxes: simple dialog boxes,
+input boxes, and empty boxes.<br>
+</p>
+<a name="index-Simple-Dialog-Boxes"></a>
+<a name="Simple-Dialog-Box-"></a>
+<h3 class="heading">Simple Dialog Box<br></h3>
+<p>The function to draw a simple dialog box is defined in &quot;dialogs.h&quot; as:
+</p>
+<div class="example">
+<pre class="example">int msgBox(char *msg, int buttons, msgtype tmsg);
+</pre></div>
+
+<p>Where:<br>
+</p><ul>
+<li> msg: is a pointer to the string that will be the output message of the dialog box
+</li><li> buttons: an integer value defining the number and type of buttons to be displayed (see below)
+</li><li> tmsg: a value of type &quot;msgtype&quot; (see below) defining the type of dialog box. 
+This will be the title of the dialog
+</li></ul>
+
+<p>The value of <code>buttons</code> can be: OK, OK|CANCEL, or YES|NO. Note when using 
+two buttons they need to be ORed with the vertical bar. The macros defining 
+those buttons are declared in &quot;dialogs.h&quot; as:
+</p>
+<a name="index-Button-values-in-dialog-boxes"></a>
+<div class="example">
+<pre class="example">//buttons used in message boxes//
+#define OK	1	//00000001
+#define YES	2	//00000010
+#define CANCEL	4	//00000100
+#define NO	8	//00001000
+</pre></div>
+
+<a name="index-Types-of-messages-in-Dialog-Boxes"></a>
+<p>The value of <code>tsmg</code> can be:<br>
+</p><ul class="no-bullet">
+<li>- INFO: This is an information box. The title will be &quot;INFORMATION&quot;
+</li><li>- ERROR: This is an error message box. The title will be &quot;ERROR&quot;
+</li><li>- CONFIRM: This is a confirmation dialog box. The title will be &quot;CONFIRMATION&quot;
+</li></ul>
+
+<a name="index-Input-Boxes"></a>
+<a name="Input-boxes"></a>
+<h3 class="heading">Input boxes</h3>
+
+<p>The function to draw a simple dialog box is defined in &quot;dialogs.h&quot; as:
+</p>
+<div class="example">
+<pre class="example">char* inputBox(char *msg, char *title);
+</pre></div>
+
+<p>Where:<br>
+</p><ul>
+<li> msg: is a pointer to the string that will be the output message of the dialog box
+</li><li> title: is a pointer to the string that will be the title of the input box
+</li></ul>
+
+<p>The function returns the user input as a char pointer. If the user entered 
+nothing, or pressed CANCEL button or ESC, the function returns NULL. You can 
+also access the return value in the globally accessed variable &rsquo;input&rsquo;, 
+which is defined:
+</p>
+<div class="example">
+<pre class="example">char input[MAX_INPUT_MSG_LEN+1];	//input string returned by inputBox() function
+</pre></div>
+
+<a name="index-Input-Boxes-with-default-input-values"></a>
+<p>Another function for drawing input boxes is defined:
+</p>
+<div class="example">
+<pre class="example">char* inputBoxI(char *msg, char *inputValue, char *title);
+</pre></div>
+
+<p>The only difference is that it takes as the second parameter a string that will 
+be displayed in the input box as an initial input value for the user. This is 
+helpful if you want to give the user a default value for whatever input is required 
+from the user. The user can change the input or just press ENTER and accept the 
+default value.
+</p>
+<a name="index-Empty-Boxes"></a>
+<a name="Empty-boxes-"></a>
+<h3 class="heading">Empty boxes<br></h3>
+
+<p>Drawing empty boxes or windows is done via one of two functions:<br>
+</p>
+<div class="example">
+<pre class="example">void drawBox(int x1, int y1, int x2, int y2, char *title, int clearArea);
+void drawBoxP(point p1, point p2, char *title, int clearArea);
+</pre></div>
+
+<p>They basically do the same thing, except that drawBoxP() accepts the window 
+coordinates as two &rsquo;point&rsquo; structures which are defined as:
+</p>
+<div class="example">
+<pre class="example">typedef struct { int row; int col; } point;
+</pre></div>
+
+<p>Whereas the drawBox() function accepts coordinates as four integer values. 
+The explanation of the parameters to the two functions is as follows:<br>
+</p><ul>
+<li> x1: The x-coordinate (row) of the upper left corner
+</li><li> y1: The y-coordinate (column) of the upper left corner
+</li><li> x2: The x-coordinate (row) of the lower right corner
+</li><li> y2: The y-coordinate (column) of the lower right corner
+</li><li> char *title: A string pointer to the title of the dialog box
+</li><li> int clearArea: A boolean value indicating whether to clear the box area 
+(YES=clear, NO=don&rsquo;t clear). Not clearing the box area can be handy when, 
+for example, you need to redraw the window frame but leave the window contents intact.
+</li></ul>
+
+<a name="index-Global-Dialog-Box-variables"></a>
+<p>Other things of concern are:
+</p>
+<div class="example">
+<pre class="example">int MAX_MSG_BOX_W;
+int MAX_MSG_BOX_H;
+#define MAX_INPUT_MSG_LEN 100
+</pre></div>
+
+<p>The first two are global variables used to determine the maximum size of a 
+dialog box. MAX_MSG_BOX_W defines the maximum width (columns) and MAX_MSG_BOX_H 
+the maxium height (rows). Their values are calculated in the msgBox() and 
+inputBox() functions as:
+</p>
+<div class="example">
+<pre class="example">MAX_MSG_BOX_W = SCREEN_W-2;
+MAX_MSG_BOX_H = SCREEN_H-2;
+</pre></div>
+
+<p>The last one, MAX_INPUT_MSG_LEN is a macro defining the maximum length of the 
+input string returned by an input box. Currently it is restricted to 100 chars.
+</p>
+<a name="index-The-catchSignals_0028_0029-function"></a>
+<a name="The-catchSignals_0028_0029-function-"></a>
+<h3 class="heading">The catchSignals() function<br></h3>
+
+<p>The last two functions of &quot;dialogs.h&quot; are:
+</p>
+<div class="example">
+<pre class="example">int catchSignals();
+int catchAllSignals();
+</pre></div>
+
+<p>Which are handy and so important. Remember that after a call to initTerminal() 
+the terminal will be in an intermediate state, which is not of much use to 
+the user. Calling restoreTerminal() is an important step to do before leaving 
+your program. But what if your program crashed for whatever reason? (bad things 
+happen all the time), or if a system administrator decided to kill your process?. 
+Here is what catchSignals() does: it catches all the important signals 
+(namely: SIGINT, SIGQUIT, SIGABRT, and SIGTERM) and passes them to a signal 
+handler, which you will define as:
+</p>
+<a name="index-The-sighandler_0028_0029-function"></a>
+<div class="example">
+<pre class="example">void sighandler(int signo)
+{
+    //do what ever needs to be done here. The following line is just an example.
+    fprintf(stderr, &quot;SIGNAL %d received\n&quot;, signo);
+}
+</pre></div>
+
+<p>The catchAllSignals() does the same, except it tries to catch also SIGSTP, SIGKILL, 
+and SIGSTOP. It is a futile effort of course, as these signals can&rsquo;t be caught, 
+it is just included for convenience.<br>
+If either function succeeds in catching the signals, it will return 1. Otherwise, 0. 
+Expect catchAllSignals() to return 0 at all times because of the reason above.<br>
+Note that you will need to define the signal handler even if you will not use the 
+catchSignals() function (which is, by the way, not recommended at all! We explained 
+the reasons several times above). It can be defined as an empty function as:
+</p>
+<div class="example">
+<pre class="example">void sighandler(int signo)
+{
+}
+</pre></div>
+
+<p>Again, please define the signal handler in a proper way whenever possible.
+</p>
+
+<hr>
+<a name="Screen"></a>
+<div class="header">
+<p>
+Next: <a href="#Strings" accesskey="n" rel="next">Strings</a>, Previous: <a href="#Dialogs" accesskey="p" rel="previous">Dialogs</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="index-Screen"></a>
+<a name="index-The-Screen-utility"></a>
+<a name="index-Using-the-Screen-utility"></a>
+<a name="Using-the-Screen-utility"></a>
+<h2 class="chapter">6 Using the Screen utility</h2>
+
+<p>The screen utility provides functions to manipulate the screen colors, clearing 
+the screen, and positioning of the cursor. It also defines values for the 
+screen size. The member variables of the screen utility (defined in screen.h) are:
+</p>
+<div class="example">
+<pre class="example"> int SCREEN_W;
+ int SCREEN_H;
+</pre></div>
+
+<p>Both these variables are filled with values after a call to getScreenSize().
+</p>
+<a name="index-Color-arrays"></a>
+<div class="example">
+<pre class="example"> int FG_COLOR[color_components];
+ int BG_COLOR[color_components];
+</pre></div>
+
+<p>The color_components is a macro defined with a value of 4. The possible values 
+for color_components which is an index into arrays of colors determining what 
+color is assigned to which component (i.e., dialogs, buttons, ...) are:
+</p>
+<a name="index-Color-components"></a>
+<div class="example">
+<pre class="example"> COLOR_WINDOW		0	  	
+ COLOR_HIGHLIGHT_TEXT	1
+ COLOR_BUTTONS	 	2
+ COLOR_HBUTTONS		3
+</pre></div>
+
+<p>You can define the colors in the color arrays by using integer values, although 
+using macro names (as discussed below) is recommended. Initializing the arrays 
+can be done with code like:
+</p>
+<a name="index-Example-of-defining-the-Color-arrays"></a>
+<div class="example">
+<pre class="example">  FG_COLOR[COLOR_WINDOW] = 37;
+  FG_COLOR[COLOR_HIGHLIGHT_TEXT] = 34;
+  FG_COLOR[COLOR_MENU_BAR] = 34;
+  FG_COLOR[COLOR_STATUS_BAR] = 34;
+  FG_COLOR[COLOR_BUTTONS] = 37;
+  FG_COLOR[COLOR_HBUTTONS] = 32;
+  BG_COLOR[COLOR_WINDOW] = 44;
+  BG_COLOR[COLOR_HIGHLIGHT_TEXT] = 47;
+  BG_COLOR[COLOR_MENU_BAR] = 47;
+  BG_COLOR[COLOR_STATUS_BAR] = 47;
+  BG_COLOR[COLOR_BUTTONS] = 41;
+  BG_COLOR[COLOR_HBUTTONS] = 41;
+</pre></div>
+
+<p>For convenience, the names of colors used in screen utility functions can be 
+retrieved from the array screen_colors[] after a call to getScreenColors():
+</p>
+<a name="index-The-getScreenColors_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> getScreenColors();
+ for(int i = 0; i &lt; 16; i++)
+   printf(&quot;%s\n&quot;, screen_colors[i]);
+</pre></div>
+
+<p>To set the screen colors (e.g. before clearing the screen,), use the function:
+</p>
+<a name="index-The-setScreenColors_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void setScreenColors(int FG, int BG);
+</pre></div>
+
+<p>where FG is the foreground color, BG is the background color. Color values are 
+defined as macros in the (screen.h) file:
+</p>
+<a name="index-Color-definitions"></a>
+<div class="example">
+<pre class="example"> #define BLACK      30      //set black foreground
+ #define RED        31      //set red foreground
+ #define GREEN      32      //set green foreground
+ #define BROWN      33      //set brown foreground
+ #define BLUE       34      //set blue foreground
+ #define MAGENTA    35      //set magenta foreground
+ #define CYAN       36      //set cyan foreground
+ #define WHITE      37      //set white foreground
+ #define BGBLACK    40      //set black background
+ #define BGRED      41      //set red background
+ #define BGGREEN    42      //set green background
+ #define BGBROWN    43      //set brown background
+ #define BGBLUE     44      //set blue background
+ #define BGMAGENTA  45      //set magenta background
+ #define BGCYAN     46      //set cyan background
+ #define BGWHITE    47      //set white background
+ #define BGDEFAULT  49      //set default background color
+</pre></div>
+
+<p>To get the size of screen coordinates, use function:
+</p>
+<a name="index-The-getScreenSize_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void getScreenSize();
+</pre></div>
+
+<p>which will fill the values into SCREEN_W and SCREEN_H global variables.<br>
+The functions
+</p>
+<a name="index-The-clearScreen_0028_0029-function"></a>
+<a name="index-The-clearScreenC_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void clearScreen();
+ void clearScreenC(int FG, int BG);
+</pre></div>
+
+<p>basically do the same thing, except clearScreen() uses whatever colors where 
+passed into previous call of setScreenColors(), and clearScreenC() takes the 
+values of colors to use when clearing the screen.
+Last color function is
+</p>
+<a name="index-The-loadDefaultColors_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void loadDefaultColors();
+</pre></div>
+
+<p>which resets the color arrays into default values.<br>
+To reposition the cursor, use:
+</p>
+<a name="index-The-locate_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void locate(int row, int col);
+</pre></div>
+
+<p>giving the row and column as int values. Remember the screen has top-left 
+based coordinates, meaning position 1-1 is at the top-left corner, position 
+25-80 is at the bottom-right (for a 25x80 screen size).
+</p>
+
+<hr>
+<a name="Strings"></a>
+<div class="header">
+<p>
+Next: <a href="#Fog" accesskey="n" rel="next">Fog</a>, Previous: <a href="#Screen" accesskey="p" rel="previous">Screen</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="index-Strings"></a>
+<a name="index-The-Strings-utility"></a>
+<a name="index-Using-the-Strings-utility"></a>
+<a name="Using-the-Strings-utility"></a>
+<h2 class="chapter">7 Using the Strings utility</h2>
+
+<p>The strings utility defines some handy functions for dealing with strings. 
+Strings in C are problematic: they involve a lot of pointer manipulation which 
+is often complicated, error-prone and a source of bugs. The strings utility 
+defines a wrapper type for strings (only for convenience), which is defined as:
+</p>
+<a name="index-The-Str-typedef"></a>
+<div class="example">
+<pre class="example">typedef char *str;
+</pre></div>
+
+<p>The functions of the strings utility, as defined in &quot;strings.h&quot;, are:
+</p>
+<a name="index-The-Strings-utility-function-definitions"></a>
+<div class="example">
+<pre class="example">int indexof(str string, char chr);
+int nindexof(char chr);
+int lindexof(str string, char chr);
+
+str substr(str string, int start);
+str nsubstr(str string, int start, int length);
+str ltrim(str string);
+str rtrim(str string);
+str trim(str string);
+
+str toupper(str string);
+str tolower(str string);
+</pre></div>
+
+<p>What the functions do is as following:
+</p><ul>
+<li> <a name="index-The-indexof_0028_0029-function"></a>
+The indexof() function returns the zero-based index of the first occurence of &rsquo;chr&rsquo; in &rsquo;string&rsquo;.
+</li><li> <a name="index-The-nindexof_0028_0029-function"></a>
+The nindexof() function returns the zero-based index of the next occurence of &rsquo;chr&rsquo; in &rsquo;string&rsquo;. It should be called after a previous call the indexof().
+</li><li> <a name="index-The-lindexof_0028_0029-function"></a>
+The lindexof() function returns the zero-based index of the last occurence of &rsquo;chr&rsquo; in &rsquo;string&rsquo;. If there is only one occurence of &rsquo;chr&rsquo; in &rsquo;string&rsquo;, the return value is essentially the same as that of indexof().
+</li><li> <a name="index-The-substr_0028_0029-function"></a>
+The substr() function returns a substring of &rsquo;string&rsquo; starting from position &rsquo;start&rsquo;. Note start is zero-based.
+</li><li> <a name="index-The-nsubstr_0028_0029-function"></a>
+The nsubstr() function returns a substring of &rsquo;string&rsquo; starting from position &rsquo;start&rsquo; and spanning &rsquo;length&rsquo; characters. Note start is zero-based.
+</li><li> <a name="index-The-ltrim_0028_0029-function"></a>
+The ltrim() function trims (removes) all the whitespace characters from the strings&rsquo; left side. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in the lefthand side of the string, the original string is returned.
+</li><li> <a name="index-The-rtrim_0028_0029-function"></a>
+The rtrim() function trims (removes) all the whitespace characters from the strings&rsquo; right side. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in the lefthand side of the string, the original string is returned.
+</li><li> <a name="index-The-trim_0028_0029-function"></a>
+The trim() function trims (removes) all the whitespace characters from both strings&rsquo; ends. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in either side of the string, the original string is returned.
+</li><li> <a name="index-The-toupper_0028_0029-function"></a>
+The toupper() function returns the string in upper case letters.
+</li><li> <a name="index-The-tolower_0028_0029-function"></a>
+The tolower() function returns the string in lower case letters.
+</li></ul>
+
+
+<hr>
+<a name="Fog"></a>
+<div class="header">
+<p>
+Next: <a href="#GNU-Free-Documentation-License" accesskey="n" rel="next">GNU Free Documentation License</a>, Previous: <a href="#Strings" accesskey="p" rel="previous">Strings</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="index-Fog"></a>
+<a name="index-The-console-Form-Designer"></a>
+<a name="index-Using-the-console-Form-Designer"></a>
+<a name="Fog_003a-The-console-Form-Designer"></a>
+<h2 class="chapter">8 Fog: The console Form Designer</h2>
+
+<p>Using the utilities of the GnuDOS library will ease the life of console 
+programmers very much, but still though, putting it all together to design 
+a complete user interface (or a form) can be a tedious job. 
+The FOG (Form Designer) helps with this aspect of programming. It provides 
+a development environment that will make it easy to design an application 
+interface for a program using the console-utils library under the console.
+</p>
+<p>Fog is installed as part of the GnuDOS library package. It can be invoked by running:
+</p>
+<div class="example">
+<pre class="example">$ fog
+</pre></div>
+
+<p>from the command line. The user interface is very simple:
+</p><ul>
+<li> Toolbox: Contains the set of &rsquo;tools&rsquo; that can be added to a form, such as option items and bulleted items
+</li><li> Form design: Displays the form under design
+</li><li> Menu bar: Contains the menus File, Edit and Help
+</li></ul>
+
+<p>Fog saves the form design typically in the same working directory from which it 
+was invoked. This can be changed by specifying another path and file name in the 
+Save dialog box.
+Fog design files have the extension &rsquo;.fog&rsquo;, to be distinct from other programs&rsquo; 
+files. These files should not be edited by hand. Instead, open Fog and edit the 
+form design and re-save the form.
+After finishing the form design, Fog can create a skeleton project that has most 
+components pre-written for the programmer, mainly the parts that deal with the 
+user interface and getting input from the user.
+</p>
+<p>Select &rsquo;Write Project&rsquo; from the File menu, or just press CTRL+W. Fog will write 
+three files in the same project directory:
+</p><ul>
+<li> main.c: Contains the main() program function. If the form contains any buttons, it will contain a function event handler which is called whenever a button is clicked (or the user presses ENTER on it).
+</li><li> fog_header.h: Contains global variable declarations and function prototypes.
+</li><li> form_design.c: Contains the following function definitions:
+<ul class="no-bullet">
+<li>- void init_form(): Initializes the form and fills global variables
+</li><li>- void refresh_form(): Redraws the form into the screen
+</li><li>- void input_loop(): Catches user input on the form
+</li><li>- void close_form(): Restores the terminal and clears the screen before exiting
+</li></ul>
+</li></ul>
+
+<p>A program designed with Fog can be compiled as following (if using gcc compiler):
+</p>
+<div class="example">
+<pre class="example">$ gcc -o myprog main.c form_design.c -lGnuDOS
+</pre></div>
+
+
+<hr>
+<a name="GNU-Free-Documentation-License"></a>
+<div class="header">
+<p>
+Next: <a href="#Index" accesskey="n" rel="next">Index</a>, Previous: <a href="#Fog" accesskey="p" rel="previous">Fog</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="GNU-Free-Documentation-License-1"></a>
+<h2 class="appendix">Appendix A GNU Free Documentation License</h2>
+
+
+<a name="GNU-Free-Documentation-License-2"></a>
+<h3 class="appendixsec">A.1 GNU Free Documentation License</h3>
+
+<a name="index-FDL_002c-GNU-Free-Documentation-License"></a>
+<div align="center">Version 1.2, November 2002
+</div>
+<div class="display">
+<pre class="display">Copyright &copy; 2000,2001,2002 Free Software Foundation, Inc.
+51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA
+
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+</pre></div>
+
+<ol>
+<li> PREAMBLE
+
+<p>The purpose of this License is to make a manual, textbook, or other
+functional and useful document <em>free</em> in the sense of freedom: to
+assure everyone the effective freedom to copy and redistribute it,
+with or without modifying it, either commercially or noncommercially.
+Secondarily, this License preserves for the author and publisher a way
+to get credit for their work, while not being considered responsible
+for modifications made by others.
+</p>
+<p>This License is a kind of &ldquo;copyleft&rdquo;, which means that derivative
+works of the document must themselves be free in the same sense.  It
+complements the GNU General Public License, which is a copyleft
+license designed for free software.
+</p>
+<p>We have designed this License in order to use it for manuals for free
+software, because free software needs free documentation: a free
+program should come with manuals providing the same freedoms that the
+software does.  But this License is not limited to software manuals;
+it can be used for any textual work, regardless of subject matter or
+whether it is published as a printed book.  We recommend this License
+principally for works whose purpose is instruction or reference.
+</p>
+</li><li> APPLICABILITY AND DEFINITIONS
+
+<p>This License applies to any manual or other work, in any medium, that
+contains a notice placed by the copyright holder saying it can be
+distributed under the terms of this License.  Such a notice grants a
+world-wide, royalty-free license, unlimited in duration, to use that
+work under the conditions stated herein.  The &ldquo;Document&rdquo;, below,
+refers to any such manual or work.  Any member of the public is a
+licensee, and is addressed as &ldquo;you&rdquo;.  You accept the license if you
+copy, modify or distribute the work in a way requiring permission
+under copyright law.
+</p>
+<p>A &ldquo;Modified Version&rdquo; of the Document means any work containing the
+Document or a portion of it, either copied verbatim, or with
+modifications and/or translated into another language.
+</p>
+<p>A &ldquo;Secondary Section&rdquo; is a named appendix or a front-matter section
+of the Document that deals exclusively with the relationship of the
+publishers or authors of the Document to the Document&rsquo;s overall
+subject (or to related matters) and contains nothing that could fall
+directly within that overall subject.  (Thus, if the Document is in
+part a textbook of mathematics, a Secondary Section may not explain
+any mathematics.)  The relationship could be a matter of historical
+connection with the subject or with related matters, or of legal,
+commercial, philosophical, ethical or political position regarding
+them.
+</p>
+<p>The &ldquo;Invariant Sections&rdquo; are certain Secondary Sections whose titles
+are designated, as being those of Invariant Sections, in the notice
+that says that the Document is released under this License.  If a
+section does not fit the above definition of Secondary then it is not
+allowed to be designated as Invariant.  The Document may contain zero
+Invariant Sections.  If the Document does not identify any Invariant
+Sections then there are none.
+</p>
+<p>The &ldquo;Cover Texts&rdquo; are certain short passages of text that are listed,
+as Front-Cover Texts or Back-Cover Texts, in the notice that says that
+the Document is released under this License.  A Front-Cover Text may
+be at most 5 words, and a Back-Cover Text may be at most 25 words.
+</p>
+<p>A &ldquo;Transparent&rdquo; copy of the Document means a machine-readable copy,
+represented in a format whose specification is available to the
+general public, that is suitable for revising the document
+straightforwardly with generic text editors or (for images composed of
+pixels) generic paint programs or (for drawings) some widely available
+drawing editor, and that is suitable for input to text formatters or
+for automatic translation to a variety of formats suitable for input
+to text formatters.  A copy made in an otherwise Transparent file
+format whose markup, or absence of markup, has been arranged to thwart
+or discourage subsequent modification by readers is not Transparent.
+An image format is not Transparent if used for any substantial amount
+of text.  A copy that is not &ldquo;Transparent&rdquo; is called &ldquo;Opaque&rdquo;.
+</p>
+<p>Examples of suitable formats for Transparent copies include plain
+<small>ASCII</small> without markup, Texinfo input format, LaTeX input
+format, <acronym>SGML</acronym> or <acronym>XML</acronym> using a publicly available
+<acronym>DTD</acronym>, and standard-conforming simple <acronym>HTML</acronym>,
+PostScript or <acronym>PDF</acronym> designed for human modification.  Examples
+of transparent image formats include <acronym>PNG</acronym>, <acronym>XCF</acronym> and
+<acronym>JPG</acronym>.  Opaque formats include proprietary formats that can be
+read and edited only by proprietary word processors, <acronym>SGML</acronym> or
+<acronym>XML</acronym> for which the <acronym>DTD</acronym> and/or processing tools are
+not generally available, and the machine-generated <acronym>HTML</acronym>,
+PostScript or <acronym>PDF</acronym> produced by some word processors for
+output purposes only.
+</p>
+<p>The &ldquo;Title Page&rdquo; means, for a printed book, the title page itself,
+plus such following pages as are needed to hold, legibly, the material
+this License requires to appear in the title page.  For works in
+formats which do not have any title page as such, &ldquo;Title Page&rdquo; means
+the text near the most prominent appearance of the work&rsquo;s title,
+preceding the beginning of the body of the text.
+</p>
+<p>A section &ldquo;Entitled XYZ&rdquo; means a named subunit of the Document whose
+title either is precisely XYZ or contains XYZ in parentheses following
+text that translates XYZ in another language.  (Here XYZ stands for a
+specific section name mentioned below, such as &ldquo;Acknowledgements&rdquo;,
+&ldquo;Dedications&rdquo;, &ldquo;Endorsements&rdquo;, or &ldquo;History&rdquo;.)  To &ldquo;Preserve the Title&rdquo;
+of such a section when you modify the Document means that it remains a
+section &ldquo;Entitled XYZ&rdquo; according to this definition.
+</p>
+<p>The Document may include Warranty Disclaimers next to the notice which
+states that this License applies to the Document.  These Warranty
+Disclaimers are considered to be included by reference in this
+License, but only as regards disclaiming warranties: any other
+implication that these Warranty Disclaimers may have is void and has
+no effect on the meaning of this License.
+</p>
+</li><li> VERBATIM COPYING
+
+<p>You may copy and distribute the Document in any medium, either
+commercially or noncommercially, provided that this License, the
+copyright notices, and the license notice saying this License applies
+to the Document are reproduced in all copies, and that you add no other
+conditions whatsoever to those of this License.  You may not use
+technical measures to obstruct or control the reading or further
+copying of the copies you make or distribute.  However, you may accept
+compensation in exchange for copies.  If you distribute a large enough
+number of copies you must also follow the conditions in section 3.
+</p>
+<p>You may also lend copies, under the same conditions stated above, and
+you may publicly display copies.
+</p>
+</li><li> COPYING IN QUANTITY
+
+<p>If you publish printed copies (or copies in media that commonly have
+printed covers) of the Document, numbering more than 100, and the
+Document&rsquo;s license notice requires Cover Texts, you must enclose the
+copies in covers that carry, clearly and legibly, all these Cover
+Texts: Front-Cover Texts on the front cover, and Back-Cover Texts on
+the back cover.  Both covers must also clearly and legibly identify
+you as the publisher of these copies.  The front cover must present
+the full title with all words of the title equally prominent and
+visible.  You may add other material on the covers in addition.
+Copying with changes limited to the covers, as long as they preserve
+the title of the Document and satisfy these conditions, can be treated
+as verbatim copying in other respects.
+</p>
+<p>If the required texts for either cover are too voluminous to fit
+legibly, you should put the first ones listed (as many as fit
+reasonably) on the actual cover, and continue the rest onto adjacent
+pages.
+</p>
+<p>If you publish or distribute Opaque copies of the Document numbering
+more than 100, you must either include a machine-readable Transparent
+copy along with each Opaque copy, or state in or with each Opaque copy
+a computer-network location from which the general network-using
+public has access to download using public-standard network protocols
+a complete Transparent copy of the Document, free of added material.
+If you use the latter option, you must take reasonably prudent steps,
+when you begin distribution of Opaque copies in quantity, to ensure
+that this Transparent copy will remain thus accessible at the stated
+location until at least one year after the last time you distribute an
+Opaque copy (directly or through your agents or retailers) of that
+edition to the public.
+</p>
+<p>It is requested, but not required, that you contact the authors of the
+Document well before redistributing any large number of copies, to give
+them a chance to provide you with an updated version of the Document.
+</p>
+</li><li> MODIFICATIONS
+
+<p>You may copy and distribute a Modified Version of the Document under
+the conditions of sections 2 and 3 above, provided that you release
+the Modified Version under precisely this License, with the Modified
+Version filling the role of the Document, thus licensing distribution
+and modification of the Modified Version to whoever possesses a copy
+of it.  In addition, you must do these things in the Modified Version:
+</p>
+<ol>
+<li> Use in the Title Page (and on the covers, if any) a title distinct
+from that of the Document, and from those of previous versions
+(which should, if there were any, be listed in the History section
+of the Document).  You may use the same title as a previous version
+if the original publisher of that version gives permission.
+
+</li><li> List on the Title Page, as authors, one or more persons or entities
+responsible for authorship of the modifications in the Modified
+Version, together with at least five of the principal authors of the
+Document (all of its principal authors, if it has fewer than five),
+unless they release you from this requirement.
+
+</li><li> State on the Title page the name of the publisher of the
+Modified Version, as the publisher.
+
+</li><li> Preserve all the copyright notices of the Document.
+
+</li><li> Add an appropriate copyright notice for your modifications
+adjacent to the other copyright notices.
+
+</li><li> Include, immediately after the copyright notices, a license notice
+giving the public permission to use the Modified Version under the
+terms of this License, in the form shown in the Addendum below.
+
+</li><li> Preserve in that license notice the full lists of Invariant Sections
+and required Cover Texts given in the Document&rsquo;s license notice.
+
+</li><li> Include an unaltered copy of this License.
+
+</li><li> Preserve the section Entitled &ldquo;History&rdquo;, Preserve its Title, and add
+to it an item stating at least the title, year, new authors, and
+publisher of the Modified Version as given on the Title Page.  If
+there is no section Entitled &ldquo;History&rdquo; in the Document, create one
+stating the title, year, authors, and publisher of the Document as
+given on its Title Page, then add an item describing the Modified
+Version as stated in the previous sentence.
+
+</li><li> Preserve the network location, if any, given in the Document for
+public access to a Transparent copy of the Document, and likewise
+the network locations given in the Document for previous versions
+it was based on.  These may be placed in the &ldquo;History&rdquo; section.
+You may omit a network location for a work that was published at
+least four years before the Document itself, or if the original
+publisher of the version it refers to gives permission.
+
+</li><li> For any section Entitled &ldquo;Acknowledgements&rdquo; or &ldquo;Dedications&rdquo;, Preserve
+the Title of the section, and preserve in the section all the
+substance and tone of each of the contributor acknowledgements and/or
+dedications given therein.
+
+</li><li> Preserve all the Invariant Sections of the Document,
+unaltered in their text and in their titles.  Section numbers
+or the equivalent are not considered part of the section titles.
+
+</li><li> Delete any section Entitled &ldquo;Endorsements&rdquo;.  Such a section
+may not be included in the Modified Version.
+
+</li><li> Do not retitle any existing section to be Entitled &ldquo;Endorsements&rdquo; or
+to conflict in title with any Invariant Section.
+
+</li><li> Preserve any Warranty Disclaimers.
+</li></ol>
+
+<p>If the Modified Version includes new front-matter sections or
+appendices that qualify as Secondary Sections and contain no material
+copied from the Document, you may at your option designate some or all
+of these sections as invariant.  To do this, add their titles to the
+list of Invariant Sections in the Modified Version&rsquo;s license notice.
+These titles must be distinct from any other section titles.
+</p>
+<p>You may add a section Entitled &ldquo;Endorsements&rdquo;, provided it contains
+nothing but endorsements of your Modified Version by various
+parties&mdash;for example, statements of peer review or that the text has
+been approved by an organization as the authoritative definition of a
+standard.
+</p>
+<p>You may add a passage of up to five words as a Front-Cover Text, and a
+passage of up to 25 words as a Back-Cover Text, to the end of the list
+of Cover Texts in the Modified Version.  Only one passage of
+Front-Cover Text and one of Back-Cover Text may be added by (or
+through arrangements made by) any one entity.  If the Document already
+includes a cover text for the same cover, previously added by you or
+by arrangement made by the same entity you are acting on behalf of,
+you may not add another; but you may replace the old one, on explicit
+permission from the previous publisher that added the old one.
+</p>
+<p>The author(s) and publisher(s) of the Document do not by this License
+give permission to use their names for publicity for or to assert or
+imply endorsement of any Modified Version.
+</p>
+</li><li> COMBINING DOCUMENTS
+
+<p>You may combine the Document with other documents released under this
+License, under the terms defined in section 4 above for modified
+versions, provided that you include in the combination all of the
+Invariant Sections of all of the original documents, unmodified, and
+list them all as Invariant Sections of your combined work in its
+license notice, and that you preserve all their Warranty Disclaimers.
+</p>
+<p>The combined work need only contain one copy of this License, and
+multiple identical Invariant Sections may be replaced with a single
+copy.  If there are multiple Invariant Sections with the same name but
+different contents, make the title of each such section unique by
+adding at the end of it, in parentheses, the name of the original
+author or publisher of that section if known, or else a unique number.
+Make the same adjustment to the section titles in the list of
+Invariant Sections in the license notice of the combined work.
+</p>
+<p>In the combination, you must combine any sections Entitled &ldquo;History&rdquo;
+in the various original documents, forming one section Entitled
+&ldquo;History&rdquo;; likewise combine any sections Entitled &ldquo;Acknowledgements&rdquo;,
+and any sections Entitled &ldquo;Dedications&rdquo;.  You must delete all
+sections Entitled &ldquo;Endorsements.&rdquo;
+</p>
+</li><li> COLLECTIONS OF DOCUMENTS
+
+<p>You may make a collection consisting of the Document and other documents
+released under this License, and replace the individual copies of this
+License in the various documents with a single copy that is included in
+the collection, provided that you follow the rules of this License for
+verbatim copying of each of the documents in all other respects.
+</p>
+<p>You may extract a single document from such a collection, and distribute
+it individually under this License, provided you insert a copy of this
+License into the extracted document, and follow this License in all
+other respects regarding verbatim copying of that document.
+</p>
+</li><li> AGGREGATION WITH INDEPENDENT WORKS
+
+<p>A compilation of the Document or its derivatives with other separate
+and independent documents or works, in or on a volume of a storage or
+distribution medium, is called an &ldquo;aggregate&rdquo; if the copyright
+resulting from the compilation is not used to limit the legal rights
+of the compilation&rsquo;s users beyond what the individual works permit.
+When the Document is included in an aggregate, this License does not
+apply to the other works in the aggregate which are not themselves
+derivative works of the Document.
+</p>
+<p>If the Cover Text requirement of section 3 is applicable to these
+copies of the Document, then if the Document is less than one half of
+the entire aggregate, the Document&rsquo;s Cover Texts may be placed on
+covers that bracket the Document within the aggregate, or the
+electronic equivalent of covers if the Document is in electronic form.
+Otherwise they must appear on printed covers that bracket the whole
+aggregate.
+</p>
+</li><li> TRANSLATION
+
+<p>Translation is considered a kind of modification, so you may
+distribute translations of the Document under the terms of section 4.
+Replacing Invariant Sections with translations requires special
+permission from their copyright holders, but you may include
+translations of some or all Invariant Sections in addition to the
+original versions of these Invariant Sections.  You may include a
+translation of this License, and all the license notices in the
+Document, and any Warranty Disclaimers, provided that you also include
+the original English version of this License and the original versions
+of those notices and disclaimers.  In case of a disagreement between
+the translation and the original version of this License or a notice
+or disclaimer, the original version will prevail.
+</p>
+<p>If a section in the Document is Entitled &ldquo;Acknowledgements&rdquo;,
+&ldquo;Dedications&rdquo;, or &ldquo;History&rdquo;, the requirement (section 4) to Preserve
+its Title (section 1) will typically require changing the actual
+title.
+</p>
+</li><li> TERMINATION
+
+<p>You may not copy, modify, sublicense, or distribute the Document except
+as expressly provided for under this License.  Any other attempt to
+copy, modify, sublicense or distribute the Document is void, and will
+automatically terminate your rights under this License.  However,
+parties who have received copies, or rights, from you under this
+License will not have their licenses terminated so long as such
+parties remain in full compliance.
+</p>
+</li><li> FUTURE REVISIONS OF THIS LICENSE
+
+<p>The Free Software Foundation may publish new, revised versions
+of the GNU Free Documentation License from time to time.  Such new
+versions will be similar in spirit to the present version, but may
+differ in detail to address new problems or concerns.  See
+<a href="http://www.gnu.org/copyleft/">http://www.gnu.org/copyleft/</a>.
+</p>
+<p>Each version of the License is given a distinguishing version number.
+If the Document specifies that a particular numbered version of this
+License &ldquo;or any later version&rdquo; applies to it, you have the option of
+following the terms and conditions either of that specified version or
+of any later version that has been published (not as a draft) by the
+Free Software Foundation.  If the Document does not specify a version
+number of this License, you may choose any version ever published (not
+as a draft) by the Free Software Foundation.
+</p></li></ol>
+
+<a name="ADDENDUM_003a-How-to-use-this-License-for-your-documents"></a>
+<h3 class="heading">ADDENDUM: How to use this License for your documents</h3>
+
+<p>To use this License in a document you have written, include a copy of
+the License in the document and put the following copyright and
+license notices just after the title page:
+</p>
+<div class="smallexample">
+<pre class="smallexample">  Copyright (C)  <var>year</var>  <var>your name</var>.
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.2
+  or any later version published by the Free Software Foundation;
+  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+  Texts.  A copy of the license is included in the section entitled ``GNU
+  Free Documentation License''.
+</pre></div>
+
+<p>If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
+replace the &ldquo;with...Texts.&rdquo; line with this:
+</p>
+<div class="smallexample">
+<pre class="smallexample">    with the Invariant Sections being <var>list their titles</var>, with
+    the Front-Cover Texts being <var>list</var>, and with the Back-Cover Texts
+    being <var>list</var>.
+</pre></div>
+
+<p>If you have Invariant Sections without Cover Texts, or some other
+combination of the three, merge those two alternatives to suit the
+situation.
+</p>
+<p>If your document contains nontrivial examples of program code, we
+recommend releasing these examples in parallel under your choice of
+free software license, such as the GNU General Public License,
+to permit their use in free software.
+</p>
+
+
+<hr>
+<a name="Index"></a>
+<div class="header">
+<p>
+Previous: <a href="#GNU-Free-Documentation-License" accesskey="p" rel="previous">GNU Free Documentation License</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Index-1"></a>
+<h2 class="unnumbered">Index</h2>
+
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Index_cp_letter-B"><b>B</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-C"><b>C</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-D"><b>D</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-G"><b>G</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-H"><b>H</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-I"><b>I</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-K"><b>K</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-O"><b>O</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-S"><b>S</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-T"><b>T</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-U"><b>U</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-cp" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-B">B</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Button-values-in-dialog-boxes">Button values in dialog boxes</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-C">C</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Color-arrays">Color arrays</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Color-components">Color components</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Color-definitions">Color definitions</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-D">D</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Dialogs">Dialogs</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-E">E</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Empty-Boxes">Empty Boxes</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Example-of-defining-the-Color-arrays">Example of defining the Color arrays</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-F">F</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-FDL_002c-GNU-Free-Documentation-License">FDL, GNU Free Documentation License</a>:</td><td>&nbsp;</td><td valign="top"><a href="#GNU-Free-Documentation-License">GNU Free Documentation License</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Fog">Fog</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Fog">Fog</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-G">G</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Global-Dialog-Box-variables">Global Dialog Box variables</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Global-Kbd-variables">Global Kbd variables</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Kbd">Kbd</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Global-keyboard-variables">Global keyboard variables</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Kbd">Kbd</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-GnuDOS-library-overview">GnuDOS library overview</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Overview">Overview</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-H">H</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-hello_005fgnudos">hello_gnudos</a>:</td><td>&nbsp;</td><td valign="top"><a href="#hello_005fgnudos">hello_gnudos</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-hello_005fstrings">hello_strings</a>:</td><td>&nbsp;</td><td valign="top"><a href="#hello_005fstrings">hello_strings</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-I">I</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Input-Boxes">Input Boxes</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Input-Boxes-with-default-input-values">Input Boxes with default input values</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-K">K</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Kbd">Kbd</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Kbd">Kbd</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Kbd-functions">Kbd functions</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Kbd">Kbd</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Keyboard-functions">Keyboard functions</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Kbd">Kbd</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-O">O</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Overview">Overview</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Overview">Overview</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-S">S</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Sample-of-using-the-getKey_0028_0029-function">Sample of using the getKey() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Kbd">Kbd</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Screen">Screen</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Simple-Dialog-Boxes">Simple Dialog Boxes</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-keys">Special keys</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Kbd">Kbd</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Strings">Strings</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-T">T</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-catchSignals_0028_0029-function">The catchSignals() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-clearScreen_0028_0029-function">The clearScreen() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-clearScreenC_0028_0029-function">The clearScreenC() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-console-Form-Designer">The console Form Designer</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Fog">Fog</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-Dialogs-utility">The Dialogs utility</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-getScreenColors_0028_0029-function">The getScreenColors() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-getScreenSize_0028_0029-function">The getScreenSize() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-indexof_0028_0029-function">The indexof() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-Kbd-utility">The Kbd utility</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Kbd">Kbd</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-lindexof_0028_0029-function">The lindexof() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-loadDefaultColors_0028_0029-function">The loadDefaultColors() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-locate_0028_0029-function">The locate() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-ltrim_0028_0029-function">The ltrim() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-nindexof_0028_0029-function">The nindexof() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-nsubstr_0028_0029-function">The nsubstr() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-rtrim_0028_0029-function">The rtrim() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-Screen-utility">The Screen utility</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-setScreenColors_0028_0029-function">The setScreenColors() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-sighandler_0028_0029-function">The sighandler() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-Str-typedef">The Str typedef</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-Strings-utility">The Strings utility</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-Strings-utility-function-definitions">The Strings utility function definitions</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-substr_0028_0029-function">The substr() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-tolower_0028_0029-function">The tolower() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-toupper_0028_0029-function">The toupper() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-The-trim_0028_0029-function">The trim() function</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Types-of-messages-in-Dialog-Boxes">Types of messages in Dialog Boxes</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Index_cp_letter-U">U</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Using-the-console-Form-Designer">Using the console Form Designer</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Fog">Fog</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Using-the-Dialogs-utility">Using the Dialogs utility</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Dialogs">Dialogs</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Using-the-Kbd-utility">Using the Kbd utility</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Kbd">Kbd</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Using-the-Screen-utility">Using the Screen utility</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Screen">Screen</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Using-the-Strings-utility">Using the Strings utility</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Strings">Strings</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Index_cp_letter-B"><b>B</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-C"><b>C</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-D"><b>D</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-G"><b>G</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-H"><b>H</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-I"><b>I</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-K"><b>K</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-O"><b>O</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-S"><b>S</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-T"><b>T</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Index_cp_letter-U"><b>U</b></a>
+ &nbsp; 
+</td></tr></table>
+
+<hr>
+
+
+
+</body>
+</html>

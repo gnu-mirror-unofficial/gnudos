@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for the GnuDOS library (version 1.0).
+
+Copyright (C) 2014 Mohammed Isam.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+ -->
+<!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
+<head>
+<title>GnuDOS library version 1.0: Strings</title>
+
+<meta name="description" content="GnuDOS library version 1.0: Strings">
+<meta name="keywords" content="GnuDOS library version 1.0: Strings">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Index.html#Index" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html#Top" rel="up" title="Top">
+<link href="Fog.html#Fog" rel="next" title="Fog">
+<link href="Screen.html#Screen" rel="previous" title="Screen">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.indentedblock {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style:oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:nowrap}
+span.nolinebreak {white-space:nowrap}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+<a name="Strings"></a>
+<div class="header">
+<p>
+Next: <a href="Fog.html#Fog" accesskey="n" rel="next">Fog</a>, Previous: <a href="Screen.html#Screen" accesskey="p" rel="previous">Screen</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<a name="index-Strings"></a>
+<a name="index-The-Strings-utility"></a>
+<a name="index-Using-the-Strings-utility"></a>
+<a name="Using-the-Strings-utility"></a>
+<h2 class="chapter">7 Using the Strings utility</h2>
+
+<p>The strings utility defines some handy functions for dealing with strings. 
+Strings in C are problematic: they involve a lot of pointer manipulation which 
+is often complicated, error-prone and a source of bugs. The strings utility 
+defines a wrapper type for strings (only for convenience), which is defined as:
+</p>
+<a name="index-The-Str-typedef"></a>
+<div class="example">
+<pre class="example">typedef char *str;
+</pre></div>
+
+<p>The functions of the strings utility, as defined in &quot;strings.h&quot;, are:
+</p>
+<a name="index-The-Strings-utility-function-definitions"></a>
+<div class="example">
+<pre class="example">int indexof(str string, char chr);
+int nindexof(char chr);
+int lindexof(str string, char chr);
+
+str substr(str string, int start);
+str nsubstr(str string, int start, int length);
+str ltrim(str string);
+str rtrim(str string);
+str trim(str string);
+
+str toupper(str string);
+str tolower(str string);
+</pre></div>
+
+<p>What the functions do is as following:
+</p><ul>
+<li> <a name="index-The-indexof_0028_0029-function"></a>
+The indexof() function returns the zero-based index of the first occurence of &rsquo;chr&rsquo; in &rsquo;string&rsquo;.
+</li><li> <a name="index-The-nindexof_0028_0029-function"></a>
+The nindexof() function returns the zero-based index of the next occurence of &rsquo;chr&rsquo; in &rsquo;string&rsquo;. It should be called after a previous call the indexof().
+</li><li> <a name="index-The-lindexof_0028_0029-function"></a>
+The lindexof() function returns the zero-based index of the last occurence of &rsquo;chr&rsquo; in &rsquo;string&rsquo;. If there is only one occurence of &rsquo;chr&rsquo; in &rsquo;string&rsquo;, the return value is essentially the same as that of indexof().
+</li><li> <a name="index-The-substr_0028_0029-function"></a>
+The substr() function returns a substring of &rsquo;string&rsquo; starting from position &rsquo;start&rsquo;. Note start is zero-based.
+</li><li> <a name="index-The-nsubstr_0028_0029-function"></a>
+The nsubstr() function returns a substring of &rsquo;string&rsquo; starting from position &rsquo;start&rsquo; and spanning &rsquo;length&rsquo; characters. Note start is zero-based.
+</li><li> <a name="index-The-ltrim_0028_0029-function"></a>
+The ltrim() function trims (removes) all the whitespace characters from the strings&rsquo; left side. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in the lefthand side of the string, the original string is returned.
+</li><li> <a name="index-The-rtrim_0028_0029-function"></a>
+The rtrim() function trims (removes) all the whitespace characters from the strings&rsquo; right side. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in the lefthand side of the string, the original string is returned.
+</li><li> <a name="index-The-trim_0028_0029-function"></a>
+The trim() function trims (removes) all the whitespace characters from both strings&rsquo; ends. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in either side of the string, the original string is returned.
+</li><li> <a name="index-The-toupper_0028_0029-function"></a>
+The toupper() function returns the string in upper case letters.
+</li><li> <a name="index-The-tolower_0028_0029-function"></a>
+The tolower() function returns the string in lower case letters.
+</li></ul>
+
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Fog.html#Fog" accesskey="n" rel="next">Fog</a>, Previous: <a href="Screen.html#Screen" accesskey="p" rel="previous">Screen</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>

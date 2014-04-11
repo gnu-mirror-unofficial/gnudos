@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for the GnuDOS library (version 1.0).
+
+Copyright (C) 2014 Mohammed Isam.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+ -->
+<!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
+<head>
+<title>GnuDOS library version 1.0: Screen</title>
+
+<meta name="description" content="GnuDOS library version 1.0: Screen">
+<meta name="keywords" content="GnuDOS library version 1.0: Screen">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Index.html#Index" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html#Top" rel="up" title="Top">
+<link href="Strings.html#Strings" rel="next" title="Strings">
+<link href="Dialogs.html#Dialogs" rel="previous" title="Dialogs">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.indentedblock {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style:oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:nowrap}
+span.nolinebreak {white-space:nowrap}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+<a name="Screen"></a>
+<div class="header">
+<p>
+Next: <a href="Strings.html#Strings" accesskey="n" rel="next">Strings</a>, Previous: <a href="Dialogs.html#Dialogs" accesskey="p" rel="previous">Dialogs</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<a name="index-Screen"></a>
+<a name="index-The-Screen-utility"></a>
+<a name="index-Using-the-Screen-utility"></a>
+<a name="Using-the-Screen-utility"></a>
+<h2 class="chapter">6 Using the Screen utility</h2>
+
+<p>The screen utility provides functions to manipulate the screen colors, clearing 
+the screen, and positioning of the cursor. It also defines values for the 
+screen size. The member variables of the screen utility (defined in screen.h) are:
+</p>
+<div class="example">
+<pre class="example"> int SCREEN_W;
+ int SCREEN_H;
+</pre></div>
+
+<p>Both these variables are filled with values after a call to getScreenSize().
+</p>
+<a name="index-Color-arrays"></a>
+<div class="example">
+<pre class="example"> int FG_COLOR[color_components];
+ int BG_COLOR[color_components];
+</pre></div>
+
+<p>The color_components is a macro defined with a value of 4. The possible values 
+for color_components which is an index into arrays of colors determining what 
+color is assigned to which component (i.e., dialogs, buttons, ...) are:
+</p>
+<a name="index-Color-components"></a>
+<div class="example">
+<pre class="example"> COLOR_WINDOW		0	  	
+ COLOR_HIGHLIGHT_TEXT	1
+ COLOR_BUTTONS	 	2
+ COLOR_HBUTTONS		3
+</pre></div>
+
+<p>You can define the colors in the color arrays by using integer values, although 
+using macro names (as discussed below) is recommended. Initializing the arrays 
+can be done with code like:
+</p>
+<a name="index-Example-of-defining-the-Color-arrays"></a>
+<div class="example">
+<pre class="example">  FG_COLOR[COLOR_WINDOW] = 37;
+  FG_COLOR[COLOR_HIGHLIGHT_TEXT] = 34;
+  FG_COLOR[COLOR_MENU_BAR] = 34;
+  FG_COLOR[COLOR_STATUS_BAR] = 34;
+  FG_COLOR[COLOR_BUTTONS] = 37;
+  FG_COLOR[COLOR_HBUTTONS] = 32;
+  BG_COLOR[COLOR_WINDOW] = 44;
+  BG_COLOR[COLOR_HIGHLIGHT_TEXT] = 47;
+  BG_COLOR[COLOR_MENU_BAR] = 47;
+  BG_COLOR[COLOR_STATUS_BAR] = 47;
+  BG_COLOR[COLOR_BUTTONS] = 41;
+  BG_COLOR[COLOR_HBUTTONS] = 41;
+</pre></div>
+
+<p>For convenience, the names of colors used in screen utility functions can be 
+retrieved from the array screen_colors[] after a call to getScreenColors():
+</p>
+<a name="index-The-getScreenColors_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> getScreenColors();
+ for(int i = 0; i &lt; 16; i++)
+   printf(&quot;%s\n&quot;, screen_colors[i]);
+</pre></div>
+
+<p>To set the screen colors (e.g. before clearing the screen,), use the function:
+</p>
+<a name="index-The-setScreenColors_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void setScreenColors(int FG, int BG);
+</pre></div>
+
+<p>where FG is the foreground color, BG is the background color. Color values are 
+defined as macros in the (screen.h) file:
+</p>
+<a name="index-Color-definitions"></a>
+<div class="example">
+<pre class="example"> #define BLACK      30      //set black foreground
+ #define RED        31      //set red foreground
+ #define GREEN      32      //set green foreground
+ #define BROWN      33      //set brown foreground
+ #define BLUE       34      //set blue foreground
+ #define MAGENTA    35      //set magenta foreground
+ #define CYAN       36      //set cyan foreground
+ #define WHITE      37      //set white foreground
+ #define BGBLACK    40      //set black background
+ #define BGRED      41      //set red background
+ #define BGGREEN    42      //set green background
+ #define BGBROWN    43      //set brown background
+ #define BGBLUE     44      //set blue background
+ #define BGMAGENTA  45      //set magenta background
+ #define BGCYAN     46      //set cyan background
+ #define BGWHITE    47      //set white background
+ #define BGDEFAULT  49      //set default background color
+</pre></div>
+
+<p>To get the size of screen coordinates, use function:
+</p>
+<a name="index-The-getScreenSize_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void getScreenSize();
+</pre></div>
+
+<p>which will fill the values into SCREEN_W and SCREEN_H global variables.<br>
+The functions
+</p>
+<a name="index-The-clearScreen_0028_0029-function"></a>
+<a name="index-The-clearScreenC_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void clearScreen();
+ void clearScreenC(int FG, int BG);
+</pre></div>
+
+<p>basically do the same thing, except clearScreen() uses whatever colors where 
+passed into previous call of setScreenColors(), and clearScreenC() takes the 
+values of colors to use when clearing the screen.
+Last color function is
+</p>
+<a name="index-The-loadDefaultColors_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void loadDefaultColors();
+</pre></div>
+
+<p>which resets the color arrays into default values.<br>
+To reposition the cursor, use:
+</p>
+<a name="index-The-locate_0028_0029-function"></a>
+<div class="example">
+<pre class="example"> void locate(int row, int col);
+</pre></div>
+
+<p>giving the row and column as int values. Remember the screen has top-left 
+based coordinates, meaning position 1-1 is at the top-left corner, position 
+25-80 is at the bottom-right (for a 25x80 screen size).
+</p>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Strings.html#Strings" accesskey="n" rel="next">Strings</a>, Previous: <a href="Dialogs.html#Dialogs" accesskey="p" rel="previous">Dialogs</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>
