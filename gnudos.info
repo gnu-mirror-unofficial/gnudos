@@ -721,7 +721,7 @@ will write three files in the same project directory:
    A program designed with Fog can be compiled as following (if using
 gcc compiler):
 
-     $ gcc -o myprog main.c form_design.c -lGnuDOS
+     $ gcc -o myprog main.c form_design.c -lgnudos
 
 
 File: gnudos.info,  Node: GNU Free Documentation License,  Next: Index,  Prev: Fog,  Up: Top

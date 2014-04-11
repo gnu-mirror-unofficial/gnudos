@@ -830,7 +830,7 @@ void close_form(): Restores the terminal and clears the screen before exiting
 A program designed with Fog can be compiled as following (if using gcc compiler):
 
 @example
-$ gcc -o myprog main.c form_design.c -lGnuDOS
+$ gcc -o myprog main.c form_design.c -lgnudos
 @end example
 
 
