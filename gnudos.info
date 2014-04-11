@@ -139,18 +139,22 @@ utilities:
      #include "console/screen.h"
      #include "console/kbd.h"
 
-     void sighandler(int signo) {
+     void sighandler(int signo)
+     {
          //do what ever needs to be done here. The following line is just an example.
          fprintf(stderr, "SIGNAL %d received\n", signo);
      }
 
-     int main(int argc, char *argv[]) {
-       if(!catchSignals()) {
+     int main(int argc, char *argv[])
+     {
+       if(!catchSignals())
+       {
          fprintf(stderr, "Error catching signals. Exiting.\n");
          exit(1);
        }
-       if(!init_kbd()) {
-         fprintf(stderr, "Error initializing keyboard. Aborting.\n");
+       if(!initTerminal())
+       {
+         fprintf(stderr, "Error initializing terminal. Aborting.\n");
          exit(1);
        }
 
@@ -165,14 +169,15 @@ utilities:
        locate(3, 3); printf("Hello GnuDOS!");
        locate(4, 3); printf("This is an example Window.");
        locate(5, 3); printf("Press ENTER to exit...");
-       while(1) {
+       while(1)
+       {
          if(getKey() == ENTER_KEY) break;
        }
 
        clearScreen();
-       //very important to restore keyboard state to its
+       //very important to restore terminal state to its
        //previous state before exiting
-       restore_kbd();
+       restoreTerminal();
        exit(0);
      }
 
@@ -211,7 +216,8 @@ utility:
      #include <stdio.h>
      #include "strings.h"
 
-     int main(int argc, char **argv) {
+     int main(int argc, char **argv)
+     {
          printf("Hello World");
          str s;
          s = "Hello world";
@@ -1224,13 +1230,13 @@ Tag Table:
 Node: Top769
 Node: Overview1305
 Node: hello_gnudos5795
-Node: hello_strings8626
-Node: Kbd9301
-Node: Dialogs12953
-Node: Screen18854
-Node: Strings22734
-Node: Fog25450
-Node: GNU Free Documentation License27970
-Node: Index50443
+Node: hello_strings8665
+Node: Kbd9345
+Node: Dialogs12997
+Node: Screen18898
+Node: Strings22778
+Node: Fog25494
+Node: GNU Free Documentation License28014
+Node: Index50487
 
 End Tag Table

@@ -219,18 +219,22 @@ Next: <a href="#hello_005fstrings" accesskey="n" rel="next">hello_strings</a>, P
 #include &quot;console/screen.h&quot;
 #include &quot;console/kbd.h&quot;
 
-void sighandler(int signo) {
+void sighandler(int signo) 
+{
     //do what ever needs to be done here. The following line is just an example.
     fprintf(stderr, &quot;SIGNAL %d received\n&quot;, signo);
 }
 
-int main(int argc, char *argv[]) {
-  if(!catchSignals()) {
+int main(int argc, char *argv[]) 
+{
+  if(!catchSignals()) 
+  {
     fprintf(stderr, &quot;Error catching signals. Exiting.\n&quot;);
     exit(1);
   }
-  if(!init_kbd()) {
-    fprintf(stderr, &quot;Error initializing keyboard. Aborting.\n&quot;);
+  if(!initTerminal()) 
+  {
+    fprintf(stderr, &quot;Error initializing terminal. Aborting.\n&quot;);
     exit(1);
   }
   
@@ -245,14 +249,15 @@ int main(int argc, char *argv[]) {
   locate(3, 3); printf(&quot;Hello GnuDOS!&quot;);
   locate(4, 3); printf(&quot;This is an example Window.&quot;);
   locate(5, 3); printf(&quot;Press ENTER to exit...&quot;);
-  while(1) {
+  while(1) 
+  {
     if(getKey() == ENTER_KEY) break;
   }
   
   clearScreen();
-  //very important to restore keyboard state to its
+  //very important to restore terminal state to its
   //previous state before exiting
-  restore_kbd();
+  restoreTerminal();
   exit(0);
 }
 </pre></div>
@@ -296,7 +301,8 @@ Next: <a href="#Kbd" accesskey="n" rel="next">Kbd</a>, Previous: <a href="#hello
 <pre class="example">#include &lt;stdio.h&gt;
 #include &quot;strings.h&quot;
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv) 
+{
     printf(&quot;Hello World&quot;);
     str s;
     s = &quot;Hello world&quot;;
