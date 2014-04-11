@@ -1,6 +1,6 @@
 \initial {C}
 \entry {Code highlighting}{3}
-\entry {Command line help}{3}
+\entry {Command line help}{2}
 \initial {E}
 \entry {Edit menu}{5}
 \entry {Edit menus}{4}

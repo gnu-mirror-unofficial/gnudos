@@ -8,7 +8,7 @@
 \entry{Running mino}{2}{Running mino}
 \entry{Starting mino}{2}{Starting mino}
 \entry{Invoking mino}{2}{Invoking mino}
-\entry{Command line help}{3}{Command line help}
+\entry{Command line help}{2}{Command line help}
 \entry{Sentence highlighting}{3}{Sentence highlighting}
 \entry{Code highlighting}{3}{Code highlighting}
 \entry{Highlighting mode}{3}{Highlighting mode}

@@ -98,45 +98,43 @@ other key. Note that '^' is the same as 'C', meaning CTRL key, it is just
 typed like this so DOS users can feel familiar with the text.
 The same as M-something, which means META or ALT.@*
 
-=====================================================================@*
-Function        DOS-like key    GNU key                 GnuDOS Level @*
-=====================================================================@*
-All DOS bindings and no GNU bindings			Newbie@*
-@*
-Next Line       Down            C-n                     Novice@*
-Prev. Line      Up              C-p                     Novice@*
-Backward        Left            C-b                     Novice@*
-Forward         Right           C-f                     Novice@*
-Back One Word   ^Left           M-b                     Intermediate@*
-Fwd One Word    ^Right          M-f                     Intermediate@*
-@*
-Cancel          ESC             C-g                     Intermediate@*
-Next Screen     PgDn            C-v                     Intermediate@*
-Prev. Screen    PgUp            M-v                     Intermediate@*
-Start of Line   Home            C-a                     Intermediate@*
-End of Line     End             C-e                     Intermediate@*
-Start of text   ^Home           C-<                     Intermediate@*
-End of text     ^End            C->                     Intermediate@*
-@*
-Del prev char   BkSpc           DEL (is BkSpc)          Advanced@*
-Del next char   Delete          C-d                     Advanced@*
-Del prev word   ^BkSpc          M-DEL (is M-BkSpc)      Advanced@*
-Del next word   ^Delete         M-d                     Advanced@*
-Select text     SHIFT+Arrow     C-Space                 Advanced@*
-Del selection   BkSpc/Del       C-w                     Advanced@*
-@*
-Quit            ^Q              C-x C-c                 Expert@*
-Paste (yanking) ^V              C-y                     Expert@*
-Del Line        ^D              C-k                     Expert@*
-Undo            ^Z              C-/, C-_, C-x u         Expert@*
-Open File       ^O              C-x C-f                 Expert@*
-Save File       ^S              C-x C-s                 Expert@*
-Find (Search)   ^F              C-s (forward search)    Expert@*
-                                C-r (reverse search)    Expert@*
-Help            F1              C-h ?                   Expert@*
-@*
-All GNU bindings and no DOS bindings                    Veteran@*
-=====================================================================@*
+
+@multitable @columnfractions .25 .25 .25 .25
+@headitem Function @tab DOS-like key @tab GNU key @tab GnuDOS Level
+@item All DOS bindings and no GNU bindings  @tab  @tab  @tab Newbie
+@item Next Line @tab Down @tab C-n @tab Novice
+@item Prev. Line @tab Up @tab C-p @tab Novice
+@item Backward @tab Left @tab C-b @tab Novice
+@item Forward @tab Right @tab C-f @tab Novice
+@item Back One Word @tab ^Left @tab M-b @tab Intermediate
+@item Fwd One Word @tab ^Right @tab M-f @tab Intermediate
+@item  @tab  @tab  @tab 
+@item Cancel @tab ESC @tab C-g @tab Intermediate
+@item Next Screen @tab PgDn @tab C-v @tab Intermediate
+@item Prev. Screen @tab PgUp @tab M-v @tab Intermediate
+@item Start of Line @tab Home @tab C-a @tab Intermediate
+@item End of Line @tab End @tab C-e @tab Intermediate
+@item Start of text @tab ^Home @tab C-< @tab Intermediate
+@item End of text @tab ^End @tab C-> @tab Intermediate
+@item  @tab  @tab  @tab 
+@item Del prev char @tab BkSpc @tab DEL (is BkSpc) @tab Advanced
+@item Del next char @tab Delete @tab C-d @tab Advanced
+@item Del prev word @tab ^BkSpc @tab M-DEL (is M-BkSpc) @tab Advanced
+@item Del next word @tab ^Delete @tab M-d @tab Advanced
+@item Select text @tab SHIFT+Arrow @tab C-Space @tab Advanced
+@item Del selection @tab BkSpc/Del @tab C-w @tab Advanced
+@item  @tab  @tab  @tab 
+@item Quit @tab ^Q @tab C-x C-c @tab Expert
+@item Paste (yanking) @tab ^V @tab C-y @tab Expert
+@item Del Line @tab ^D @tab C-k @tab Expert
+@item Undo @tab ^Z @tab C-/, C-_, C-x u @tab Expert
+@item Open File @tab ^O @tab C-x C-f @tab Expert
+@item Save File @tab ^S @tab C-x C-s @tab Expert
+@item Find (Search) @tab ^F @tab C-s (forward search) @tab Expert
+@item  @tab  @tab C-r (reverse search) @tab Expert
+@item Help @tab F1 @tab C-h ? @tab Expert
+@item All GNU bindings and no DOS bindings @tab  @tab  @tab Veteran
+@end multitable
 
 @heading Why should I use it?@*
 @cindex Why to use it
