@@ -1,0 +1,11 @@
+@numchapentry{Overview of the GnuDOS library}{1}{Overview}{1}
+@numchapentry{An example of using the GnuDOS library}{2}{hello_gnudos}{3}
+@numchapentry{An example of using the strings utility}{3}{hello_strings}{5}
+@numchapentry{Using the Kbd utility}{4}{Kbd}{6}
+@numchapentry{Using the Dialogs utility}{5}{Dialogs}{9}
+@numchapentry{Using the Screen utility}{6}{Screen}{12}
+@numchapentry{Using the Strings utility}{7}{Strings}{14}
+@numchapentry{Fog: The console Form Designer}{8}{Fog}{16}
+@appentry{GNU Free Documentation License}{A}{GNU Free Documentation License}{17}
+@appsecentry{GNU Free Documentation License}{A.1}{}{17}
+@unnchapentry{Index}{10001}{Index}{24}

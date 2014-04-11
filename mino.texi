@@ -1,0 +1,352 @@
+\input texinfo   @c -*-texinfo-*-
+@comment $Id@w{$}
+@comment %**start of header
+@setfilename mino.info
+@settitle Mino (mino) version 1.0
+@syncodeindex pg cp
+@comment %**end of header
+@copying
+This manual is for the Mino (mino) program (version 1.0).
+
+Copyright @copyright{} 2014 Mohammed Isam.
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+``GNU Free Documentation License''.
+
+@end quotation
+@end copying
+
+@dircategory Editors
+@direntry
+* mino: (mino).                 Using Mino (mino) text editor.
+@end direntry
+
+@titlepage
+@title Mino (mino) text editor
+@subtitle for version 1.0
+@author Mohammed Isam (@email{mohammed_isam1984@@yahoo.com})
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@contents
+
+@ifnottex
+@node Top
+@top mino
+
+This manual is for the Mino (mino) text editor (version 1.0).
+
+@end ifnottex
+
+@menu
+* Overview:: Overview of the mino (Mino) text editor
+* Main Window:: Mino main window
+* Menus:: Working around with menus
+* Shortcuts:: Using keyboard shortcuts
+* GNU Free Documentation License::
+* Index::
+@end menu
+
+@node Overview
+@chapter Overview of the mino (Mino) text editor
+@cindex Overview
+@cindex Mino Overview
+
+What is mino (Mino)?
+Prime is a GNU software, part of the GnuDOS package.
+Mino is a text file editor for use with the GNU/Linux console/xterm. The idea 
+was to provide a text editor that is user friendly and easy to use for those 
+who came from DOS land. Having accustomed to SHIFT selecting text, using 
+CTRL-shortcut keys and so on makes it hard for a regular Joe to dive in head
+first into GNU syntax. Mino provides multi-level experience, the level of
+complexity can be adjusted by the user: you want to use DOS-keys with a few
+basic GNU ones? you want to go with the full power of the GNU system? All are
+options that are provided by the six levels of experience of Mino:
+
+  1- Newbie: All DOS shortcut keys, no GNU keys yet
+  2- Novice: DOS shortcut keys, some of which are replaced with GNU's
+  3- Intermediate: DOS keys with a few more replaced with GNU keys
+  4- ِAdvanced: ... And more GNU keys in
+  5- ِExpert: Very few DOS keys, most are GNU keys
+  6- ِVeteran: Only GNU keys, no DOS-like keys
+  
+You start with level 1 by default.
+To set your level, call the mino with '--levelX' or '-lX' options,
+Where X is the level desired, for example:
+@example
+$mino --level2
+@end example
+
+@cindex Key bindings
+@heading Which keys are defined for which level?
+Below is a table showing the DOS-like key combinations along with their 
+respective GNU key bindings. To the right is the level at which a certain GNU
+key is defined. Each key defined is recognized in higher levels (e.g. level 2
+keys are recognized in levels 3-4-5-6). Note that in level 6 only GNU keys are
+defined, no DOS keys will work at this level!.
+
+Keybindings:
+In the table below, C-something means pressing down CTRL and then pressing the
+other key. Note that '^' is the same as 'C', meaning CTRL key, it is just
+typed like this so DOS users can feel familiar with the text.
+The same as M-something, which means META or ALT.
+
+=====================================================================
+Function        DOS-like key    GNU key                 GnuDOS Level
+=====================================================================
+All DOS bindings and no GNU bindings			Newbie
+
+Next Line       Down            C-n                     Novice
+Prev. Line      Up              C-p                     Novice
+Backward        Left            C-b                     Novice
+Forward         Right           C-f                     Novice
+Back One Word   ^Left           M-b                     Intermediate
+Fwd One Word    ^Right          M-f                     Intermediate
+
+Cancel          ESC             C-g                     Intermediate
+Next Screen     PgDn            C-v                     Intermediate
+Prev. Screen    PgUp            M-v                     Intermediate
+Start of Line   Home            C-a                     Intermediate
+End of Line     End             C-e                     Intermediate
+Start of text   ^Home           C-<                     Intermediate
+End of text     ^End            C->                     Intermediate
+
+Del prev char   BkSpc           DEL (is BkSpc)          Advanced
+Del next char   Delete          C-d                     Advanced
+Del prev word   ^BkSpc          M-DEL (is M-BkSpc)      Advanced
+Del next word   ^Delete         M-d                     Advanced
+Select text     SHIFT+Arrow     C-Space                 Advanced
+Del selection   BkSpc/Del       C-w                     Advanced
+
+Quit            ^Q              C-x C-c                 Expert
+Paste (yanking) ^V              C-y                     Expert
+Del Line        ^D              C-k                     Expert
+Undo            ^Z              C-/, C-_, C-x u         Expert
+Open File       ^O              C-x C-f                 Expert
+Save File       ^S              C-x C-s                 Expert
+Find (Search)   ^F              C-s (forward search)    Expert
+                                C-r (reverse search)    Expert
+Help            F1              C-h ?                   Expert
+
+All GNU bindings and no DOS bindings                    Veteran
+=====================================================================
+
+@heading Why should I use it?@*
+@cindex Why to use it
+@cindex Why to use mino
+@cindex Reasons of using mino
+If you are new to GNU system and find it hard to dive in head-first into the
+GNU keys and shortcuts for GNU programs (like emacs), this is the place to
+start. Use you well-known DOS-like shortcuts, in the same time learn how to
+use the GNU shortcuts.
+
+@heading How to run it?@*	
+@cindex How to run mino
+@cindex Running mino
+@cindex Starting mino
+@cindex Invoking mino
+
+After installing the package, simply type:
+
+@example
+$ mino
+@end example
+
+on your console (or xterm) and it will run. If you want to load a file into mino:
+
+@example
+$ mino file-name
+@end example
+
+To reset the configuration file:
+
+@example
+$ mino --reset-config
+@end example
+
+@cindex Command line help
+To show command line help:
+
+@example
+$ mino [--help|-h]
+@end example
+
+@heading How does mino remember my preferences?@*
+
+Mino stores its configuration in a file called '.mino.conf' under your home
+directory. You can edit it by hand (or using mino!), but this is not advisable.
+Use the Options menu under mino to change your preferences and mino will save
+them into the config file.
+
+@cindex Sentence highlighting
+@cindex Code highlighting
+@cindex Highlighting mode
+@heading What about sentence highlighting?@*
+
+Currently mino recognizes the following file types:
+@itemize
+@item
+C/C++ Source and header files
+@item
+Perl scripts
+@item
+Shell scripts
+@end itemize
+
+Whenever you open a file of these types, mino will automatically adjust the
+colors of the view so that the language keywords, library functions, and
+operators (like +-*/ and so on) are highlighted each in a different
+color, on a black background, to ease writing your programs.
+
+@heading What else?@*
+
+There is one catch: when running under the X system, the program will not be
+able to capture all input from the keyboard, as X interferes with the keyboard
+input. Don't panic, this is not much of a deal. Plus, there is a workaround. 
+The only thing you will be missing is the SHIFT-select. That means you will not
+be able to hold down shift and use arrow keys to select text. The solution is
+using CTRL+E under X, which activates the select mode. Enter select mode, use
+arrow keys to size your selection, do whatever you want with it, and exit the
+select mode. You want a permanent solution? Run mino under the Linux console!.@*
+
+And that's it for intro!
+
+@node Main Window
+@chapter Mino main window
+@cindex Main window
+
+After running mino (Mino), you are faced with a window that has the following components:
+
+@cindex Menu bar
+@heading Menu bar@*
+
+At the top of the window. Contains menus: File, Edit, Options, and Help. The details of these menus can be found under @xref{Menus}.
+
+@cindex Status bar
+@heading Status bar@*
+
+At the bottom is the status bar. It shows the current state of the file, which can be:
+
+@cindex File state
+@itemize @bullet
+@item New: After opening a fresh mino window or selecting New from the File Menu
+@item Opened: When a fresh file is opened
+@item Saved: After saving the edited file
+@item Modified: When any editing has not yet been saved
+@item Idle: Nothing has happened yet!
+@end itemize
+
+The right side of the status bar shows the current position in file in terms of line and column.@*
+ There are indicators which can appear in the status bar:
+
+@cindex Status indicators
+@itemize @bullet
+@item CAPS: When Capslock is On
+@item INS: When inserting mode is on (pressing Insert)
+@item SEL: When selecting mode is on (pressing SHIFT under console or CTRL+E under X)
+@end itemize
+
+@cindex Editing area
+@cindex Work area
+@heading Editing area@*
+
+Most of the main window will be occupied by the editing field containing the lines of the file selected. Most of your editing work will be done in this area.
+
+@cindex Menus
+@cindex Edit menus
+@node Menus
+@chapter Working around with menus
+
+Menus are on the menu bar on the top of the @xref{Main Window}. They are:
+
+@cindex File menu
+@heading(1) File Menu (opened by pressing ALT+F):@*
+
+@	New: Clears editing area and opens a new file@*
+@	Open File: Opens another file for editing@*
+@	Save File: Saves the current file to disk@*
+@	Save As: Save the current file under another name@*
+@	Print: Prints the current file to printer@*
+@	Exit: Exits mino@*
+
+@cindex Edit menu
+@heading(2) Edit Menu (opened by pressing ALT+E):@*
+
+@	Cut: Cuts current selection and places text into mino clipboard@*
+@	Copy: Copies current selection to mino clipboard@*
+@	Paste: Pastes whatever in the mino clipboard into the current position in file@*
+@	Select All: Selects the whole document@*
+@	Undo: Undoes the last action@*
+@	Redo: Redoes the last action undone@*
+@	Find: Finds text in the file@*
+@	Replace: Finds and replaces specific text in the file@*
+@	Delete Line: Deletes the line under the cursor@*
+@	Toggle Select Mode (Only under X):@*
+@	@	Toggles the select mode On (like pressing SHIFT)@*
+@	@	or Off (Like releasing SHIFT)@*
+
+@cindex Options menu
+@heading(3) Options Menu (opened by pressing ALT+O):@*
+
+@	Change colors: Opens a dialog box to select different colors for window, menu bar, ...@*
+@	Tab spaces: Define the number of spaces to be inserted when you press TAB@*
+@	Reset config: Resets the configuration (colors and tab spaces)@*
+@*
+All the Options menu items write the new values into the config file (~/.mino.conf).@*
+
+@cindex Help menu
+@heading(4) Help Menu (opened by pressing ALT+H):@*
+
+@	View README: Displays the README file installed with the package@*
+@	Quick Referece: Shows a quick reference for mino functions@*
+@	About Mino: Shows About dialog box@*
+
+@cindex Shortcuts
+@cindex Keyboard shortcuts
+@cindex Shortcuts keys
+@node Shortcuts
+@chapter Using keyboard shortcuts
+
+Moving around with Shortcut Keys:@*
+@	ALT+F: Open File menu@*
+@	ALT+E: Open Edit menu@*
+@	ALT+H: Open Help menu@*
+@	ALT+O: Open Options menu@*
+@*
+(1) File menu shortcuts:@*
+@	CTRL+O: Open file@*
+@	CTRL+S: Save file@*
+@	CTRL+P: Print file (currently under development)@*
+@	CTRL+Q:Exit program@*
+@*
+(2) Edit menu shortcuts:@*
+@	CTRL+X: Cut selection@*
+@	CTRL+C: Copy selection@*
+@	CTRL+V: Paste selection@*
+@	CTRL+F: Find@*
+@	CTRL+R: Find & Replace@*
+@	CTRL+A: Select All@*
+@	CTRL+D: Delete Line@*
+@	CTRL+Z: Undo@*
+@	CTRL+Y: Redo@*
+@	CTRL+E: Toggle select mode (under X)@*
+
+
+@node GNU Free Documentation License
+@appendix GNU Free Documentation License
+
+@include fdl.texi
+
+@node Index
+@unnumbered Index
+
+@printindex cp
+
+@bye

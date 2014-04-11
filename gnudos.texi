@@ -1,0 +1,843 @@
+\input texinfo   @c -*-texinfo-*-
+@comment $Id@w{$}
+@comment %**start of header
+@setfilename gnudos.info
+@settitle GnuDOS library version 1.0
+@syncodeindex pg cp
+@comment %**end of header
+@copying
+This manual is for the GnuDOS library (version 1.0).
+
+Copyright @copyright{} 2014 Mohammed Isam.
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+``GNU Free Documentation License''.
+
+@end quotation
+@end copying
+
+@dircategory Individual utilities
+@direntry
+* GnuDOS: (gnudos).             Using the GnuDOS library
+* Fog: (fog).                   The console Form Designer
+@end direntry
+
+@titlepage
+@title GnuDOS library
+@subtitle for version 1.0
+@author Mohammed Isam (@email{mohammed_isam1984@@yahoo.com})
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@contents
+
+@ifnottex
+@node Top
+@top GnuDOS library
+
+This manual is for the GnuDOS library (version 1.0).
+
+@end ifnottex
+
+@menu
+* Overview:: Overview of the GnuDOS library
+* hello_gnudos:: An example of using the GnuDOS library
+* hello_strings:: An example of using the strings utility
+* Kbd:: Using the Kbd utility
+* Dialogs:: Using the Dialogs utility
+* Screen:: Using the Screen utility
+* Strings:: Using the Strings utility
+* Fog:: The console Form Designer
+* GNU Free Documentation License::
+* Index::
+@end menu
+
+@node Overview
+@cindex Overview
+@cindex GnuDOS library overview
+@chapter Overview of the GnuDOS library
+
+@heading About the GnuDOS library
+GnuDOS package is a GNU software. It is a library designed to help new users
+of the GNU system, who are coming from a DOS background, fit into the picture
+and start using the GNU system with ease. It also addresses the console
+programmers of such programs that have the look and feel of old DOS system.
+The library is composed of core utilities and software applications:
+* The core library (corelib) contains four utilities: Kbd (for keyboard 
+handling), Screen (for screen drawing), Dialogs (for dialog boxes/window
+drawing), and Strings (for strings functions).
+* The software applications are three: Prime (console file manager), Mino
+(console text editor), and Fog (console form designer).
+
+
+@heading The rationale behind the GnuDOS corelib library
+So, you like programming under the GNU/Linux console, right?. And you came
+from the DOS land where every thing was white/blue or yellow/black. You 
+want to make users coming from DOS land feel home when switching to the
+powerful GNU system. Okay, That's good. But there are some catches when 
+programming under the console. First of all, you can't format your output 
+exactly the way you want in terms of color, positioning, and so on. You can 
+go deep and use terminal escape sequences (as most GNU/Linux consoles emulate
+the VT100 terminal), but who can remember these?.
+
+Next comes the problem of the terminal driver interfering with the keyboard 
+input. You don't get the real key scancodes sent by the keyboard. The driver 
+gets in the way and performs a lot of steps to map the right key to the right 
+keycode, process some special key combinations (like CTRL+ALT+DEL) and so on, 
+before passing the result to the terminal. And in the case of XTerminal, the 
+X terminal does more processing before sending the final result to your 
+program. You say what difference does it make? you are taking all the pain off
+my head, why should I bother? Here is why:
+
+If you want your program to be REALLY interactive, like waiting the user to 
+press a key (press, not press and release and press ENTER!) you can't rely on 
+the good old getc() or getchar() functions, as they will return an input char 
+alright, but only after the user presses ENTER!. That's no good for us, you know.
+Another thing is reading special keys, like SHIFT, ALT and CTRL. You don't get 
+scancodes for these keys (not all times, at least).
+
+So how to make your program get over these problems? well, you can implement 
+your own keyboard driver, which will be very painful to  construct your keymap 
+tables and do all the calculations, or your can interfere with the input sent 
+from the console driver before it does any further processing on it. 
+The console-utils @xref{Kbd}. utility does this. It tells the console driver 
+to send it raw data (with no processing), and it then looks into its own table 
+to see what key (or key combinations) does this scancode means, and then gives 
+you the result.
+
+Right now, the @xref{Kbd}. utility doesn't recognize ALL the possible keys that 
+can be entered through a keyboard. It recognizes all the alphanumeric charset, 
+the TAB, CAPS, ENTER, SPACE, CTRL, ALT, SHIFT, DEL, INS, HOME, ESC, and END. 
+More keys (like function keys F1-F12) will be added with future releases.
+
+The other thing the GnuDOS library provides is a utility for controlling the 
+screen @xref{Screen}. It provides functions for getting the screen size (height 
+and width), setting the screen colors, and clearing the screen.
+
+The third utility is the @xref{Dialogs}. utility, which (as its name says) 
+provides a ready to use class of dialog boxes under the console. It provides 
+two types of boxes: simple dialog box (to provide the user with a messeage, or 
+asking for confirmation, ...) and an input box (to ask the user to enter some input).
+
+The fourth utility is the @xref{Strings}. utility. It provides some handy 
+functions to make working with strings under C much easier for the programmer.
+
+There are two sample programs: the @xref{hello_gnudos}. demonstrates how to use 
+the various elements and utilities of the console-utils (GnuDOS) library (except 
+for the strings utility). The other example is @xref{hello_strings}. which 
+demonstrates how to use the strings utility.
+
+@node hello_gnudos
+@cindex hello_gnudos
+@chapter An example of using the GnuDOS library
+
+This is a sample program that demonstrates how to use the GnuDOS library utilities:
+
+@example
+#include "console/dialogs.h"
+#include "console/screen.h"
+#include "console/kbd.h"
+
+void sighandler(int signo) @{
+    //do what ever needs to be done here. The following line is just an example.
+    fprintf(stderr, "SIGNAL %d received\n", signo);
+@}
+
+int main(int argc, char *argv[]) @{
+  if(!catchSignals()) @{
+    fprintf(stderr, "Error catching signals. Exiting.\n");
+    exit(1);
+  @}
+  if(!init_kbd()) @{
+    fprintf(stderr, "Error initializing keyboard. Aborting.\n");
+    exit(1);
+  @}
+  
+  getScreenSize();		//gets screen size
+  clearScreenC(WHITE, BGBLACK);	//clear the screen
+  //loads color arrays with default values
+  loadDefaultColors();
+  setScreenColors(FG_COLOR[COLOR_WINDOW], BG_COLOR[COLOR_WINDOW]);
+    
+  msgBox("This was an example", OK, INFO);
+  drawBox(2, 2, SCREEN_H-2, SCREEN_W-2, " Example ", YES);
+  locate(3, 3); printf("Hello GnuDOS!");
+  locate(4, 3); printf("This is an example Window.");
+  locate(5, 3); printf("Press ENTER to exit...");
+  while(1) @{
+    if(getKey() == ENTER_KEY) break;
+  @}
+  
+  clearScreen();
+  //very important to restore keyboard state to its
+  //previous state before exiting
+  restore_kbd();
+  exit(0);
+@}
+@end example
+
+
+Note that including the header file "dialogs.h" automatically includes both 
+"screen.h" and "kbd.h" as the dialogs utility uses both of the other two.
+
+
+And now REMEMBER two things:
+(1) a call to initTerminal() must be invoked before using the library
+(2) a call restoreTerminal() must be done before exiting the program
+For deatils about these functions please see @xref{Kbd}.@*
+
+If you forget point (2), you will leave the user's terminal in raw mode, which 
+(under console) means he/she will not be able to do virtually anything (not 
+even switching terminal by CTRL+ALT+F key!). The only way out is a reboot!. 
+Under X it is less worse, usually the user will need to close the xterm or kill 
+the process. Still though, it is IMPERATIVE to call restoreTerminal() before 
+exiting your program!. To make sure no funny things happen (like your progrm 
+crashing for whatever reason, or your admin killing it, to name a few) before 
+you call restoreTerminal(), you better use the catchSignals() function of the 
+@xref{Dialogs}. utility. Remember though that there are some signals that can't 
+be caught by your program, like the SIGSTOP and SIGKILL signals. This is why we 
+used the catchSignals() function instead of the catchAllSignals() function.
+
+
+@node hello_strings
+@cindex hello_strings
+@chapter An example of using the strings utility
+
+This is a sample program that demonstrates how to use the strings utility:
+
+@example
+#include <stdio.h>
+#include "strings.h"
+
+int main(int argc, char **argv) @{
+    printf("Hello World");
+    str s;
+    s = "Hello world";
+    printf("\n%s", s);
+    printf("\n%d", indexof(s, 'H'));
+    printf("\n%d", nindexof('H'));
+    printf("\n%d", lindexof(s, 'H'));
+    printf("\n%s", substr(s, 4));
+    printf("\n%s", nsubstr(s, 4, 5));
+    return 0;
+@}
+@end example
+
+
+@node Kbd
+@cindex Kbd
+@cindex The Kbd utility
+@cindex Using the Kbd utility
+@chapter Using the Kbd utility
+
+The Kbd utility of the GnuDOS library provides functions for getting input 
+from the keyboard, initializing and restoring the terminal state to enable 
+the utility to grasp proper keyboard input, and some global variables.@*
+
+@cindex Global keyboard variables
+@cindex Global Kbd variables
+The global variables defined in kbd.h are:
+
+@example
+bool ALT;
+bool CTRL;
+bool SHIFT;
+bool CAPS;
+bool INSERT;
+bool X_IS_RUNNING;
+@end example
+
+This is their explanation:@*
+@	ALT: Boolean variable that indicates the state of the ALT key@*
+@	@	(1=pressed, 0=released)@*
+@	CTRL: Boolean variable that indicates the state of the CTRL key@*
+@	@	(1=pressed, 0=released)@*
+@	SHIFT: Boolean variable that indicates the state of the SHIFT key@*
+@	@	(1=pressed, 0=released)@*
+@	CAPS: Boolean variable that indicates the state of CAPSLOCK@*
+@	@	(1=pressed/ON, 0=released/OFF)@*
+@	INSERT: Boolean variable that indicates the state of the INSERT key@*
+@	@	(1=pressed/ON, 0=released/OFF)@*
+@	X_IS_RUNNING: Boolean variable that indicates whether X is running@*
+@	@	(1=running under X, 0=running under console)@*
+
+@cindex Keyboard functions
+@cindex Kbd functions
+Three functions are defined:@*
+
+@example
+int initTerminal();
+void restoreTerminal();
+int getKey();
+@end example
+
+The initTerminal() function must be called before any other library function 
+is used. It initializes the terminal for library use. What this means in simple 
+English is that the console will be messed up for other programs during your 
+program execution. This is why it is MANDATORY to call restoreTerminal() just 
+before your program exits to ensure that the terminal is restored to its previous 
+state. Failing to do so, the terminal is left in an intermediate state that the 
+user will have only one option: to reboot (under console) or to kill (or close) 
+the terminal (under X).@*
+
+The function getKey() is called to get the next key press from the keyboard. 
+It actually relies on two functions internally: one to get the key under X, the 
+other to get it under console mode. The difference between the two is of no 
+relevance to the user. Just call getKey() to get the next keypress whether 
+under X or not.
+
+The getKey() function returns its result as an integer. For alphanumeric keys 
+this will mean the ASCII value of that key (ASCII 65-90 for Latin capitals, 
+97-122 for Latin smalls, 32 for Space, 33-64 for numbers and punctuation, 
+96 for backtick, 123-126 for braces, vertical bar and tilde). Other keys like 
+arrows and ESC and ENTER are defined as macros in the kbd.h file:
+
+@cindex Special keys
+@example
+#define ESC_KEY		27
+#define BACKSPACE_KEY	8
+#define TAB_KEY		9
+#define ENTER_KEY	13
+#define CAPS_KEY	1
+#define SHIFT_KEY	2
+#define CTRL_KEY	3
+#define ALT_KEY		4
+#define SPACE_KEY	32
+#define UP_KEY		5
+#define DOWN_KEY	6
+#define LEFT_KEY	7
+#define RIGHT_KEY	10
+#define DEL_KEY		11
+#define	HOME_KEY	12
+#define END_KEY		14
+#define INS_KEY		15
+#define SHIFT_DOWN	17
+#define SHIFT_UP	18
+#define PGUP_KEY	19
+#define PGDOWN_KEY	20
+@end example
+
+What you need to do is to match the return value of getKey() against the 
+desired key. For example:
+
+@example
+if(getKey() == ESC_KEY)
+   exit(0);
+@end example
+
+Or, more elegantly, in a switch loop:
+
+@cindex Sample of using the getKey() function
+@example
+int c = getKey();
+switch(c) @{
+  case(ESC_KEY):
+     //do-something
+     break;
+  case(UP_KEY):
+     //do-other-stuff
+     break;
+  default:
+     if(c >= 32 && c <= 126)
+        print("%c", c);
+     break;
+@}
+@end example
+
+To test for special key combinations (e.g. CTRL+S):
+
+@example
+c = getKey()
+if(c == 's' && CTRL) @{
+   //do something
+@}
+@end example
+
+
+@node Dialogs
+@cindex Dialogs
+@cindex The Dialogs utility
+@cindex Using the Dialogs utility
+@chapter Using the Dialogs utility
+
+The Dialogs utility provides three types of dialog boxes: simple dialog boxes,
+input boxes, and empty boxes.@*
+
+@cindex Simple Dialog Boxes
+@heading Simple Dialog Box@*
+The function to draw a simple dialog box is defined in "dialogs.h" as:
+
+@example
+int msgBox(char *msg, int buttons, msgtype tmsg);
+@end example
+
+Where:@*
+@itemize @bullet
+@item
+msg: is a pointer to the string that will be the output message of the dialog box
+@item
+buttons: an integer value defining the number and type of buttons to be displayed (see below)
+@item
+tmsg: a value of type "msgtype" (see below) defining the type of dialog box. 
+This will be the title of the dialog
+@end itemize
+
+The value of @code{buttons} can be: OK, OK|CANCEL, or YES|NO. Note when using 
+two buttons they need to be ORed with the vertical bar. The macros defining 
+those buttons are declared in "dialogs.h" as:
+
+@cindex Button values in dialog boxes
+@example
+//buttons used in message boxes//
+#define OK	1	//00000001
+#define YES	2	//00000010
+#define CANCEL	4	//00000100
+#define NO	8	//00001000
+@end example
+
+@cindex Types of messages in Dialog Boxes
+The value of @code{tsmg} can be:@*
+@itemize @minus
+@item
+INFO: This is an information box. The title will be "INFORMATION"
+@item
+ERROR: This is an error message box. The title will be "ERROR"
+@item
+CONFIRM: This is a confirmation dialog box. The title will be "CONFIRMATION"
+@end itemize
+
+@cindex Input Boxes
+@heading Input boxes
+
+The function to draw a simple dialog box is defined in "dialogs.h" as:
+
+@example
+char* inputBox(char *msg, char *title);
+@end example
+
+Where:@*
+@itemize @bullet
+@item
+msg: is a pointer to the string that will be the output message of the dialog box
+@item
+title: is a pointer to the string that will be the title of the input box
+@end itemize
+
+The function returns the user input as a char pointer. If the user entered 
+nothing, or pressed CANCEL button or ESC, the function returns NULL. You can 
+also access the return value in the globally accessed variable 'input', 
+which is defined:
+
+@example
+char input[MAX_INPUT_MSG_LEN+1];	//input string returned by inputBox() function
+@end example
+
+@cindex Input Boxes with default input values
+Another function for drawing input boxes is defined:
+
+@example
+char* inputBoxI(char *msg, char *inputValue, char *title);
+@end example
+
+The only difference is that it takes as the second parameter a string that will 
+be displayed in the input box as an initial input value for the user. This is 
+helpful if you want to give the user a default value for whatever input is required 
+from the user. The user can change the input or just press ENTER and accept the 
+default value.
+
+@cindex Empty Boxes
+@heading Empty boxes@*
+
+Drawing empty boxes or windows is done via one of two functions:@*
+
+@example
+void drawBox(int x1, int y1, int x2, int y2, char *title, int clearArea);
+void drawBoxP(point p1, point p2, char *title, int clearArea);
+@end example
+
+They basically do the same thing, except that drawBoxP() accepts the window 
+coordinates as two 'point' structures which are defined as:
+
+@example
+typedef struct @{ int row; int col; @} point;
+@end example
+
+Whereas the drawBox() function accepts coordinates as four integer values. 
+The explanation of the parameters to the two functions is as follows:@*
+@itemize @bullet
+@item
+x1: The x-coordinate (row) of the upper left corner
+@item
+y1: The y-coordinate (column) of the upper left corner
+@item
+x2: The x-coordinate (row) of the lower right corner
+@item
+y2: The y-coordinate (column) of the lower right corner
+@item
+char *title: A string pointer to the title of the dialog box
+@item
+int clearArea: A boolean value indicating whether to clear the box area 
+(YES=clear, NO=don't clear). Not clearing the box area can be handy when, 
+for example, you need to redraw the window frame but leave the window contents intact.
+@end itemize
+
+@cindex Global Dialog Box variables
+Other things of concern are:
+
+@example
+int MAX_MSG_BOX_W;
+int MAX_MSG_BOX_H;
+#define MAX_INPUT_MSG_LEN 100
+@end example
+
+The first two are global variables used to determine the maximum size of a 
+dialog box. MAX_MSG_BOX_W defines the maximum width (columns) and MAX_MSG_BOX_H 
+the maxium height (rows). Their values are calculated in the msgBox() and 
+inputBox() functions as:
+
+@example
+MAX_MSG_BOX_W = SCREEN_W-2;
+MAX_MSG_BOX_H = SCREEN_H-2;
+@end example
+
+The last one, MAX_INPUT_MSG_LEN is a macro defining the maximum length of the 
+input string returned by an input box. Currently it is restricted to 100 chars.
+
+@cindex The catchSignals() function
+@heading The catchSignals() function@*
+
+The last two functions of "dialogs.h" are:
+
+@example
+int catchSignals();
+int catchAllSignals();
+@end example
+
+Which are handy and so important. Remember that after a call to initTerminal() 
+the terminal will be in an intermediate state, which is not of much use to 
+the user. Calling restoreTerminal() is an important step to do before leaving 
+your program. But what if your program crashed for whatever reason? (bad things 
+happen all the time), or if a system administrator decided to kill your process?. 
+Here is what catchSignals() does: it catches all the important signals 
+(namely: SIGINT, SIGQUIT, SIGABRT, and SIGTERM) and passes them to a signal 
+handler, which you will define as:
+
+@cindex The sighandler() function
+@example
+void sighandler(int signo)
+@{
+    //do what ever needs to be done here. The following line is just an example.
+    fprintf(stderr, "SIGNAL %d received\n", signo);
+@}
+@end example
+
+The catchAllSignals() does the same, except it tries to catch also SIGSTP, SIGKILL, 
+and SIGSTOP. It is a futile effort of course, as these signals can't be caught, 
+it is just included for convenience.@*
+If either function succeeds in catching the signals, it will return 1. Otherwise, 0. 
+Expect catchAllSignals() to return 0 at all times because of the reason above.@*
+Note that you will need to define the signal handler even if you will not use the 
+catchSignals() function (which is, by the way, not recommended at all! We explained 
+the reasons several times above). It can be defined as an empty function as:
+
+@example
+void sighandler(int signo)
+@{
+@}
+@end example
+
+Again, please define the signal handler in a proper way whenever possible.
+
+
+@node Screen
+@cindex Screen
+@cindex The Screen utility
+@cindex Using the Screen utility
+@chapter Using the Screen utility
+
+The screen utility provides functions to manipulate the screen colors, clearing 
+the screen, and positioning of the cursor. It also defines values for the 
+screen size. The member variables of the screen utility (defined in screen.h) are:
+
+@example
+ int SCREEN_W;
+ int SCREEN_H;
+@end example
+
+Both these variables are filled with values after a call to getScreenSize().
+
+@cindex Color arrays
+@example
+ int FG_COLOR[color_components];
+ int BG_COLOR[color_components];
+@end example
+
+The color_components is a macro defined with a value of 4. The possible values 
+for color_components which is an index into arrays of colors determining what 
+color is assigned to which component (i.e., dialogs, buttons, ...) are:
+
+@cindex Color components
+@example
+ COLOR_WINDOW		0	  	
+ COLOR_HIGHLIGHT_TEXT	1
+ COLOR_BUTTONS	 	2
+ COLOR_HBUTTONS		3
+@end example
+
+You can define the colors in the color arrays by using integer values, although 
+using macro names (as discussed below) is recommended. Initializing the arrays 
+can be done with code like:
+
+@cindex Example of defining the Color arrays
+@example
+  FG_COLOR[COLOR_WINDOW] = 37;
+  FG_COLOR[COLOR_HIGHLIGHT_TEXT] = 34;
+  FG_COLOR[COLOR_MENU_BAR] = 34;
+  FG_COLOR[COLOR_STATUS_BAR] = 34;
+  FG_COLOR[COLOR_BUTTONS] = 37;
+  FG_COLOR[COLOR_HBUTTONS] = 32;
+  BG_COLOR[COLOR_WINDOW] = 44;
+  BG_COLOR[COLOR_HIGHLIGHT_TEXT] = 47;
+  BG_COLOR[COLOR_MENU_BAR] = 47;
+  BG_COLOR[COLOR_STATUS_BAR] = 47;
+  BG_COLOR[COLOR_BUTTONS] = 41;
+  BG_COLOR[COLOR_HBUTTONS] = 41;
+@end example
+
+For convenience, the names of colors used in screen utility functions can be 
+retrieved from the array screen_colors[] after a call to getScreenColors():
+
+@cindex The getScreenColors() function
+@example
+ getScreenColors();
+ for(int i = 0; i < 16; i++)
+   printf("%s\n", screen_colors[i]);
+@end example
+
+To set the screen colors (e.g. before clearing the screen,), use the function:
+
+@cindex The setScreenColors() function
+@example
+ void setScreenColors(int FG, int BG);
+@end example
+
+where FG is the foreground color, BG is the background color. Color values are 
+defined as macros in the (screen.h) file:
+
+@cindex Color definitions
+@example
+ #define BLACK      30      //set black foreground
+ #define RED        31      //set red foreground
+ #define GREEN      32      //set green foreground
+ #define BROWN      33      //set brown foreground
+ #define BLUE       34      //set blue foreground
+ #define MAGENTA    35      //set magenta foreground
+ #define CYAN       36      //set cyan foreground
+ #define WHITE      37      //set white foreground
+ #define BGBLACK    40      //set black background
+ #define BGRED      41      //set red background
+ #define BGGREEN    42      //set green background
+ #define BGBROWN    43      //set brown background
+ #define BGBLUE     44      //set blue background
+ #define BGMAGENTA  45      //set magenta background
+ #define BGCYAN     46      //set cyan background
+ #define BGWHITE    47      //set white background
+ #define BGDEFAULT  49      //set default background color
+@end example
+
+To get the size of screen coordinates, use function:
+
+@cindex The getScreenSize() function
+@example
+ void getScreenSize();
+@end example
+
+which will fill the values into SCREEN_W and SCREEN_H global variables.@*
+The functions
+
+@cindex The clearScreen() function
+@cindex The clearScreenC() function
+@example
+ void clearScreen();
+ void clearScreenC(int FG, int BG);
+@end example
+
+basically do the same thing, except clearScreen() uses whatever colors where 
+passed into previous call of setScreenColors(), and clearScreenC() takes the 
+values of colors to use when clearing the screen.
+Last color function is
+
+@cindex The loadDefaultColors() function
+@example
+ void loadDefaultColors();
+@end example
+
+which resets the color arrays into default values.@*
+To reposition the cursor, use:
+
+@cindex The locate() function
+@example
+ void locate(int row, int col);
+@end example
+
+giving the row and column as int values. Remember the screen has top-left 
+based coordinates, meaning position 1-1 is at the top-left corner, position 
+25-80 is at the bottom-right (for a 25x80 screen size).
+
+
+@node Strings
+@cindex Strings
+@cindex The Strings utility
+@cindex Using the Strings utility
+@chapter Using the Strings utility
+
+The strings utility defines some handy functions for dealing with strings. 
+Strings in C are problematic: they involve a lot of pointer manipulation which 
+is often complicated, error-prone and a source of bugs. The strings utility 
+defines a wrapper type for strings (only for convenience), which is defined as:
+
+@cindex The Str typedef
+@example
+typedef char *str;
+@end example
+
+The functions of the strings utility, as defined in "strings.h", are:
+
+@cindex The Strings utility function definitions
+@example
+int indexof(str string, char chr);
+int nindexof(char chr);
+int lindexof(str string, char chr);
+
+str substr(str string, int start);
+str nsubstr(str string, int start, int length);
+str ltrim(str string);
+str rtrim(str string);
+str trim(str string);
+
+str toupper(str string);
+str tolower(str string);
+@end example
+
+What the functions do is as following:
+@itemize
+@cindex The indexof() function
+@item
+The indexof() function returns the zero-based index of the first occurence of 'chr' in 'string'.
+@cindex The nindexof() function
+@item
+The nindexof() function returns the zero-based index of the next occurence of 'chr' in 'string'. It should be called after a previous call the indexof().
+@cindex The lindexof() function
+@item
+The lindexof() function returns the zero-based index of the last occurence of 'chr' in 'string'. If there is only one occurence of 'chr' in 'string', the return value is essentially the same as that of indexof().
+@cindex The substr() function
+@item
+The substr() function returns a substring of 'string' starting from position 'start'. Note start is zero-based.
+@cindex The nsubstr() function
+@item
+The nsubstr() function returns a substring of 'string' starting from position 'start' and spanning 'length' characters. Note start is zero-based.
+@cindex The ltrim() function
+@item
+The ltrim() function trims (removes) all the whitespace characters from the strings' left side. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in the lefthand side of the string, the original string is returned.
+@cindex The rtrim() function
+@item
+The rtrim() function trims (removes) all the whitespace characters from the strings' right side. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in the lefthand side of the string, the original string is returned.
+@cindex The trim() function
+@item
+The trim() function trims (removes) all the whitespace characters from both strings' ends. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in either side of the string, the original string is returned.
+@cindex The toupper() function
+@item
+The toupper() function returns the string in upper case letters.
+@cindex The tolower() function
+@item
+The tolower() function returns the string in lower case letters.
+@end itemize
+
+
+@node Fog
+@cindex Fog
+@cindex The console Form Designer
+@cindex Using the console Form Designer
+@chapter Fog: The console Form Designer
+
+Using the utilities of the GnuDOS library will ease the life of console 
+programmers very much, but still though, putting it all together to design 
+a complete user interface (or a form) can be a tedious job. 
+The FOG (Form Designer) helps with this aspect of programming. It provides 
+a development environment that will make it easy to design an application 
+interface for a program using the console-utils library under the console.
+
+Fog is installed as part of the GnuDOS library package. It can be invoked by running:
+
+@example
+$ fog
+@end example
+
+from the command line. The user interface is very simple:
+@itemize
+@item
+Toolbox: Contains the set of 'tools' that can be added to a form, such as option items and bulleted items
+@item
+Form design: Displays the form under design
+@item
+Menu bar: Contains the menus File, Edit and Help
+@end itemize
+
+Fog saves the form design typically in the same working directory from which it 
+was invoked. This can be changed by specifying another path and file name in the 
+Save dialog box.
+Fog design files have the extension '.fog', to be distinct from other programs' 
+files. These files should not be edited by hand. Instead, open Fog and edit the 
+form design and re-save the form.
+After finishing the form design, Fog can create a skeleton project that has most 
+components pre-written for the programmer, mainly the parts that deal with the 
+user interface and getting input from the user.
+
+Select 'Write Project' from the File menu, or just press CTRL+W. Fog will write 
+three files in the same project directory:
+@itemize @bullet
+@item
+main.c: Contains the main() program function. If the form contains any buttons, it will contain a function event handler which is called whenever a button is clicked (or the user presses ENTER on it).
+@item
+fog_header.h: Contains global variable declarations and function prototypes.
+@item
+form_design.c: Contains the following function definitions:
+@itemize @minus
+@item
+void init_form(): Initializes the form and fills global variables
+@item
+void refresh_form(): Redraws the form into the screen
+@item
+void input_loop(): Catches user input on the form
+@item
+void close_form(): Restores the terminal and clears the screen before exiting
+@end itemize
+@end itemize
+
+A program designed with Fog can be compiled as following (if using gcc compiler):
+
+@example
+$ gcc -o myprog main.c form_design.c -lGnuDOS
+@end example
+
+
+@node GNU Free Documentation License
+@appendix GNU Free Documentation License
+
+@include fdl.texi
+
+@node Index
+@unnumbered Index
+
+@printindex cp
+
+@bye
+
+
