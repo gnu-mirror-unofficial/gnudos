@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.0).
+<!-- This manual is for the GnuDOS library (version 1.2).
 
 Copyright (C) 2014 Mohammed Isam.
 
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.0: Kbd</title>
+<title>GnuDOS library version 1.2: Kbd</title>
 
-<meta name="description" content="GnuDOS library version 1.0: Kbd">
-<meta name="keywords" content="GnuDOS library version 1.0: Kbd">
+<meta name="description" content="GnuDOS library version 1.2: Kbd">
+<meta name="keywords" content="GnuDOS library version 1.2: Kbd">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -172,7 +172,8 @@ desired key. For example:
 <a name="index-Sample-of-using-the-getKey_0028_0029-function"></a>
 <div class="example">
 <pre class="example">int c = getKey();
-switch(c) {
+switch(c) 
+{
   case(ESC_KEY):
      //do-something
      break;
@@ -190,10 +191,32 @@ switch(c) {
 </p>
 <div class="example">
 <pre class="example">c = getKey()
-if(c == 's' &amp;&amp; CTRL) {
+if(c == 's' &amp;&amp; CTRL) 
+{
    //do something
 }
 </pre></div>
+
+<p>Another utility has been added, which is called UKbd (&quot;U&quot; stands for Unicode).
+As such, this utility is the exact same replica of the Kbd utility, with the
+exception that it handles unicode characters. The functions defined are almost
+the same as Kbd&rsquo;s functions, with an added &quot;u&quot; in front of each, i.e.:
+</p>
+<div class="example">
+<pre class="example">char *ugetKey();
+char *ugetKeyUnderConsole();
+char *ugetKeyUnderX();
+</pre></div>
+
+<p>The results are returned as character pointer in each.
+</p>
+<p>One additional piece of information is the mask that is used to determine the
+length of a given unicode char, as unicode chars have variable lengths:
+</p>
+<div class="example">
+<pre class="example">static unsigned short mask[] = {192, 224, 240};
+</pre></div>
+
 
 
 <hr>
