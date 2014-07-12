@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.0).
+<!-- This manual is for the GnuDOS library (version 1.2).
 
 Copyright (C) 2014 Mohammed Isam.
 
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.0</title>
+<title>GnuDOS library version 1.2</title>
 
-<meta name="description" content="GnuDOS library version 1.0">
-<meta name="keywords" content="GnuDOS library version 1.0">
+<meta name="description" content="GnuDOS library version 1.2">
+<meta name="keywords" content="GnuDOS library version 1.2">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -58,7 +58,7 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<h1 class="settitle" align="center">GnuDOS library version 1.0</h1>
+<h1 class="settitle" align="center">GnuDOS library version 1.2</h1>
 
 
 
@@ -93,7 +93,7 @@ Next: <a href="#Overview" accesskey="n" rel="next">Overview</a>, Up: <a href="di
 <a name="GnuDOS-library"></a>
 <h1 class="top">GnuDOS library</h1>
 
-<p>This manual is for the GnuDOS library (version 1.0).
+<p>This manual is for the GnuDOS library (version 1.2).
 </p>
 
 <table class="menu" border="0" cellspacing="0">
@@ -137,9 +137,9 @@ of the GNU system, who are coming from a DOS background, fit into the picture
 and start using the GNU system with ease. It also addresses the console
 programmers of such programs that have the look and feel of old DOS system.
 The library is composed of core utilities and software applications:
-* The core library (corelib) contains four utilities: Kbd (for keyboard 
-handling), Screen (for screen drawing), Dialogs (for dialog boxes/window
-drawing), and Strings (for strings functions).
+* The core library (corelib) contains five utilities: Kbd (for keyboard 
+handling), UKbd (includes unicode support), Screen (for screen drawing), 
+Dialogs (for dialog boxes/window drawing), and Strings (for strings functions).
 * The software applications are three: Prime (console file manager), Mino
 (console text editor), and Fog (console form designer).
 </p>
@@ -219,22 +219,22 @@ Next: <a href="#hello_005fstrings" accesskey="n" rel="next">hello_strings</a>, P
 #include &quot;console/screen.h&quot;
 #include &quot;console/kbd.h&quot;
 
-void sighandler(int signo) 
+void sighandler(int signo)
 {
     //do what ever needs to be done here. The following line is just an example.
     fprintf(stderr, &quot;SIGNAL %d received\n&quot;, signo);
 }
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
-  if(!catchSignals()) 
+  if(!catchSignals())
   {
     fprintf(stderr, &quot;Error catching signals. Exiting.\n&quot;);
     exit(1);
   }
-  if(!initTerminal()) 
+  if(!init_kbd())
   {
-    fprintf(stderr, &quot;Error initializing terminal. Aborting.\n&quot;);
+    fprintf(stderr, &quot;Error initializing keyboard. Aborting.\n&quot;);
     exit(1);
   }
   
@@ -249,15 +249,15 @@ int main(int argc, char *argv[])
   locate(3, 3); printf(&quot;Hello GnuDOS!&quot;);
   locate(4, 3); printf(&quot;This is an example Window.&quot;);
   locate(5, 3); printf(&quot;Press ENTER to exit...&quot;);
-  while(1) 
+  while(1)
   {
     if(getKey() == ENTER_KEY) break;
   }
   
   clearScreen();
-  //very important to restore terminal state to its
+  //very important to restore keyboard state to its
   //previous state before exiting
-  restoreTerminal();
+  restore_kbd();
   exit(0);
 }
 </pre></div>
@@ -301,7 +301,7 @@ Next: <a href="#Kbd" accesskey="n" rel="next">Kbd</a>, Previous: <a href="#hello
 <pre class="example">#include &lt;stdio.h&gt;
 #include &quot;strings.h&quot;
 
-int main(int argc, char **argv) 
+int main(int argc, char **argv)
 {
     printf(&quot;Hello World&quot;);
     str s;
@@ -429,7 +429,8 @@ desired key. For example:
 <a name="index-Sample-of-using-the-getKey_0028_0029-function"></a>
 <div class="example">
 <pre class="example">int c = getKey();
-switch(c) {
+switch(c) 
+{
   case(ESC_KEY):
      //do-something
      break;
@@ -447,10 +448,32 @@ switch(c) {
 </p>
 <div class="example">
 <pre class="example">c = getKey()
-if(c == 's' &amp;&amp; CTRL) {
+if(c == 's' &amp;&amp; CTRL) 
+{
    //do something
 }
 </pre></div>
+
+<p>Another utility has been added, which is called UKbd (&quot;U&quot; stands for Unicode).
+As such, this utility is the exact same replica of the Kbd utility, with the
+exception that it handles unicode characters. The functions defined are almost
+the same as Kbd&rsquo;s functions, with an added &quot;u&quot; in front of each, i.e.:
+</p>
+<div class="example">
+<pre class="example">char *ugetKey();
+char *ugetKeyUnderConsole();
+char *ugetKeyUnderX();
+</pre></div>
+
+<p>The results are returned as character pointer in each.
+</p>
+<p>One additional piece of information is the mask that is used to determine the
+length of a given unicode char, as unicode chars have variable lengths:
+</p>
+<div class="example">
+<pre class="example">static unsigned short mask[] = {192, 224, 240};
+</pre></div>
+
 
 
 <hr>
@@ -910,7 +933,7 @@ three files in the same project directory:
 <p>A program designed with Fog can be compiled as following (if using gcc compiler):
 </p>
 <div class="example">
-<pre class="example">$ gcc -o myprog main.c form_design.c -lgnudos
+<pre class="example">$ gcc -o myprog main.c form_design.c -lGnuDOS
 </pre></div>
 
 

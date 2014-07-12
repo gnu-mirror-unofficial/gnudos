@@ -2,11 +2,11 @@
 @comment $Id@w{$}
 @comment %**start of header
 @setfilename gnudos.info
-@settitle GnuDOS library version 1.0
+@settitle GnuDOS library version 1.2
 @syncodeindex pg cp
 @comment %**end of header
 @copying
-This manual is for the GnuDOS library (version 1.0).
+This manual is for the GnuDOS library (version 1.2).
 
 Copyright @copyright{} 2014 Mohammed Isam.
 
@@ -29,7 +29,7 @@ Texts.  A copy of the license is included in the section entitled
 
 @titlepage
 @title GnuDOS library
-@subtitle for version 1.0
+@subtitle for version 1.2
 @author Mohammed Isam (@email{mohammed_isam1984@@yahoo.com})
 @page
 @vskip 0pt plus 1filll
@@ -42,7 +42,7 @@ Texts.  A copy of the license is included in the section entitled
 @node Top
 @top GnuDOS library
 
-This manual is for the GnuDOS library (version 1.0).
+This manual is for the GnuDOS library (version 1.2).
 
 @end ifnottex
 
@@ -70,9 +70,9 @@ of the GNU system, who are coming from a DOS background, fit into the picture
 and start using the GNU system with ease. It also addresses the console
 programmers of such programs that have the look and feel of old DOS system.
 The library is composed of core utilities and software applications:
-* The core library (corelib) contains four utilities: Kbd (for keyboard 
-handling), Screen (for screen drawing), Dialogs (for dialog boxes/window
-drawing), and Strings (for strings functions).
+* The core library (corelib) contains five utilities: Kbd (for keyboard 
+handling), UKbd (includes unicode support), Screen (for screen drawing), 
+Dialogs (for dialog boxes/window drawing), and Strings (for strings functions).
 * The software applications are three: Prime (console file manager), Mino
 (console text editor), and Fog (console form designer).
 
@@ -145,22 +145,22 @@ This is a sample program that demonstrates how to use the GnuDOS library utiliti
 #include "console/screen.h"
 #include "console/kbd.h"
 
-void sighandler(int signo) 
+void sighandler(int signo)
 @{
     //do what ever needs to be done here. The following line is just an example.
     fprintf(stderr, "SIGNAL %d received\n", signo);
 @}
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 @{
-  if(!catchSignals()) 
+  if(!catchSignals())
   @{
     fprintf(stderr, "Error catching signals. Exiting.\n");
     exit(1);
   @}
-  if(!initTerminal()) 
+  if(!init_kbd())
   @{
-    fprintf(stderr, "Error initializing terminal. Aborting.\n");
+    fprintf(stderr, "Error initializing keyboard. Aborting.\n");
     exit(1);
   @}
   
@@ -175,15 +175,15 @@ int main(int argc, char *argv[])
   locate(3, 3); printf("Hello GnuDOS!");
   locate(4, 3); printf("This is an example Window.");
   locate(5, 3); printf("Press ENTER to exit...");
-  while(1) 
+  while(1)
   @{
     if(getKey() == ENTER_KEY) break;
   @}
   
   clearScreen();
-  //very important to restore terminal state to its
+  //very important to restore keyboard state to its
   //previous state before exiting
-  restoreTerminal();
+  restore_kbd();
   exit(0);
 @}
 @end example
@@ -221,7 +221,7 @@ This is a sample program that demonstrates how to use the strings utility:
 #include <stdio.h>
 #include "strings.h"
 
-int main(int argc, char **argv) 
+int main(int argc, char **argv)
 @{
     printf("Hello World");
     str s;
@@ -343,7 +343,8 @@ Or, more elegantly, in a switch loop:
 @cindex Sample of using the getKey() function
 @example
 int c = getKey();
-switch(c) @{
+switch(c) 
+@{
   case(ESC_KEY):
      //do-something
      break;
@@ -361,10 +362,32 @@ To test for special key combinations (e.g. CTRL+S):
 
 @example
 c = getKey()
-if(c == 's' && CTRL) @{
+if(c == 's' && CTRL) 
+@{
    //do something
 @}
 @end example
+
+Another utility has been added, which is called UKbd ("U" stands for Unicode).
+As such, this utility is the exact same replica of the Kbd utility, with the
+exception that it handles unicode characters. The functions defined are almost
+the same as Kbd's functions, with an added "u" in front of each, i.e.:
+
+@example
+char *ugetKey();
+char *ugetKeyUnderConsole();
+char *ugetKeyUnderX();
+@end example
+
+The results are returned as character pointer in each.
+
+One additional piece of information is the mask that is used to determine the
+length of a given unicode char, as unicode chars have variable lengths:
+
+@example
+static unsigned short mask[] = @{192, 224, 240@};
+@end example
+
 
 
 @node Dialogs
@@ -830,7 +853,7 @@ void close_form(): Restores the terminal and clears the screen before exiting
 A program designed with Fog can be compiled as following (if using gcc compiler):
 
 @example
-$ gcc -o myprog main.c form_design.c -lgnudos
+$ gcc -o myprog main.c form_design.c -lGnuDOS
 @end example
 
 

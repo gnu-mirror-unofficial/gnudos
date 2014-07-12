@@ -29,16 +29,16 @@ user: you want to use DOS-keys with a few basic GNU ones?  you want to
 go with the full power of the GNU system?  All are options that are
 provided by the six levels of experience of Prime:
 
-   1- Newbie: All DOS shortcut keys, no GNU keys yet
-2- Novice: DOS shortcut keys, some of which are replaced with GNU's
-3- Intermediate: DOS keys with a few more replaced with GNU keys
-4- ِAdvanced: ...  And more GNU keys in
-5- ِExpert: Very few DOS keys, most are GNU keys
-6- ِVeteran: Only GNU keys, no DOS-like keys
+  1. Newbie: All DOS shortcut keys, no GNU keys yet
+  2. Novice: DOS shortcut keys, some of which are replaced with GNU's
+  3. Intermediate: DOS keys with a few more replaced with GNU keys
+  4. Advanced: ...  And more GNU keys in
+  5. Expert: Very few DOS keys, most are GNU keys
+  6. Veteran: Only GNU keys, no DOS-like keys
 
-   You start with level 1 by default.
-To set your level, call the mino with '-levelX' or '-lX' options, Where
-X is the level desired, for example:
+   You start with level 1 by default.  To set your level, call the mino
+with '-levelX' or '-lX' options, Where X is the level desired, for
+example:
      $prime --level2
 
 Which keys are defined for which level?
@@ -50,51 +50,51 @@ certain key is defined.  Each key defined is recognized in higher levels
 (e.g.  level 2 keys are recognized in levels 3-4-5-6).  Note that in
 level 5 only GNU keys are defined, no DOS keys will work at this level!.
 
-   Keybindings:
-In the table below, C-something means pressing down CTRL and then
-pressing the other key.  Note that '^' is the same as 'C', meaning CTRL
-key, it is just typed like this so DOS users can feel familiar with the
-text.  The same as M-something, which means META or ALT.
+   Keybindings: In the table below, C-something means pressing down CTRL
+and then pressing the other key.  Note that '^' is the same as 'C',
+meaning CTRL key, it is just typed like this so DOS users can feel
+familiar with the text.  The same as M-something, which means META or
+ALT.
 
-Function           DOS-like key       GNU key            GnuDOS Level
+Function               DOS-like key   GNU key        GnuDOS Level
 ----------------------------------------------------------------------------
-All DOS bindings                                         Newbie
-and no GNU
-bindings
-Next Line          Down               C-n                Novice
-Prev.  Line        Up                 C-p                Novice
-Backward           Left               C-b                Novice
-Forward            Right              C-f                Novice
-Back One Word      ^Left              M-b                Intermediate
-Fwd One Word       ^Right             M-f                Intermediate
-Cancel             ESC                C-g                Intermediate
-Next Screen        PgDn               C-v                Intermediate
-Prev.  Screen      PgUp               M-v                Intermediate
-Start of Line      Home               C-a                Intermediate
-End of Line        End                C-e                Intermediate
-Start of text      ^Home              C-<                Intermediate
-End of text        ^End               C->                Intermediate
-Del prev char      BkSpc              DEL (is BkSpc)     Advanced
-Del next char      Delete             C-d                Advanced
-Del prev word      ^BkSpc             M-DEL (is          Advanced
+All DOS bindings and                                 Newbie
+no GNU bindings
+Next Line              Down           C-n            Novice
+Prev.  Line            Up             C-p            Novice
+Backward               Left           C-b            Novice
+Forward                Right          C-f            Novice
+Back One Word          ^Left          M-b            Novice
+Fwd One Word           ^Right         M-f            Novice
+Cancel                 ESC            C-g            Intermediate
+Next Screen            PgDn           C-v            Intermediate
+Prev.  Screen          PgUp           M-v            Intermediate
+Start of Line          Home           C-a            Intermediate
+End of Line            End            C-e            Intermediate
+Start of text          ^Home          C-<            Intermediate
+End of text            ^End           C->            Intermediate
+Del prev char          BkSpc          DEL (is        Advanced
+                                      BkSpc)
+Del next char          Delete         C-d            Advanced
+Del prev word          ^BkSpc         M-DEL (is      Advanced
                                       M-BkSpc)
-Del next word      ^Delete            M-d                Advanced
-Select text        SHIFT+Arrow        C-Space            Advanced
-Del selection      BkSpc/Del          C-w                Advanced
-Quit               ^Q                 C-x C-c            Expert
-Paste (yanking)    ^V                 C-y                Expert
-Del Line           ^D                 C-k                Expert
-Undo               ^Z                 C-/, C-_, C-x u    Expert
-Open File          ^O                 C-x C-f            Expert
-Save File          ^S                 C-x C-s            Expert
-Find (Search)      ^F                 C-s (forward       Expert
+Del next word          ^Delete        M-d            Advanced
+Select text            SHIFT+Arrow    C-Space        Advanced
+Del selection          BkSpc/Del      C-w            Advanced
+Quit                   ^Q             C-x C-c        Expert
+Paste (yanking)        ^V             C-y            Expert
+Del Line               ^D             C-k            Expert
+Undo                   ^Z             C-/, C-_,      Expert
+                                      C-x u
+Open File              ^O             C-x C-f        Expert
+Save File              ^S             C-x C-s        Expert
+Find (Search)          ^F             C-s (forward   Expert
                                       search)
-                                      C-r (reverse       Expert
+                                      C-r (reverse   Expert
                                       search)
-Help               F1                 C-h ?              Expert
-All GNU bindings                                         Veteran
-and no DOS
-bindings
+Help                   F1             C-h ?          Expert
+All GNU bindings and                                 Veteran
+no DOS bindings
 
 Why should I use it?
 ====================

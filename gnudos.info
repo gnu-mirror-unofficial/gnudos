@@ -1,6 +1,6 @@
 This is gnudos.info, produced by makeinfo version 5.1 from gnudos.texi.
 
-This manual is for the GnuDOS library (version 1.0).
+This manual is for the GnuDOS library (version 1.2).
 
    Copyright (C) 2014 Mohammed Isam.
 
@@ -23,7 +23,7 @@ File: gnudos.info,  Node: Top,  Next: Overview,  Up: (dir)
 GnuDOS library
 **************
 
-This manual is for the GnuDOS library (version 1.0).
+This manual is for the GnuDOS library (version 1.2).
 
 * Menu:
 
@@ -52,11 +52,12 @@ users of the GNU system, who are coming from a DOS background, fit into
 the picture and start using the GNU system with ease.  It also addresses
 the console programmers of such programs that have the look and feel of
 old DOS system.  The library is composed of core utilities and software
-applications: * The core library (corelib) contains four utilities: Kbd
-(for keyboard handling), Screen (for screen drawing), Dialogs (for
-dialog boxes/window drawing), and Strings (for strings functions).  *
-The software applications are three: Prime (console file manager), Mino
-(console text editor), and Fog (console form designer).
+applications: * The core library (corelib) contains five utilities: Kbd
+(for keyboard handling), UKbd (includes unicode support), Screen (for
+screen drawing), Dialogs (for dialog boxes/window drawing), and Strings
+(for strings functions).  * The software applications are three: Prime
+(console file manager), Mino (console text editor), and Fog (console
+form designer).
 
 The rationale behind the GnuDOS corelib library
 ===============================================
@@ -152,9 +153,9 @@ utilities:
          fprintf(stderr, "Error catching signals. Exiting.\n");
          exit(1);
        }
-       if(!initTerminal())
+       if(!init_kbd())
        {
-         fprintf(stderr, "Error initializing terminal. Aborting.\n");
+         fprintf(stderr, "Error initializing keyboard. Aborting.\n");
          exit(1);
        }
 
@@ -175,9 +176,9 @@ utilities:
        }
 
        clearScreen();
-       //very important to restore terminal state to its
+       //very important to restore keyboard state to its
        //previous state before exiting
-       restoreTerminal();
+       restore_kbd();
        exit(0);
      }
 
@@ -324,7 +325,8 @@ the desired key.  For example:
    Or, more elegantly, in a switch loop:
 
      int c = getKey();
-     switch(c) {
+     switch(c)
+     {
        case(ESC_KEY):
           //do-something
           break;
@@ -340,9 +342,28 @@ the desired key.  For example:
    To test for special key combinations (e.g.  CTRL+S):
 
      c = getKey()
-     if(c == 's' && CTRL) {
+     if(c == 's' && CTRL)
+     {
         //do something
      }
+
+   Another utility has been added, which is called UKbd ("U" stands for
+Unicode).  As such, this utility is the exact same replica of the Kbd
+utility, with the exception that it handles unicode characters.  The
+functions defined are almost the same as Kbd's functions, with an added
+"u" in front of each, i.e.:
+
+     char *ugetKey();
+     char *ugetKeyUnderConsole();
+     char *ugetKeyUnderX();
+
+   The results are returned as character pointer in each.
+
+   One additional piece of information is the mask that is used to
+determine the length of a given unicode char, as unicode chars have
+variable lengths:
+
+     static unsigned short mask[] = {192, 224, 240};
 
 
 File: gnudos.info,  Node: Dialogs,  Next: Screen,  Prev: Kbd,  Up: Top
@@ -721,7 +742,7 @@ will write three files in the same project directory:
    A program designed with Fog can be compiled as following (if using
 gcc compiler):
 
-     $ gcc -o myprog main.c form_design.c -lgnudos
+     $ gcc -o myprog main.c form_design.c -lGnuDOS
 
 
 File: gnudos.info,  Node: GNU Free Documentation License,  Next: Index,  Prev: Fog,  Up: Top
@@ -1229,14 +1250,14 @@ Index
 Tag Table:
 Node: Top769
 Node: Overview1305
-Node: hello_gnudos5795
-Node: hello_strings8665
-Node: Kbd9345
-Node: Dialogs12997
-Node: Screen18898
-Node: Strings22778
-Node: Fog25494
-Node: GNU Free Documentation License28014
-Node: Index50487
+Node: hello_gnudos5828
+Node: hello_strings8690
+Node: Kbd9370
+Node: Dialogs13696
+Node: Screen19597
+Node: Strings23477
+Node: Fog26193
+Node: GNU Free Documentation License28713
+Node: Index51186
 
 End Tag Table

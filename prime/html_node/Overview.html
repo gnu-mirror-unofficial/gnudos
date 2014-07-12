@@ -85,16 +85,18 @@ feel ease when dealing with the GNU system.
 Prime provides multi-level experience, the level of complexity can be adjusted
 by the user: you want to use DOS-keys with a few basic GNU ones? you want to 
 go with the full power of the GNU system? All are options that are provided by
-the six levels of experience of Prime:<br>
+the six levels of experience of Prime:
 </p>
-<p>1- Newbie: All DOS shortcut keys, no GNU keys yet<br>
-  2- Novice: DOS shortcut keys, some of which are replaced with GNU&rsquo;s<br>
-  3- Intermediate: DOS keys with a few more replaced with GNU keys<br>
-  4- ÙAdvanced: ... And more GNU keys in<br>
-  5- ÙExpert: Very few DOS keys, most are GNU keys<br>
-  6- ÙVeteran: Only GNU keys, no DOS-like keys<br>
-</p>  
-<p>You start with level 1 by default.<br>
+<ol>
+<li> Newbie: All DOS shortcut keys, no GNU keys yet
+</li><li> Novice: DOS shortcut keys, some of which are replaced with GNU&rsquo;s
+</li><li> Intermediate: DOS keys with a few more replaced with GNU keys
+</li><li> Advanced: ... And more GNU keys in
+</li><li> Expert: Very few DOS keys, most are GNU keys
+</li><li> Veteran: Only GNU keys, no DOS-like keys
+</li></ol>
+
+<p>You start with level 1 by default.
 To set your level, call the mino with &rsquo;&ndash;levelX&rsquo; or &rsquo;-lX&rsquo; options,
 Where X is the level desired, for example:
 </p><div class="example">
@@ -108,50 +110,51 @@ Where X is the level desired, for example:
 respective GNU key bindings. To the right is the level at which a certain
 key is defined. Each key defined is recognized in higher levels (e.g. level 2
 keys are recognized in levels 3-4-5-6). Note that in level 5 only GNU keys are
-defined, no DOS keys will work at this level!.<br>
+defined, no DOS keys will work at this level!.
 </p>
-<p>Keybindings:<br>
+<p>Keybindings:
 In the table below, C-something means pressing down CTRL and then pressing the
 other key. Note that &rsquo;^&rsquo; is the same as &rsquo;C&rsquo;, meaning CTRL key, it is just
 typed like this so DOS users can feel familiar with the text.
-The same as M-something, which means META or ALT.<br>
+The same as M-something, which means META or ALT.
 </p>
-
 <table>
-<thead><tr><th width="25%">Function</th><th width="25%">DOS-like key</th><th width="25%">GNU key</th><th width="25%">GnuDOS Level</th></tr></thead>
-<tr><td width="25%">All DOS bindings and no GNU bindings</td><td width="25%"></td><td width="25%"></td><td width="25%">Newbie</td></tr>
-<tr><td width="25%">Next Line</td><td width="25%">Down</td><td width="25%">C-n</td><td width="25%">Novice</td></tr>
-<tr><td width="25%">Prev. Line</td><td width="25%">Up</td><td width="25%">C-p</td><td width="25%">Novice</td></tr>
-<tr><td width="25%">Backward</td><td width="25%">Left</td><td width="25%">C-b</td><td width="25%">Novice</td></tr>
-<tr><td width="25%">Forward</td><td width="25%">Right</td><td width="25%">C-f</td><td width="25%">Novice</td></tr>
-<tr><td width="25%">Back One Word</td><td width="25%">^Left</td><td width="25%">M-b</td><td width="25%">Intermediate</td></tr>
-<tr><td width="25%">Fwd One Word</td><td width="25%">^Right</td><td width="25%">M-f</td><td width="25%">Intermediate</td></tr>
-<tr><td width="25%"></td><td width="25%"></td><td width="25%"></td><td width="25%"></td></tr>
-<tr><td width="25%">Cancel</td><td width="25%">ESC</td><td width="25%">C-g</td><td width="25%">Intermediate</td></tr>
-<tr><td width="25%">Next Screen</td><td width="25%">PgDn</td><td width="25%">C-v</td><td width="25%">Intermediate</td></tr>
-<tr><td width="25%">Prev. Screen</td><td width="25%">PgUp</td><td width="25%">M-v</td><td width="25%">Intermediate</td></tr>
-<tr><td width="25%">Start of Line</td><td width="25%">Home</td><td width="25%">C-a</td><td width="25%">Intermediate</td></tr>
-<tr><td width="25%">End of Line</td><td width="25%">End</td><td width="25%">C-e</td><td width="25%">Intermediate</td></tr>
-<tr><td width="25%">Start of text</td><td width="25%">^Home</td><td width="25%">C-&lt;</td><td width="25%">Intermediate</td></tr>
-<tr><td width="25%">End of text</td><td width="25%">^End</td><td width="25%">C-&gt;</td><td width="25%">Intermediate</td></tr>
-<tr><td width="25%"></td><td width="25%"></td><td width="25%"></td><td width="25%"></td></tr>
-<tr><td width="25%">Del prev char</td><td width="25%">BkSpc</td><td width="25%">DEL (is BkSpc)</td><td width="25%">Advanced</td></tr>
-<tr><td width="25%">Del next char</td><td width="25%">Delete</td><td width="25%">C-d</td><td width="25%">Advanced</td></tr>
-<tr><td width="25%">Del prev word</td><td width="25%">^BkSpc</td><td width="25%">M-DEL (is M-BkSpc)</td><td width="25%">Advanced</td></tr>
-<tr><td width="25%">Del next word</td><td width="25%">^Delete</td><td width="25%">M-d</td><td width="25%">Advanced</td></tr>
-<tr><td width="25%">Select text</td><td width="25%">SHIFT+Arrow</td><td width="25%">C-Space</td><td width="25%">Advanced</td></tr>
-<tr><td width="25%">Del selection</td><td width="25%">BkSpc/Del</td><td width="25%">C-w</td><td width="25%">Advanced</td></tr>
-<tr><td width="25%"></td><td width="25%"></td><td width="25%"></td><td width="25%"></td></tr>
-<tr><td width="25%">Quit</td><td width="25%">^Q</td><td width="25%">C-x C-c</td><td width="25%">Expert</td></tr>
-<tr><td width="25%">Paste (yanking)</td><td width="25%">^V</td><td width="25%">C-y</td><td width="25%">Expert</td></tr>
-<tr><td width="25%">Del Line</td><td width="25%">^D</td><td width="25%">C-k</td><td width="25%">Expert</td></tr>
-<tr><td width="25%">Undo</td><td width="25%">^Z</td><td width="25%">C-/, C-_, C-x u</td><td width="25%">Expert</td></tr>
-<tr><td width="25%">Open File</td><td width="25%">^O</td><td width="25%">C-x C-f</td><td width="25%">Expert</td></tr>
-<tr><td width="25%">Save File</td><td width="25%">^S</td><td width="25%">C-x C-s</td><td width="25%">Expert</td></tr>
-<tr><td width="25%">Find (Search)</td><td width="25%">^F</td><td width="25%">C-s (forward search)</td><td width="25%">Expert</td></tr>
-<tr><td width="25%"></td><td width="25%"></td><td width="25%">C-r (reverse search)</td><td width="25%">Expert</td></tr>
-<tr><td width="25%">Help</td><td width="25%">F1</td><td width="25%">C-h ?</td><td width="25%">Expert</td></tr>
-<tr><td width="25%">All GNU bindings and no DOS bindings</td><td width="25%"></td><td width="25%"></td><td width="25%">Veteran</td></tr>
+<thead><tr><th width="30%">Function</th><th width="20%">DOS-like key</th><th width="20%">GNU key</th><th width="30%">GnuDOS Level</th></tr></thead>
+<tr><td width="30%">All DOS bindings and no GNU bindings</td><td width="20%"></td><td width="20%"></td><td width="30%">Newbie</td></tr>
+<tr><td width="30%"></td><td width="20%"></td><td width="20%"></td><td width="30%"></td></tr>
+<tr><td width="30%">Next Line</td><td width="20%">Down</td><td width="20%">C-n</td><td width="30%">Novice</td></tr>
+<tr><td width="30%">Prev. Line</td><td width="20%">Up</td><td width="20%">C-p</td><td width="30%">Novice</td></tr>
+<tr><td width="30%">Backward</td><td width="20%">Left</td><td width="20%">C-b</td><td width="30%">Novice</td></tr>
+<tr><td width="30%">Forward</td><td width="20%">Right</td><td width="20%">C-f</td><td width="30%">Novice</td></tr>
+<tr><td width="30%">Back One Word</td><td width="20%">^Left</td><td width="20%">M-b</td><td width="30%">Novice</td></tr>
+<tr><td width="30%">Fwd One Word</td><td width="20%">^Right</td><td width="20%">M-f</td><td width="30%">Novice</td></tr>
+<tr><td width="30%"></td><td width="20%"></td><td width="20%"></td><td width="30%"></td></tr>
+<tr><td width="30%">Cancel</td><td width="20%">ESC</td><td width="20%">C-g</td><td width="30%">Intermediate</td></tr>
+<tr><td width="30%">Next Screen</td><td width="20%">PgDn</td><td width="20%">C-v</td><td width="30%">Intermediate</td></tr>
+<tr><td width="30%">Prev. Screen</td><td width="20%">PgUp</td><td width="20%">M-v</td><td width="30%">Intermediate</td></tr>
+<tr><td width="30%">Start of Line</td><td width="20%">Home</td><td width="20%">C-a</td><td width="30%">Intermediate</td></tr>
+<tr><td width="30%">End of Line</td><td width="20%">End</td><td width="20%">C-e</td><td width="30%">Intermediate</td></tr>
+<tr><td width="30%">Start of text</td><td width="20%">^Home</td><td width="20%">C-&lt;</td><td width="30%">Intermediate</td></tr>
+<tr><td width="30%">End of text</td><td width="20%">^End</td><td width="20%">C-&gt;</td><td width="30%">Intermediate</td></tr>
+<tr><td width="30%"></td><td width="20%"></td><td width="20%"></td><td width="30%"></td></tr>
+<tr><td width="30%">Del prev char</td><td width="20%">BkSpc</td><td width="20%">DEL (is BkSpc)</td><td width="30%">Advanced</td></tr>
+<tr><td width="30%">Del next char</td><td width="20%">Delete</td><td width="20%">C-d</td><td width="30%">Advanced</td></tr>
+<tr><td width="30%">Del prev word</td><td width="20%">^BkSpc</td><td width="20%">M-DEL (is M-BkSpc)</td><td width="30%">Advanced</td></tr>
+<tr><td width="30%">Del next word</td><td width="20%">^Delete</td><td width="20%">M-d</td><td width="30%">Advanced</td></tr>
+<tr><td width="30%">Select text</td><td width="20%">SHIFT+Arrow</td><td width="20%">C-Space</td><td width="30%">Advanced</td></tr>
+<tr><td width="30%">Del selection</td><td width="20%">BkSpc/Del</td><td width="20%">C-w</td><td width="30%">Advanced</td></tr>
+<tr><td width="30%"></td><td width="20%"></td><td width="20%"></td><td width="30%"></td></tr>
+<tr><td width="30%">Quit</td><td width="20%">^Q</td><td width="20%">C-x C-c</td><td width="30%">Expert</td></tr>
+<tr><td width="30%">Paste (yanking)</td><td width="20%">^V</td><td width="20%">C-y</td><td width="30%">Expert</td></tr>
+<tr><td width="30%">Del Line</td><td width="20%">^D</td><td width="20%">C-k</td><td width="30%">Expert</td></tr>
+<tr><td width="30%">Undo</td><td width="20%">^Z</td><td width="20%">C-/, C-_, C-x u</td><td width="30%">Expert</td></tr>
+<tr><td width="30%">Open File</td><td width="20%">^O</td><td width="20%">C-x C-f</td><td width="30%">Expert</td></tr>
+<tr><td width="30%">Save File</td><td width="20%">^S</td><td width="20%">C-x C-s</td><td width="30%">Expert</td></tr>
+<tr><td width="30%">Find (Search)</td><td width="20%">^F</td><td width="20%">C-s (forward search)</td><td width="30%">Expert</td></tr>
+<tr><td width="30%"></td><td width="20%"></td><td width="20%">C-r (reverse search)</td><td width="30%">Expert</td></tr>
+<tr><td width="30%">Help</td><td width="20%">F1</td><td width="20%">C-h ?</td><td width="30%">Expert</td></tr>
+<tr><td width="30%"></td><td width="20%"></td><td width="20%"></td><td width="30%"></td></tr>
+<tr><td width="30%">All GNU bindings and no DOS bindings</td><td width="20%"></td><td width="20%"></td><td width="30%">Veteran</td></tr>
 </table>
 
 
