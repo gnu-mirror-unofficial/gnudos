@@ -26,12 +26,14 @@ users of the GNU system, who are coming from a DOS background, fit into
 the picture and start using the GNU system with ease.  It also addresses
 the console programmers of such programs that have the look and feel of
 old DOS system.  The library is composed of core utilities and software
-applications: * The core library (corelib) contains five utilities: Kbd
-(for keyboard handling), UKbd (includes unicode support), Screen (for
-screen drawing), Dialogs (for dialog boxes/window drawing), and Strings
-(for strings functions).  * The software applications are three: Prime
-(console file manager), Mino (console text editor), and Fog (console
-form designer).
+applications:
+
+   * The core library (corelib) contains five utilities: Kbd (for
+     keyboard handling), UKbd (includes unicode support), Screen (for
+     screen drawing), Dialogs (for dialog boxes/window drawing), and
+     Strings (for strings functions).
+   * The software applications are three: Prime (console file manager),
+     Mino (console text editor), and Fog (console form designer).
 
 The rationale behind the GnuDOS corelib library
 ===============================================
@@ -157,10 +159,10 @@ utilities:
 includes both "screen.h" and "kbd.h" as the dialogs utility uses both of
 the other two.
 
-   And now REMEMBER two things: (1) a call to initTerminal() must be
-invoked before using the library (2) a call restoreTerminal() must be
-done before exiting the program For deatils about these functions please
-see *Note Kbd::.
+   And now REMEMBER two things:
+  1. a call to initTerminal() must be invoked before using the library
+  2. a call restoreTerminal() must be done before exiting the program
+   For deatils about these functions please see *Note Kbd::.
 
    If you forget point (2), you will leave the user's terminal in raw
 mode, which (under console) means he/she will not be able to do
@@ -217,18 +219,18 @@ variables.
      bool X_IS_RUNNING;
 
    This is their explanation:
- ALT: Boolean variable that indicates the state of the ALT key
-  (1=pressed, 0=released)
- CTRL: Boolean variable that indicates the state of the CTRL key
-  (1=pressed, 0=released)
- SHIFT: Boolean variable that indicates the state of the SHIFT key
-  (1=pressed, 0=released)
- CAPS: Boolean variable that indicates the state of CAPSLOCK
-  (1=pressed/ON, 0=released/OFF)
- INSERT: Boolean variable that indicates the state of the INSERT key
-  (1=pressed/ON, 0=released/OFF)
- X_IS_RUNNING: Boolean variable that indicates whether X is running
-  (1=running under X, 0=running under console)
+   * ALT: Boolean variable that indicates the state of the ALT key
+       (1=pressed, 0=released)
+   * CTRL: Boolean variable that indicates the state of the CTRL key
+       (1=pressed, 0=released)
+   * SHIFT: Boolean variable that indicates the state of the SHIFT key
+       (1=pressed, 0=released)
+   * CAPS: Boolean variable that indicates the state of CAPSLOCK
+       (1=pressed/ON, 0=released/OFF)
+   * INSERT: Boolean variable that indicates the state of the INSERT key
+       (1=pressed/ON, 0=released/OFF)
+   * X_IS_RUNNING: Boolean variable that indicates whether X is running
+       (1=running under X, 0=running under console)
 
    Three functions are defined:
 
@@ -1131,63 +1133,63 @@ Index
 
 * Menu:
 
-* Button values in dialog boxes:         Dialogs.             (line 357)
-* Color arrays:                          Screen.              (line 499)
-* Color components:                      Screen.              (line 507)
-* Color definitions:                     Screen.              (line 545)
-* Dialogs:                               Dialogs.             (line 332)
-* Empty Boxes:                           Dialogs.             (line 399)
-* Example of defining the Color arrays:  Screen.              (line 516)
+* Button values in dialog boxes:         Dialogs.             (line 359)
+* Color arrays:                          Screen.              (line 501)
+* Color components:                      Screen.              (line 509)
+* Color definitions:                     Screen.              (line 547)
+* Dialogs:                               Dialogs.             (line 334)
+* Empty Boxes:                           Dialogs.             (line 401)
+* Example of defining the Color arrays:  Screen.              (line 518)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
-                                                              (line 705)
-* Fog:                                   Fog.                 (line 646)
-* Global Dialog Box variables:           Dialogs.             (line 425)
-* Global Kbd variables:                  Kbd.                 (line 209)
-* Global keyboard variables:             Kbd.                 (line 209)
+                                                              (line 707)
+* Fog:                                   Fog.                 (line 648)
+* Global Dialog Box variables:           Dialogs.             (line 427)
+* Global Kbd variables:                  Kbd.                 (line 211)
+* Global keyboard variables:             Kbd.                 (line 211)
 * GnuDOS library overview:               Overview.            (line  16)
-* hello_gnudos:                          hello_gnudos.        (line 102)
-* hello_strings:                         hello_strings.       (line 177)
-* Input Boxes:                           Dialogs.             (line 369)
-* Input Boxes with default input values: Dialogs.             (line 389)
-* Kbd:                                   Kbd.                 (line 201)
-* Kbd functions:                         Kbd.                 (line 232)
-* Keyboard functions:                    Kbd.                 (line 232)
+* hello_gnudos:                          hello_gnudos.        (line 104)
+* hello_strings:                         hello_strings.       (line 179)
+* Input Boxes:                           Dialogs.             (line 371)
+* Input Boxes with default input values: Dialogs.             (line 391)
+* Kbd:                                   Kbd.                 (line 203)
+* Kbd functions:                         Kbd.                 (line 234)
+* Keyboard functions:                    Kbd.                 (line 234)
 * Overview:                              Overview.            (line  17)
-* Sample of using the getKey() function: Kbd.                 (line 291)
-* Screen:                                Screen.              (line 485)
-* Simple Dialog Boxes:                   Dialogs.             (line 338)
-* Special keys:                          Kbd.                 (line 261)
-* Strings:                               Strings.             (line 590)
-* The catchSignals() function:           Dialogs.             (line 443)
-* The clearScreen() function:            Screen.              (line 571)
-* The clearScreenC() function:           Screen.              (line 571)
-* The console Form Designer:             Fog.                 (line 646)
-* The Dialogs utility:                   Dialogs.             (line 332)
-* The getScreenColors() function:        Screen.              (line 533)
-* The getScreenSize() function:          Screen.              (line 565)
-* The indexof() function:                Strings.             (line 617)
-* The Kbd utility:                       Kbd.                 (line 201)
-* The lindexof() function:               Strings.             (line 621)
-* The loadDefaultColors() function:      Screen.              (line 579)
-* The locate() function:                 Screen.              (line 584)
-* The ltrim() function:                  Strings.             (line 630)
-* The nindexof() function:               Strings.             (line 618)
-* The nsubstr() function:                Strings.             (line 627)
-* The rtrim() function:                  Strings.             (line 634)
-* The Screen utility:                    Screen.              (line 485)
-* The setScreenColors() function:        Screen.              (line 540)
-* The sighandler() function:             Dialogs.             (line 461)
-* The Str typedef:                       Strings.             (line 599)
-* The Strings utility:                   Strings.             (line 590)
-* The Strings utility function definitions: Strings.          (line 603)
-* The substr() function:                 Strings.             (line 625)
-* The tolower() function:                Strings.             (line 643)
-* The toupper() function:                Strings.             (line 642)
-* The trim() function:                   Strings.             (line 638)
-* Types of messages in Dialog Boxes:     Dialogs.             (line 363)
-* Using the console Form Designer:       Fog.                 (line 645)
-* Using the Dialogs utility:             Dialogs.             (line 331)
-* Using the Kbd utility:                 Kbd.                 (line 200)
-* Using the Screen utility:              Screen.              (line 484)
-* Using the Strings utility:             Strings.             (line 589)
+* Sample of using the getKey() function: Kbd.                 (line 293)
+* Screen:                                Screen.              (line 487)
+* Simple Dialog Boxes:                   Dialogs.             (line 340)
+* Special keys:                          Kbd.                 (line 263)
+* Strings:                               Strings.             (line 592)
+* The catchSignals() function:           Dialogs.             (line 445)
+* The clearScreen() function:            Screen.              (line 573)
+* The clearScreenC() function:           Screen.              (line 573)
+* The console Form Designer:             Fog.                 (line 648)
+* The Dialogs utility:                   Dialogs.             (line 334)
+* The getScreenColors() function:        Screen.              (line 535)
+* The getScreenSize() function:          Screen.              (line 567)
+* The indexof() function:                Strings.             (line 619)
+* The Kbd utility:                       Kbd.                 (line 203)
+* The lindexof() function:               Strings.             (line 623)
+* The loadDefaultColors() function:      Screen.              (line 581)
+* The locate() function:                 Screen.              (line 586)
+* The ltrim() function:                  Strings.             (line 632)
+* The nindexof() function:               Strings.             (line 620)
+* The nsubstr() function:                Strings.             (line 629)
+* The rtrim() function:                  Strings.             (line 636)
+* The Screen utility:                    Screen.              (line 487)
+* The setScreenColors() function:        Screen.              (line 542)
+* The sighandler() function:             Dialogs.             (line 463)
+* The Str typedef:                       Strings.             (line 601)
+* The Strings utility:                   Strings.             (line 592)
+* The Strings utility function definitions: Strings.          (line 605)
+* The substr() function:                 Strings.             (line 627)
+* The tolower() function:                Strings.             (line 645)
+* The toupper() function:                Strings.             (line 644)
+* The trim() function:                   Strings.             (line 640)
+* Types of messages in Dialog Boxes:     Dialogs.             (line 365)
+* Using the console Form Designer:       Fog.                 (line 647)
+* Using the Dialogs utility:             Dialogs.             (line 333)
+* Using the Kbd utility:                 Kbd.                 (line 202)
+* Using the Screen utility:              Screen.              (line 486)
+* Using the Strings utility:             Strings.             (line 591)
 

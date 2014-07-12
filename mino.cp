@@ -25,7 +25,7 @@
 \entry{Edit menu}{5}{Edit menu}
 \entry{Options menu}{5}{Options menu}
 \entry{Help menu}{5}{Help menu}
-\entry{Shortcuts}{6}{Shortcuts}
-\entry{Keyboard shortcuts}{6}{Keyboard shortcuts}
-\entry{Shortcuts keys}{6}{Shortcuts keys}
-\entry{FDL, GNU Free Documentation License}{8}{FDL, GNU Free Documentation License}
+\entry{Shortcuts}{5}{Shortcuts}
+\entry{Keyboard shortcuts}{5}{Keyboard shortcuts}
+\entry{Shortcuts keys}{5}{Shortcuts keys}
+\entry{FDL, GNU Free Documentation License}{7}{FDL, GNU Free Documentation License}

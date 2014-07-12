@@ -137,12 +137,14 @@ of the GNU system, who are coming from a DOS background, fit into the picture
 and start using the GNU system with ease. It also addresses the console
 programmers of such programs that have the look and feel of old DOS system.
 The library is composed of core utilities and software applications:
-* The core library (corelib) contains five utilities: Kbd (for keyboard 
+</p>
+<ul>
+<li> The core library (corelib) contains five utilities: Kbd (for keyboard 
 handling), UKbd (includes unicode support), Screen (for screen drawing), 
 Dialogs (for dialog boxes/window drawing), and Strings (for strings functions).
-* The software applications are three: Prime (console file manager), Mino
+</li><li> The software applications are three: Prime (console file manager), Mino
 (console text editor), and Fog (console form designer).
-</p>
+</li></ul>
 
 <a name="The-rationale-behind-the-GnuDOS-corelib-library"></a>
 <h3 class="heading">The rationale behind the GnuDOS corelib library</h3>
@@ -268,9 +270,11 @@ int main(int argc, char *argv[])
 </p>
 
 <p>And now REMEMBER two things:
-(1) a call to initTerminal() must be invoked before using the library
-(2) a call restoreTerminal() must be done before exiting the program
-For deatils about these functions please see See <a href="#Kbd">Kbd</a>.<br>
+</p><ol>
+<li> a call to initTerminal() must be invoked before using the library
+</li><li> a call restoreTerminal() must be done before exiting the program
+</li></ol>
+<p>For deatils about these functions please see See <a href="#Kbd">Kbd</a>.<br>
 </p>
 <p>If you forget point (2), you will leave the user&rsquo;s terminal in raw mode, which 
 (under console) means he/she will not be able to do virtually anything (not 
@@ -347,19 +351,21 @@ bool X_IS_RUNNING;
 </pre></div>
 
 <p>This is their explanation:<br>
-&nbsp;ALT: Boolean variable that indicates the state of the ALT key<br>
+</p><ul>
+<li> ALT: Boolean variable that indicates the state of the ALT key<br>
 &nbsp;&nbsp;(1=pressed, 0=released)<br>
-&nbsp;CTRL: Boolean variable that indicates the state of the CTRL key<br>
+</li><li> CTRL: Boolean variable that indicates the state of the CTRL key<br>
 &nbsp;&nbsp;(1=pressed, 0=released)<br>
-&nbsp;SHIFT: Boolean variable that indicates the state of the SHIFT key<br>
+</li><li> SHIFT: Boolean variable that indicates the state of the SHIFT key<br>
 &nbsp;&nbsp;(1=pressed, 0=released)<br>
-&nbsp;CAPS: Boolean variable that indicates the state of CAPSLOCK<br>
+</li><li> CAPS: Boolean variable that indicates the state of CAPSLOCK<br>
 &nbsp;&nbsp;(1=pressed/ON, 0=released/OFF)<br>
-&nbsp;INSERT: Boolean variable that indicates the state of the INSERT key<br>
+</li><li> INSERT: Boolean variable that indicates the state of the INSERT key<br>
 &nbsp;&nbsp;(1=pressed/ON, 0=released/OFF)<br>
-&nbsp;X_IS_RUNNING: Boolean variable that indicates whether X is running<br>
+</li><li> X_IS_RUNNING: Boolean variable that indicates whether X is running<br>
 &nbsp;&nbsp;(1=running under X, 0=running under console)<br>
-</p>
+</li></ul>
+
 <a name="index-Keyboard-functions"></a>
 <a name="index-Kbd-functions"></a>
 <p>Three functions are defined:<br>

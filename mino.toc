@@ -1,7 +1,7 @@
 @numchapentry{Overview of the mino (Mino) text editor}{1}{Overview}{1}
 @numchapentry{Mino main window}{2}{Main Window}{4}
 @numchapentry{Working around with menus}{3}{Menus}{5}
-@numchapentry{Using keyboard shortcuts}{4}{Shortcuts}{7}
-@appentry{GNU Free Documentation License}{A}{GNU Free Documentation License}{8}
-@appsecentry{GNU Free Documentation License}{A.1}{}{8}
-@unnchapentry{Index}{10001}{Index}{15}
+@numchapentry{Using keyboard shortcuts}{4}{Shortcuts}{6}
+@appentry{GNU Free Documentation License}{A}{GNU Free Documentation License}{7}
+@appsecentry{GNU Free Documentation License}{A.1}{}{7}
+@unnchapentry{Index}{10001}{Index}{14}

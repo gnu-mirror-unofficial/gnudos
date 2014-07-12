@@ -14,16 +14,17 @@ This manual is for the Mino (mino) text editor (version 1.0).
 1 Overview of the mino (Mino) text editor
 *****************************************
 
-What is mino (Mino)?  Prime is a GNU software, part of the GnuDOS
-package.  Mino is a text file editor for use with the GNU/Linux
-console/xterm.  The idea was to provide a text editor that is user
-friendly and easy to use for those who came from DOS land.  Having
-accustomed to SHIFT selecting text, using CTRL-shortcut keys and so on
-makes it hard for a regular Joe to dive in head first into GNU syntax.
-Mino provides multi-level experience, the level of complexity can be
-adjusted by the user: you want to use DOS-keys with a few basic GNU
-ones?  you want to go with the full power of the GNU system?  All are
-options that are provided by the six levels of experience of Mino:
+What is mino (Mino)?  Mino is a GNU software, part of the GnuDOS
+package.
+Mino is a text file editor for use with the GNU/Linux console/xterm.
+The idea was to provide a text editor that is user friendly and easy to
+use for those who came from DOS land.  Having accustomed to SHIFT
+selecting text, using CTRL-shortcut keys and so on makes it hard for a
+regular Joe to dive in head first into GNU syntax.  Mino provides
+multi-level experience, the level of complexity can be adjusted by the
+user: you want to use DOS-keys with a few basic GNU ones?  you want to
+go with the full power of the GNU system?  All are options that are
+provided by the six levels of experience of Mino:
 
   1. Newbie: All DOS shortcut keys, no GNU keys yet
   2. Novice: DOS shortcut keys, some of which are replaced with GNU's
@@ -33,7 +34,7 @@ options that are provided by the six levels of experience of Mino:
   6. Veteran: Only GNU keys, no DOS-like keys
 
    You start with level 1 by default.  To set your level, call the mino
-with '-levelX' or '-lX' options, Where X is the level desired, for
+with ''--levelX'' or ''-lX'' options, Where X is the level desired, for
 example:
      $mino --level2
 
@@ -47,11 +48,11 @@ levels (e.g.  level 2 keys are recognized in levels 3-4-5-6).  Note that
 in level 6 only GNU keys are defined, no DOS keys will work at this
 level!.
 
-   Keybindings: In the table below, C-something means pressing down CTRL
-and then pressing the other key.  Note that '^' is the same as 'C',
-meaning CTRL key, it is just typed like this so DOS users can feel
-familiar with the text.  The same as M-something, which means META or
-ALT.
+   Keybindings:
+In the table below, C-something means pressing down CTRL and then
+pressing the other key.  Note that '^' is the same as 'C', meaning CTRL
+key, it is just typed like this so DOS users can feel familiar with the
+text.  The same as M-something, which means META or ALT.
 
 Function               DOS-like key   GNU key        GnuDOS Level
 ----------------------------------------------------------------------------
@@ -208,48 +209,48 @@ are:
 (1) File Menu (opened by pressing ALT+F):
 =========================================
 
- New: Clears editing area and opens a new file
- Open File: Opens another file for editing
- Save File: Saves the current file to disk
- Save As: Save the current file under another name
- Print: Prints the current file to printer
- Exit: Exits mino
+   * New: Clears editing area and opens a new file
+   * Open File: Opens another file for editing
+   * Save File: Saves the current file to disk
+   * Save As: Save the current file under another name
+   * Print: Prints the current file to printer
+   * Exit: Exits mino
 
 (2) Edit Menu (opened by pressing ALT+E):
 =========================================
 
- Cut: Cuts current selection and places text into mino clipboard
- Copy: Copies current selection to mino clipboard
- Paste: Pastes whatever in the mino clipboard into the current position
-in file
- Select All: Selects the whole document
- Undo: Undoes the last action
- Redo: Redoes the last action undone
- Find: Finds text in the file
- Replace: Finds and replaces specific text in the file
- Delete Line: Deletes the line under the cursor
- Toggle Select Mode (Only under X):
-  Toggles the select mode On (like pressing SHIFT)
-  or Off (Like releasing SHIFT)
+   * Cut: Cuts current selection and places text into mino clipboard
+   * Copy: Copies current selection to mino clipboard
+   * Paste: Pastes whatever in the mino clipboard into the current
+     position in file
+   * Select All: Selects the whole document
+   * Undo: Undoes the last action
+   * Redo: Redoes the last action undone
+   * Find: Finds text in the file
+   * Replace: Finds and replaces specific text in the file
+   * Delete Line: Deletes the line under the cursor
+   * Toggle Select Mode (Only under X):
+        - Toggles the select mode On (like pressing SHIFT)
+        - or Off (Like releasing SHIFT)
 
 (3) Options Menu (opened by pressing ALT+O):
 ============================================
 
- Change colors: Opens a dialog box to select different colors for
-window, menu bar, ...
- Tab spaces: Define the number of spaces to be inserted when you press
-TAB
- Reset config: Resets the configuration (colors and tab spaces)
+   * Change colors: Opens a dialog box to select different colors for
+     window, menu bar, ...
+   * Tab spaces: Define the number of spaces to be inserted when you
+     press TAB
+   * Reset config: Resets the configuration (colors and tab spaces)
 
-All the Options menu items write the new values into the config file
+   All the Options menu items write the new values into the config file
 (~/.mino.conf).
 
 (4) Help Menu (opened by pressing ALT+H):
 =========================================
 
- View README: Displays the README file installed with the package
- Quick Referece: Shows a quick reference for mino functions
- About Mino: Shows About dialog box
+   * View README: Displays the README file installed with the package
+   * Quick Referece: Shows a quick reference for mino functions
+   * About Mino: Shows About dialog box
 
 4 Using keyboard shortcuts
 **************************
@@ -712,36 +713,36 @@ Index
 
 * Menu:
 
-* Code highlighting:                     Overview.            (line 131)
-* Command line help:                     Overview.            (line 119)
-* Edit menu:                             Menus.               (line 217)
-* Edit menus:                            Main Window.         (line 200)
-* Editing area:                          Main Window.         (line 194)
+* Code highlighting:                     Overview.            (line 132)
+* Command line help:                     Overview.            (line 120)
+* Edit menu:                             Menus.               (line 218)
+* Edit menus:                            Main Window.         (line 201)
+* Editing area:                          Main Window.         (line 195)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
-                                                              (line 286)
-* File menu:                             Menus.               (line 207)
-* File state:                            Main Window.         (line 178)
-* Help menu:                             Menus.               (line 246)
-* Highlighting mode:                     Overview.            (line 131)
-* How to run mino:                       Overview.            (line 106)
-* Invoking mino:                         Overview.            (line 106)
-* Key bindings:                          Overview.            (line  39)
-* Keyboard shortcuts:                    Menus.               (line 253)
-* Main window:                           Main Window.         (line 163)
-* Menu bar:                              Main Window.         (line 166)
-* Menus:                                 Main Window.         (line 201)
+                                                              (line 287)
+* File menu:                             Menus.               (line 208)
+* File state:                            Main Window.         (line 179)
+* Help menu:                             Menus.               (line 247)
+* Highlighting mode:                     Overview.            (line 132)
+* How to run mino:                       Overview.            (line 107)
+* Invoking mino:                         Overview.            (line 107)
+* Key bindings:                          Overview.            (line  40)
+* Keyboard shortcuts:                    Menus.               (line 254)
+* Main window:                           Main Window.         (line 164)
+* Menu bar:                              Main Window.         (line 167)
+* Menus:                                 Main Window.         (line 202)
 * Mino Overview:                         Overview.            (line  16)
-* Options menu:                          Menus.               (line 234)
+* Options menu:                          Menus.               (line 235)
 * Overview:                              Overview.            (line  16)
-* Reasons of using mino:                 Overview.            (line  98)
-* Running mino:                          Overview.            (line 106)
-* Sentence highlighting:                 Overview.            (line 131)
-* Shortcuts:                             Menus.               (line 253)
-* Shortcuts keys:                        Menus.               (line 252)
-* Starting mino:                         Overview.            (line 106)
-* Status bar:                            Main Window.         (line 172)
-* Status indicators:                     Main Window.         (line 189)
-* Why to use it:                         Overview.            (line  98)
-* Why to use mino:                       Overview.            (line  98)
-* Work area:                             Main Window.         (line 194)
+* Reasons of using mino:                 Overview.            (line  99)
+* Running mino:                          Overview.            (line 107)
+* Sentence highlighting:                 Overview.            (line 132)
+* Shortcuts:                             Menus.               (line 254)
+* Shortcuts keys:                        Menus.               (line 253)
+* Starting mino:                         Overview.            (line 107)
+* Status bar:                            Main Window.         (line 173)
+* Status indicators:                     Main Window.         (line 190)
+* Why to use it:                         Overview.            (line  99)
+* Why to use mino:                       Overview.            (line  99)
+* Work area:                             Main Window.         (line 195)
 

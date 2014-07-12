@@ -17,17 +17,17 @@ This manual is for the Prime console file manager (version 1.0).
 What is Prime?
 ==============
 
-Prime is a GNU software, part of the GnuDOS package.  Prime is a file
-manager which works under the GNU/Linux console.  It was influenced by
-other file managers (like the well known XTree Gold which was popular
-under MS-DOS). It provides a user friendly interface with menus,
-shortcuts, and key navigation.  It is distributed as part of the GnuDOS
-package which was developed to help users coming from DOS-like
-environments feel ease when dealing with the GNU system.  Prime provides
-multi-level experience, the level of complexity can be adjusted by the
-user: you want to use DOS-keys with a few basic GNU ones?  you want to
-go with the full power of the GNU system?  All are options that are
-provided by the six levels of experience of Prime:
+Prime is a GNU software, part of the GnuDOS package.
+Prime is a file manager which works under the GNU/Linux console.  It was
+influenced by other file managers (like the well known XTree Gold which
+was popular under MS-DOS). It provides a user friendly interface with
+menus, shortcuts, and key navigation.  It is distributed as part of the
+GnuDOS package which was developed to help users coming from DOS-like
+environments feel ease when dealing with the GNU system.
+Prime provides multi-level experience, the level of complexity can be
+adjusted by the user: you want to use DOS-keys with a few basic GNU
+ones?  you want to go with the full power of the GNU system?  All are
+options that are provided by the six levels of experience of Prime:
 
   1. Newbie: All DOS shortcut keys, no GNU keys yet
   2. Novice: DOS shortcut keys, some of which are replaced with GNU's
@@ -37,7 +37,7 @@ provided by the six levels of experience of Prime:
   6. Veteran: Only GNU keys, no DOS-like keys
 
    You start with level 1 by default.  To set your level, call the mino
-with '-levelX' or '-lX' options, Where X is the level desired, for
+with ''--levelX'' or ''-lX'' options, Where X is the level desired, for
 example:
      $prime --level2
 
@@ -50,11 +50,11 @@ certain key is defined.  Each key defined is recognized in higher levels
 (e.g.  level 2 keys are recognized in levels 3-4-5-6).  Note that in
 level 5 only GNU keys are defined, no DOS keys will work at this level!.
 
-   Keybindings: In the table below, C-something means pressing down CTRL
-and then pressing the other key.  Note that '^' is the same as 'C',
-meaning CTRL key, it is just typed like this so DOS users can feel
-familiar with the text.  The same as M-something, which means META or
-ALT.
+   Keybindings:
+In the table below, C-something means pressing down CTRL and then
+pressing the other key.  Note that '^' is the same as 'C', meaning CTRL
+key, it is just typed like this so DOS users can feel familiar with the
+text.  The same as M-something, which means META or ALT.
 
 Function               DOS-like key   GNU key        GnuDOS Level
 ----------------------------------------------------------------------------

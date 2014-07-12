@@ -126,9 +126,11 @@ int main(int argc, char *argv[])
 </p>
 
 <p>And now REMEMBER two things:
-(1) a call to initTerminal() must be invoked before using the library
-(2) a call restoreTerminal() must be done before exiting the program
-For deatils about these functions please see See <a href="Kbd.html#Kbd">Kbd</a>.<br>
+</p><ol>
+<li> a call to initTerminal() must be invoked before using the library
+</li><li> a call restoreTerminal() must be done before exiting the program
+</li></ol>
+<p>For deatils about these functions please see See <a href="Kbd.html#Kbd">Kbd</a>.<br>
 </p>
 <p>If you forget point (2), you will leave the user&rsquo;s terminal in raw mode, which 
 (under console) means he/she will not be able to do virtually anything (not 

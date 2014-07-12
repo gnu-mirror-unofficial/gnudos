@@ -60,7 +60,7 @@ This manual is for the Mino (mino) text editor (version 1.0).
 @cindex Mino Overview
 
 What is mino (Mino)?
-Prime is a GNU software, part of the GnuDOS package.
+Mino is a GNU software, part of the GnuDOS package.@*
 Mino is a text file editor for use with the GNU/Linux console/xterm. The idea 
 was to provide a text editor that is user friendly and easy to use for those 
 who came from DOS land. Having accustomed to SHIFT selecting text, using 
@@ -86,7 +86,7 @@ Veteran: Only GNU keys, no DOS-like keys
 @end enumerate
   
 You start with level 1 by default.
-To set your level, call the mino with '--levelX' or '-lX' options,
+To set your level, call the mino with @code{'--levelX'} or @code{'-lX'} options,
 Where X is the level desired, for example:
 @example
 $mino --level2
@@ -100,7 +100,7 @@ key is defined. Each key defined is recognized in higher levels (e.g. level 2
 keys are recognized in levels 3-4-5-6). Note that in level 6 only GNU keys are
 defined, no DOS keys will work at this level!.
 
-Keybindings:
+@b{Keybindings:}@*
 In the table below, C-something means pressing down CTRL and then pressing the
 other key. Note that '^' is the same as 'C', meaning CTRL key, it is just
 typed like this so DOS users can feel familiar with the text.
@@ -306,44 +306,54 @@ Menus are on the menu bar on the top of the @xref{Main Window}. They are:
 @cindex File menu
 @heading(1) File Menu (opened by pressing ALT+F):@*
 
-@	New: Clears editing area and opens a new file@*
-@	Open File: Opens another file for editing@*
-@	Save File: Saves the current file to disk@*
-@	Save As: Save the current file under another name@*
-@	Print: Prints the current file to printer@*
-@	Exit: Exits mino@*
+@itemize @bullet
+@item New: Clears editing area and opens a new file
+@item Open File: Opens another file for editing
+@item Save File: Saves the current file to disk
+@item Save As: Save the current file under another name
+@item Print: Prints the current file to printer
+@item Exit: Exits mino
+@end itemize
 
 @cindex Edit menu
 @heading(2) Edit Menu (opened by pressing ALT+E):@*
 
-@	Cut: Cuts current selection and places text into mino clipboard@*
-@	Copy: Copies current selection to mino clipboard@*
-@	Paste: Pastes whatever in the mino clipboard into the current position in file@*
-@	Select All: Selects the whole document@*
-@	Undo: Undoes the last action@*
-@	Redo: Redoes the last action undone@*
-@	Find: Finds text in the file@*
-@	Replace: Finds and replaces specific text in the file@*
-@	Delete Line: Deletes the line under the cursor@*
-@	Toggle Select Mode (Only under X):@*
-@	@	Toggles the select mode On (like pressing SHIFT)@*
-@	@	or Off (Like releasing SHIFT)@*
+@itemize @bullet
+@item Cut: Cuts current selection and places text into mino clipboard
+@item Copy: Copies current selection to mino clipboard
+@item Paste: Pastes whatever in the mino clipboard into the current position in file
+@item Select All: Selects the whole document
+@item Undo: Undoes the last action
+@item Redo: Redoes the last action undone
+@item Find: Finds text in the file
+@item Replace: Finds and replaces specific text in the file
+@item Delete Line: Deletes the line under the cursor
+@item Toggle Select Mode (Only under X):
+@itemize @minus
+@item Toggles the select mode On (like pressing SHIFT)
+@item or Off (Like releasing SHIFT)
+@end itemize
+@end itemize
 
 @cindex Options menu
 @heading(3) Options Menu (opened by pressing ALT+O):@*
 
-@	Change colors: Opens a dialog box to select different colors for window, menu bar, ...@*
-@	Tab spaces: Define the number of spaces to be inserted when you press TAB@*
-@	Reset config: Resets the configuration (colors and tab spaces)@*
-@*
+@itemize @bullet
+@item Change colors: Opens a dialog box to select different colors for window, menu bar, ...
+@item Tab spaces: Define the number of spaces to be inserted when you press TAB
+@item Reset config: Resets the configuration (colors and tab spaces)
+@end itemize
+
 All the Options menu items write the new values into the config file (~/.mino.conf).@*
 
 @cindex Help menu
 @heading(4) Help Menu (opened by pressing ALT+H):@*
 
-@	View README: Displays the README file installed with the package@*
-@	Quick Referece: Shows a quick reference for mino functions@*
-@	About Mino: Shows About dialog box@*
+@itemize @bullet
+@item View README: Displays the README file installed with the package
+@item Quick Referece: Shows a quick reference for mino functions
+@item About Mino: Shows About dialog box
+@end itemize
 
 @cindex Shortcuts
 @cindex Keyboard shortcuts

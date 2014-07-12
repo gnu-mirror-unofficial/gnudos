@@ -6,7 +6,7 @@
 \entry {Edit menus}{4}
 \entry {Editing area}{4}
 \initial {F}
-\entry {FDL, GNU Free Documentation License}{8}
+\entry {FDL, GNU Free Documentation License}{7}
 \entry {File menu}{5}
 \entry {File state}{4}
 \initial {H}
@@ -17,7 +17,7 @@
 \entry {Invoking mino}{2}
 \initial {K}
 \entry {Key bindings}{1}
-\entry {Keyboard shortcuts}{6}
+\entry {Keyboard shortcuts}{5}
 \initial {M}
 \entry {Main window}{4}
 \entry {Menu bar}{4}
@@ -31,8 +31,8 @@
 \entry {Running mino}{2}
 \initial {S}
 \entry {Sentence highlighting}{3}
-\entry {Shortcuts}{6}
-\entry {Shortcuts keys}{6}
+\entry {Shortcuts}{5}
+\entry {Shortcuts keys}{5}
 \entry {Starting mino}{2}
 \entry {Status bar}{4}
 \entry {Status indicators}{4}

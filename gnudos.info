@@ -52,12 +52,14 @@ users of the GNU system, who are coming from a DOS background, fit into
 the picture and start using the GNU system with ease.  It also addresses
 the console programmers of such programs that have the look and feel of
 old DOS system.  The library is composed of core utilities and software
-applications: * The core library (corelib) contains five utilities: Kbd
-(for keyboard handling), UKbd (includes unicode support), Screen (for
-screen drawing), Dialogs (for dialog boxes/window drawing), and Strings
-(for strings functions).  * The software applications are three: Prime
-(console file manager), Mino (console text editor), and Fog (console
-form designer).
+applications:
+
+   * The core library (corelib) contains five utilities: Kbd (for
+     keyboard handling), UKbd (includes unicode support), Screen (for
+     screen drawing), Dialogs (for dialog boxes/window drawing), and
+     Strings (for strings functions).
+   * The software applications are three: Prime (console file manager),
+     Mino (console text editor), and Fog (console form designer).
 
 The rationale behind the GnuDOS corelib library
 ===============================================
@@ -186,10 +188,10 @@ utilities:
 includes both "screen.h" and "kbd.h" as the dialogs utility uses both of
 the other two.
 
-   And now REMEMBER two things: (1) a call to initTerminal() must be
-invoked before using the library (2) a call restoreTerminal() must be
-done before exiting the program For deatils about these functions please
-see *Note Kbd::.
+   And now REMEMBER two things:
+  1. a call to initTerminal() must be invoked before using the library
+  2. a call restoreTerminal() must be done before exiting the program
+   For deatils about these functions please see *Note Kbd::.
 
    If you forget point (2), you will leave the user's terminal in raw
 mode, which (under console) means he/she will not be able to do
@@ -252,18 +254,18 @@ variables.
      bool X_IS_RUNNING;
 
    This is their explanation:
- ALT: Boolean variable that indicates the state of the ALT key
-  (1=pressed, 0=released)
- CTRL: Boolean variable that indicates the state of the CTRL key
-  (1=pressed, 0=released)
- SHIFT: Boolean variable that indicates the state of the SHIFT key
-  (1=pressed, 0=released)
- CAPS: Boolean variable that indicates the state of CAPSLOCK
-  (1=pressed/ON, 0=released/OFF)
- INSERT: Boolean variable that indicates the state of the INSERT key
-  (1=pressed/ON, 0=released/OFF)
- X_IS_RUNNING: Boolean variable that indicates whether X is running
-  (1=running under X, 0=running under console)
+   * ALT: Boolean variable that indicates the state of the ALT key
+       (1=pressed, 0=released)
+   * CTRL: Boolean variable that indicates the state of the CTRL key
+       (1=pressed, 0=released)
+   * SHIFT: Boolean variable that indicates the state of the SHIFT key
+       (1=pressed, 0=released)
+   * CAPS: Boolean variable that indicates the state of CAPSLOCK
+       (1=pressed/ON, 0=released/OFF)
+   * INSERT: Boolean variable that indicates the state of the INSERT key
+       (1=pressed/ON, 0=released/OFF)
+   * X_IS_RUNNING: Boolean variable that indicates whether X is running
+       (1=running under X, 0=running under console)
 
    Three functions are defined:
 
@@ -1250,14 +1252,14 @@ Index
 Tag Table:
 Node: Top769
 Node: Overview1305
-Node: hello_gnudos5828
-Node: hello_strings8690
-Node: Kbd9370
-Node: Dialogs13696
-Node: Screen19597
-Node: Strings23477
-Node: Fog26193
-Node: GNU Free Documentation License28713
-Node: Index51186
+Node: hello_gnudos5854
+Node: hello_strings8721
+Node: Kbd9401
+Node: Dialogs13781
+Node: Screen19682
+Node: Strings23562
+Node: Fog26278
+Node: GNU Free Documentation License28798
+Node: Index51271
 
 End Tag Table
