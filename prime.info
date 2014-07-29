@@ -1,6 +1,6 @@
 This is prime.info, produced by makeinfo version 5.1 from prime.texi.
 
-This manual is for the Prime console file manager (version 1.0).
+This manual is for the Prime console file manager (version 1.1).
 
    Copyright (C) 2014 Mohammed Isam.
 
@@ -11,7 +11,7 @@ This manual is for the Prime console file manager (version 1.0).
      and with no Back-Cover Texts.  A copy of the license is included in
      the section entitled "GNU Free Documentation License".
 
-INFO-DIR-SECTION Individual utilities
+INFO-DIR-SECTION GNU Utilities
 START-INFO-DIR-ENTRY
 * prime: (prime).               Using Prime console file manager
 END-INFO-DIR-ENTRY
@@ -22,7 +22,7 @@ File: prime.info,  Node: Top,  Next: Overview,  Up: (dir)
 Prime
 *****
 
-This manual is for the Prime console file manager (version 1.0).
+This manual is for the Prime console file manager (version 1.1).
 
 * Menu:
 
@@ -248,6 +248,8 @@ are:
 =========================================
 
    * View README: Displays the README file installed with the package
+   * GNU keybindings: Displays the keybindings file installed with the
+     package
    * Quick Referece: Shows a quick reference for Prime functions
    * About Prime: Shows About dialog box
 
@@ -736,7 +738,7 @@ Index
 * Help menu:                             Menus.               (line  33)
 * How to run Prime:                      Overview.            (line 103)
 * Key bindings:                          Overview.            (line  33)
-* Keyboard shortcuts:                    Menus.               (line  40)
+* Keyboard shortcuts:                    Menus.               (line  42)
 * Main window:                           Main Window.         (line   3)
 * Manu bar:                              Main Window.         (line   9)
 * Menus:                                 Menus.               (line   3)
@@ -746,8 +748,8 @@ Index
 * Prime menu bar:                        Main Window.         (line   9)
 * Prime Overview:                        Overview.            (line   3)
 * Running Prime:                         Overview.            (line 103)
-* Shortcut keys:                         Menus.               (line  39)
-* Shortcuts:                             Menus.               (line  40)
+* Shortcut keys:                         Menus.               (line  41)
+* Shortcuts:                             Menus.               (line  42)
 * Start Prime with a specific directory: Overview.            (line 132)
 * Starting Prime:                        Overview.            (line 103)
 * Suppressing log information:           Overview.            (line 122)
@@ -759,12 +761,12 @@ Index
 
 
 Tag Table:
-Node: Top729
-Node: Overview1090
-Node: Main Window7584
-Node: Menus8278
-Node: Shortcuts9650
-Node: GNU Free Documentation License10656
-Node: Index33134
+Node: Top722
+Node: Overview1083
+Node: Main Window7577
+Node: Menus8271
+Node: Shortcuts9727
+Node: GNU Free Documentation License10733
+Node: Index33211
 
 End Tag Table

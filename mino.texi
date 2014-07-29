@@ -2,11 +2,11 @@
 @comment $Id@w{$}
 @comment %**start of header
 @setfilename mino.info
-@settitle Mino (mino) version 1.0
+@settitle Mino (mino) version 1.1
 @syncodeindex pg cp
 @comment %**end of header
 @copying
-This manual is for the Mino (mino) program (version 1.0).
+This manual is for the Mino (mino) program (version 1.1).
 
 Copyright @copyright{} 2014 Mohammed Isam.
 
@@ -21,14 +21,14 @@ Texts.  A copy of the license is included in the section entitled
 @end quotation
 @end copying
 
-@dircategory Editors
+@dircategory GNU Utilities
 @direntry
 * mino: (mino).                 Using Mino (mino) text editor.
 @end direntry
 
 @titlepage
 @title Mino (mino) text editor
-@subtitle for version 1.0
+@subtitle for version 1.1
 @author Mohammed Isam (@email{mohammed_isam1984@@yahoo.com})
 @page
 @vskip 0pt plus 1filll
@@ -41,7 +41,7 @@ Texts.  A copy of the license is included in the section entitled
 @node Top
 @top mino
 
-This manual is for the Mino (mino) text editor (version 1.0).
+This manual is for the Mino (mino) text editor (version 1.1).
 
 @end ifnottex
 
@@ -351,6 +351,7 @@ All the Options menu items write the new values into the config file (~/.mino.co
 
 @itemize @bullet
 @item View README: Displays the README file installed with the package
+@item GNU keybindings: Displays the keybindings file installed with the package
 @item Quick Referece: Shows a quick reference for mino functions
 @item About Mino: Shows About dialog box
 @end itemize

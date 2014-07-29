@@ -2,11 +2,11 @@
 @comment $Id@w{$}
 @comment %**start of header
 @setfilename prime.info
-@settitle Prime version 1.0
+@settitle Prime version 1.1
 @syncodeindex pg cp
 @comment %**end of header
 @copying
-This manual is for the Prime console file manager (version 1.0).
+This manual is for the Prime console file manager (version 1.1).
 
 Copyright @copyright{} 2014 Mohammed Isam.
 
@@ -21,7 +21,7 @@ Texts.  A copy of the license is included in the section entitled
 @end quotation
 @end copying
 
-@dircategory Individual utilities
+@dircategory GNU Utilities
 @direntry
 * prime: (prime).               Using Prime console file manager
 @c * Prime: Using Prime console file manager
@@ -29,7 +29,7 @@ Texts.  A copy of the license is included in the section entitled
 
 @titlepage
 @title Prime console file manager
-@subtitle for version 1.0
+@subtitle for version 1.1
 @author Mohammed Isam (@email{mohammed_isam1984@@yahoo.com})
 @page
 @vskip 0pt plus 1filll
@@ -42,7 +42,7 @@ Texts.  A copy of the license is included in the section entitled
 @node Top
 @top Prime
 
-This manual is for the Prime console file manager (version 1.0).
+This manual is for the Prime console file manager (version 1.1).
 
 @end ifnottex
 
@@ -336,6 +336,8 @@ Find: Finds a file
 @itemize
 @item
 View README: Displays the README file installed with the package
+@item
+GNU keybindings: Displays the keybindings file installed with the package
 @item
 Quick Referece: Shows a quick reference for Prime functions
 @item

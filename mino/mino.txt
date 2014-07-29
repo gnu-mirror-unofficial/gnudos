@@ -9,7 +9,7 @@ Index
 mino
 ****
 
-This manual is for the Mino (mino) text editor (version 1.0).
+This manual is for the Mino (mino) text editor (version 1.1).
 
 1 Overview of the mino (Mino) text editor
 *****************************************
@@ -249,6 +249,8 @@ are:
 =========================================
 
    * View README: Displays the README file installed with the package
+   * GNU keybindings: Displays the keybindings file installed with the
+     package
    * Quick Referece: Shows a quick reference for mino functions
    * About Mino: Shows About dialog box
 
@@ -719,7 +721,7 @@ Index
 * Edit menus:                            Main Window.         (line 201)
 * Editing area:                          Main Window.         (line 195)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
-                                                              (line 287)
+                                                              (line 289)
 * File menu:                             Menus.               (line 208)
 * File state:                            Main Window.         (line 179)
 * Help menu:                             Menus.               (line 247)
@@ -727,7 +729,7 @@ Index
 * How to run mino:                       Overview.            (line 107)
 * Invoking mino:                         Overview.            (line 107)
 * Key bindings:                          Overview.            (line  40)
-* Keyboard shortcuts:                    Menus.               (line 254)
+* Keyboard shortcuts:                    Menus.               (line 256)
 * Main window:                           Main Window.         (line 164)
 * Menu bar:                              Main Window.         (line 167)
 * Menus:                                 Main Window.         (line 202)
@@ -737,8 +739,8 @@ Index
 * Reasons of using mino:                 Overview.            (line  99)
 * Running mino:                          Overview.            (line 107)
 * Sentence highlighting:                 Overview.            (line 132)
-* Shortcuts:                             Menus.               (line 254)
-* Shortcuts keys:                        Menus.               (line 253)
+* Shortcuts:                             Menus.               (line 256)
+* Shortcuts keys:                        Menus.               (line 255)
 * Starting mino:                         Overview.            (line 107)
 * Status bar:                            Main Window.         (line 173)
 * Status indicators:                     Main Window.         (line 190)

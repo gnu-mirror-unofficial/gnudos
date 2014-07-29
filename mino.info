@@ -1,6 +1,6 @@
 This is mino.info, produced by makeinfo version 5.1 from mino.texi.
 
-This manual is for the Mino (mino) program (version 1.0).
+This manual is for the Mino (mino) program (version 1.1).
 
    Copyright (C) 2014 Mohammed Isam.
 
@@ -11,7 +11,7 @@ This manual is for the Mino (mino) program (version 1.0).
      and with no Back-Cover Texts.  A copy of the license is included in
      the section entitled "GNU Free Documentation License".
 
-INFO-DIR-SECTION Editors
+INFO-DIR-SECTION GNU Utilities
 START-INFO-DIR-ENTRY
 * mino: (mino).                 Using Mino (mino) text editor.
 END-INFO-DIR-ENTRY
@@ -22,7 +22,7 @@ File: mino.info,  Node: Top,  Next: Overview,  Up: (dir)
 mino
 ****
 
-This manual is for the Mino (mino) text editor (version 1.0).
+This manual is for the Mino (mino) text editor (version 1.1).
 
 * Menu:
 
@@ -280,6 +280,8 @@ are:
 =========================================
 
    * View README: Displays the README file installed with the package
+   * GNU keybindings: Displays the keybindings file installed with the
+     package
    * Quick Referece: Shows a quick reference for mino functions
    * About Mino: Shows About dialog box
 
@@ -768,7 +770,7 @@ Index
 * How to run mino:                       Overview.            (line  97)
 * Invoking mino:                         Overview.            (line  97)
 * Key bindings:                          Overview.            (line  30)
-* Keyboard shortcuts:                    Menus.               (line  55)
+* Keyboard shortcuts:                    Menus.               (line  57)
 * Main window:                           Main Window.         (line   6)
 * Menu bar:                              Main Window.         (line   9)
 * Menus:                                 Main Window.         (line  44)
@@ -778,8 +780,8 @@ Index
 * Reasons of using mino:                 Overview.            (line  89)
 * Running mino:                          Overview.            (line  97)
 * Sentence highlighting:                 Overview.            (line 122)
-* Shortcuts:                             Menus.               (line  55)
-* Shortcuts keys:                        Menus.               (line  54)
+* Shortcuts:                             Menus.               (line  57)
+* Shortcuts keys:                        Menus.               (line  56)
 * Starting mino:                         Overview.            (line  97)
 * Status bar:                            Main Window.         (line  15)
 * Status indicators:                     Main Window.         (line  32)
@@ -790,12 +792,12 @@ Index
 
 
 Tag Table:
-Node: Top705
-Node: Overview1055
-Node: Main Window7502
-Node: Menus8761
-Node: Shortcuts10722
-Node: GNU Free Documentation License11385
-Node: Index33862
+Node: Top711
+Node: Overview1061
+Node: Main Window7508
+Node: Menus8767
+Node: Shortcuts10812
+Node: GNU Free Documentation License11475
+Node: Index33952
 
 End Tag Table

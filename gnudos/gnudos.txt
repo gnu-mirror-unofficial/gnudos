@@ -13,7 +13,7 @@ Index
 GnuDOS library
 **************
 
-This manual is for the GnuDOS library (version 1.2).
+This manual is for the GnuDOS library (version 1.4).
 
 1 Overview of the GnuDOS library
 ********************************

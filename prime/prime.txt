@@ -9,7 +9,7 @@ Index
 Prime
 *****
 
-This manual is for the Prime console file manager (version 1.0).
+This manual is for the Prime console file manager (version 1.1).
 
 1 Overview of the Prime console file manager
 ********************************************
@@ -217,6 +217,8 @@ are:
 =========================================
 
    * View README: Displays the README file installed with the package
+   * GNU keybindings: Displays the keybindings file installed with the
+     package
    * Quick Referece: Shows a quick reference for Prime functions
    * About Prime: Shows About dialog box
 
@@ -689,13 +691,13 @@ Index
 * Edit menu:                             Menus.               (line 199)
 * Exporting from the command line:       Overview.            (line 136)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
-                                                              (line 256)
+                                                              (line 258)
 * File menu:                             Menus.               (line 191)
 * File view:                             Main Window.         (line 181)
 * Help menu:                             Menus.               (line 215)
 * How to run Prime:                      Overview.            (line 113)
 * Key bindings:                          Overview.            (line  43)
-* Keyboard shortcuts:                    Menus.               (line 222)
+* Keyboard shortcuts:                    Menus.               (line 224)
 * Main window:                           Main Window.         (line 163)
 * Manu bar:                              Main Window.         (line 169)
 * Menus:                                 Menus.               (line 185)
@@ -705,8 +707,8 @@ Index
 * Prime menu bar:                        Main Window.         (line 169)
 * Prime Overview:                        Overview.            (line  12)
 * Running Prime:                         Overview.            (line 113)
-* Shortcut keys:                         Menus.               (line 221)
-* Shortcuts:                             Menus.               (line 222)
+* Shortcut keys:                         Menus.               (line 223)
+* Shortcuts:                             Menus.               (line 224)
 * Start Prime with a specific directory: Overview.            (line 142)
 * Starting Prime:                        Overview.            (line 113)
 * Suppressing log information:           Overview.            (line 132)
