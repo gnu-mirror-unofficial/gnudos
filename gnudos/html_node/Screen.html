@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.4).
+<!-- This manual is for the GnuDOS library (version 1.5).
 
 Copyright (C) 2014 Mohammed Isam.
 
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.4 or
+under the terms of the GNU Free Documentation License, Version 1.5 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.4: Screen</title>
+<title>GnuDOS library version 1.5: Screen</title>
 
-<meta name="description" content="GnuDOS library version 1.4: Screen">
-<meta name="keywords" content="GnuDOS library version 1.4: Screen">
+<meta name="description" content="GnuDOS library version 1.5: Screen">
+<meta name="keywords" content="GnuDOS library version 1.5: Screen">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -74,14 +74,16 @@ Next: <a href="Strings.html#Strings" accesskey="n" rel="next">Strings</a>, Previ
 
 <p>The screen utility provides functions to manipulate the screen colors, clearing 
 the screen, and positioning of the cursor. It also defines values for the 
-screen size. The member variables of the screen utility (defined in screen.h) are:
+screen size. The member variables of the screen utility (defined in &quot;screen.h&quot;)
+are:
 </p>
 <div class="example">
 <pre class="example"> int SCREEN_W;
  int SCREEN_H;
 </pre></div>
 
-<p>Both these variables are filled with values after a call to getScreenSize().
+<p>Both these variables are filled with their proper values after a call to 
+getScreenSize().
 </p>
 <a name="index-Color-arrays"></a>
 <div class="example">
@@ -89,16 +91,18 @@ screen size. The member variables of the screen utility (defined in screen.h) ar
  int BG_COLOR[color_components];
 </pre></div>
 
-<p>The color_components is a macro defined with a value of 4. The possible values 
+<p>The color_components is a macro defined with a value of 6. The possible values 
 for color_components which is an index into arrays of colors determining what 
 color is assigned to which component (i.e., dialogs, buttons, ...) are:
 </p>
 <a name="index-Color-components"></a>
 <div class="example">
-<pre class="example"> COLOR_WINDOW		0	  	
+<pre class="example"> COLOR_WINDOW		0
  COLOR_HIGHLIGHT_TEXT	1
- COLOR_BUTTONS	 	2
- COLOR_HBUTTONS		3
+ COLOR_MENU_BAR		2
+ COLOR_STATUS_BAR	3
+ COLOR_BUTTONS		4
+ COLOR_HBUTTONS		5
 </pre></div>
 
 <p>You can define the colors in the color arrays by using integer values, although 

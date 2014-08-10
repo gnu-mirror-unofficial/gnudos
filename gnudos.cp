@@ -52,7 +52,4 @@
 \entry{The trim() function}{14}{The trim() function}
 \entry{The toupper() function}{14}{The toupper() function}
 \entry{The tolower() function}{14}{The tolower() function}
-\entry{Fog}{15}{Fog}
-\entry{The console Form Designer}{15}{The console Form Designer}
-\entry{Using the console Form Designer}{15}{Using the console Form Designer}
-\entry{FDL, GNU Free Documentation License}{17}{FDL, GNU Free Documentation License}
+\entry{FDL, GNU Free Documentation License}{16}{FDL, GNU Free Documentation License}

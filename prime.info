@@ -39,8 +39,8 @@ File: prime.info,  Node: Overview,  Next: Main Window,  Prev: Top,  Up: Top
 1 Overview of the Prime console file manager
 ********************************************
 
-What is Prime?
-==============
+1.1 What is Prime?
+==================
 
 Prime is a GNU software, part of the GnuDOS package.
 Prime is a file manager which works under the GNU/Linux console.  It was
@@ -48,7 +48,7 @@ influenced by other file managers (like the well known XTree Gold which
 was popular under MS-DOS). It provides a user friendly interface with
 menus, shortcuts, and key navigation.  It is distributed as part of the
 GnuDOS package which was developed to help users coming from DOS-like
-environments feel ease when dealing with the GNU system.
+environment feel ease when dealing with the GNU system.
 Prime provides multi-level experience, the level of complexity can be
 adjusted by the user: you want to use DOS-keys with a few basic GNU
 ones?  you want to go with the full power of the GNU system?  All are
@@ -61,25 +61,27 @@ options that are provided by the six levels of experience of Prime:
   5. Expert: Very few DOS keys, most are GNU keys
   6. Veteran: Only GNU keys, no DOS-like keys
 
-   You start with level 1 by default.  To set your level, call the mino
-with ''--levelX'' or ''-lX'' options, Where X is the level desired, for
-example:
+   You start with level 1 by default.
+To set your level, call prime with ''--levelX'' or ''-lX'' options,
+Where X is the level desired, for example:
      $prime --level2
 
-Which keys are defined for which level?
-=======================================
+1.2 Which keys are defined for which level?
+===========================================
 
 Below is a table showing the DOS-like key combinations along with their
 respective GNU key bindings.  To the right is the level at which a
 certain key is defined.  Each key defined is recognized in higher levels
 (e.g.  level 2 keys are recognized in levels 3-4-5-6).  Note that in
-level 5 only GNU keys are defined, no DOS keys will work at this level!.
+level 6 only GNU keys are defined, no DOS keys will work at this level!.
 
    Keybindings:
 In the table below, C-something means pressing down CTRL and then
-pressing the other key.  Note that '^' is the same as 'C', meaning CTRL
-key, it is just typed like this so DOS users can feel familiar with the
-text.  The same as M-something, which means META or ALT.
+pressing the other key.  Note that '^' is the same as 'C', meaning
+CTRL-key, it is just typed like this so DOS users can feel familiar with
+the text.
+
+   The same as M-something, which means META or ALT.
 
 Function               DOS-like key   GNU key        GnuDOS Level
 ----------------------------------------------------------------------------
@@ -121,8 +123,8 @@ Help                   F1             C-h ?          Expert
 All GNU bindings and                                 Veteran
 no DOS bindings
 
-Why should I use it?
-====================
+1.3 Why should I use it?
+========================
 
 If you like using the console (like most GNU/Linux vintage users do),
 and you came from DOS land, having a nice and easy way to run through
@@ -130,22 +132,22 @@ your directory trees and moving files around will be an important asset
 in your toolset, plus you will easily dive into the GNU system key
 bindings.
 
-What do I need?
-===============
+1.4 What do I need?
+===================
 
-The program can be invoked from the linux console or under X11 from an
+The program can be invoked from the linux console or under X from an
 xterm.
 
-How to use it?
-==============
+1.5 How to use it?
+==================
 
 Simply invoke the 'prime' executable from the bash shell.  The
 components of the main window can be found under *Note Main Window::.
 The description of the menus in *Note Menus::.  And the shortcut keys in
 *Note Shortcuts::.
 
-What else?
-==========
+1.6 What else?
+==============
 
 To help the developers (and yourself) debugging the program, Prime sends
 log information by default to a file named 'prime.log' in the user's
@@ -175,7 +177,7 @@ program start.
 Currently there is partial wildcard support.  That means for example
 that you can specify '~' to indicate your home directory, and you can
 use '*' inside the program (in the search dialog box) but no further
-wildcards (like '?')  are supported.  Examples:
+wildcards (like '?')  are supported Currently.  Examples:
 
      $prime ~/projects
    Will open the subdirectory 'projects' of the home directory
@@ -195,14 +197,14 @@ File: prime.info,  Node: Main Window,  Next: Menus,  Prev: Overview,  Up: Top
 After running Prime, you are faced with a window that has the following
 components:
 
-Menu bar
-========
+2.1 Menu bar
+============
 
-At the top of the window.  Contains menus: File, Edit, and Help.  The
-details of these menus can be found under *Note Menus::.
+Located at the top of the window.  Contains the menus: File, Edit, and
+Help.  The details of these menus can be found under *Note Menus::.
 
-Main Window
-===========
+2.2 Main Window
+===============
 
 The rest of the main window has three parts:
    * Directory view (left side): you can navigate the directory tree of
@@ -220,7 +222,7 @@ File: prime.info,  Node: Menus,  Next: Shortcuts,  Prev: Main Window,  Up: Top
 Menus are on the menu bar on the top of the *Note Main Window::.  They
 are:
 
-(1) File Menu (opened by pressing ALT+F):
+3.1 File Menu (opened by pressing ALT+F):
 =========================================
 
    * Open Location: Opens specific location to view its directory tree
@@ -228,14 +230,14 @@ are:
    * Print: Prints the directory tree to printer
    * Exit: Exits Prime
 
-(2) Edit Menu (opened by pressing ALT+E):
+3.2 Edit Menu (opened by pressing ALT+E):
 =========================================
 
-   * Space bar: toggle selection.  Selected items are marked "*"
-   * Cut selection (if no selection, cut current item).  Cut items
-     marked "^"
+   * Space bar: toggle selection.  Selected items are marked with a "*"
+   * Cut selection (if no selection, cut current item).  Cut items are
+     marked with a "^"
    * Copy selection (if no selection, copy current item).  Copy items
-     marked "#"
+     are marked with a "#"
    * Paste: Pastes the list of cut/copied files and directories into
      current location
    * Mark All: Mark all the files/dirs with '*'
@@ -244,7 +246,7 @@ are:
      cut/copy
    * Find: Finds a file
 
-(3) Help Menu (opened by pressing ALT+H):
+3.3 Help Menu (opened by pressing ALT+H):
 =========================================
 
    * View README: Displays the README file installed with the package
@@ -725,37 +727,37 @@ Index
  [index ]
 * Menu:
 
-* About Prime:                           Overview.            (line   6)
+* About Prime:                           Overview.            (line   5)
 * Bottom view:                           Main Window.         (line  22)
-* Command line export:                   Overview.            (line 126)
+* Command line export:                   Overview.            (line 128)
 * Directory view:                        Main Window.         (line  19)
-* Edit menu:                             Menus.               (line  17)
-* Exporting from the command line:       Overview.            (line 126)
+* Edit menu:                             Menus.               (line  16)
+* Exporting from the command line:       Overview.            (line 128)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
                                                               (line   9)
-* File menu:                             Menus.               (line   9)
+* File menu:                             Menus.               (line   8)
 * File view:                             Main Window.         (line  21)
-* Help menu:                             Menus.               (line  33)
-* How to run Prime:                      Overview.            (line 103)
-* Key bindings:                          Overview.            (line  33)
+* Help menu:                             Menus.               (line  32)
+* How to run Prime:                      Overview.            (line 104)
+* Key bindings:                          Overview.            (line  32)
 * Keyboard shortcuts:                    Menus.               (line  42)
 * Main window:                           Main Window.         (line   3)
 * Manu bar:                              Main Window.         (line   9)
 * Menus:                                 Menus.               (line   3)
-* No log information:                    Overview.            (line 122)
+* No log information:                    Overview.            (line 124)
 * Overview:                              Overview.            (line   3)
 * Prime main window:                     Main Window.         (line   3)
-* Prime menu bar:                        Main Window.         (line   9)
+* Prime menu bar:                        Main Window.         (line   8)
 * Prime Overview:                        Overview.            (line   3)
-* Running Prime:                         Overview.            (line 103)
+* Running Prime:                         Overview.            (line 105)
 * Shortcut keys:                         Menus.               (line  41)
 * Shortcuts:                             Menus.               (line  42)
-* Start Prime with a specific directory: Overview.            (line 132)
-* Starting Prime:                        Overview.            (line 103)
-* Suppressing log information:           Overview.            (line 122)
+* Start Prime with a specific directory: Overview.            (line 134)
+* Starting Prime:                        Overview.            (line 105)
+* Suppressing log information:           Overview.            (line 124)
 * What is Prime:                         Overview.            (line   6)
-* Why to use it:                         Overview.            (line  88)
-* Why to use Prime:                      Overview.            (line  88)
+* Why to use it:                         Overview.            (line  89)
+* Why to use Prime:                      Overview.            (line  90)
 * Working around with menus:             Menus.               (line   3)
 
 
@@ -763,10 +765,10 @@ Index
 Tag Table:
 Node: Top722
 Node: Overview1083
-Node: Main Window7577
-Node: Menus8271
-Node: Shortcuts9727
-Node: GNU Free Documentation License10733
-Node: Index33211
+Node: Main Window7631
+Node: Menus8353
+Node: Shortcuts9838
+Node: GNU Free Documentation License10844
+Node: Index33322
 
 End Tag Table

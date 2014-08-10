@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the Mino (mino) program (version 1.1).
+<!-- This manual is for the Mino text editor (version 1.1).
 
 Copyright (C) 2014 Mohammed Isam.
 
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Mino (mino) version 1.1</title>
+<title>Mino version 1.1</title>
 
-<meta name="description" content="Mino (mino) version 1.1">
-<meta name="keywords" content="Mino (mino) version 1.1">
+<meta name="description" content="Mino version 1.1">
+<meta name="keywords" content="Mino version 1.1">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -58,7 +58,7 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<h1 class="settitle" align="center">Mino (mino) version 1.1</h1>
+<h1 class="settitle" align="center">Mino version 1.1</h1>
 
 
 
@@ -68,9 +68,29 @@ ul.no-bullet {list-style: none}
 <div class="contents">
 
 <ul class="no-bullet">
-  <li><a name="toc-Overview-of-the-mino-_0028Mino_0029-text-editor" href="#Overview">1 Overview of the mino (Mino) text editor</a></li>
-  <li><a name="toc-Mino-main-window" href="#Main-Window">2 Mino main window</a></li>
-  <li><a name="toc-Working-around-with-menus" href="#Menus">3 Working around with menus</a></li>
+  <li><a name="toc-Overview-of-the-mino-text-editor" href="#Overview">1 Overview of the mino text editor</a>
+  <ul class="no-bullet">
+    <li><a name="toc-What-is-mino-_0028Mino_0029_003f" href="#What-is-mino-_0028Mino_0029_003f">1.1 What is mino (Mino)?</a></li>
+    <li><a name="toc-Which-keys-are-defined-for-which-level_003f" href="#Which-keys-are-defined-for-which-level_003f">1.2 Which keys are defined for which level?</a></li>
+    <li><a name="toc-Why-should-I-use-it_003f-" href="#Why-should-I-use-it_003f-">1.3 Why should I use it?<br></a></li>
+    <li><a name="toc-How-to-run-it_003f-" href="#How-to-run-it_003f-">1.4 How to run it?<br></a></li>
+    <li><a name="toc-How-does-mino-remember-my-preferences_003f-" href="#How-does-mino-remember-my-preferences_003f-">1.5 How does mino remember my preferences?<br></a></li>
+    <li><a name="toc-What-about-sentence-highlighting_003f-" href="#What-about-sentence-highlighting_003f-">1.6 What about sentence highlighting?<br></a></li>
+    <li><a name="toc-What-else_003f-" href="#What-else_003f-">1.7 What else?<br></a></li>
+  </ul></li>
+  <li><a name="toc-Mino-main-window" href="#Main-Window">2 Mino main window</a>
+  <ul class="no-bullet">
+    <li><a name="toc-The-Menu-bar-" href="#The-Menu-bar-">2.1 The Menu bar<br></a></li>
+    <li><a name="toc-Status-bar-" href="#Status-bar-">2.2 Status bar<br></a></li>
+    <li><a name="toc-Editing-area-" href="#Editing-area-">2.3 Editing area<br></a></li>
+  </ul></li>
+  <li><a name="toc-Working-around-with-menus" href="#Menus">3 Working around with menus</a>
+  <ul class="no-bullet">
+    <li><a name="toc-File-Menu-_0028opened-by-pressing-ALT_002bF_0029_003a-" href="#File-Menu-_0028opened-by-pressing-ALT_002bF_0029_003a-">3.1 File Menu (opened by pressing ALT+F):<br></a></li>
+    <li><a name="toc-Edit-Menu-_0028opened-by-pressing-ALT_002bE_0029_003a-" href="#Edit-Menu-_0028opened-by-pressing-ALT_002bE_0029_003a-">3.2 Edit Menu (opened by pressing ALT+E):<br></a></li>
+    <li><a name="toc-Options-Menu-_0028opened-by-pressing-ALT_002bO_0029_003a-" href="#Options-Menu-_0028opened-by-pressing-ALT_002bO_0029_003a-">3.3 Options Menu (opened by pressing ALT+O):<br></a></li>
+    <li><a name="toc-Help-Menu-_0028opened-by-pressing-ALT_002bH_0029_003a-" href="#Help-Menu-_0028opened-by-pressing-ALT_002bH_0029_003a-">3.4 Help Menu (opened by pressing ALT+H):<br></a></li>
+  </ul></li>
   <li><a name="toc-Using-keyboard-shortcuts" href="#Shortcuts">4 Using keyboard shortcuts</a></li>
   <li><a name="toc-GNU-Free-Documentation-License-1" href="#GNU-Free-Documentation-License">Appendix A GNU Free Documentation License</a>
   <ul class="no-bullet">
@@ -89,11 +109,11 @@ Next: <a href="#Overview" accesskey="n" rel="next">Overview</a>, Up: <a href="di
 <a name="mino"></a>
 <h1 class="top">mino</h1>
 
-<p>This manual is for the Mino (mino) text editor (version 1.1).
+<p>This manual is for the Mino text editor (version 1.1).
 </p>
 
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#Overview" accesskey="1">Overview</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Overview of the mino (Mino) text editor
+<tr><td align="left" valign="top">&bull; <a href="#Overview" accesskey="1">Overview</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Overview of the mino text editor
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Main-Window" accesskey="2">Main Window</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Mino main window
 </td></tr>
@@ -113,13 +133,14 @@ Next: <a href="#Overview" accesskey="n" rel="next">Overview</a>, Up: <a href="di
 <p>
 Next: <a href="#Main-Window" accesskey="n" rel="next">Main Window</a>, Previous: <a href="#Top" accesskey="p" rel="previous">Top</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Overview-of-the-mino-_0028Mino_0029-text-editor"></a>
-<h2 class="chapter">1 Overview of the mino (Mino) text editor</h2>
+<a name="Overview-of-the-mino-text-editor"></a>
+<h2 class="chapter">1 Overview of the mino text editor</h2>
 <a name="index-Overview"></a>
 <a name="index-Mino-Overview"></a>
 
-<p>What is mino (Mino)?
-Mino is a GNU software, part of the GnuDOS package.<br>
+<a name="What-is-mino-_0028Mino_0029_003f"></a>
+<h3 class="section">1.1 What is mino (Mino)?</h3>
+<p>Mino is a GNU software, part of the GnuDOS package.<br>
 Mino is a text file editor for use with the GNU/Linux console/xterm. The idea 
 was to provide a text editor that is user friendly and easy to use for those 
 who came from DOS land. Having accustomed to SHIFT selecting text, using 
@@ -138,16 +159,16 @@ options that are provided by the six levels of experience of Mino:
 </li><li> Veteran: Only GNU keys, no DOS-like keys
 </li></ol>
   
-<p>You start with level 1 by default.
-To set your level, call the mino with <code>'--levelX'</code> or <code>'-lX'</code> options,
-Where X is the level desired, for example:
+<p>You start with level 1 by default.<br>
+To set your level of experience, call mino with <code>'--levelX'</code> or 
+<code>'-lX'</code> options, Where X is the level desired, for example:
 </p><div class="example">
 <pre class="example">$mino --level2
 </pre></div>
 
 <a name="index-Key-bindings"></a>
 <a name="Which-keys-are-defined-for-which-level_003f"></a>
-<h3 class="heading">Which keys are defined for which level?</h3>
+<h3 class="section">1.2 Which keys are defined for which level?</h3>
 <p>Below is a table showing the DOS-like key combinations along with their 
 respective GNU key bindings. To the right is the level at which a certain GNU
 key is defined. Each key defined is recognized in higher levels (e.g. level 2
@@ -156,9 +177,10 @@ defined, no DOS keys will work at this level!.
 </p>
 <p><b>Keybindings:</b><br>
 In the table below, C-something means pressing down CTRL and then pressing the
-other key. Note that &rsquo;^&rsquo; is the same as &rsquo;C&rsquo;, meaning CTRL key, it is just
+other key. Note that &rsquo;^&rsquo; is the same as &rsquo;C&rsquo;, meaning CTRL-key, it is just
 typed like this so DOS users can feel familiar with the text.
-The same as M-something, which means META or ALT.
+</p>
+<p>The same as M-something, which means META or ALT.
 </p>
 <table>
 <thead><tr><th width="30%">Function</th><th width="20%">DOS-like key</th><th width="20%">GNU key</th><th width="30%">GnuDOS Level</th></tr></thead>
@@ -200,17 +222,17 @@ The same as M-something, which means META or ALT.
 </table>
 
 <a name="Why-should-I-use-it_003f-"></a>
-<h3 class="heading">Why should I use it?<br></h3>
+<h3 class="section">1.3 Why should I use it?<br></h3>
 <a name="index-Why-to-use-it"></a>
 <a name="index-Why-to-use-mino"></a>
 <a name="index-Reasons-of-using-mino"></a>
 <p>If you are new to GNU system and find it hard to dive in head-first into the
 GNU keys and shortcuts for GNU programs (like emacs), this is the place to
-start. Use you well-known DOS-like shortcuts, in the same time learn how to
+start. Use your well-known DOS-like shortcuts, in the same time learn how to
 use the GNU shortcuts.
 </p>
 <a name="How-to-run-it_003f-"></a>
-<h3 class="heading">How to run it?<br></h3>
+<h3 class="section">1.4 How to run it?<br></h3>
 <a name="index-How-to-run-mino"></a>
 <a name="index-Running-mino"></a>
 <a name="index-Starting-mino"></a>
@@ -222,12 +244,14 @@ use the GNU shortcuts.
 <pre class="example">$ mino
 </pre></div>
 
-<p>on your console (or xterm) and it will run. If you want to load a file into mino:
+<p>on your console (or xterm) and it will run. If you want to load a file into 
+mino on startup:
 </p>
 <div class="example">
 <pre class="example">$ mino file-name
 </pre></div>
 
+<a name="index-Resetting-the-config-file"></a>
 <p>To reset the configuration file:
 </p>
 <div class="example">
@@ -242,33 +266,36 @@ use the GNU shortcuts.
 </pre></div>
 
 <a name="How-does-mino-remember-my-preferences_003f-"></a>
-<h3 class="heading">How does mino remember my preferences?<br></h3>
+<h3 class="section">1.5 How does mino remember my preferences?<br></h3>
 
 <p>Mino stores its configuration in a file called &rsquo;.mino.conf&rsquo; under your home
 directory. You can edit it by hand (or using mino!), but this is not advisable.
 Use the Options menu under mino to change your preferences and mino will save
-them into the config file.
+them into the config file in the proper way.
 </p>
 <a name="index-Sentence-highlighting"></a>
 <a name="index-Code-highlighting"></a>
 <a name="index-Highlighting-mode"></a>
 <a name="What-about-sentence-highlighting_003f-"></a>
-<h3 class="heading">What about sentence highlighting?<br></h3>
+<h3 class="section">1.6 What about sentence highlighting?<br></h3>
 
-<p>Currently mino recognizes the following file types:
+<p>Currently mino recognizes the following file types (by their extension):
 </p><ul>
 <li> C/C++ Source and header files
 </li><li> Perl scripts
 </li><li> Shell scripts
+</li><li> Python scripts
+</li><li> Assembly source listings
+</li><li> Texi info source files
 </li></ul>
 
-<p>Whenever you open a file of these types, mino will automatically adjust the
-colors of the view so that the language keywords, library functions, and
-operators (like +-*/ and so on) are highlighted each in a different
+<p>Whenever you open a file of one of these types, mino will automatically adjust
+the colors of the view so that the language keywords, library functions, and
+operators (like +-*/ and so on) are highlighted, each in a different
 color, on a black background, to ease writing your programs.
 </p>
 <a name="What-else_003f-"></a>
-<h3 class="heading">What else?<br></h3>
+<h3 class="section">1.7 What else?<br></h3>
 
 <p>There is one catch: when running under the X system, the program will not be
 able to capture all input from the keyboard, as X interferes with the keyboard
@@ -291,48 +318,53 @@ Next: <a href="#Menus" accesskey="n" rel="next">Menus</a>, Previous: <a href="#O
 <h2 class="chapter">2 Mino main window</h2>
 <a name="index-Main-window"></a>
 
-<p>After running mino (Mino), you are faced with a window that has the following components:
+<p>After running mino, you are faced with a window that has the following components:
 </p>
 <a name="index-Menu-bar"></a>
-<a name="Menu-bar-"></a>
-<h3 class="heading">Menu bar<br></h3>
+<a name="The-Menu-bar-"></a>
+<h3 class="section">2.1 The Menu bar<br></h3>
 
-<p>At the top of the window. Contains menus: File, Edit, Options, and Help. The details of these menus can be found under See <a href="#Menus">Menus</a>.
+<p>Located at the top of the window. Contains the menus: File, Edit, Options, and 
+Help. The details of these menus can be found under See <a href="#Menus">Menus</a>.
 </p>
 <a name="index-Status-bar"></a>
 <a name="Status-bar-"></a>
-<h3 class="heading">Status bar<br></h3>
+<h3 class="section">2.2 Status bar<br></h3>
 
-<p>At the bottom is the status bar. It shows the current state of the file, which can be:
+<p>At the bottom is the status bar. It shows the current state of the file, which
+can be:
 </p>
 <a name="index-File-state"></a>
 <ul>
 <li> New: After opening a fresh mino window or selecting New from the File Menu
-</li><li> Opened: When a fresh file is opened
+</li><li> Opened: When a saved file is opened
 </li><li> Saved: After saving the edited file
-</li><li> Modified: When any editing has not yet been saved
+</li><li> Modified: When any editing has been done but not yet been saved
 </li><li> Idle: Nothing has happened yet!
 </li></ul>
 
-<p>The right side of the status bar shows the current position in file in terms of line and column.<br>
- There are indicators which can appear in the status bar:
+<p>The right side of the status bar shows the current position in file in terms 
+of line and column.<br>
+There are indicators which can appear in the status bar:
 </p>
 <a name="index-Status-indicators"></a>
 <ul>
 <li> CAPS: When Capslock is On
 </li><li> INS: When inserting mode is on (pressing Insert)
-</li><li> SEL: When selecting mode is on (pressing SHIFT under console or CTRL+E under X)
+</li><li> SEL: When selecting mode is on (pressing SHIFT under console or CTRL+E 
+under X)
 </li></ul>
 
 <a name="index-Editing-area"></a>
 <a name="index-Work-area"></a>
 <a name="Editing-area-"></a>
-<h3 class="heading">Editing area<br></h3>
+<h3 class="section">2.3 Editing area<br></h3>
 
-<p>Most of the main window will be occupied by the editing field containing the lines of the file selected. Most of your editing work will be done in this area.
+<p>Most of the main window will be occupied by the editing field containing the 
+lines of the file selected. Most of your editing work will be done in this area.
 </p>
 <a name="index-Menus"></a>
-<a name="index-Edit-menus"></a>
+<a name="index-Mino-menus"></a>
 <hr>
 <a name="Menus"></a>
 <div class="header">
@@ -345,26 +377,27 @@ Next: <a href="#Shortcuts" accesskey="n" rel="next">Shortcuts</a>, Previous: <a 
 <p>Menus are on the menu bar on the top of the See <a href="#Main-Window">Main Window</a>. They are:
 </p>
 <a name="index-File-menu"></a>
-<a name="g_t_00281_0029-File-Menu-_0028opened-by-pressing-ALT_002bF_0029_003a-"></a>
-<h3 class="heading">(1) File Menu (opened by pressing ALT+F):<br></h3>
+<a name="File-Menu-_0028opened-by-pressing-ALT_002bF_0029_003a-"></a>
+<h3 class="section">3.1 File Menu (opened by pressing ALT+F):<br></h3>
 
 <ul>
 <li> New: Clears editing area and opens a new file
-</li><li> Open File: Opens another file for editing
+</li><li> Open File: Opens a previously saved file for editing
 </li><li> Save File: Saves the current file to disk
-</li><li> Save As: Save the current file under another name
+</li><li> Save As: Saves the current file under another name
 </li><li> Print: Prints the current file to printer
 </li><li> Exit: Exits mino
 </li></ul>
 
 <a name="index-Edit-menu"></a>
-<a name="g_t_00282_0029-Edit-Menu-_0028opened-by-pressing-ALT_002bE_0029_003a-"></a>
-<h3 class="heading">(2) Edit Menu (opened by pressing ALT+E):<br></h3>
+<a name="Edit-Menu-_0028opened-by-pressing-ALT_002bE_0029_003a-"></a>
+<h3 class="section">3.2 Edit Menu (opened by pressing ALT+E):<br></h3>
 
 <ul>
-<li> Cut: Cuts current selection and places text into mino clipboard
-</li><li> Copy: Copies current selection to mino clipboard
-</li><li> Paste: Pastes whatever in the mino clipboard into the current position in file
+<li> Cut: Cuts current selection and places text into the mino clipboard
+</li><li> Copy: Copies current selection to the mino clipboard
+</li><li> Paste: Pastes whatever in the mino clipboard into the current position 
+in file
 </li><li> Select All: Selects the whole document
 </li><li> Undo: Undoes the last action
 </li><li> Redo: Redoes the last action undone
@@ -374,25 +407,28 @@ Next: <a href="#Shortcuts" accesskey="n" rel="next">Shortcuts</a>, Previous: <a 
 </li><li> Toggle Select Mode (Only under X):
 <ul class="no-bullet">
 <li>- Toggles the select mode On (like pressing SHIFT)
-</li><li>- or Off (Like releasing SHIFT)
+</li><li>- Or Off (Like releasing SHIFT)
 </li></ul>
 </li></ul>
 
 <a name="index-Options-menu"></a>
-<a name="g_t_00283_0029-Options-Menu-_0028opened-by-pressing-ALT_002bO_0029_003a-"></a>
-<h3 class="heading">(3) Options Menu (opened by pressing ALT+O):<br></h3>
+<a name="Options-Menu-_0028opened-by-pressing-ALT_002bO_0029_003a-"></a>
+<h3 class="section">3.3 Options Menu (opened by pressing ALT+O):<br></h3>
 
 <ul>
-<li> Change colors: Opens a dialog box to select different colors for window, menu bar, ...
-</li><li> Tab spaces: Define the number of spaces to be inserted when you press TAB
+<li> Change colors: Opens a dialog box to select different colors for window,
+menu bar, ...
+</li><li> Tab spaces: Define the number of spaces to be inserted when you press the
+TAB key
 </li><li> Reset config: Resets the configuration (colors and tab spaces)
 </li></ul>
 
-<p>All the Options menu items write the new values into the config file (~/.mino.conf).<br>
+<p>All the Options menu items write the new values into the config file 
+(~/.mino.conf).<br>
 </p>
 <a name="index-Help-menu"></a>
-<a name="g_t_00284_0029-Help-Menu-_0028opened-by-pressing-ALT_002bH_0029_003a-"></a>
-<h3 class="heading">(4) Help Menu (opened by pressing ALT+H):<br></h3>
+<a name="Help-Menu-_0028opened-by-pressing-ALT_002bH_0029_003a-"></a>
+<h3 class="section">3.4 Help Menu (opened by pressing ALT+H):<br></h3>
 
 <ul>
 <li> View README: Displays the README file installed with the package
@@ -908,7 +944,6 @@ Previous: <a href="#GNU-Free-Documentation-License" accesskey="p" rel="previous"
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-E">E</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Edit-menu">Edit menu</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Menus">Menus</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Edit-menus">Edit menus</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Main-Window">Main Window</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Editing-area">Editing area</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Main-Window">Main Window</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-F">F</a></th><td></td><td></td></tr>
@@ -932,6 +967,7 @@ Previous: <a href="#GNU-Free-Documentation-License" accesskey="p" rel="previous"
 <tr><td></td><td valign="top"><a href="#index-Main-window">Main window</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Main-Window">Main Window</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Menu-bar">Menu bar</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Main-Window">Main Window</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Menus">Menus</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Main-Window">Main Window</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Mino-menus">Mino menus</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Main-Window">Main Window</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Mino-Overview">Mino Overview</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Overview">Overview</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-O">O</a></th><td></td><td></td></tr>
@@ -940,6 +976,7 @@ Previous: <a href="#GNU-Free-Documentation-License" accesskey="p" rel="previous"
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-R">R</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Reasons-of-using-mino">Reasons of using mino</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Overview">Overview</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Resetting-the-config-file">Resetting the config file</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Overview">Overview</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Running-mino">Running mino</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Overview">Overview</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-S">S</a></th><td></td><td></td></tr>

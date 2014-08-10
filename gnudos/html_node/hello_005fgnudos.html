@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.4).
+<!-- This manual is for the GnuDOS library (version 1.5).
 
 Copyright (C) 2014 Mohammed Isam.
 
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.4 or
+under the terms of the GNU Free Documentation License, Version 1.5 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.4: hello_gnudos</title>
+<title>GnuDOS library version 1.5: hello_gnudos</title>
 
-<meta name="description" content="GnuDOS library version 1.4: hello_gnudos">
-<meta name="keywords" content="GnuDOS library version 1.4: hello_gnudos">
+<meta name="description" content="GnuDOS library version 1.5: hello_gnudos">
+<meta name="keywords" content="GnuDOS library version 1.5: hello_gnudos">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -122,10 +122,10 @@ int main(int argc, char *argv[])
 
 
 <p>Note that including the header file &quot;dialogs.h&quot; automatically includes both 
-&quot;screen.h&quot; and &quot;kbd.h&quot; as the dialogs utility uses both of the other two.
+&quot;screen.h&quot; and &quot;kbd.h&quot;, as the dialogs utility uses both of the other two.
 </p>
 
-<p>And now REMEMBER two things:
+<p>And now, REMEMBER two things:
 </p><ol>
 <li> a call to initTerminal() must be invoked before using the library
 </li><li> a call restoreTerminal() must be done before exiting the program
@@ -135,12 +135,14 @@ int main(int argc, char *argv[])
 <p>If you forget point (2), you will leave the user&rsquo;s terminal in raw mode, which 
 (under console) means he/she will not be able to do virtually anything (not 
 even switching terminal by CTRL+ALT+F key!). The only way out is a reboot!. 
+And I am talking about hard reboot by pressing the power button or restart key.
 Under X it is less worse, usually the user will need to close the xterm or kill 
 the process. Still though, it is IMPERATIVE to call restoreTerminal() before 
-exiting your program!. To make sure no funny things happen (like your progrm 
-crashing for whatever reason, or your admin killing it, to name a few) before 
-you call restoreTerminal(), you better use the catchSignals() function of the 
-See <a href="Dialogs.html#Dialogs">Dialogs</a>. utility. Remember though that there are some signals that can&rsquo;t 
+exiting your program!.<br>
+To make sure no funny things happen (like your progrm crashing for whatever 
+reason, or your admin killing it, to name a few) before you call 
+restoreTerminal(), you better use the catchSignals() function of the 
+See <a href="Dialogs.html#Dialogs">Dialogs</a>, utility. Remember though that there are some signals that can&rsquo;t 
 be caught by your program, like the SIGSTOP and SIGKILL signals. This is why we 
 used the catchSignals() function instead of the catchAllSignals() function.
 </p>

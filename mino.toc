@@ -1,6 +1,20 @@
-@numchapentry{Overview of the mino (Mino) text editor}{1}{Overview}{1}
+@numchapentry{Overview of the mino text editor}{1}{Overview}{1}
+@numsecentry{What is mino (Mino)?}{1.1}{}{1}
+@numsecentry{Which keys are defined for which level?}{1.2}{}{1}
+@numsecentry{Why should I use it?@*}{1.3}{}{2}
+@numsecentry{How to run it?@*}{1.4}{}{2}
+@numsecentry{How does mino remember my preferences?@*}{1.5}{}{3}
+@numsecentry{What about sentence highlighting?@*}{1.6}{}{3}
+@numsecentry{What else?@*}{1.7}{}{3}
 @numchapentry{Mino main window}{2}{Main Window}{4}
+@numsecentry{The Menu bar@*}{2.1}{}{4}
+@numsecentry{Status bar@*}{2.2}{}{4}
+@numsecentry{Editing area@*}{2.3}{}{4}
 @numchapentry{Working around with menus}{3}{Menus}{5}
+@numsecentry{File Menu (opened by pressing ALT+F):@*}{3.1}{}{5}
+@numsecentry{Edit Menu (opened by pressing ALT+E):@*}{3.2}{}{5}
+@numsecentry{Options Menu (opened by pressing ALT+O):@*}{3.3}{}{5}
+@numsecentry{Help Menu (opened by pressing ALT+H):@*}{3.4}{}{6}
 @numchapentry{Using keyboard shortcuts}{4}{Shortcuts}{7}
 @appentry{GNU Free Documentation License}{A}{GNU Free Documentation License}{8}
 @appsecentry{GNU Free Documentation License}{A.1}{}{8}

@@ -8,7 +8,8 @@
 \entry{Running mino}{2}{Running mino}
 \entry{Starting mino}{2}{Starting mino}
 \entry{Invoking mino}{2}{Invoking mino}
-\entry{Command line help}{2}{Command line help}
+\entry{Resetting the config file}{2}{Resetting the config file}
+\entry{Command line help}{3}{Command line help}
 \entry{Sentence highlighting}{3}{Sentence highlighting}
 \entry{Code highlighting}{3}{Code highlighting}
 \entry{Highlighting mode}{3}{Highlighting mode}
@@ -20,7 +21,7 @@
 \entry{Editing area}{4}{Editing area}
 \entry{Work area}{4}{Work area}
 \entry{Menus}{4}{Menus}
-\entry{Edit menus}{4}{Edit menus}
+\entry{Mino menus}{4}{Mino menus}
 \entry{File menu}{5}{File menu}
 \entry{Edit menu}{5}{Edit menu}
 \entry{Options menu}{5}{Options menu}

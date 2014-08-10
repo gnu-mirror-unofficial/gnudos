@@ -74,13 +74,13 @@ Next: <a href="Main-Window.html#Main-Window" accesskey="n" rel="next">Main Windo
 <a name="index-What-is-Prime"></a>
 <a name="index-About-Prime"></a>
 <a name="What-is-Prime_003f-"></a>
-<h3 class="heading">What is Prime?<br></h3>
+<h3 class="section">1.1 What is Prime?<br></h3>
 <p>Prime is a GNU software, part of the GnuDOS package.<br>
 Prime is a file manager which works under the GNU/Linux console. It was 
 influenced by other file managers (like the well known XTree Gold which was 
 popular under MS-DOS). It provides a user friendly interface with menus, 
 shortcuts, and key navigation. It is distributed as part of the GnuDOS
-package which was developed to help users coming from DOS-like environments
+package which was developed to help users coming from DOS-like environment
 feel ease when dealing with the GNU system.<br>
 Prime provides multi-level experience, the level of complexity can be adjusted
 by the user: you want to use DOS-keys with a few basic GNU ones? you want to 
@@ -96,8 +96,8 @@ the six levels of experience of Prime:
 </li><li> Veteran: Only GNU keys, no DOS-like keys
 </li></ol>
 
-<p>You start with level 1 by default.
-To set your level, call the mino with <code>'--levelX'</code> or <code>'-lX'</code> options,
+<p>You start with level 1 by default.<br>
+To set your level, call prime with <code>'--levelX'</code> or <code>'-lX'</code> options,
 Where X is the level desired, for example:
 </p><div class="example">
 <pre class="example">$prime --level2
@@ -105,18 +105,19 @@ Where X is the level desired, for example:
 
 <a name="index-Key-bindings"></a>
 <a name="Which-keys-are-defined-for-which-level_003f"></a>
-<h3 class="heading">Which keys are defined for which level?</h3>
+<h3 class="section">1.2 Which keys are defined for which level?</h3>
 <p>Below is a table showing the DOS-like key combinations along with their 
 respective GNU key bindings. To the right is the level at which a certain
 key is defined. Each key defined is recognized in higher levels (e.g. level 2
-keys are recognized in levels 3-4-5-6). Note that in level 5 only GNU keys are
+keys are recognized in levels 3-4-5-6). Note that in level 6 only GNU keys are
 defined, no DOS keys will work at this level!.<br>
 </p>
 <p><b>Keybindings:</b><br>
 In the table below, C-something means pressing down CTRL and then pressing the
-other key. Note that &rsquo;^&rsquo; is the same as &rsquo;C&rsquo;, meaning CTRL key, it is just
+other key. Note that &rsquo;^&rsquo; is the same as &rsquo;C&rsquo;, meaning CTRL-key, it is just
 typed like this so DOS users can feel familiar with the text.
-The same as M-something, which means META or ALT.
+</p>
+<p>The same as M-something, which means META or ALT.
 </p>
 <table>
 <thead><tr><th width="30%">Function</th><th width="20%">DOS-like key</th><th width="20%">GNU key</th><th width="30%">GnuDOS Level</th></tr></thead>
@@ -161,27 +162,27 @@ The same as M-something, which means META or ALT.
 <a name="index-Why-to-use-Prime"></a>
 <a name="index-Why-to-use-it"></a>
 <a name="Why-should-I-use-it_003f"></a>
-<h3 class="heading">Why should I use it?</h3>
+<h3 class="section">1.3 Why should I use it?</h3>
 <p>If you like using the console (like most GNU/Linux vintage users do), and
 you came from DOS land, having a nice and easy way to run through your 
 directory trees and moving files around will be an important asset in your
 toolset, plus you will easily dive into the GNU system key bindings.
 </p>
 <a name="What-do-I-need_003f-"></a>
-<h3 class="heading">What do I need?<br></h3>
-<p>The program can be invoked from the linux console or under X11 from an xterm.
+<h3 class="section">1.4 What do I need?<br></h3>
+<p>The program can be invoked from the linux console or under X from an xterm.
 </p>
 <a name="index-Running-Prime"></a>
 <a name="index-Starting-Prime"></a>
 <a name="index-How-to-run-Prime"></a>
 <a name="How-to-use-it_003f-"></a>
-<h3 class="heading">How to use it?<br></h3>
+<h3 class="section">1.5 How to use it?<br></h3>
 <p>Simply invoke the &rsquo;prime&rsquo; executable from the bash shell. The components of 
 the main window can be found under See <a href="Main-Window.html#Main-Window">Main Window</a>. The description of the 
 menus in See <a href="Menus.html#Menus">Menus</a>. And the shortcut keys in See <a href="Shortcuts.html#Shortcuts">Shortcuts</a>.
 </p>
 <a name="What-else_003f-"></a>
-<h3 class="heading">What else?<br></h3>
+<h3 class="section">1.6 What else?<br></h3>
 <p>To help the developers (and yourself) debugging the program, Prime sends log 
 information by default to a file named &rsquo;prime.log&rsquo; in the user&rsquo;s home 
 directory (e.g. /home/username).
@@ -223,7 +224,7 @@ program start.<br>
 Currently there is partial wildcard support. That means for example that you 
 can specify &rsquo;~&rsquo; to indicate your home directory, and you can use &rsquo;*&rsquo; inside 
 the program (in the search dialog box) but no further wildcards (like &rsquo;?&rsquo;) 
-are supported. Examples:
+are supported Currently. Examples:
 </p>
 <div class="example">
 <pre class="example">$prime ~/projects

@@ -2,11 +2,11 @@
 @comment $Id@w{$}
 @comment %**start of header
 @setfilename mino.info
-@settitle Mino (mino) version 1.1
+@settitle Mino version 1.1
 @syncodeindex pg cp
 @comment %**end of header
 @copying
-This manual is for the Mino (mino) program (version 1.1).
+This manual is for the Mino text editor (version 1.1).
 
 Copyright @copyright{} 2014 Mohammed Isam.
 
@@ -23,11 +23,11 @@ Texts.  A copy of the license is included in the section entitled
 
 @dircategory GNU Utilities
 @direntry
-* mino: (mino).                 Using Mino (mino) text editor.
+* mino: (mino).                 Using the Mino text editor.
 @end direntry
 
 @titlepage
-@title Mino (mino) text editor
+@title The Mino text editor
 @subtitle for version 1.1
 @author Mohammed Isam (@email{mohammed_isam1984@@yahoo.com})
 @page
@@ -41,12 +41,12 @@ Texts.  A copy of the license is included in the section entitled
 @node Top
 @top mino
 
-This manual is for the Mino (mino) text editor (version 1.1).
+This manual is for the Mino text editor (version 1.1).
 
 @end ifnottex
 
 @menu
-* Overview:: Overview of the mino (Mino) text editor
+* Overview:: Overview of the mino text editor
 * Main Window:: Mino main window
 * Menus:: Working around with menus
 * Shortcuts:: Using keyboard shortcuts
@@ -55,11 +55,11 @@ This manual is for the Mino (mino) text editor (version 1.1).
 @end menu
 
 @node Overview
-@chapter Overview of the mino (Mino) text editor
+@chapter Overview of the mino text editor
 @cindex Overview
 @cindex Mino Overview
 
-What is mino (Mino)?
+@section What is mino (Mino)?
 Mino is a GNU software, part of the GnuDOS package.@*
 Mino is a text file editor for use with the GNU/Linux console/xterm. The idea 
 was to provide a text editor that is user friendly and easy to use for those 
@@ -85,15 +85,15 @@ Expert: Very few DOS keys, most are GNU keys
 Veteran: Only GNU keys, no DOS-like keys
 @end enumerate
   
-You start with level 1 by default.
-To set your level, call the mino with @code{'--levelX'} or @code{'-lX'} options,
-Where X is the level desired, for example:
+You start with level 1 by default.@*
+To set your level of experience, call mino with @code{'--levelX'} or 
+@code{'-lX'} options, Where X is the level desired, for example:
 @example
 $mino --level2
 @end example
 
 @cindex Key bindings
-@heading Which keys are defined for which level?
+@section Which keys are defined for which level?
 Below is a table showing the DOS-like key combinations along with their 
 respective GNU key bindings. To the right is the level at which a certain GNU
 key is defined. Each key defined is recognized in higher levels (e.g. level 2
@@ -102,8 +102,9 @@ defined, no DOS keys will work at this level!.
 
 @b{Keybindings:}@*
 In the table below, C-something means pressing down CTRL and then pressing the
-other key. Note that '^' is the same as 'C', meaning CTRL key, it is just
+other key. Note that '^' is the same as 'C', meaning CTRL-key, it is just
 typed like this so DOS users can feel familiar with the text.
+
 The same as M-something, which means META or ALT.
 
 @multitable @columnfractions .3 .2 .2 .3
@@ -175,16 +176,16 @@ Help @tab F1 @tab C-h ? @tab Expert
 All GNU bindings and no DOS bindings @tab  @tab  @tab Veteran
 @end multitable
 
-@heading Why should I use it?@*
+@section Why should I use it?@*
 @cindex Why to use it
 @cindex Why to use mino
 @cindex Reasons of using mino
 If you are new to GNU system and find it hard to dive in head-first into the
 GNU keys and shortcuts for GNU programs (like emacs), this is the place to
-start. Use you well-known DOS-like shortcuts, in the same time learn how to
+start. Use your well-known DOS-like shortcuts, in the same time learn how to
 use the GNU shortcuts.
 
-@heading How to run it?@*	
+@section How to run it?@*	
 @cindex How to run mino
 @cindex Running mino
 @cindex Starting mino
@@ -196,12 +197,14 @@ After installing the package, simply type:
 $ mino
 @end example
 
-on your console (or xterm) and it will run. If you want to load a file into mino:
+on your console (or xterm) and it will run. If you want to load a file into 
+mino on startup:
 
 @example
 $ mino file-name
 @end example
 
+@cindex Resetting the config file
 To reset the configuration file:
 
 @example
@@ -215,19 +218,19 @@ To show command line help:
 $ mino [--help|-h]
 @end example
 
-@heading How does mino remember my preferences?@*
+@section How does mino remember my preferences?@*
 
 Mino stores its configuration in a file called '.mino.conf' under your home
 directory. You can edit it by hand (or using mino!), but this is not advisable.
 Use the Options menu under mino to change your preferences and mino will save
-them into the config file.
+them into the config file in the proper way.
 
 @cindex Sentence highlighting
 @cindex Code highlighting
 @cindex Highlighting mode
-@heading What about sentence highlighting?@*
+@section What about sentence highlighting?@*
 
-Currently mino recognizes the following file types:
+Currently mino recognizes the following file types (by their extension):
 @itemize
 @item
 C/C++ Source and header files
@@ -235,14 +238,20 @@ C/C++ Source and header files
 Perl scripts
 @item
 Shell scripts
+@item
+Python scripts
+@item
+Assembly source listings
+@item
+Texi info source files
 @end itemize
 
-Whenever you open a file of these types, mino will automatically adjust the
-colors of the view so that the language keywords, library functions, and
-operators (like +-*/ and so on) are highlighted each in a different
+Whenever you open a file of one of these types, mino will automatically adjust
+the colors of the view so that the language keywords, library functions, and
+operators (like +-*/ and so on) are highlighted, each in a different
 color, on a black background, to ease writing your programs.
 
-@heading What else?@*
+@section What else?@*
 
 There is one catch: when running under the X system, the program will not be
 able to capture all input from the keyboard, as X interferes with the keyboard
@@ -259,69 +268,75 @@ And that's it for intro!
 @chapter Mino main window
 @cindex Main window
 
-After running mino (Mino), you are faced with a window that has the following components:
+After running mino, you are faced with a window that has the following components:
 
 @cindex Menu bar
-@heading Menu bar@*
+@section The Menu bar@*
 
-At the top of the window. Contains menus: File, Edit, Options, and Help. The details of these menus can be found under @xref{Menus}.
+Located at the top of the window. Contains the menus: File, Edit, Options, and 
+Help. The details of these menus can be found under @xref{Menus}.
 
 @cindex Status bar
-@heading Status bar@*
+@section Status bar@*
 
-At the bottom is the status bar. It shows the current state of the file, which can be:
+At the bottom is the status bar. It shows the current state of the file, which
+can be:
 
 @cindex File state
 @itemize @bullet
 @item New: After opening a fresh mino window or selecting New from the File Menu
-@item Opened: When a fresh file is opened
+@item Opened: When a saved file is opened
 @item Saved: After saving the edited file
-@item Modified: When any editing has not yet been saved
+@item Modified: When any editing has been done but not yet been saved
 @item Idle: Nothing has happened yet!
 @end itemize
 
-The right side of the status bar shows the current position in file in terms of line and column.@*
- There are indicators which can appear in the status bar:
+The right side of the status bar shows the current position in file in terms 
+of line and column.@*
+There are indicators which can appear in the status bar:
 
 @cindex Status indicators
 @itemize @bullet
 @item CAPS: When Capslock is On
 @item INS: When inserting mode is on (pressing Insert)
-@item SEL: When selecting mode is on (pressing SHIFT under console or CTRL+E under X)
+@item SEL: When selecting mode is on (pressing SHIFT under console or CTRL+E 
+under X)
 @end itemize
 
 @cindex Editing area
 @cindex Work area
-@heading Editing area@*
+@section Editing area@*
 
-Most of the main window will be occupied by the editing field containing the lines of the file selected. Most of your editing work will be done in this area.
+Most of the main window will be occupied by the editing field containing the 
+lines of the file selected. Most of your editing work will be done in this area.
 
 @cindex Menus
-@cindex Edit menus
+@cindex Mino menus
 @node Menus
 @chapter Working around with menus
 
 Menus are on the menu bar on the top of the @xref{Main Window}. They are:
 
 @cindex File menu
-@heading(1) File Menu (opened by pressing ALT+F):@*
+@section File Menu (opened by pressing ALT+F):@*
 
 @itemize @bullet
 @item New: Clears editing area and opens a new file
-@item Open File: Opens another file for editing
+@item Open File: Opens a previously saved file for editing
 @item Save File: Saves the current file to disk
-@item Save As: Save the current file under another name
+@item Save As: Saves the current file under another name
 @item Print: Prints the current file to printer
 @item Exit: Exits mino
 @end itemize
 
 @cindex Edit menu
-@heading(2) Edit Menu (opened by pressing ALT+E):@*
+@section Edit Menu (opened by pressing ALT+E):@*
 
 @itemize @bullet
-@item Cut: Cuts current selection and places text into mino clipboard
-@item Copy: Copies current selection to mino clipboard
-@item Paste: Pastes whatever in the mino clipboard into the current position in file
+@item Cut: Cuts current selection and places text into the mino clipboard
+@item Copy: Copies current selection to the mino clipboard
+@item Paste: Pastes whatever in the mino clipboard into the current position 
+in file
 @item Select All: Selects the whole document
 @item Undo: Undoes the last action
 @item Redo: Redoes the last action undone
@@ -331,23 +346,26 @@ Menus are on the menu bar on the top of the @xref{Main Window}. They are:
 @item Toggle Select Mode (Only under X):
 @itemize @minus
 @item Toggles the select mode On (like pressing SHIFT)
-@item or Off (Like releasing SHIFT)
+@item Or Off (Like releasing SHIFT)
 @end itemize
 @end itemize
 
 @cindex Options menu
-@heading(3) Options Menu (opened by pressing ALT+O):@*
+@section Options Menu (opened by pressing ALT+O):@*
 
 @itemize @bullet
-@item Change colors: Opens a dialog box to select different colors for window, menu bar, ...
-@item Tab spaces: Define the number of spaces to be inserted when you press TAB
+@item Change colors: Opens a dialog box to select different colors for window,
+menu bar, ...
+@item Tab spaces: Define the number of spaces to be inserted when you press the
+TAB key
 @item Reset config: Resets the configuration (colors and tab spaces)
 @end itemize
 
-All the Options menu items write the new values into the config file (~/.mino.conf).@*
+All the Options menu items write the new values into the config file 
+(~/.mino.conf).@*
 
 @cindex Help menu
-@heading(4) Help Menu (opened by pressing ALT+H):@*
+@section Help Menu (opened by pressing ALT+H):@*
 
 @itemize @bullet
 @item View README: Displays the README file installed with the package

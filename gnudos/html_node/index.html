@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.4).
+<!-- This manual is for the GnuDOS library (version 1.5).
 
 Copyright (C) 2014 Mohammed Isam.
 
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.4 or
+under the terms of the GNU Free Documentation License, Version 1.5 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.4: Top</title>
+<title>GnuDOS library version 1.5: Top</title>
 
-<meta name="description" content="GnuDOS library version 1.4: Top">
-<meta name="keywords" content="GnuDOS library version 1.4: Top">
+<meta name="description" content="GnuDOS library version 1.5: Top">
+<meta name="keywords" content="GnuDOS library version 1.5: Top">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -59,7 +59,7 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<h1 class="settitle" align="center">GnuDOS library version 1.4</h1>
+<h1 class="settitle" align="center">GnuDOS library version 1.5</h1>
 
 
 
@@ -69,14 +69,23 @@ ul.no-bullet {list-style: none}
 <div class="contents">
 
 <ul class="no-bullet">
-  <li><a name="toc-Overview-of-the-GnuDOS-library" href="Overview.html#Overview">1 Overview of the GnuDOS library</a></li>
+  <li><a name="toc-Overview-of-the-GnuDOS-library" href="Overview.html#Overview">1 Overview of the GnuDOS library</a>
+  <ul class="no-bullet">
+    <li><a name="toc-About-the-GnuDOS-library" href="Overview.html#About-the-GnuDOS-library">1.1 About the GnuDOS library</a></li>
+    <li><a name="toc-The-rationale-behind-the-GnuDOS-corelib-library" href="Overview.html#The-rationale-behind-the-GnuDOS-corelib-library">1.2 The rationale behind the GnuDOS corelib library</a></li>
+  </ul></li>
   <li><a name="toc-An-example-of-using-the-GnuDOS-library" href="hello_005fgnudos.html#hello_005fgnudos">2 An example of using the GnuDOS library</a></li>
   <li><a name="toc-An-example-of-using-the-strings-utility" href="hello_005fstrings.html#hello_005fstrings">3 An example of using the strings utility</a></li>
   <li><a name="toc-Using-the-Kbd-utility" href="Kbd.html#Kbd">4 Using the Kbd utility</a></li>
-  <li><a name="toc-Using-the-Dialogs-utility" href="Dialogs.html#Dialogs">5 Using the Dialogs utility</a></li>
+  <li><a name="toc-Using-the-Dialogs-utility" href="Dialogs.html#Dialogs">5 Using the Dialogs utility</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Simple-Dialog-Box-" href="Dialogs.html#Simple-Dialog-Box-">5.1 Simple Dialog Box<br></a></li>
+    <li><a name="toc-Input-boxes" href="Dialogs.html#Input-boxes">5.2 Input boxes</a></li>
+    <li><a name="toc-Empty-boxes-" href="Dialogs.html#Empty-boxes-">5.3 Empty boxes<br></a></li>
+    <li><a name="toc-The-catchSignals_0028_0029-function-" href="Dialogs.html#The-catchSignals_0028_0029-function-">5.4 The catchSignals() function<br></a></li>
+  </ul></li>
   <li><a name="toc-Using-the-Screen-utility" href="Screen.html#Screen">6 Using the Screen utility</a></li>
   <li><a name="toc-Using-the-Strings-utility" href="Strings.html#Strings">7 Using the Strings utility</a></li>
-  <li><a name="toc-Fog_003a-The-console-Form-Designer" href="Fog.html#Fog">8 Fog: The console Form Designer</a></li>
   <li><a name="toc-GNU-Free-Documentation-License-1" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">Appendix A GNU Free Documentation License</a>
   <ul class="no-bullet">
     <li><a name="toc-GNU-Free-Documentation-License-2" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License-2">A.1 GNU Free Documentation License</a></li>
@@ -92,10 +101,10 @@ ul.no-bullet {list-style: none}
 Next: <a href="Overview.html#Overview" accesskey="n" rel="next">Overview</a>, Up: <a href="../dir/index.html" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="GnuDOS-library"></a>
-<h1 class="top">GnuDOS library</h1>
+<a name="The-GnuDOS-library"></a>
+<h1 class="top">The GnuDOS library</h1>
 
-<p>This manual is for the GnuDOS library (version 1.4).
+<p>This manual is for the GnuDOS library (version 1.5).
 </p>
 
 <table class="menu" border="0" cellspacing="0">
@@ -113,11 +122,9 @@ Next: <a href="Overview.html#Overview" accesskey="n" rel="next">Overview</a>, Up
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="Strings.html#Strings" accesskey="7">Strings</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Using the Strings utility
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Fog.html#Fog" accesskey="8">Fog</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The console Form Designer
+<tr><td align="left" valign="top">&bull; <a href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License" accesskey="8">GNU Free Documentation License</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License" accesskey="9">GNU Free Documentation License</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Index.html#Index">Index</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="Index.html#Index" accesskey="9">Index</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 

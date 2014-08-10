@@ -10,8 +10,7 @@
 \entry {Empty Boxes}{10}
 \entry {Example of defining the Color arrays}{12}
 \initial {F}
-\entry {FDL, GNU Free Documentation License}{17}
-\entry {Fog}{15}
+\entry {FDL, GNU Free Documentation License}{16}
 \initial {G}
 \entry {Global Dialog Box variables}{10}
 \entry {Global Kbd variables}{6}
@@ -39,7 +38,6 @@
 \entry {The catchSignals() function}{10}
 \entry {The clearScreen() function}{13}
 \entry {The clearScreenC() function}{13}
-\entry {The console Form Designer}{15}
 \entry {The Dialogs utility}{8}
 \entry {The getScreenColors() function}{12}
 \entry {The getScreenSize() function}{13}
@@ -64,7 +62,6 @@
 \entry {The trim() function}{14}
 \entry {Types of messages in Dialog Boxes}{9}
 \initial {U}
-\entry {Using the console Form Designer}{15}
 \entry {Using the Dialogs utility}{8}
 \entry {Using the Kbd utility}{5}
 \entry {Using the Screen utility}{11}

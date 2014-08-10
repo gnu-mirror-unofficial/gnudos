@@ -15,7 +15,7 @@
 \entry {File view}{4}
 \initial {H}
 \entry {Help menu}{5}
-\entry {How to run Prime}{2}
+\entry {How to run Prime}{3}
 \initial {K}
 \entry {Key bindings}{1}
 \entry {Keyboard shortcuts}{5}
@@ -32,12 +32,12 @@
 \entry {Prime menu bar}{4}
 \entry {Prime Overview}{1}
 \initial {R}
-\entry {Running Prime}{2}
+\entry {Running Prime}{3}
 \initial {S}
 \entry {Shortcut keys}{5}
 \entry {Shortcuts}{5}
 \entry {Start Prime with a specific directory}{3}
-\entry {Starting Prime}{2}
+\entry {Starting Prime}{3}
 \entry {Suppressing log information}{3}
 \initial {W}
 \entry {What is Prime}{1}

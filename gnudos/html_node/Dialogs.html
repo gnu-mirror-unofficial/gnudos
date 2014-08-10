@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.4).
+<!-- This manual is for the GnuDOS library (version 1.5).
 
 Copyright (C) 2014 Mohammed Isam.
 
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.4 or
+under the terms of the GNU Free Documentation License, Version 1.5 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.4: Dialogs</title>
+<title>GnuDOS library version 1.5: Dialogs</title>
 
-<meta name="description" content="GnuDOS library version 1.4: Dialogs">
-<meta name="keywords" content="GnuDOS library version 1.4: Dialogs">
+<meta name="description" content="GnuDOS library version 1.5: Dialogs">
+<meta name="keywords" content="GnuDOS library version 1.5: Dialogs">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -77,7 +77,7 @@ input boxes, and empty boxes.<br>
 </p>
 <a name="index-Simple-Dialog-Boxes"></a>
 <a name="Simple-Dialog-Box-"></a>
-<h3 class="heading">Simple Dialog Box<br></h3>
+<h3 class="section">5.1 Simple Dialog Box<br></h3>
 <p>The function to draw a simple dialog box is defined in &quot;dialogs.h&quot; as:
 </p>
 <div class="example">
@@ -86,15 +86,17 @@ input boxes, and empty boxes.<br>
 
 <p>Where:<br>
 </p><ul>
-<li> msg: is a pointer to the string that will be the output message of the dialog box
-</li><li> buttons: an integer value defining the number and type of buttons to be displayed (see below)
+<li> msg: is a pointer to the string that will be the output message of the 
+dialog box
+</li><li> buttons: an integer value defining the number and type of buttons to be 
+displayed (see below)
 </li><li> tmsg: a value of type &quot;msgtype&quot; (see below) defining the type of dialog box. 
 This will be the title of the dialog
 </li></ul>
 
-<p>The value of <code>buttons</code> can be: OK, OK|CANCEL, or YES|NO. Note when using 
-two buttons they need to be ORed with the vertical bar. The macros defining 
-those buttons are declared in &quot;dialogs.h&quot; as:
+<p>The value of <code>buttons</code> can be: OK, OK|CANCEL, YES|NO, or OK|CANCEL|ALL. 
+Note when using two or more buttons they need to be ORed with the vertical 
+bar. The macros defining those buttons are declared in &quot;dialogs.h&quot; as:
 </p>
 <a name="index-Button-values-in-dialog-boxes"></a>
 <div class="example">
@@ -103,6 +105,8 @@ those buttons are declared in &quot;dialogs.h&quot; as:
 #define YES	2	//00000010
 #define CANCEL	4	//00000100
 #define NO	8	//00001000
+#define ALL	16	//00010000
+#define ABORT	32	//00100000
 </pre></div>
 
 <a name="index-Types-of-messages-in-Dialog-Boxes"></a>
@@ -115,7 +119,7 @@ those buttons are declared in &quot;dialogs.h&quot; as:
 
 <a name="index-Input-Boxes"></a>
 <a name="Input-boxes"></a>
-<h3 class="heading">Input boxes</h3>
+<h3 class="section">5.2 Input boxes</h3>
 
 <p>The function to draw a simple dialog box is defined in &quot;dialogs.h&quot; as:
 </p>
@@ -153,7 +157,7 @@ default value.
 </p>
 <a name="index-Empty-Boxes"></a>
 <a name="Empty-boxes-"></a>
-<h3 class="heading">Empty boxes<br></h3>
+<h3 class="section">5.3 Empty boxes<br></h3>
 
 <p>Drawing empty boxes or windows is done via one of two functions:<br>
 </p>
@@ -179,7 +183,8 @@ The explanation of the parameters to the two functions is as follows:<br>
 </li><li> char *title: A string pointer to the title of the dialog box
 </li><li> int clearArea: A boolean value indicating whether to clear the box area 
 (YES=clear, NO=don&rsquo;t clear). Not clearing the box area can be handy when, 
-for example, you need to redraw the window frame but leave the window contents intact.
+for example, you need to redraw the window frame but leave the window 
+contents intact.
 </li></ul>
 
 <a name="index-Global-Dialog-Box-variables"></a>
@@ -206,7 +211,7 @@ input string returned by an input box. Currently it is restricted to 100 chars.
 </p>
 <a name="index-The-catchSignals_0028_0029-function"></a>
 <a name="The-catchSignals_0028_0029-function-"></a>
-<h3 class="heading">The catchSignals() function<br></h3>
+<h3 class="section">5.4 The catchSignals() function<br></h3>
 
 <p>The last two functions of &quot;dialogs.h&quot; are:
 </p>

@@ -1,11 +1,16 @@
 @numchapentry{Overview of the GnuDOS library}{1}{Overview}{1}
+@numsecentry{About the GnuDOS library}{1.1}{}{1}
+@numsecentry{The rationale behind the GnuDOS corelib library}{1.2}{}{1}
 @numchapentry{An example of using the GnuDOS library}{2}{hello_gnudos}{3}
 @numchapentry{An example of using the strings utility}{3}{hello_strings}{5}
 @numchapentry{Using the Kbd utility}{4}{Kbd}{6}
 @numchapentry{Using the Dialogs utility}{5}{Dialogs}{9}
+@numsecentry{Simple Dialog Box@*}{5.1}{}{9}
+@numsecentry{Input boxes}{5.2}{}{9}
+@numsecentry{Empty boxes@*}{5.3}{}{10}
+@numsecentry{The catchSignals() function@*}{5.4}{}{11}
 @numchapentry{Using the Screen utility}{6}{Screen}{12}
 @numchapentry{Using the Strings utility}{7}{Strings}{14}
-@numchapentry{Fog: The console Form Designer}{8}{Fog}{16}
-@appentry{GNU Free Documentation License}{A}{GNU Free Documentation License}{17}
-@appsecentry{GNU Free Documentation License}{A.1}{}{17}
-@unnchapentry{Index}{10001}{Index}{24}
+@appentry{GNU Free Documentation License}{A}{GNU Free Documentation License}{16}
+@appsecentry{GNU Free Documentation License}{A.1}{}{16}
+@unnchapentry{Index}{10001}{Index}{23}

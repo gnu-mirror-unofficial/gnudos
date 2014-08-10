@@ -62,13 +62,13 @@ This manual is for the Prime console file manager (version 1.1).
 
 @cindex What is Prime
 @cindex About Prime
-@heading What is Prime?@*
+@section What is Prime?@*
 Prime is a GNU software, part of the GnuDOS package.@*
 Prime is a file manager which works under the GNU/Linux console. It was 
 influenced by other file managers (like the well known XTree Gold which was 
 popular under MS-DOS). It provides a user friendly interface with menus, 
 shortcuts, and key navigation. It is distributed as part of the GnuDOS
-package which was developed to help users coming from DOS-like environments
+package which was developed to help users coming from DOS-like environment
 feel ease when dealing with the GNU system.@*
 Prime provides multi-level experience, the level of complexity can be adjusted
 by the user: you want to use DOS-keys with a few basic GNU ones? you want to 
@@ -90,25 +90,26 @@ Expert: Very few DOS keys, most are GNU keys
 Veteran: Only GNU keys, no DOS-like keys
 @end enumerate
 
-You start with level 1 by default.
-To set your level, call the mino with @code{'--levelX'} or @code{'-lX'} options,
+You start with level 1 by default.@*
+To set your level, call prime with @code{'--levelX'} or @code{'-lX'} options,
 Where X is the level desired, for example:
 @example
 $prime --level2
 @end example
 
 @cindex Key bindings
-@heading Which keys are defined for which level?
+@section Which keys are defined for which level?
 Below is a table showing the DOS-like key combinations along with their 
 respective GNU key bindings. To the right is the level at which a certain
 key is defined. Each key defined is recognized in higher levels (e.g. level 2
-keys are recognized in levels 3-4-5-6). Note that in level 5 only GNU keys are
+keys are recognized in levels 3-4-5-6). Note that in level 6 only GNU keys are
 defined, no DOS keys will work at this level!.@*
 
 @b{Keybindings:}@*
 In the table below, C-something means pressing down CTRL and then pressing the
-other key. Note that '^' is the same as 'C', meaning CTRL key, it is just
+other key. Note that '^' is the same as 'C', meaning CTRL-key, it is just
 typed like this so DOS users can feel familiar with the text.
+
 The same as M-something, which means META or ALT.
 
 @multitable @columnfractions .3 .2 .2 .3
@@ -183,24 +184,24 @@ All GNU bindings and no DOS bindings @tab  @tab  @tab Veteran
 
 @cindex Why to use Prime
 @cindex Why to use it
-@heading Why should I use it?
+@section Why should I use it?
 If you like using the console (like most GNU/Linux vintage users do), and
 you came from DOS land, having a nice and easy way to run through your 
 directory trees and moving files around will be an important asset in your
 toolset, plus you will easily dive into the GNU system key bindings.
 
-@heading What do I need?@*
-The program can be invoked from the linux console or under X11 from an xterm.
+@section What do I need?@*
+The program can be invoked from the linux console or under X from an xterm.
 
 @cindex Running Prime
 @cindex Starting Prime
 @cindex How to run Prime
-@heading How to use it?@*
+@section How to use it?@*
 Simply invoke the 'prime' executable from the bash shell. The components of 
 the main window can be found under @xref{Main Window}. The description of the 
 menus in @xref{Menus}. And the shortcut keys in @xref{Shortcuts}.
 
-@heading What else?@*
+@section What else?@*
 To help the developers (and yourself) debugging the program, Prime sends log 
 information by default to a file named 'prime.log' in the user's home 
 directory (e.g. /home/username).
@@ -242,7 +243,7 @@ program start.@*
 Currently there is partial wildcard support. That means for example that you 
 can specify '~' to indicate your home directory, and you can use '*' inside 
 the program (in the search dialog box) but no further wildcards (like '?') 
-are supported. Examples:
+are supported Currently. Examples:
 
 @example
 $prime ~/projects
@@ -268,12 +269,12 @@ components:
 
 @cindex Manu bar
 @cindex Prime menu bar
-@heading Menu bar
+@section Menu bar
 
-At the top of the window. Contains menus: File, Edit, and Help. The details of
-these menus can be found under @xref{Menus}.@*
+Located at the top of the window. Contains the menus: File, Edit, and Help. 
+The details of these menus can be found under @xref{Menus}.@*
 
-@heading Main Window
+@section Main Window
 
 The rest of the main window has three parts:
 @itemize
@@ -298,7 +299,7 @@ items
 Menus are on the menu bar on the top of the @xref{Main Window}. They are:
 
 @cindex File menu
-@heading(1) File Menu (opened by pressing ALT+F):@*
+@section File Menu (opened by pressing ALT+F):@*
 @itemize
 @item
 Open Location: Opens specific location to view its directory tree
@@ -311,16 +312,19 @@ Exit: Exits Prime
 @end itemize
 
 @cindex Edit menu
-@heading(2) Edit Menu (opened by pressing ALT+E):@*
+@section Edit Menu (opened by pressing ALT+E):@*
 @itemize
 @item
-Space bar: toggle selection. Selected items are marked "*"
+Space bar: toggle selection. Selected items are marked with a "*"
 @item
-Cut selection (if no selection, cut current item). Cut items marked "^"
+Cut selection (if no selection, cut current item). Cut items are marked with 
+a "^"
 @item
-Copy selection (if no selection, copy current item). Copy items marked "#"
+Copy selection (if no selection, copy current item). Copy items are marked 
+with a "#"
 @item
-Paste: Pastes the list of cut/copied files and directories into current location
+Paste: Pastes the list of cut/copied files and directories into current 
+location
 @item
 Mark All: Mark all the files/dirs with '*'
 @item
@@ -332,7 +336,7 @@ Find: Finds a file
 @end itemize
 
 @cindex Help menu
-@heading(3) Help Menu (opened by pressing ALT+H):@*
+@section Help Menu (opened by pressing ALT+H):@*
 @itemize
 @item
 View README: Displays the README file installed with the package

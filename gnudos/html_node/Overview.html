@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.4).
+<!-- This manual is for the GnuDOS library (version 1.5).
 
 Copyright (C) 2014 Mohammed Isam.
 
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.4 or
+under the terms of the GNU Free Documentation License, Version 1.5 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.4: Overview</title>
+<title>GnuDOS library version 1.5: Overview</title>
 
-<meta name="description" content="GnuDOS library version 1.4: Overview">
-<meta name="keywords" content="GnuDOS library version 1.4: Overview">
+<meta name="description" content="GnuDOS library version 1.5: Overview">
+<meta name="keywords" content="GnuDOS library version 1.5: Overview">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -72,31 +72,33 @@ Next: <a href="hello_005fgnudos.html#hello_005fgnudos" accesskey="n" rel="next">
 <h2 class="chapter">1 Overview of the GnuDOS library</h2>
 
 <a name="About-the-GnuDOS-library"></a>
-<h3 class="heading">About the GnuDOS library</h3>
-<p>GnuDOS package is a GNU software. It is a library designed to help new users
-of the GNU system, who are coming from a DOS background, fit into the picture
-and start using the GNU system with ease. It also addresses the console
-programmers of such programs that have the look and feel of old DOS system.
+<h3 class="section">1.1 About the GnuDOS library</h3>
+<p>The GnuDOS package is a GNU software. It is a library designed to help new 
+users of the GNU system, who are coming from a DOS background, fit into the 
+picture and start using the GNU system with ease. It also addresses the console
+programmers of such programs that have the look and feel of the old DOS system.
 The library is composed of core utilities and software applications:
 </p>
 <ul>
 <li> The core library (corelib) contains five utilities: Kbd (for keyboard 
 handling), UKbd (includes unicode support), Screen (for screen drawing), 
-Dialogs (for dialog boxes/window drawing), and Strings (for strings functions).
+Dialogs (for dialog boxes/window drawing), and Strings (for extended strings 
+functions).
 </li><li> The software applications are three: Prime (console file manager), Mino
 (console text editor), and Fog (console form designer).
 </li></ul>
 
 <a name="The-rationale-behind-the-GnuDOS-corelib-library"></a>
-<h3 class="heading">The rationale behind the GnuDOS corelib library</h3>
+<h3 class="section">1.2 The rationale behind the GnuDOS corelib library</h3>
 <p>So, you like programming under the GNU/Linux console, right?. And you came
 from the DOS land where every thing was white/blue or yellow/black. You 
-want to make users coming from DOS land feel home when switching to the
+want to make users coming from the DOS land feel home when switching to the
 powerful GNU system. Okay, That&rsquo;s good. But there are some catches when 
-programming under the console. First of all, you can&rsquo;t format your output 
-exactly the way you want in terms of color, positioning, and so on. You can 
-go deep and use terminal escape sequences (as most GNU/Linux consoles emulate
-the VT100 terminal), but who can remember these?.
+programming under the console.<br>
+First of all, you can&rsquo;t format your output exactly the way you want in terms 
+of color, positioning, and so on. You can go deep and use terminal escape 
+sequences (as most GNU/Linux consoles emulate the VT100 terminal), but who 
+can remember these?.<br>
 </p>
 <p>Next comes the problem of the terminal driver interfering with the keyboard 
 input. You don&rsquo;t get the real key scancodes sent by the keyboard. The driver 
@@ -105,18 +107,19 @@ keycode, process some special key combinations (like CTRL+ALT+DEL) and so on,
 before passing the result to the terminal. And in the case of XTerminal, the 
 X terminal does more processing before sending the final result to your 
 program. You say what difference does it make? you are taking all the pain off
-my head, why should I bother? Here is why:
+my head, why should I bother? Here is why:<br>
 </p>
 <p>If you want your program to be REALLY interactive, like waiting the user to 
-press a key (press, not press and release and press ENTER!) you can&rsquo;t rely on 
-the good old getc() or getchar() functions, as they will return an input char 
-alright, but only after the user presses ENTER!. That&rsquo;s no good for us, you know.
+press a key (&rsquo;press&rsquo;, not &rsquo;press and release&rsquo; and then &rsquo;press ENTER&rsquo;!) you 
+can&rsquo;t rely on the good old getc() or getchar() functions, as they will return 
+an input char alright, but only after the user presses ENTER!. That&rsquo;s no good 
+for us, you know.<br>
 Another thing is reading special keys, like SHIFT, ALT and CTRL. You don&rsquo;t get 
-scancodes for these keys (not all times, at least).
+scancodes for these keys (not all times, at least).<br>
 </p>
-<p>So how to make your program get over these problems? well, you can implement 
-your own keyboard driver, which will be very painful to  construct your keymap 
-tables and do all the calculations, or your can interfere with the input sent 
+<p>So how to make your program get over these problems? Well, you can implement 
+your own keyboard driver, which will be very painful: to construct your keymap 
+tables and do all the calculations; or your can interfere with the input sent 
 from the console driver before it does any further processing on it. 
 The console-utils See <a href="Kbd.html#Kbd">Kbd</a>. utility does this. It tells the console driver 
 to send it raw data (with no processing), and it then looks into its own table 
@@ -130,19 +133,21 @@ More keys (like function keys F1-F12) will be added with future releases.
 </p>
 <p>The other thing the GnuDOS library provides is a utility for controlling the 
 screen See <a href="Screen.html#Screen">Screen</a>. It provides functions for getting the screen size (height 
-and width), setting the screen colors, and clearing the screen.
+and width), setting the screen colors, changing cursor position, and clearing 
+the screen.
 </p>
 <p>The third utility is the See <a href="Dialogs.html#Dialogs">Dialogs</a>. utility, which (as its name says) 
-provides a ready to use class of dialog boxes under the console. It provides 
+provides a ready-to-use classes of dialog boxes under the console. It provides 
 two types of boxes: simple dialog box (to provide the user with a messeage, or 
-asking for confirmation, ...) and an input box (to ask the user to enter some input).
+asking for confirmation, ...) and an input box (to ask the user to enter some 
+input).
 </p>
 <p>The fourth utility is the See <a href="Strings.html#Strings">Strings</a>. utility. It provides some handy 
 functions to make working with strings under C much easier for the programmer.
 </p>
-<p>There are two sample programs: the See <a href="hello_005fgnudos.html#hello_005fgnudos">hello_gnudos</a>. demonstrates how to use 
-the various elements and utilities of the console-utils (GnuDOS) library (except 
-for the strings utility). The other example is See <a href="hello_005fstrings.html#hello_005fstrings">hello_strings</a>. which 
+<p>There are two sample programs: the See <a href="hello_005fgnudos.html#hello_005fgnudos">hello_gnudos</a>, demonstrates how to use 
+the various elements and utilities of the GnuDOS corelib library (except 
+for the strings utility). The other example is See <a href="hello_005fstrings.html#hello_005fstrings">hello_strings</a>, which 
 demonstrates how to use the strings utility.
 </p>
 <hr>

@@ -2,17 +2,17 @@
 @comment $Id@w{$}
 @comment %**start of header
 @setfilename gnudos.info
-@settitle GnuDOS library version 1.4
+@settitle GnuDOS library version 1.5
 @syncodeindex pg cp
 @comment %**end of header
 @copying
-This manual is for the GnuDOS library (version 1.4).
+This manual is for the GnuDOS library (version 1.5).
 
 Copyright @copyright{} 2014 Mohammed Isam.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.4 or
+under the terms of the GNU Free Documentation License, Version 1.5 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
@@ -24,12 +24,11 @@ Texts.  A copy of the license is included in the section entitled
 @dircategory GNU Libraries
 @direntry
 * GnuDOS: (gnudos).             Using the GnuDOS library
-* Fog: (fog).                   The console Form Designer
 @end direntry
 
 @titlepage
-@title GnuDOS library
-@subtitle for version 1.4
+@title The GnuDOS library
+@subtitle for version 1.5
 @author Mohammed Isam (@email{mohammed_isam1984@@yahoo.com})
 @page
 @vskip 0pt plus 1filll
@@ -40,9 +39,9 @@ Texts.  A copy of the license is included in the section entitled
 
 @ifnottex
 @node Top
-@top GnuDOS library
+@top The GnuDOS library
 
-This manual is for the GnuDOS library (version 1.4).
+This manual is for the GnuDOS library (version 1.5).
 
 @end ifnottex
 
@@ -54,7 +53,6 @@ This manual is for the GnuDOS library (version 1.4).
 * Dialogs:: Using the Dialogs utility
 * Screen:: Using the Screen utility
 * Strings:: Using the Strings utility
-* Fog:: The console Form Designer
 * GNU Free Documentation License::
 * Index::
 @end menu
@@ -64,30 +62,32 @@ This manual is for the GnuDOS library (version 1.4).
 @cindex GnuDOS library overview
 @chapter Overview of the GnuDOS library
 
-@heading About the GnuDOS library
-GnuDOS package is a GNU software. It is a library designed to help new users
-of the GNU system, who are coming from a DOS background, fit into the picture
-and start using the GNU system with ease. It also addresses the console
-programmers of such programs that have the look and feel of old DOS system.
+@section About the GnuDOS library
+The GnuDOS package is a GNU software. It is a library designed to help new 
+users of the GNU system, who are coming from a DOS background, fit into the 
+picture and start using the GNU system with ease. It also addresses the console
+programmers of such programs that have the look and feel of the old DOS system.
 The library is composed of core utilities and software applications:
 
 @itemize @bullet
 @item The core library (corelib) contains five utilities: Kbd (for keyboard 
 handling), UKbd (includes unicode support), Screen (for screen drawing), 
-Dialogs (for dialog boxes/window drawing), and Strings (for strings functions).
+Dialogs (for dialog boxes/window drawing), and Strings (for extended strings 
+functions).
 @item The software applications are three: Prime (console file manager), Mino
 (console text editor), and Fog (console form designer).
 @end itemize
 
-@heading The rationale behind the GnuDOS corelib library
+@section The rationale behind the GnuDOS corelib library
 So, you like programming under the GNU/Linux console, right?. And you came
 from the DOS land where every thing was white/blue or yellow/black. You 
-want to make users coming from DOS land feel home when switching to the
+want to make users coming from the DOS land feel home when switching to the
 powerful GNU system. Okay, That's good. But there are some catches when 
-programming under the console. First of all, you can't format your output 
-exactly the way you want in terms of color, positioning, and so on. You can 
-go deep and use terminal escape sequences (as most GNU/Linux consoles emulate
-the VT100 terminal), but who can remember these?.
+programming under the console.@*
+First of all, you can't format your output exactly the way you want in terms 
+of color, positioning, and so on. You can go deep and use terminal escape 
+sequences (as most GNU/Linux consoles emulate the VT100 terminal), but who 
+can remember these?.@*
 
 Next comes the problem of the terminal driver interfering with the keyboard 
 input. You don't get the real key scancodes sent by the keyboard. The driver 
@@ -96,18 +96,19 @@ keycode, process some special key combinations (like CTRL+ALT+DEL) and so on,
 before passing the result to the terminal. And in the case of XTerminal, the 
 X terminal does more processing before sending the final result to your 
 program. You say what difference does it make? you are taking all the pain off
-my head, why should I bother? Here is why:
+my head, why should I bother? Here is why:@*
 
 If you want your program to be REALLY interactive, like waiting the user to 
-press a key (press, not press and release and press ENTER!) you can't rely on 
-the good old getc() or getchar() functions, as they will return an input char 
-alright, but only after the user presses ENTER!. That's no good for us, you know.
+press a key ('press', not 'press and release' and then 'press ENTER'!) you 
+can't rely on the good old getc() or getchar() functions, as they will return 
+an input char alright, but only after the user presses ENTER!. That's no good 
+for us, you know.@*
 Another thing is reading special keys, like SHIFT, ALT and CTRL. You don't get 
-scancodes for these keys (not all times, at least).
+scancodes for these keys (not all times, at least).@*
 
-So how to make your program get over these problems? well, you can implement 
-your own keyboard driver, which will be very painful to  construct your keymap 
-tables and do all the calculations, or your can interfere with the input sent 
+So how to make your program get over these problems? Well, you can implement 
+your own keyboard driver, which will be very painful: to construct your keymap 
+tables and do all the calculations; or your can interfere with the input sent 
 from the console driver before it does any further processing on it. 
 The console-utils @xref{Kbd}. utility does this. It tells the console driver 
 to send it raw data (with no processing), and it then looks into its own table 
@@ -121,19 +122,21 @@ More keys (like function keys F1-F12) will be added with future releases.
 
 The other thing the GnuDOS library provides is a utility for controlling the 
 screen @xref{Screen}. It provides functions for getting the screen size (height 
-and width), setting the screen colors, and clearing the screen.
+and width), setting the screen colors, changing cursor position, and clearing 
+the screen.
 
 The third utility is the @xref{Dialogs}. utility, which (as its name says) 
-provides a ready to use class of dialog boxes under the console. It provides 
+provides a ready-to-use classes of dialog boxes under the console. It provides 
 two types of boxes: simple dialog box (to provide the user with a messeage, or 
-asking for confirmation, ...) and an input box (to ask the user to enter some input).
+asking for confirmation, ...) and an input box (to ask the user to enter some 
+input).
 
 The fourth utility is the @xref{Strings}. utility. It provides some handy 
 functions to make working with strings under C much easier for the programmer.
 
-There are two sample programs: the @xref{hello_gnudos}. demonstrates how to use 
-the various elements and utilities of the console-utils (GnuDOS) library (except 
-for the strings utility). The other example is @xref{hello_strings}. which 
+There are two sample programs: the @xref{hello_gnudos}, demonstrates how to use 
+the various elements and utilities of the GnuDOS corelib library (except 
+for the strings utility). The other example is @xref{hello_strings}, which 
 demonstrates how to use the strings utility.
 
 @node hello_gnudos
@@ -192,10 +195,10 @@ int main(int argc, char *argv[])
 
 
 Note that including the header file "dialogs.h" automatically includes both 
-"screen.h" and "kbd.h" as the dialogs utility uses both of the other two.
+"screen.h" and "kbd.h", as the dialogs utility uses both of the other two.
 
 
-And now REMEMBER two things:
+And now, REMEMBER two things:
 @enumerate
 @item a call to initTerminal() must be invoked before using the library
 @item a call restoreTerminal() must be done before exiting the program
@@ -205,12 +208,14 @@ For deatils about these functions please see @xref{Kbd}.@*
 If you forget point (2), you will leave the user's terminal in raw mode, which 
 (under console) means he/she will not be able to do virtually anything (not 
 even switching terminal by CTRL+ALT+F key!). The only way out is a reboot!. 
+And I am talking about hard reboot by pressing the power button or restart key.
 Under X it is less worse, usually the user will need to close the xterm or kill 
 the process. Still though, it is IMPERATIVE to call restoreTerminal() before 
-exiting your program!. To make sure no funny things happen (like your progrm 
-crashing for whatever reason, or your admin killing it, to name a few) before 
-you call restoreTerminal(), you better use the catchSignals() function of the 
-@xref{Dialogs}. utility. Remember though that there are some signals that can't 
+exiting your program!.@*
+To make sure no funny things happen (like your progrm crashing for whatever 
+reason, or your admin killing it, to name a few) before you call 
+restoreTerminal(), you better use the catchSignals() function of the 
+@xref{Dialogs}, utility. Remember though that there are some signals that can't 
 be caught by your program, like the SIGSTOP and SIGKILL signals. This is why we 
 used the catchSignals() function instead of the catchAllSignals() function.
 
@@ -223,7 +228,7 @@ This is a sample program that demonstrates how to use the strings utility:
 
 @example
 #include <stdio.h>
-#include "strings.h"
+#include "console/strings.h"
 
 int main(int argc, char **argv)
 @{
@@ -303,7 +308,7 @@ The function getKey() is called to get the next key press from the keyboard.
 It actually relies on two functions internally: one to get the key under X, the 
 other to get it under console mode. The difference between the two is of no 
 relevance to the user. Just call getKey() to get the next keypress whether 
-under X or not.
+under X or the console.
 
 The getKey() function returns its result as an integer. For alphanumeric keys 
 this will mean the ASCII value of that key (ASCII 65-90 for Latin capitals, 
@@ -385,7 +390,7 @@ char *ugetKeyUnderConsole();
 char *ugetKeyUnderX();
 @end example
 
-The results are returned as character pointer in each.
+The results are returned as a character pointer in each.@*
 
 One additional piece of information is the mask that is used to determine the
 length of a given unicode char, as unicode chars have variable lengths:
@@ -406,7 +411,7 @@ The Dialogs utility provides three types of dialog boxes: simple dialog boxes,
 input boxes, and empty boxes.@*
 
 @cindex Simple Dialog Boxes
-@heading Simple Dialog Box@*
+@section Simple Dialog Box@*
 The function to draw a simple dialog box is defined in "dialogs.h" as:
 
 @example
@@ -416,17 +421,19 @@ int msgBox(char *msg, int buttons, msgtype tmsg);
 Where:@*
 @itemize @bullet
 @item
-msg: is a pointer to the string that will be the output message of the dialog box
+msg: is a pointer to the string that will be the output message of the 
+dialog box
 @item
-buttons: an integer value defining the number and type of buttons to be displayed (see below)
+buttons: an integer value defining the number and type of buttons to be 
+displayed (see below)
 @item
 tmsg: a value of type "msgtype" (see below) defining the type of dialog box. 
 This will be the title of the dialog
 @end itemize
 
-The value of @code{buttons} can be: OK, OK|CANCEL, or YES|NO. Note when using 
-two buttons they need to be ORed with the vertical bar. The macros defining 
-those buttons are declared in "dialogs.h" as:
+The value of @code{buttons} can be: OK, OK|CANCEL, YES|NO, or OK|CANCEL|ALL. 
+Note when using two or more buttons they need to be ORed with the vertical 
+bar. The macros defining those buttons are declared in "dialogs.h" as:
 
 @cindex Button values in dialog boxes
 @example
@@ -435,6 +442,8 @@ those buttons are declared in "dialogs.h" as:
 #define YES	2	//00000010
 #define CANCEL	4	//00000100
 #define NO	8	//00001000
+#define ALL	16	//00010000
+#define ABORT	32	//00100000
 @end example
 
 @cindex Types of messages in Dialog Boxes
@@ -449,7 +458,7 @@ CONFIRM: This is a confirmation dialog box. The title will be "CONFIRMATION"
 @end itemize
 
 @cindex Input Boxes
-@heading Input boxes
+@section Input boxes
 
 The function to draw a simple dialog box is defined in "dialogs.h" as:
 
@@ -488,7 +497,7 @@ from the user. The user can change the input or just press ENTER and accept the
 default value.
 
 @cindex Empty Boxes
-@heading Empty boxes@*
+@section Empty boxes@*
 
 Drawing empty boxes or windows is done via one of two functions:@*
 
@@ -520,7 +529,8 @@ char *title: A string pointer to the title of the dialog box
 @item
 int clearArea: A boolean value indicating whether to clear the box area 
 (YES=clear, NO=don't clear). Not clearing the box area can be handy when, 
-for example, you need to redraw the window frame but leave the window contents intact.
+for example, you need to redraw the window frame but leave the window 
+contents intact.
 @end itemize
 
 @cindex Global Dialog Box variables
@@ -546,7 +556,7 @@ The last one, MAX_INPUT_MSG_LEN is a macro defining the maximum length of the
 input string returned by an input box. Currently it is restricted to 100 chars.
 
 @cindex The catchSignals() function
-@heading The catchSignals() function@*
+@section The catchSignals() function@*
 
 The last two functions of "dialogs.h" are:
 
@@ -599,14 +609,16 @@ Again, please define the signal handler in a proper way whenever possible.
 
 The screen utility provides functions to manipulate the screen colors, clearing 
 the screen, and positioning of the cursor. It also defines values for the 
-screen size. The member variables of the screen utility (defined in screen.h) are:
+screen size. The member variables of the screen utility (defined in "screen.h")
+are:
 
 @example
  int SCREEN_W;
  int SCREEN_H;
 @end example
 
-Both these variables are filled with values after a call to getScreenSize().
+Both these variables are filled with their proper values after a call to 
+getScreenSize().
 
 @cindex Color arrays
 @example
@@ -614,16 +626,18 @@ Both these variables are filled with values after a call to getScreenSize().
  int BG_COLOR[color_components];
 @end example
 
-The color_components is a macro defined with a value of 4. The possible values 
+The color_components is a macro defined with a value of 6. The possible values 
 for color_components which is an index into arrays of colors determining what 
 color is assigned to which component (i.e., dialogs, buttons, ...) are:
 
 @cindex Color components
 @example
- COLOR_WINDOW		0	  	
+ COLOR_WINDOW		0
  COLOR_HIGHLIGHT_TEXT	1
- COLOR_BUTTONS	 	2
- COLOR_HBUTTONS		3
+ COLOR_MENU_BAR		2
+ COLOR_STATUS_BAR	3
+ COLOR_BUTTONS		4
+ COLOR_HBUTTONS		5
 @end example
 
 You can define the colors in the color arrays by using integer values, although 
@@ -765,28 +779,43 @@ What the functions do is as following:
 @itemize
 @cindex The indexof() function
 @item
-The indexof() function returns the zero-based index of the first occurence of 'chr' in 'string'.
+The indexof() function returns the zero-based index of the first occurence of 
+'chr' in 'string'.
 @cindex The nindexof() function
 @item
-The nindexof() function returns the zero-based index of the next occurence of 'chr' in 'string'. It should be called after a previous call the indexof().
+The nindexof() function returns the zero-based index of the next occurence of 
+'chr' in 'string'. It should be called after a previous call the indexof().
 @cindex The lindexof() function
 @item
-The lindexof() function returns the zero-based index of the last occurence of 'chr' in 'string'. If there is only one occurence of 'chr' in 'string', the return value is essentially the same as that of indexof().
+The lindexof() function returns the zero-based index of the last occurence of 
+'chr' in 'string'. If there is only one occurence of 'chr' in 'string', the 
+return value is essentially the same as that of indexof().
 @cindex The substr() function
 @item
-The substr() function returns a substring of 'string' starting from position 'start'. Note start is zero-based.
+The substr() function returns a substring of 'string' starting from position 
+'start'. Note start is zero-based.
 @cindex The nsubstr() function
 @item
-The nsubstr() function returns a substring of 'string' starting from position 'start' and spanning 'length' characters. Note start is zero-based.
+The nsubstr() function returns a substring of 'string' starting from position 
+'start' and spanning 'length' characters. Note start is zero-based.
 @cindex The ltrim() function
 @item
-The ltrim() function trims (removes) all the whitespace characters from the strings' left side. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in the lefthand side of the string, the original string is returned.
+The ltrim() function trims (removes) all the whitespace characters from the 
+strings' left side. Whitespace characters removed are: space, tab, and newline.
+If there are no whitespace characters in the lefthand side of the string, the 
+original string is returned.
 @cindex The rtrim() function
 @item
-The rtrim() function trims (removes) all the whitespace characters from the strings' right side. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in the lefthand side of the string, the original string is returned.
+The rtrim() function trims (removes) all the whitespace characters from the 
+strings' right side. Whitespace characters removed are: space, tab, and 
+newline. If there are no whitespace characters in the lefthand side of the 
+string, the original string is returned.
 @cindex The trim() function
 @item
-The trim() function trims (removes) all the whitespace characters from both strings' ends. Whitespace characters removed are: space, tab, and newline. If there are no whitespace characters in either side of the string, the original string is returned.
+The trim() function trims (removes) all the whitespace characters from both 
+strings' ends. Whitespace characters removed are: space, tab, and newline. 
+If there are no whitespace characters in either side of the string, the 
+original string is returned.
 @cindex The toupper() function
 @item
 The toupper() function returns the string in upper case letters.
@@ -795,72 +824,6 @@ The toupper() function returns the string in upper case letters.
 The tolower() function returns the string in lower case letters.
 @end itemize
 
-
-@node Fog
-@cindex Fog
-@cindex The console Form Designer
-@cindex Using the console Form Designer
-@chapter Fog: The console Form Designer
-
-Using the utilities of the GnuDOS library will ease the life of console 
-programmers very much, but still though, putting it all together to design 
-a complete user interface (or a form) can be a tedious job. 
-The FOG (Form Designer) helps with this aspect of programming. It provides 
-a development environment that will make it easy to design an application 
-interface for a program using the console-utils library under the console.
-
-Fog is installed as part of the GnuDOS library package. It can be invoked by running:
-
-@example
-$ fog
-@end example
-
-from the command line. The user interface is very simple:
-@itemize
-@item
-Toolbox: Contains the set of 'tools' that can be added to a form, such as option items and bulleted items
-@item
-Form design: Displays the form under design
-@item
-Menu bar: Contains the menus File, Edit and Help
-@end itemize
-
-Fog saves the form design typically in the same working directory from which it 
-was invoked. This can be changed by specifying another path and file name in the 
-Save dialog box.
-Fog design files have the extension '.fog', to be distinct from other programs' 
-files. These files should not be edited by hand. Instead, open Fog and edit the 
-form design and re-save the form.
-After finishing the form design, Fog can create a skeleton project that has most 
-components pre-written for the programmer, mainly the parts that deal with the 
-user interface and getting input from the user.
-
-Select 'Write Project' from the File menu, or just press CTRL+W. Fog will write 
-three files in the same project directory:
-@itemize @bullet
-@item
-main.c: Contains the main() program function. If the form contains any buttons, it will contain a function event handler which is called whenever a button is clicked (or the user presses ENTER on it).
-@item
-fog_header.h: Contains global variable declarations and function prototypes.
-@item
-form_design.c: Contains the following function definitions:
-@itemize @minus
-@item
-void init_form(): Initializes the form and fills global variables
-@item
-void refresh_form(): Redraws the form into the screen
-@item
-void input_loop(): Catches user input on the form
-@item
-void close_form(): Restores the terminal and clears the screen before exiting
-@end itemize
-@end itemize
-
-A program designed with Fog can be compiled as following (if using gcc compiler):
-
-@example
-$ gcc -o myprog main.c form_design.c -lGnuDOS
-@end example
 
 
 @node GNU Free Documentation License

@@ -1,9 +1,8 @@
 \initial {C}
 \entry {Code highlighting}{3}
-\entry {Command line help}{2}
+\entry {Command line help}{3}
 \initial {E}
 \entry {Edit menu}{5}
-\entry {Edit menus}{4}
 \entry {Editing area}{4}
 \initial {F}
 \entry {FDL, GNU Free Documentation License}{8}
@@ -22,12 +21,14 @@
 \entry {Main window}{4}
 \entry {Menu bar}{4}
 \entry {Menus}{4}
+\entry {Mino menus}{4}
 \entry {Mino Overview}{1}
 \initial {O}
 \entry {Options menu}{5}
 \entry {Overview}{1}
 \initial {R}
 \entry {Reasons of using mino}{2}
+\entry {Resetting the config file}{2}
 \entry {Running mino}{2}
 \initial {S}
 \entry {Sentence highlighting}{3}

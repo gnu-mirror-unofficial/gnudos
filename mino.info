@@ -1,6 +1,6 @@
 This is mino.info, produced by makeinfo version 5.1 from mino.texi.
 
-This manual is for the Mino (mino) program (version 1.1).
+This manual is for the Mino text editor (version 1.1).
 
    Copyright (C) 2014 Mohammed Isam.
 
@@ -13,7 +13,7 @@ This manual is for the Mino (mino) program (version 1.1).
 
 INFO-DIR-SECTION GNU Utilities
 START-INFO-DIR-ENTRY
-* mino: (mino).                 Using Mino (mino) text editor.
+* mino: (mino).                 Using the Mino text editor.
 END-INFO-DIR-ENTRY
 
 
@@ -22,11 +22,11 @@ File: mino.info,  Node: Top,  Next: Overview,  Up: (dir)
 mino
 ****
 
-This manual is for the Mino (mino) text editor (version 1.1).
+This manual is for the Mino text editor (version 1.1).
 
 * Menu:
 
-* Overview:: Overview of the mino (Mino) text editor
+* Overview:: Overview of the mino text editor
 * Main Window:: Mino main window
 * Menus:: Working around with menus
 * Shortcuts:: Using keyboard shortcuts
@@ -36,11 +36,13 @@ This manual is for the Mino (mino) text editor (version 1.1).
 
 File: mino.info,  Node: Overview,  Next: Main Window,  Prev: Top,  Up: Top
 
-1 Overview of the mino (Mino) text editor
-*****************************************
+1 Overview of the mino text editor
+**********************************
 
-What is mino (Mino)?  Mino is a GNU software, part of the GnuDOS
-package.
+1.1 What is mino (Mino)?
+========================
+
+Mino is a GNU software, part of the GnuDOS package.
 Mino is a text file editor for use with the GNU/Linux console/xterm.
 The idea was to provide a text editor that is user friendly and easy to
 use for those who came from DOS land.  Having accustomed to SHIFT
@@ -58,13 +60,13 @@ provided by the six levels of experience of Mino:
   5. Expert: Very few DOS keys, most are GNU keys
   6. Veteran: Only GNU keys, no DOS-like keys
 
-   You start with level 1 by default.  To set your level, call the mino
-with ''--levelX'' or ''-lX'' options, Where X is the level desired, for
-example:
+   You start with level 1 by default.
+To set your level of experience, call mino with ''--levelX'' or ''-lX''
+options, Where X is the level desired, for example:
      $mino --level2
 
-Which keys are defined for which level?
-=======================================
+1.2 Which keys are defined for which level?
+===========================================
 
 Below is a table showing the DOS-like key combinations along with their
 respective GNU key bindings.  To the right is the level at which a
@@ -75,9 +77,11 @@ level!.
 
    Keybindings:
 In the table below, C-something means pressing down CTRL and then
-pressing the other key.  Note that '^' is the same as 'C', meaning CTRL
-key, it is just typed like this so DOS users can feel familiar with the
-text.  The same as M-something, which means META or ALT.
+pressing the other key.  Note that '^' is the same as 'C', meaning
+CTRL-key, it is just typed like this so DOS users can feel familiar with
+the text.
+
+   The same as M-something, which means META or ALT.
 
 Function               DOS-like key   GNU key        GnuDOS Level
 ----------------------------------------------------------------------------
@@ -119,23 +123,23 @@ Help                   F1             C-h ?          Expert
 All GNU bindings and                                 Veteran
 no DOS bindings
 
-Why should I use it?
-====================
+1.3 Why should I use it?
+========================
 
 If you are new to GNU system and find it hard to dive in head-first into
 the GNU keys and shortcuts for GNU programs (like emacs), this is the
-place to start.  Use you well-known DOS-like shortcuts, in the same time
-learn how to use the GNU shortcuts.
+place to start.  Use your well-known DOS-like shortcuts, in the same
+time learn how to use the GNU shortcuts.
 
-How to run it?
-==============
+1.4 How to run it?
+==================
 
 After installing the package, simply type:
 
      $ mino
 
    on your console (or xterm) and it will run.  If you want to load a
-file into mino:
+file into mino on startup:
 
      $ mino file-name
 
@@ -147,29 +151,34 @@ file into mino:
 
      $ mino [--help|-h]
 
-How does mino remember my preferences?
-======================================
+1.5 How does mino remember my preferences?
+==========================================
 
 Mino stores its configuration in a file called '.mino.conf' under your
 home directory.  You can edit it by hand (or using mino!), but this is
 not advisable.  Use the Options menu under mino to change your
-preferences and mino will save them into the config file.
+preferences and mino will save them into the config file in the proper
+way.
 
-What about sentence highlighting?
-=================================
+1.6 What about sentence highlighting?
+=====================================
 
-Currently mino recognizes the following file types:
+Currently mino recognizes the following file types (by their extension):
    * C/C++ Source and header files
    * Perl scripts
    * Shell scripts
+   * Python scripts
+   * Assembly source listings
+   * Texi info source files
 
-   Whenever you open a file of these types, mino will automatically
-adjust the colors of the view so that the language keywords, library
-functions, and operators (like +-*/ and so on) are highlighted each in a
-different color, on a black background, to ease writing your programs.
+   Whenever you open a file of one of these types, mino will
+automatically adjust the colors of the view so that the language
+keywords, library functions, and operators (like +-*/ and so on) are
+highlighted, each in a different color, on a black background, to ease
+writing your programs.
 
-What else?
-==========
+1.7 What else?
+==============
 
 There is one catch: when running under the X system, the program will
 not be able to capture all input from the keyboard, as X interferes with
@@ -190,26 +199,27 @@ File: mino.info,  Node: Main Window,  Next: Menus,  Prev: Overview,  Up: Top
 2 Mino main window
 ******************
 
-After running mino (Mino), you are faced with a window that has the
-following components:
+After running mino, you are faced with a window that has the following
+components:
 
-Menu bar
-========
+2.1 The Menu bar
+================
 
-At the top of the window.  Contains menus: File, Edit, Options, and
-Help.  The details of these menus can be found under *Note Menus::.
+Located at the top of the window.  Contains the menus: File, Edit,
+Options, and Help.  The details of these menus can be found under *Note
+Menus::.
 
-Status bar
-==========
+2.2 Status bar
+==============
 
 At the bottom is the status bar.  It shows the current state of the
 file, which can be:
 
    * New: After opening a fresh mino window or selecting New from the
      File Menu
-   * Opened: When a fresh file is opened
+   * Opened: When a saved file is opened
    * Saved: After saving the edited file
-   * Modified: When any editing has not yet been saved
+   * Modified: When any editing has been done but not yet been saved
    * Idle: Nothing has happened yet!
 
    The right side of the status bar shows the current position in file
@@ -221,8 +231,8 @@ There are indicators which can appear in the status bar:
    * SEL: When selecting mode is on (pressing SHIFT under console or
      CTRL+E under X)
 
-Editing area
-============
+2.3 Editing area
+================
 
 Most of the main window will be occupied by the editing field containing
 the lines of the file selected.  Most of your editing work will be done
@@ -237,21 +247,21 @@ File: mino.info,  Node: Menus,  Next: Shortcuts,  Prev: Main Window,  Up: Top
 Menus are on the menu bar on the top of the *Note Main Window::.  They
 are:
 
-(1) File Menu (opened by pressing ALT+F):
+3.1 File Menu (opened by pressing ALT+F):
 =========================================
 
    * New: Clears editing area and opens a new file
-   * Open File: Opens another file for editing
+   * Open File: Opens a previously saved file for editing
    * Save File: Saves the current file to disk
-   * Save As: Save the current file under another name
+   * Save As: Saves the current file under another name
    * Print: Prints the current file to printer
    * Exit: Exits mino
 
-(2) Edit Menu (opened by pressing ALT+E):
+3.2 Edit Menu (opened by pressing ALT+E):
 =========================================
 
-   * Cut: Cuts current selection and places text into mino clipboard
-   * Copy: Copies current selection to mino clipboard
+   * Cut: Cuts current selection and places text into the mino clipboard
+   * Copy: Copies current selection to the mino clipboard
    * Paste: Pastes whatever in the mino clipboard into the current
      position in file
    * Select All: Selects the whole document
@@ -262,21 +272,21 @@ are:
    * Delete Line: Deletes the line under the cursor
    * Toggle Select Mode (Only under X):
         - Toggles the select mode On (like pressing SHIFT)
-        - or Off (Like releasing SHIFT)
+        - Or Off (Like releasing SHIFT)
 
-(3) Options Menu (opened by pressing ALT+O):
+3.3 Options Menu (opened by pressing ALT+O):
 ============================================
 
    * Change colors: Opens a dialog box to select different colors for
      window, menu bar, ...
    * Tab spaces: Define the number of spaces to be inserted when you
-     press TAB
+     press the TAB key
    * Reset config: Resets the configuration (colors and tab spaces)
 
    All the Options menu items write the new values into the config file
 (~/.mino.conf).
 
-(4) Help Menu (opened by pressing ALT+H):
+3.4 Help Menu (opened by pressing ALT+H):
 =========================================
 
    * View README: Displays the README file installed with the package
@@ -756,48 +766,49 @@ Index
  [index ]
 * Menu:
 
-* Code highlighting:                     Overview.            (line 122)
-* Command line help:                     Overview.            (line 110)
-* Edit menu:                             Menus.               (line  19)
-* Edit menus:                            Main Window.         (line  43)
-* Editing area:                          Main Window.         (line  37)
+* Code highlighting:                     Overview.            (line 127)
+* Command line help:                     Overview.            (line 114)
+* Edit menu:                             Menus.               (line  18)
+* Editing area:                          Main Window.         (line  38)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
                                                               (line   9)
-* File menu:                             Menus.               (line   9)
-* File state:                            Main Window.         (line  21)
-* Help menu:                             Menus.               (line  48)
-* Highlighting mode:                     Overview.            (line 122)
-* How to run mino:                       Overview.            (line  97)
-* Invoking mino:                         Overview.            (line  97)
-* Key bindings:                          Overview.            (line  30)
+* File menu:                             Menus.               (line   8)
+* File state:                            Main Window.         (line  22)
+* Help menu:                             Menus.               (line  47)
+* Highlighting mode:                     Overview.            (line 126)
+* How to run mino:                       Overview.            (line 101)
+* Invoking mino:                         Overview.            (line 101)
+* Key bindings:                          Overview.            (line  31)
 * Keyboard shortcuts:                    Menus.               (line  57)
 * Main window:                           Main Window.         (line   6)
-* Menu bar:                              Main Window.         (line   9)
-* Menus:                                 Main Window.         (line  44)
-* Mino Overview:                         Overview.            (line   6)
-* Options menu:                          Menus.               (line  36)
+* Menu bar:                              Main Window.         (line   8)
+* Menus:                                 Main Window.         (line  45)
+* Mino menus:                            Main Window.         (line  44)
+* Mino Overview:                         Overview.            (line   5)
+* Options menu:                          Menus.               (line  35)
 * Overview:                              Overview.            (line   6)
-* Reasons of using mino:                 Overview.            (line  89)
-* Running mino:                          Overview.            (line  97)
-* Sentence highlighting:                 Overview.            (line 122)
+* Reasons of using mino:                 Overview.            (line  93)
+* Resetting the config file:             Overview.            (line 110)
+* Running mino:                          Overview.            (line 101)
+* Sentence highlighting:                 Overview.            (line 127)
 * Shortcuts:                             Menus.               (line  57)
 * Shortcuts keys:                        Menus.               (line  56)
-* Starting mino:                         Overview.            (line  97)
+* Starting mino:                         Overview.            (line 101)
 * Status bar:                            Main Window.         (line  15)
-* Status indicators:                     Main Window.         (line  32)
-* Why to use it:                         Overview.            (line  89)
-* Why to use mino:                       Overview.            (line  89)
+* Status indicators:                     Main Window.         (line  33)
+* Why to use it:                         Overview.            (line  93)
+* Why to use mino:                       Overview.            (line  93)
 * Work area:                             Main Window.         (line  37)
 
 
 
 Tag Table:
-Node: Top711
-Node: Overview1061
-Node: Main Window7508
-Node: Menus8767
-Node: Shortcuts10812
-Node: GNU Free Documentation License11475
-Node: Index33952
+Node: Top705
+Node: Overview1041
+Node: Main Window7700
+Node: Menus9010
+Node: Shortcuts11083
+Node: GNU Free Documentation License11746
+Node: Index34223
 
 End Tag Table
