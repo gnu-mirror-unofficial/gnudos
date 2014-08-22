@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.5).
+<!-- This manual is for the GnuDOS library (version 1.6).
 
 Copyright (C) 2014 Mohammed Isam.
 
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.5 or
+under the terms of the GNU Free Documentation License, Version 1.6 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
@@ -13,10 +13,10 @@ Texts.  A copy of the license is included in the section entitled
  -->
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.5: hello_gnudos</title>
+<title>GnuDOS library version 1.6: hello_gnudos</title>
 
-<meta name="description" content="GnuDOS library version 1.5: hello_gnudos">
-<meta name="keywords" content="GnuDOS library version 1.5: hello_gnudos">
+<meta name="description" content="GnuDOS library version 1.6: hello_gnudos">
+<meta name="keywords" content="GnuDOS library version 1.6: hello_gnudos">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
     fprintf(stderr, &quot;Error catching signals. Exiting.\n&quot;);
     exit(1);
   }
-  if(!init_kbd())
+  if(!initTerminal())
   {
     fprintf(stderr, &quot;Error initializing keyboard. Aborting.\n&quot;);
     exit(1);
@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
   clearScreen();
   //very important to restore keyboard state to its
   //previous state before exiting
-  restore_kbd();
+  restoreTerminal();
   exit(0);
 }
 </pre></div>

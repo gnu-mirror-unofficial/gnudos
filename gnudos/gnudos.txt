@@ -12,13 +12,14 @@ The GnuDOS library
   5.4 The catchSignals() function
 6 Using the Screen utility
 7 Using the Strings utility
+8 The ASCII character table
 Appendix A GNU Free Documentation License
   A.1 GNU Free Documentation License
 Index
 The GnuDOS library
 ******************
 
-This manual is for the GnuDOS library (version 1.5).
+This manual is for the GnuDOS library (version 1.6).
 
 1 Overview of the GnuDOS library
 ********************************
@@ -130,7 +131,7 @@ utilities:
          fprintf(stderr, "Error catching signals. Exiting.\n");
          exit(1);
        }
-       if(!init_kbd())
+       if(!initTerminal())
        {
          fprintf(stderr, "Error initializing keyboard. Aborting.\n");
          exit(1);
@@ -155,7 +156,7 @@ utilities:
        clearScreen();
        //very important to restore keyboard state to its
        //previous state before exiting
-       restore_kbd();
+       restoreTerminal();
        exit(0);
      }
 
@@ -657,6 +658,156 @@ convenience), which is defined as:
    * The toupper() function returns the string in upper case letters.
    * The tolower() function returns the string in lower case letters.
 
+8 The ASCII character table
+***************************
+
+ASCII stands for 'American Standard Code for Information Interchange'.
+It's a 7-bit character code used to be the standard of text
+representation.  Although there are a number of other standards in use
+today, especially those that support wide characters and multi-language
+interfaces, the ASCII character set is the base for most of the
+character encodings used today.
+
+   The first 32 (0-31) characters in the ASCII-table are unprintable
+control codes that are classicaly used to control peripheral devices
+such as printers.
+
+   Codes 32-127 are the printable characters, which represent letters,
+digits, punctuation marks, and a few other symbols.  Almost every
+character is available on standard keyboards.  Character 127 represents
+the command DEL.
+
+Dec         Oct         Hex         Name        Description
+------------------------------------------------------------------------------
+0           000         00          NUL         Null char
+1           001         01          SOH         Start of heading
+2           002         02          STX         Start of text
+3           003         03          ETX         End of text
+4           004         04          EOT         End of transmission
+5           005         05          ENQ         Enquiry
+6           006         06          ACK         Acknowledgment
+7           007         07          BEL         Bell
+8           010         08          BS          Back space
+9           011         09          HT          Horizontal tab
+10          012         0A          LF          Line feed
+11          013         0B          VT          Vertical tab
+12          014         0C          FF          Form feed
+13          015         0D          CR          Carriage return
+14          016         0E          SO          Shift out/XOn
+15          017         0F          SI          Shift in/XOff
+16          020         10          DLE         Data line escape
+17          021         11          DC1         Device control 1
+18          022         12          DC2         Device control 2
+19          023         13          DC3         Device control 3
+20          024         14          DC4         Device control 4
+21          025         15          NAK         Negative acknowledgment
+22          026         16          SYN         Synchronous idle
+23          027         17          ETB         End of transmit block
+24          030         18          CAN         Cancel
+25          031         19          EM          End of medium
+26          032         1A          SUB         Substitute
+27          033         1B          ESC         Escape
+28          034         1C          FS          File separator
+29          035         1D          GS          Group separator
+30          036         1E          RS          Record separator
+31          037         1F          US          Unit separator
+32          040         20          SP          Space
+33          041         21          !           Exclamation mark
+34          042         22          "           Double quotes
+35          043         23          #           Number
+36          044         24          $           Dollar
+37          045         25          %           Procenttecken
+38          046         26          &           Ampersand
+39          047         27          '           Single quote
+40          050         28          (           Open parenthesis
+41          051         29          )           Close parenthesis
+42          052         2A          *           Asterisk
+43          053         2B          +           Plus
+44          054         2C          ,           Comma
+45          055         2D          -           Hyphen
+46          056         2E          .           Full stop
+47          057         2F          /           Slash or divide
+48          060         30          0           Zero
+49          061         31          1           One
+50          062         32          2           Two
+51          063         33          3           Three
+52          064         34          4           Four
+53          065         35          5           Five
+54          066         36          6           Six
+55          067         37          7           Seven
+56          070         38          8           Eight
+57          071         39          9           Nine
+58          072         3A          :           Colon
+59          073         3B          ;           Semicolon
+60          074         3C          <           Less than
+61          075         3D          =           Equals
+62          076         3E          >           Grater than
+63          077         3F          ?           Question mark
+64          100         40          @           At symbol
+65          101         41          A           Capital A
+66          102         42          B           Capital B
+67          103         43          C           Capital C
+68          104         44          D           Capital D
+69          105         45          E           Capital E
+70          106         46          F           Capital F
+71          107         47          G           Capital G
+72          110         48          H           Capital H
+73          111         49          I           Capital I
+74          112         4A          J           Capital J
+75          113         4B          K           Capital K
+76          114         4C          L           Capital L
+77          115         4D          M           Capital M
+78          116         4E          N           Capital N
+79          117         4F          O           Capital O
+80          120         50          P           Capital P
+81          121         51          Q           Capital Q
+82          122         52          R           Capital R
+83          123         53          S           Capital S
+84          124         54          T           Capital T
+85          125         55          U           Capital U
+86          126         56          V           Capital V
+87          127         57          W           Capital W
+88          130         58          X           Capital X
+89          131         59          Y           Capital Y
+90          132         5A          Z           Capital Z
+91          133         5B          [           Opening bracket
+92          134         5C          \           Backslash
+93          135         5D          ]           Closing bracket
+94          136         5E          ^           Caret
+95          137         5F          _           Underscore
+96          140         60          '           Grave accent
+97          141         61          a           Small a
+98          142         62          b           Small b
+99          143         63          c           Small c
+100         144         64          d           Small d
+101         145         65          e           Small e
+102         146         66          f           Small f
+103         147         67          g           Small g
+104         150         68          h           Small h
+105         151         69          i           Small i
+106         152         6A          j           Small j
+107         153         6B          k           Small k
+108         154         6C          l           Small l
+109         155         6D          m           Small m
+110         156         6E          n           Small n
+111         158         6F          o           Small o
+112         160         70          p           Small p
+113         161         71          q           Small q
+114         162         72          r           Small r
+115         163         73          s           Small s
+116         164         74          t           Small t
+117         165         75          u           Small u
+118         166         76          v           Small v
+119         167         77          w           Small w
+120         170         78          x           Small x
+121         171         79          y           Small y
+122         172         7A          z           Small z
+123         173         7B          {           Opening brace
+124         174         7C          |           Vertical bar
+125         175         7D          }           Closing brace
+126         176         7E          ~           Tilde
+127         177         7F          DEL         Delete
+
 Appendix A GNU Free Documentation License
 *****************************************
 
@@ -1091,60 +1242,61 @@ Index
 
 * Menu:
 
-* Button values in dialog boxes:         Dialogs.             (line 366)
-* Color arrays:                          Screen.              (line 510)
-* Color components:                      Screen.              (line 518)
-* Color definitions:                     Screen.              (line 558)
-* Dialogs:                               Dialogs.             (line 340)
-* Empty Boxes:                           Dialogs.             (line 409)
-* Example of defining the Color arrays:  Screen.              (line 529)
+* Button values in dialog boxes:         Dialogs.             (line 367)
+* Color arrays:                          Screen.              (line 511)
+* Color components:                      Screen.              (line 519)
+* Color definitions:                     Screen.              (line 559)
+* Dialogs:                               Dialogs.             (line 341)
+* Empty Boxes:                           Dialogs.             (line 410)
+* Example of defining the Color arrays:  Screen.              (line 530)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
-                                                              (line 665)
-* Global Dialog Box variables:           Dialogs.             (line 436)
-* Global Kbd variables:                  Kbd.                 (line 217)
-* Global keyboard variables:             Kbd.                 (line 217)
-* GnuDOS library overview:               Overview.            (line  21)
-* hello_gnudos:                          hello_gnudos.        (line 108)
-* hello_strings:                         hello_strings.       (line 185)
-* Input Boxes:                           Dialogs.             (line 379)
-* Input Boxes with default input values: Dialogs.             (line 400)
-* Kbd:                                   Kbd.                 (line 209)
-* Kbd functions:                         Kbd.                 (line 240)
-* Keyboard functions:                    Kbd.                 (line 240)
-* Overview:                              Overview.            (line  22)
-* Sample of using the getKey() function: Kbd.                 (line 299)
-* Screen:                                Screen.              (line 496)
-* Simple Dialog Boxes:                   Dialogs.             (line 345)
-* Special keys:                          Kbd.                 (line 269)
-* Strings:                               Strings.             (line 603)
-* The catchSignals() function:           Dialogs.             (line 453)
-* The clearScreen() function:            Screen.              (line 584)
-* The clearScreenC() function:           Screen.              (line 584)
-* The Dialogs utility:                   Dialogs.             (line 340)
-* The getScreenColors() function:        Screen.              (line 546)
-* The getScreenSize() function:          Screen.              (line 578)
-* The indexof() function:                Strings.             (line 630)
-* The Kbd utility:                       Kbd.                 (line 209)
-* The lindexof() function:               Strings.             (line 634)
-* The loadDefaultColors() function:      Screen.              (line 592)
-* The locate() function:                 Screen.              (line 597)
-* The ltrim() function:                  Strings.             (line 643)
-* The nindexof() function:               Strings.             (line 631)
-* The nsubstr() function:                Strings.             (line 640)
-* The rtrim() function:                  Strings.             (line 647)
-* The Screen utility:                    Screen.              (line 496)
-* The setScreenColors() function:        Screen.              (line 553)
-* The sighandler() function:             Dialogs.             (line 472)
-* The Str typedef:                       Strings.             (line 612)
-* The Strings utility:                   Strings.             (line 603)
-* The Strings utility function definitions: Strings.          (line 616)
-* The substr() function:                 Strings.             (line 638)
-* The tolower() function:                Strings.             (line 656)
-* The toupper() function:                Strings.             (line 655)
-* The trim() function:                   Strings.             (line 651)
-* Types of messages in Dialog Boxes:     Dialogs.             (line 374)
-* Using the Dialogs utility:             Dialogs.             (line 339)
-* Using the Kbd utility:                 Kbd.                 (line 208)
-* Using the Screen utility:              Screen.              (line 495)
-* Using the Strings utility:             Strings.             (line 602)
+                                                              (line 816)
+* Global Dialog Box variables:           Dialogs.             (line 437)
+* Global Kbd variables:                  Kbd.                 (line 218)
+* Global keyboard variables:             Kbd.                 (line 218)
+* GnuDOS library overview:               Overview.            (line  22)
+* hello_gnudos:                          hello_gnudos.        (line 109)
+* hello_strings:                         hello_strings.       (line 186)
+* Input Boxes:                           Dialogs.             (line 380)
+* Input Boxes with default input values: Dialogs.             (line 401)
+* Kbd:                                   Kbd.                 (line 210)
+* Kbd functions:                         Kbd.                 (line 241)
+* Keyboard functions:                    Kbd.                 (line 241)
+* Overview:                              Overview.            (line  23)
+* Sample of using the getKey() function: Kbd.                 (line 300)
+* Screen:                                Screen.              (line 497)
+* Simple Dialog Boxes:                   Dialogs.             (line 346)
+* Special keys:                          Kbd.                 (line 270)
+* Strings:                               Strings.             (line 604)
+* The ASCII character table:             ASCII.               (line 663)
+* The catchSignals() function:           Dialogs.             (line 454)
+* The clearScreen() function:            Screen.              (line 585)
+* The clearScreenC() function:           Screen.              (line 585)
+* The Dialogs utility:                   Dialogs.             (line 341)
+* The getScreenColors() function:        Screen.              (line 547)
+* The getScreenSize() function:          Screen.              (line 579)
+* The indexof() function:                Strings.             (line 631)
+* The Kbd utility:                       Kbd.                 (line 210)
+* The lindexof() function:               Strings.             (line 635)
+* The loadDefaultColors() function:      Screen.              (line 593)
+* The locate() function:                 Screen.              (line 598)
+* The ltrim() function:                  Strings.             (line 644)
+* The nindexof() function:               Strings.             (line 632)
+* The nsubstr() function:                Strings.             (line 641)
+* The rtrim() function:                  Strings.             (line 648)
+* The Screen utility:                    Screen.              (line 497)
+* The setScreenColors() function:        Screen.              (line 554)
+* The sighandler() function:             Dialogs.             (line 473)
+* The Str typedef:                       Strings.             (line 613)
+* The Strings utility:                   Strings.             (line 604)
+* The Strings utility function definitions: Strings.          (line 617)
+* The substr() function:                 Strings.             (line 639)
+* The tolower() function:                Strings.             (line 657)
+* The toupper() function:                Strings.             (line 656)
+* The trim() function:                   Strings.             (line 652)
+* Types of messages in Dialog Boxes:     Dialogs.             (line 375)
+* Using the Dialogs utility:             Dialogs.             (line 340)
+* Using the Kbd utility:                 Kbd.                 (line 209)
+* Using the Screen utility:              Screen.              (line 496)
+* Using the Strings utility:             Strings.             (line 603)
 

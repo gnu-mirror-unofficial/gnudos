@@ -48,9 +48,9 @@ options that are provided by the six levels of experience of Prime:
   6. Veteran: Only GNU keys, no DOS-like keys
 
    You start with level 1 by default.
-To set your level, call prime with ''--levelX'' or ''-lX'' options,
+To set your level, call prime with ''--level X'' or ''-l X'' options,
 Where X is the level desired, for example:
-     $prime --level2
+     $prime --level 2
 
 1.2 Which keys are defined for which level?
 ===========================================
@@ -93,7 +93,7 @@ Del prev word          ^BkSpc         M-DEL (is      Advanced
                                       M-BkSpc)
 Del next word          ^Delete        M-d            Advanced
 Select text            SHIFT+Arrow    C-Space        Advanced
-Del selection          BkSpc/Del      C-w            Advanced
+Cut (kill)             BkSpc/Del      C-w            Advanced
 Quit                   ^Q             C-x C-c        Expert
 Paste (yanking)        ^V             C-y            Expert
 Del Line               ^D             C-k            Expert
@@ -141,11 +141,18 @@ home directory (e.g.  /home/username).  If you wish log information to
 be sent to another file, invoke the program with the file name on the
 command line, e.g.
 
-     $prime log-file-name
+     $prime --log log-file-name
+     $prime -g log-file-name
 
    If you don't want log information, invoke Prime as
 
      $prime --no-log
+
+   If you want to reset the configuration file to it's default values,
+invoke Prime as
+
+     $prime --reset-config
+     $prime -r
 
    You can export directory tree of a given directory to a given file
 without starting Prime by typing:
@@ -153,10 +160,12 @@ without starting Prime by typing:
      $prime -e|--export dirname filename
 
    Note you will only type ''-e'' or ''--export'', not both.
-Prime starts with the directory tree of the current working directory.
-To open Prime with the directory tree of another location, type:
 
-     $prime -d|--dir dirname
+   Prime starts with the directory tree of the current working
+directory.  To open Prime with the directory tree of another location,
+type:
+
+     $prime dirname
 
    Where 'dirname' is the path name which is to be loaded into Prime on
 program start.
@@ -698,35 +707,36 @@ Index
 * Menu:
 
 * About Prime:                           Overview.            (line  26)
-* Bottom view:                           Main Window.         (line 195)
-* Command line export:                   Overview.            (line 149)
-* Directory view:                        Main Window.         (line 192)
-* Edit menu:                             Menus.               (line 211)
-* Exporting from the command line:       Overview.            (line 149)
+* Bottom view:                           Main Window.         (line 204)
+* Command line export:                   Overview.            (line 156)
+* Directory view:                        Main Window.         (line 201)
+* Edit menu:                             Menus.               (line 220)
+* Exporting from the command line:       Overview.            (line 156)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
-                                                              (line 271)
-* File menu:                             Menus.               (line 203)
-* File view:                             Main Window.         (line 194)
-* Help menu:                             Menus.               (line 227)
+                                                              (line 280)
+* File menu:                             Menus.               (line 212)
+* File view:                             Main Window.         (line 203)
+* Help menu:                             Menus.               (line 236)
 * How to run Prime:                      Overview.            (line 125)
 * Key bindings:                          Overview.            (line  53)
-* Keyboard shortcuts:                    Menus.               (line 237)
-* Main window:                           Main Window.         (line 176)
-* Manu bar:                              Main Window.         (line 182)
-* Menus:                                 Menus.               (line 198)
-* No log information:                    Overview.            (line 145)
+* Keyboard shortcuts:                    Menus.               (line 246)
+* Main window:                           Main Window.         (line 185)
+* Manu bar:                              Main Window.         (line 191)
+* Menus:                                 Menus.               (line 207)
+* No log information:                    Overview.            (line 146)
 * Overview:                              Overview.            (line  24)
-* Prime main window:                     Main Window.         (line 175)
-* Prime menu bar:                        Main Window.         (line 181)
+* Prime main window:                     Main Window.         (line 184)
+* Prime menu bar:                        Main Window.         (line 190)
 * Prime Overview:                        Overview.            (line  23)
+* Resetting the configuration file:      Overview.            (line 150)
 * Running Prime:                         Overview.            (line 126)
-* Shortcut keys:                         Menus.               (line 236)
-* Shortcuts:                             Menus.               (line 237)
-* Start Prime with a specific directory: Overview.            (line 155)
+* Shortcut keys:                         Menus.               (line 245)
+* Shortcuts:                             Menus.               (line 246)
+* Start Prime with a specific directory: Overview.            (line 163)
 * Starting Prime:                        Overview.            (line 126)
-* Suppressing log information:           Overview.            (line 145)
+* Suppressing log information:           Overview.            (line 146)
 * What is Prime:                         Overview.            (line  27)
 * Why to use it:                         Overview.            (line 110)
 * Why to use Prime:                      Overview.            (line 111)
-* Working around with menus:             Menus.               (line 197)
+* Working around with menus:             Menus.               (line 206)
 

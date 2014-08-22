@@ -23,7 +23,7 @@ Index
 mino
 ****
 
-This manual is for the Mino text editor (version 1.1).
+This manual is for the Mino text editor (version 1.2).
 
 1 Overview of the mino text editor
 **********************************
@@ -96,7 +96,7 @@ Del prev word          ^BkSpc         M-DEL (is      Advanced
                                       M-BkSpc)
 Del next word          ^Delete        M-d            Advanced
 Select text            SHIFT+Arrow    C-Space        Advanced
-Del selection          BkSpc/Del      C-w            Advanced
+Cut (kill)             BkSpc/Del      C-w            Advanced
 Quit                   ^Q             C-x C-c        Expert
 Paste (yanking)        ^V             C-y            Expert
 Del Line               ^D             C-k            Expert
@@ -157,8 +157,13 @@ Currently mino recognizes the following file types (by their extension):
    * Perl scripts
    * Shell scripts
    * Python scripts
-   * Assembly source listings
+   * x86 Assembly source listings
    * Texi info source files
+   * HTML page files
+   * JavaScript source files
+   * QBASIC source files
+   * GNU Pascal source files
+   * Fortran 77 v4.0 source files
 
    Whenever you open a file of one of these types, mino will
 automatically adjust the colors of the view so that the language
@@ -741,35 +746,35 @@ Index
 
 * Code highlighting:                     Overview.            (line 151)
 * Command line help:                     Overview.            (line 138)
-* Edit menu:                             Menus.               (line 241)
-* Editing area:                          Main Window.         (line 219)
+* Edit menu:                             Menus.               (line 246)
+* Editing area:                          Main Window.         (line 224)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
-                                                              (line 313)
-* File menu:                             Menus.               (line 231)
-* File state:                            Main Window.         (line 203)
-* Help menu:                             Menus.               (line 270)
+                                                              (line 318)
+* File menu:                             Menus.               (line 236)
+* File state:                            Main Window.         (line 208)
+* Help menu:                             Menus.               (line 275)
 * Highlighting mode:                     Overview.            (line 150)
 * How to run mino:                       Overview.            (line 125)
 * Invoking mino:                         Overview.            (line 125)
 * Key bindings:                          Overview.            (line  55)
-* Keyboard shortcuts:                    Menus.               (line 280)
-* Main window:                           Main Window.         (line 187)
-* Menu bar:                              Main Window.         (line 189)
-* Menus:                                 Main Window.         (line 226)
-* Mino menus:                            Main Window.         (line 225)
+* Keyboard shortcuts:                    Menus.               (line 285)
+* Main window:                           Main Window.         (line 192)
+* Menu bar:                              Main Window.         (line 194)
+* Menus:                                 Main Window.         (line 231)
+* Mino menus:                            Main Window.         (line 230)
 * Mino Overview:                         Overview.            (line  29)
-* Options menu:                          Menus.               (line 258)
+* Options menu:                          Menus.               (line 263)
 * Overview:                              Overview.            (line  30)
 * Reasons of using mino:                 Overview.            (line 117)
 * Resetting the config file:             Overview.            (line 134)
 * Running mino:                          Overview.            (line 125)
 * Sentence highlighting:                 Overview.            (line 151)
-* Shortcuts:                             Menus.               (line 280)
-* Shortcuts keys:                        Menus.               (line 279)
+* Shortcuts:                             Menus.               (line 285)
+* Shortcuts keys:                        Menus.               (line 284)
 * Starting mino:                         Overview.            (line 125)
-* Status bar:                            Main Window.         (line 196)
-* Status indicators:                     Main Window.         (line 214)
+* Status bar:                            Main Window.         (line 201)
+* Status indicators:                     Main Window.         (line 219)
 * Why to use it:                         Overview.            (line 117)
 * Why to use mino:                       Overview.            (line 117)
-* Work area:                             Main Window.         (line 218)
+* Work area:                             Main Window.         (line 223)
 

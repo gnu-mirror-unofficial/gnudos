@@ -161,10 +161,10 @@ the six levels of experience of Prime:
 </li></ol>
 
 <p>You start with level 1 by default.<br>
-To set your level, call prime with <code>'--levelX'</code> or <code>'-lX'</code> options,
+To set your level, call prime with <code>'--level X'</code> or <code>'-l X'</code> options,
 Where X is the level desired, for example:
 </p><div class="example">
-<pre class="example">$prime --level2
+<pre class="example">$prime --level 2
 </pre></div>
 
 <a name="index-Key-bindings"></a>
@@ -207,7 +207,7 @@ typed like this so DOS users can feel familiar with the text.
 <tr><td width="30%">Del prev word</td><td width="20%">^BkSpc</td><td width="20%">M-DEL (is M-BkSpc)</td><td width="30%">Advanced</td></tr>
 <tr><td width="30%">Del next word</td><td width="20%">^Delete</td><td width="20%">M-d</td><td width="30%">Advanced</td></tr>
 <tr><td width="30%">Select text</td><td width="20%">SHIFT+Arrow</td><td width="20%">C-Space</td><td width="30%">Advanced</td></tr>
-<tr><td width="30%">Del selection</td><td width="20%">BkSpc/Del</td><td width="20%">C-w</td><td width="30%">Advanced</td></tr>
+<tr><td width="30%">Cut (kill)</td><td width="20%">BkSpc/Del</td><td width="20%">C-w</td><td width="30%">Advanced</td></tr>
 <tr><td width="30%"></td><td width="20%"></td><td width="20%"></td><td width="30%"></td></tr>
 <tr><td width="30%">Quit</td><td width="20%">^Q</td><td width="20%">C-x C-c</td><td width="30%">Expert</td></tr>
 <tr><td width="30%">Paste (yanking)</td><td width="20%">^V</td><td width="20%">C-y</td><td width="30%">Expert</td></tr>
@@ -254,7 +254,8 @@ If you wish log information to be sent to another file, invoke the program
 with the file name on the command line, e.g.
 </p>
 <div class="example">
-<pre class="example">$prime log-file-name
+<pre class="example">$prime --log log-file-name
+$prime -g log-file-name
 </pre></div>
 
 <a name="index-No-log-information"></a>
@@ -263,6 +264,15 @@ with the file name on the command line, e.g.
 </p>
 <div class="example">
 <pre class="example">$prime --no-log
+</pre></div>
+
+<a name="index-Resetting-the-configuration-file"></a>
+<p>If you want to reset the configuration file to it&rsquo;s default values, 
+invoke Prime as
+</p>
+<div class="example">
+<pre class="example">$prime --reset-config
+$prime -r
 </pre></div>
 
 <a name="index-Command-line-export"></a>
@@ -275,12 +285,13 @@ starting Prime by typing:
 </pre></div>
 
 <p>Note you will only type <code>'-e'</code> or <code>'--export'</code>, not both.<br>
+</p>
 <a name="index-Start-Prime-with-a-specific-directory"></a>
-Prime starts with the directory tree of the current working directory. To 
+<p>Prime starts with the directory tree of the current working directory. To 
 open Prime with the directory tree of another location, type:
 </p>
 <div class="example">
-<pre class="example">$prime -d|--dir dirname
+<pre class="example">$prime dirname
 </pre></div>
 
 <p>Where <code>dirname</code> is the path name which is to be loaded into Prime on 
@@ -946,6 +957,7 @@ Previous: <a href="#GNU-Free-Documentation-License" accesskey="p" rel="previous"
 <tr><td></td><td valign="top"><a href="#index-Prime-Overview">Prime Overview</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Overview">Overview</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-R">R</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Resetting-the-configuration-file">Resetting the configuration file</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Overview">Overview</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Running-Prime">Running Prime</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Overview">Overview</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Index_cp_letter-S">S</a></th><td></td><td></td></tr>
