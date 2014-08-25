@@ -19,7 +19,7 @@ Index
 The GnuDOS library
 ******************
 
-This manual is for the GnuDOS library (version 1.6).
+This manual is for the GnuDOS library (version 1.7).
 
 1 Overview of the GnuDOS library
 ********************************

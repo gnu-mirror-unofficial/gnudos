@@ -50,9 +50,9 @@ provided by the six levels of experience of Mino:
   6. Veteran: Only GNU keys, no DOS-like keys
 
    You start with level 1 by default.
-To set your level of experience, call mino with ''--levelX'' or ''-lX''
-options, Where X is the level desired, for example:
-     $mino --level2
+To set your level of experience, call mino with ''--level X'' or ''-l
+X'' options, Where X is the level desired, for example:
+     $mino --level 2
 
 1.2 Which keys are defined for which level?
 ===========================================
