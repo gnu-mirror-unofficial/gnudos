@@ -1,6 +1,6 @@
 mino
 1 Overview of the mino text editor
-  1.1 What is mino (Mino)?
+  1.1 What is mino?
   1.2 Which keys are defined for which level?
   1.3 Why should I use it?
   1.4 How to run it?
@@ -23,13 +23,13 @@ Index
 mino
 ****
 
-This manual is for the Mino text editor (version 1.2).
+This manual is for the Mino text editor (version 1.3).
 
 1 Overview of the mino text editor
 **********************************
 
-1.1 What is mino (Mino)?
-========================
+1.1 What is mino?
+=================
 
 Mino is a GNU software, part of the GnuDOS package.
 Mino is a text file editor for use with the GNU/Linux console/xterm.
@@ -40,7 +40,7 @@ regular Joe to dive in head first into GNU syntax.  Mino provides
 multi-level experience, the level of complexity can be adjusted by the
 user: you want to use DOS-keys with a few basic GNU ones?  you want to
 go with the full power of the GNU system?  All are options that are
-provided by the six levels of experience of Mino:
+provided by the six levels of experience of mino:
 
   1. Newbie: All DOS shortcut keys, no GNU keys yet
   2. Novice: DOS shortcut keys, some of which are replaced with GNU's
@@ -52,7 +52,7 @@ provided by the six levels of experience of Mino:
    You start with level 1 by default.
 To set your level of experience, call mino with ''--level X'' or ''-l
 X'' options, Where X is the level desired, for example:
-     $mino --level 2
+     $ mino --level 2
 
 1.2 Which keys are defined for which level?
 ===========================================
@@ -226,8 +226,8 @@ There are indicators which can appear in the status bar:
 ================
 
 Most of the main window will be occupied by the editing field containing
-the lines of the file selected.  Most of your editing work will be done
-in this area.
+the lines of the open file.  Most of your editing work will be done in
+this area.
 
 3 Working around with menus
 ***************************

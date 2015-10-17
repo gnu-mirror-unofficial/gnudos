@@ -7,7 +7,7 @@ Index
 Fog
 ***
 
-This manual is for the Console Form Designer - Fog (version 1.1).
+This manual is for the Console Form Designer - Fog (version 1.2).
 
 1 Overview of the GnuDOS library
 ********************************

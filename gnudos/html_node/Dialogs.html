@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.7).
+<!-- This manual is for the GnuDOS library (version 1.8).
 
-Copyright (C) 2014 Mohammed Isam.
+Copyright (C) 2014, 2015 Mohammed Isam.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.7 or
@@ -11,12 +11,12 @@ Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
 "GNU Free Documentation License".
  -->
-<!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by GNU Texinfo 5.2, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.7: Dialogs</title>
+<title>GnuDOS library version 1.8: Dialogs</title>
 
-<meta name="description" content="GnuDOS library version 1.7: Dialogs">
-<meta name="keywords" content="GnuDOS library version 1.7: Dialogs">
+<meta name="description" content="GnuDOS library version 1.8: Dialogs">
+<meta name="keywords" content="GnuDOS library version 1.8: Dialogs">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -26,7 +26,7 @@ Texts.  A copy of the license is included in the section entitled
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
 <link href="index.html#Top" rel="up" title="Top">
 <link href="Screen.html#Screen" rel="next" title="Screen">
-<link href="Kbd.html#Kbd" rel="previous" title="Kbd">
+<link href="Kbd.html#Kbd" rel="prev" title="Kbd">
 <style type="text/css">
 <!--
 a.summary-letter {text-decoration: none}
@@ -63,7 +63,7 @@ ul.no-bullet {list-style: none}
 <a name="Dialogs"></a>
 <div class="header">
 <p>
-Next: <a href="Screen.html#Screen" accesskey="n" rel="next">Screen</a>, Previous: <a href="Kbd.html#Kbd" accesskey="p" rel="previous">Kbd</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Screen.html#Screen" accesskey="n" rel="next">Screen</a>, Previous: <a href="Kbd.html#Kbd" accesskey="p" rel="prev">Kbd</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
 <a name="index-Dialogs"></a>
@@ -101,12 +101,12 @@ bar. The macros defining those buttons are declared in &quot;dialogs.h&quot; as:
 <a name="index-Button-values-in-dialog-boxes"></a>
 <div class="example">
 <pre class="example">//buttons used in message boxes//
-#define OK	1	//00000001
-#define YES	2	//00000010
-#define CANCEL	4	//00000100
-#define NO	8	//00001000
-#define ALL	16	//00010000
-#define ABORT	32	//00100000
+#define OK&nbsp;1       //00000001
+#define YES&nbsp;2       //00000010
+#define CANCEL&nbsp;4       //00000100
+#define NO&nbsp;8       //00001000
+#define ALL&nbsp;16      //00010000
+#define ABORT&nbsp;32      //00100000
 </pre></div>
 
 <a name="index-Types-of-messages-in-Dialog-Boxes"></a>
@@ -250,6 +250,7 @@ the reasons several times above). It can be defined as an empty function as:
 <div class="example">
 <pre class="example">void sighandler(int signo)
 {
+
 }
 </pre></div>
 
@@ -259,7 +260,7 @@ the reasons several times above). It can be defined as an empty function as:
 <hr>
 <div class="header">
 <p>
-Next: <a href="Screen.html#Screen" accesskey="n" rel="next">Screen</a>, Previous: <a href="Kbd.html#Kbd" accesskey="p" rel="previous">Kbd</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Screen.html#Screen" accesskey="n" rel="next">Screen</a>, Previous: <a href="Kbd.html#Kbd" accesskey="p" rel="prev">Kbd</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 
 

@@ -19,7 +19,7 @@ Index
 The GnuDOS library
 ******************
 
-This manual is for the GnuDOS library (version 1.7).
+This manual is for the GnuDOS library (version 1.8).
 
 1 Overview of the GnuDOS library
 ********************************
@@ -74,7 +74,7 @@ don't get scancodes for these keys (not all times, at least).
 
    So how to make your program get over these problems?  Well, you can
 implement your own keyboard driver, which will be very painful: to
-construct your keymap tables and do all the calculations; or your can
+construct your keymap tables and do all the calculations; or you can
 interfere with the input sent from the console driver before it does any
 further processing on it.  The console-utils *Note Kbd::.  utility does
 this.  It tells the console driver to send it raw data (with no
@@ -268,33 +268,35 @@ for numbers and punctuation, 96 for backtick, 123-126 for braces,
 vertical bar and tilde).  Other keys like arrows and ESC and ENTER are
 defined as macros in the kbd.h file:
 
-     #define ESC_KEY		27
-     #define BACKSPACE_KEY	8
-     #define TAB_KEY		9
-     #define ENTER_KEY	13
-     #define CAPS_KEY	1
-     #define SHIFT_KEY	2
-     #define CTRL_KEY	3
-     #define ALT_KEY		4
-     #define SPACE_KEY	32
-     #define UP_KEY		5
-     #define DOWN_KEY	6
-     #define LEFT_KEY	7
-     #define RIGHT_KEY	10
-     #define DEL_KEY		11
-     #define	HOME_KEY	12
-     #define END_KEY		14
-     #define INS_KEY		15
-     #define SHIFT_DOWN	17
-     #define SHIFT_UP	18
-     #define PGUP_KEY	19
-     #define PGDOWN_KEY	20
+     #define ESC_KEY  27
+     #define BACKSPACE_KEY 8
+     #define TAB_KEY  9
+     #define ENTER_KEY 13
+     #define CAPS_KEY 1
+     #define SHIFT_KEY 2
+     #define CTRL_KEY 3
+     #define ALT_KEY  4
+     #define SPACE_KEY 32
+     #define UP_KEY   5
+     #define DOWN_KEY 6
+     #define LEFT_KEY 7
+     #define RIGHT_KEY 10
+     #define DEL_KEY  11
+     #define	HOME_KEY 12
+     #define END_KEY  14
+     #define INS_KEY  15
+     #define SHIFT_DOWN 17
+     #define SHIFT_UP 18
+     #define PGUP_KEY 19
+     #define PGDOWN_KEY 20
 
    What you need to do is to match the return value of getKey() against
 the desired key.  For example:
 
      if(getKey() == ESC_KEY)
+     {
         exit(0);
+     }
 
    Or, more elegantly, in a switch loop:
 
@@ -319,6 +321,7 @@ the desired key.  For example:
      if(c == 's' && CTRL)
      {
         //do something
+        ...
      }
 
    Another utility has been added, which is called UKbd ("U" stands for
@@ -366,12 +369,12 @@ with the vertical bar.  The macros defining those buttons are declared
 in "dialogs.h" as:
 
      //buttons used in message boxes//
-     #define OK	1	//00000001
-     #define YES	2	//00000010
-     #define CANCEL	4	//00000100
-     #define NO	8	//00001000
-     #define ALL	16	//00010000
-     #define ABORT	32	//00100000
+     #define OK 1       //00000001
+     #define YES 2       //00000010
+     #define CANCEL 4       //00000100
+     #define NO 8       //00001000
+     #define ALL 16      //00010000
+     #define ABORT 32      //00100000
 
    The value of 'tsmg' can be:
    - INFO: This is an information box.  The title will be "INFORMATION"
@@ -490,6 +493,7 @@ can be defined as an empty function as:
 
      void sighandler(int signo)
      {
+
      }
 
    Again, please define the signal handler in a proper way whenever
@@ -517,12 +521,12 @@ possible values for color_components which is an index into arrays of
 colors determining what color is assigned to which component (i.e.,
 dialogs, buttons, ...)  are:
 
-      COLOR_WINDOW		0
-      COLOR_HIGHLIGHT_TEXT	1
-      COLOR_MENU_BAR		2
-      COLOR_STATUS_BAR	3
-      COLOR_BUTTONS		4
-      COLOR_HBUTTONS		5
+      COLOR_WINDOW    0
+      COLOR_HIGHLIGHT_TEXT 1
+      COLOR_MENU_BAR  2
+      COLOR_STATUS_BAR 3
+      COLOR_BUTTONS   4
+      COLOR_HBUTTONS  5
 
    You can define the colors in the color arrays by using integer
 values, although using macro names (as discussed below) is recommended.
@@ -601,6 +605,12 @@ To reposition the cursor, use:
    giving the row and column as int values.  Remember the screen has
 top-left based coordinates, meaning position 1-1 is at the top-left
 corner, position 25-80 is at the bottom-right (for a 25x80 screen size).
+
+   To show/hide the cursor:
+     /* Turn on the cursor */
+     void showCursor();
+     /* Turn off the cursor */
+     void hideCursor();
 
 7 Using the Strings utility
 ***************************
@@ -1242,61 +1252,63 @@ Index
 
 * Menu:
 
-* Button values in dialog boxes:         Dialogs.             (line 367)
-* Color arrays:                          Screen.              (line 511)
-* Color components:                      Screen.              (line 519)
-* Color definitions:                     Screen.              (line 559)
-* Dialogs:                               Dialogs.             (line 341)
-* Empty Boxes:                           Dialogs.             (line 410)
-* Example of defining the Color arrays:  Screen.              (line 530)
+* Button values in dialog boxes:         Dialogs.             (line 370)
+* Color arrays:                          Screen.              (line 515)
+* Color components:                      Screen.              (line 523)
+* Color definitions:                     Screen.              (line 563)
+* Dialogs:                               Dialogs.             (line 344)
+* Empty Boxes:                           Dialogs.             (line 413)
+* Example of defining the Color arrays:  Screen.              (line 534)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
-                                                              (line 816)
-* Global Dialog Box variables:           Dialogs.             (line 437)
+                                                              (line 826)
+* Global Dialog Box variables:           Dialogs.             (line 440)
 * Global Kbd variables:                  Kbd.                 (line 218)
 * Global keyboard variables:             Kbd.                 (line 218)
 * GnuDOS library overview:               Overview.            (line  22)
 * hello_gnudos:                          hello_gnudos.        (line 109)
 * hello_strings:                         hello_strings.       (line 186)
-* Input Boxes:                           Dialogs.             (line 380)
-* Input Boxes with default input values: Dialogs.             (line 401)
+* Input Boxes:                           Dialogs.             (line 383)
+* Input Boxes with default input values: Dialogs.             (line 404)
 * Kbd:                                   Kbd.                 (line 210)
 * Kbd functions:                         Kbd.                 (line 241)
 * Keyboard functions:                    Kbd.                 (line 241)
 * Overview:                              Overview.            (line  23)
-* Sample of using the getKey() function: Kbd.                 (line 300)
-* Screen:                                Screen.              (line 497)
-* Simple Dialog Boxes:                   Dialogs.             (line 346)
+* Sample of using the getKey() function: Kbd.                 (line 302)
+* Screen:                                Screen.              (line 501)
+* Simple Dialog Boxes:                   Dialogs.             (line 349)
 * Special keys:                          Kbd.                 (line 270)
-* Strings:                               Strings.             (line 604)
-* The ASCII character table:             ASCII.               (line 663)
-* The catchSignals() function:           Dialogs.             (line 454)
-* The clearScreen() function:            Screen.              (line 585)
-* The clearScreenC() function:           Screen.              (line 585)
-* The Dialogs utility:                   Dialogs.             (line 341)
-* The getScreenColors() function:        Screen.              (line 547)
-* The getScreenSize() function:          Screen.              (line 579)
-* The indexof() function:                Strings.             (line 631)
+* Strings:                               Strings.             (line 614)
+* The ASCII character table:             ASCII.               (line 673)
+* The catchSignals() function:           Dialogs.             (line 457)
+* The clearScreen() function:            Screen.              (line 589)
+* The clearScreenC() function:           Screen.              (line 589)
+* The Dialogs utility:                   Dialogs.             (line 344)
+* The getScreenColors() function:        Screen.              (line 551)
+* The getScreenSize() function:          Screen.              (line 583)
+* The hideCursor() function:             Screen.              (line 608)
+* The indexof() function:                Strings.             (line 641)
 * The Kbd utility:                       Kbd.                 (line 210)
-* The lindexof() function:               Strings.             (line 635)
-* The loadDefaultColors() function:      Screen.              (line 593)
-* The locate() function:                 Screen.              (line 598)
-* The ltrim() function:                  Strings.             (line 644)
-* The nindexof() function:               Strings.             (line 632)
-* The nsubstr() function:                Strings.             (line 641)
-* The rtrim() function:                  Strings.             (line 648)
-* The Screen utility:                    Screen.              (line 497)
-* The setScreenColors() function:        Screen.              (line 554)
-* The sighandler() function:             Dialogs.             (line 473)
-* The Str typedef:                       Strings.             (line 613)
-* The Strings utility:                   Strings.             (line 604)
-* The Strings utility function definitions: Strings.          (line 617)
-* The substr() function:                 Strings.             (line 639)
-* The tolower() function:                Strings.             (line 657)
-* The toupper() function:                Strings.             (line 656)
-* The trim() function:                   Strings.             (line 652)
-* Types of messages in Dialog Boxes:     Dialogs.             (line 375)
-* Using the Dialogs utility:             Dialogs.             (line 340)
+* The lindexof() function:               Strings.             (line 645)
+* The loadDefaultColors() function:      Screen.              (line 597)
+* The locate() function:                 Screen.              (line 602)
+* The ltrim() function:                  Strings.             (line 654)
+* The nindexof() function:               Strings.             (line 642)
+* The nsubstr() function:                Strings.             (line 651)
+* The rtrim() function:                  Strings.             (line 658)
+* The Screen utility:                    Screen.              (line 501)
+* The setScreenColors() function:        Screen.              (line 558)
+* The showCursor() function:             Screen.              (line 608)
+* The sighandler() function:             Dialogs.             (line 476)
+* The Str typedef:                       Strings.             (line 623)
+* The Strings utility:                   Strings.             (line 614)
+* The Strings utility function definitions: Strings.          (line 627)
+* The substr() function:                 Strings.             (line 649)
+* The tolower() function:                Strings.             (line 667)
+* The toupper() function:                Strings.             (line 666)
+* The trim() function:                   Strings.             (line 662)
+* Types of messages in Dialog Boxes:     Dialogs.             (line 378)
+* Using the Dialogs utility:             Dialogs.             (line 343)
 * Using the Kbd utility:                 Kbd.                 (line 209)
-* Using the Screen utility:              Screen.              (line 496)
-* Using the Strings utility:             Strings.             (line 603)
+* Using the Screen utility:              Screen.              (line 500)
+* Using the Strings utility:             Strings.             (line 613)
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the Prime console file manager (version 1.1).
+<!-- This manual is for the Prime console file manager (version 1.2).
 
-Copyright (C) 2014 Mohammed Isam.
+Copyright (C) 2014, 2015 Mohammed Isam.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -11,12 +11,12 @@ Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
 "GNU Free Documentation License".
  -->
-<!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by GNU Texinfo 5.2, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Prime version 1.1</title>
+<title>Prime version 1.2</title>
 
-<meta name="description" content="Prime version 1.1">
-<meta name="keywords" content="Prime version 1.1">
+<meta name="description" content="Prime version 1.2">
+<meta name="keywords" content="Prime version 1.2">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -58,7 +58,7 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<h1 class="settitle" align="center">Prime version 1.1</h1>
+<h1 class="settitle" align="center">Prime version 1.2</h1>
 
 
 
@@ -106,11 +106,11 @@ Next: <a href="#Overview" accesskey="n" rel="next">Overview</a>, Up: <a href="di
 <a name="Prime"></a>
 <h1 class="top">Prime</h1>
 
-<p>This manual is for the Prime console file manager (version 1.1).
+<p>This manual is for the Prime console file manager (version 1.2).
 </p>
 
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#Overview" accesskey="1">Overview</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Overview of the Prime console file manager
+<tr><td align="left" valign="top">&bull; <a href="#Overview" accesskey="1">Overview</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Overview of the prime console file manager
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Main-Window" accesskey="2">Main Window</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Prime main window
 </td></tr>
@@ -128,7 +128,7 @@ Next: <a href="#Overview" accesskey="n" rel="next">Overview</a>, Up: <a href="di
 <a name="Overview"></a>
 <div class="header">
 <p>
-Next: <a href="#Main-Window" accesskey="n" rel="next">Main Window</a>, Previous: <a href="#Top" accesskey="p" rel="previous">Top</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Main-Window" accesskey="n" rel="next">Main Window</a>, Previous: <a href="#Top" accesskey="p" rel="prev">Top</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="index-Overview"></a>
 <a name="index-Prime-Overview"></a>
@@ -234,7 +234,7 @@ toolset, plus you will easily dive into the GNU system key bindings.
 </p>
 <a name="What-do-I-need_003f-"></a>
 <h3 class="section">1.4 What do I need?<br></h3>
-<p>The program can be invoked from the linux console or under X from an xterm.
+<p>The program can be invoked from the GNU/Linux console or under X from an xterm.
 </p>
 <a name="index-Running-Prime"></a>
 <a name="index-Starting-Prime"></a>
@@ -247,9 +247,9 @@ menus in See <a href="#Menus">Menus</a>. And the shortcut keys in See <a href="#
 </p>
 <a name="What-else_003f-"></a>
 <h3 class="section">1.6 What else?<br></h3>
-<p>To help the developers (and yourself) debugging the program, Prime sends log 
+<p>To help the developers (and yourself) in debugging the program, prime sends log 
 information by default to a file named &rsquo;prime.log&rsquo; in the user&rsquo;s home 
-directory (e.g. /home/username).
+directory (e.g. /home/username).<br>
 If you wish log information to be sent to another file, invoke the program 
 with the file name on the command line, e.g.
 </p>
@@ -260,15 +260,16 @@ $prime -g log-file-name
 
 <a name="index-No-log-information"></a>
 <a name="index-Suppressing-log-information"></a>
-<p>If you don&rsquo;t want log information, invoke Prime as
+<p>If you don&rsquo;t want log information, invoke prime as
 </p>
 <div class="example">
 <pre class="example">$prime --no-log
+$prime -n
 </pre></div>
 
 <a name="index-Resetting-the-configuration-file"></a>
 <p>If you want to reset the configuration file to it&rsquo;s default values, 
-invoke Prime as
+invoke prime as
 </p>
 <div class="example">
 <pre class="example">$prime --reset-config
@@ -277,8 +278,8 @@ $prime -r
 
 <a name="index-Command-line-export"></a>
 <a name="index-Exporting-from-the-command-line"></a>
-<p>You can export directory tree of a given directory to a given file without 
-starting Prime by typing:
+<p>You can export the directory tree of a given directory to a given file without 
+starting prime by typing:
 </p>
 <div class="example">
 <pre class="example">$prime -e|--export dirname filename
@@ -288,23 +289,23 @@ starting Prime by typing:
 </p>
 <a name="index-Start-Prime-with-a-specific-directory"></a>
 <p>Prime starts with the directory tree of the current working directory. To 
-open Prime with the directory tree of another location, type:
+open prime with the directory tree of another location, type:
 </p>
 <div class="example">
 <pre class="example">$prime dirname
 </pre></div>
 
-<p>Where <code>dirname</code> is the path name which is to be loaded into Prime on 
+<p>Where <code>dirname</code> is the path name which is to be loaded into prime on 
 program start.<br>
 Currently there is partial wildcard support. That means for example that you 
 can specify &rsquo;~&rsquo; to indicate your home directory, and you can use &rsquo;*&rsquo; inside 
-the program (in the search dialog box) but no further wildcards (like &rsquo;?&rsquo;) 
-are supported Currently. Examples:
+the program (in the &rsquo;Find&rsquo; dialog box) but no further wildcards (like &rsquo;?&rsquo;) 
+are supported at that time. For example, entering:
 </p>
 <div class="example">
-<pre class="example">$prime ~/projects
+<pre class="example">~/projects
 </pre></div>
-<p>Will open the subdirectory &rsquo;projects&rsquo; of the home directory<br>
+<p>In the find dialog box will search the subdirectory &rsquo;projects&rsquo; of the home directory<br>
 The following are examples of accepted ways to enter wildcard strings in the 
 Find file dialog box:
 </p>
@@ -319,14 +320,14 @@ a*.c
 <a name="Main-Window"></a>
 <div class="header">
 <p>
-Next: <a href="#Menus" accesskey="n" rel="next">Menus</a>, Previous: <a href="#Overview" accesskey="p" rel="previous">Overview</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Menus" accesskey="n" rel="next">Menus</a>, Previous: <a href="#Overview" accesskey="p" rel="prev">Overview</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="index-Main-window"></a>
 <a name="index-Prime-main-window"></a>
 <a name="Prime-main-window"></a>
 <h2 class="chapter">2 Prime  main window</h2>
 
-<p>After running Prime, you are faced with a window that has the following 
+<p>After running prime, you are faced with a window that has the following 
 components:
 </p>
 <a name="index-Manu-bar"></a>
@@ -356,7 +357,7 @@ items
 <a name="Menus"></a>
 <div class="header">
 <p>
-Next: <a href="#Shortcuts" accesskey="n" rel="next">Shortcuts</a>, Previous: <a href="#Main-Window" accesskey="p" rel="previous">Main Window</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Shortcuts" accesskey="n" rel="next">Shortcuts</a>, Previous: <a href="#Main-Window" accesskey="p" rel="prev">Main Window</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="index-Menus"></a>
 <a name="index-Working-around-with-menus"></a>
@@ -409,7 +410,7 @@ location
 <a name="Shortcuts"></a>
 <div class="header">
 <p>
-Next: <a href="#GNU-Free-Documentation-License" accesskey="n" rel="next">GNU Free Documentation License</a>, Previous: <a href="#Menus" accesskey="p" rel="previous">Menus</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#GNU-Free-Documentation-License" accesskey="n" rel="next">GNU Free Documentation License</a>, Previous: <a href="#Menus" accesskey="p" rel="prev">Menus</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Using-keyboard-shortcuts"></a>
 <h2 class="chapter">4 Using keyboard shortcuts</h2>
@@ -443,7 +444,7 @@ Next: <a href="#GNU-Free-Documentation-License" accesskey="n" rel="next">GNU Fre
 <a name="GNU-Free-Documentation-License"></a>
 <div class="header">
 <p>
-Next: <a href="#Index" accesskey="n" rel="next">Index</a>, Previous: <a href="#Shortcuts" accesskey="p" rel="previous">Shortcuts</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Index" accesskey="n" rel="next">Index</a>, Previous: <a href="#Shortcuts" accesskey="p" rel="prev">Shortcuts</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="GNU-Free-Documentation-License-1"></a>
 <h2 class="appendix">Appendix A GNU Free Documentation License</h2>
@@ -872,7 +873,7 @@ to permit their use in free software.
 <a name="Index"></a>
 <div class="header">
 <p>
-Previous: <a href="#GNU-Free-Documentation-License" accesskey="p" rel="previous">GNU Free Documentation License</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
+Previous: <a href="#GNU-Free-Documentation-License" accesskey="p" rel="prev">GNU Free Documentation License</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Index-1"></a>
 <h2 class="unnumbered">Index</h2>

@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for the GnuDOS library (version 1.7).
+<!-- This manual is for the GnuDOS library (version 1.8).
 
-Copyright (C) 2014 Mohammed Isam.
+Copyright (C) 2014, 2015 Mohammed Isam.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.7 or
@@ -11,12 +11,12 @@ Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled
 "GNU Free Documentation License".
  -->
-<!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by GNU Texinfo 5.2, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GnuDOS library version 1.7: Screen</title>
+<title>GnuDOS library version 1.8: Screen</title>
 
-<meta name="description" content="GnuDOS library version 1.7: Screen">
-<meta name="keywords" content="GnuDOS library version 1.7: Screen">
+<meta name="description" content="GnuDOS library version 1.8: Screen">
+<meta name="keywords" content="GnuDOS library version 1.8: Screen">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -26,7 +26,7 @@ Texts.  A copy of the license is included in the section entitled
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
 <link href="index.html#Top" rel="up" title="Top">
 <link href="Strings.html#Strings" rel="next" title="Strings">
-<link href="Dialogs.html#Dialogs" rel="previous" title="Dialogs">
+<link href="Dialogs.html#Dialogs" rel="prev" title="Dialogs">
 <style type="text/css">
 <!--
 a.summary-letter {text-decoration: none}
@@ -63,7 +63,7 @@ ul.no-bullet {list-style: none}
 <a name="Screen"></a>
 <div class="header">
 <p>
-Next: <a href="Strings.html#Strings" accesskey="n" rel="next">Strings</a>, Previous: <a href="Dialogs.html#Dialogs" accesskey="p" rel="previous">Dialogs</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Strings.html#Strings" accesskey="n" rel="next">Strings</a>, Previous: <a href="Dialogs.html#Dialogs" accesskey="p" rel="prev">Dialogs</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
 <a name="index-Screen"></a>
@@ -97,12 +97,12 @@ color is assigned to which component (i.e., dialogs, buttons, ...) are:
 </p>
 <a name="index-Color-components"></a>
 <div class="example">
-<pre class="example"> COLOR_WINDOW		0
- COLOR_HIGHLIGHT_TEXT	1
- COLOR_MENU_BAR		2
- COLOR_STATUS_BAR	3
- COLOR_BUTTONS		4
- COLOR_HBUTTONS		5
+<pre class="example"> COLOR_WINDOW   &nbsp;0
+ COLOR_HIGHLIGHT_TEXT&nbsp;1
+ COLOR_MENU_BAR &nbsp;2
+ COLOR_STATUS_BAR&nbsp;3
+ COLOR_BUTTONS  &nbsp;4
+ COLOR_HBUTTONS &nbsp;5
 </pre></div>
 
 <p>You can define the colors in the color arrays by using integer values, although 
@@ -205,11 +205,21 @@ To reposition the cursor, use:
 based coordinates, meaning position 1-1 is at the top-left corner, position 
 25-80 is at the bottom-right (for a 25x80 screen size).
 </p>
+<p>To show/hide the cursor:
+<a name="index-The-showCursor_0028_0029-function"></a>
+<a name="index-The-hideCursor_0028_0029-function"></a>
+</p><div class="example">
+<pre class="example">/* Turn on the cursor */
+void showCursor();
+/* Turn off the cursor */
+void hideCursor();
+</pre></div>
+
 
 <hr>
 <div class="header">
 <p>
-Next: <a href="Strings.html#Strings" accesskey="n" rel="next">Strings</a>, Previous: <a href="Dialogs.html#Dialogs" accesskey="p" rel="previous">Dialogs</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Strings.html#Strings" accesskey="n" rel="next">Strings</a>, Previous: <a href="Dialogs.html#Dialogs" accesskey="p" rel="prev">Dialogs</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
 </div>
 
 

@@ -20,7 +20,7 @@ Index
 Prime
 *****
 
-This manual is for the Prime console file manager (version 1.1).
+This manual is for the Prime console file manager (version 1.2).
 
 1 Overview of the Prime console file manager
 ********************************************
@@ -121,7 +121,7 @@ bindings.
 1.4 What do I need?
 ===================
 
-The program can be invoked from the linux console or under X from an
+The program can be invoked from the GNU/Linux console or under X from an
 xterm.
 
 1.5 How to use it?
@@ -135,47 +135,50 @@ The description of the menus in *Note Menus::.  And the shortcut keys in
 1.6 What else?
 ==============
 
-To help the developers (and yourself) debugging the program, Prime sends
-log information by default to a file named 'prime.log' in the user's
-home directory (e.g.  /home/username).  If you wish log information to
-be sent to another file, invoke the program with the file name on the
-command line, e.g.
+To help the developers (and yourself) in debugging the program, prime
+sends log information by default to a file named 'prime.log' in the
+user's home directory (e.g.  /home/username).
+If you wish log information to be sent to another file, invoke the
+program with the file name on the command line, e.g.
 
      $prime --log log-file-name
      $prime -g log-file-name
 
-   If you don't want log information, invoke Prime as
+   If you don't want log information, invoke prime as
 
      $prime --no-log
+     $prime -n
 
    If you want to reset the configuration file to it's default values,
-invoke Prime as
+invoke prime as
 
      $prime --reset-config
      $prime -r
 
-   You can export directory tree of a given directory to a given file
-without starting Prime by typing:
+   You can export the directory tree of a given directory to a given
+file without starting prime by typing:
 
      $prime -e|--export dirname filename
 
    Note you will only type ''-e'' or ''--export'', not both.
 
    Prime starts with the directory tree of the current working
-directory.  To open Prime with the directory tree of another location,
+directory.  To open prime with the directory tree of another location,
 type:
 
      $prime dirname
 
-   Where 'dirname' is the path name which is to be loaded into Prime on
+   Where 'dirname' is the path name which is to be loaded into prime on
 program start.
 Currently there is partial wildcard support.  That means for example
 that you can specify '~' to indicate your home directory, and you can
-use '*' inside the program (in the search dialog box) but no further
-wildcards (like '?')  are supported Currently.  Examples:
+use '*' inside the program (in the 'Find' dialog box) but no further
+wildcards (like '?')  are supported at that time.  For example,
+entering:
 
-     $prime ~/projects
-   Will open the subdirectory 'projects' of the home directory
+     ~/projects
+   In the find dialog box will search the subdirectory 'projects' of the
+home directory
 The following are examples of accepted ways to enter wildcard strings in
 the Find file dialog box:
 
@@ -186,7 +189,7 @@ the Find file dialog box:
 2 Prime main window
 *******************
 
-After running Prime, you are faced with a window that has the following
+After running prime, you are faced with a window that has the following
 components:
 
 2.1 Menu bar
@@ -707,36 +710,36 @@ Index
 * Menu:
 
 * About Prime:                           Overview.            (line  26)
-* Bottom view:                           Main Window.         (line 204)
-* Command line export:                   Overview.            (line 156)
-* Directory view:                        Main Window.         (line 201)
-* Edit menu:                             Menus.               (line 220)
-* Exporting from the command line:       Overview.            (line 156)
+* Bottom view:                           Main Window.         (line 207)
+* Command line export:                   Overview.            (line 157)
+* Directory view:                        Main Window.         (line 204)
+* Edit menu:                             Menus.               (line 223)
+* Exporting from the command line:       Overview.            (line 157)
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
-                                                              (line 280)
-* File menu:                             Menus.               (line 212)
-* File view:                             Main Window.         (line 203)
-* Help menu:                             Menus.               (line 236)
+                                                              (line 283)
+* File menu:                             Menus.               (line 215)
+* File view:                             Main Window.         (line 206)
+* Help menu:                             Menus.               (line 239)
 * How to run Prime:                      Overview.            (line 125)
 * Key bindings:                          Overview.            (line  53)
-* Keyboard shortcuts:                    Menus.               (line 246)
-* Main window:                           Main Window.         (line 185)
-* Manu bar:                              Main Window.         (line 191)
-* Menus:                                 Menus.               (line 207)
+* Keyboard shortcuts:                    Menus.               (line 249)
+* Main window:                           Main Window.         (line 188)
+* Manu bar:                              Main Window.         (line 194)
+* Menus:                                 Menus.               (line 210)
 * No log information:                    Overview.            (line 146)
 * Overview:                              Overview.            (line  24)
-* Prime main window:                     Main Window.         (line 184)
-* Prime menu bar:                        Main Window.         (line 190)
+* Prime main window:                     Main Window.         (line 187)
+* Prime menu bar:                        Main Window.         (line 193)
 * Prime Overview:                        Overview.            (line  23)
-* Resetting the configuration file:      Overview.            (line 150)
+* Resetting the configuration file:      Overview.            (line 151)
 * Running Prime:                         Overview.            (line 126)
-* Shortcut keys:                         Menus.               (line 245)
-* Shortcuts:                             Menus.               (line 246)
-* Start Prime with a specific directory: Overview.            (line 163)
+* Shortcut keys:                         Menus.               (line 248)
+* Shortcuts:                             Menus.               (line 249)
+* Start Prime with a specific directory: Overview.            (line 164)
 * Starting Prime:                        Overview.            (line 126)
 * Suppressing log information:           Overview.            (line 146)
 * What is Prime:                         Overview.            (line  27)
 * Why to use it:                         Overview.            (line 110)
 * Why to use Prime:                      Overview.            (line 111)
-* Working around with menus:             Menus.               (line 206)
+* Working around with menus:             Menus.               (line 209)
 
